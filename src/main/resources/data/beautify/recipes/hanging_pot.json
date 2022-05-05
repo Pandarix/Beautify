@@ -15,5 +15,6 @@
 	"result": {
 		"item": "beautify:hanging_pot",
 		"count": 1
-	}
+	},
+	"group": "hanging_pot"
 }
