@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"F"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:rose_bush"
+		},
+		"F": {
+			"item": "beautify:hanging_pot"
+		}
+	},
+	"result": {
+		"item": "beautify:rose_pot",
+		"count": 1
+	}
+}

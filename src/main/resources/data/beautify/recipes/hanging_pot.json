@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"F"
+	],
+	"key": {
+		"#": {
+			"item": "beautify:rope"
+		},
+		"F": {
+			"item": "minecraft:flower_pot"
+		}
+	},
+	"result": {
+		"item": "beautify:hanging_pot",
+		"count": 1
+	}
+}
