@@ -1,0 +1,25 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:rope"
+						],
+						"count": 1
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"beautify:hanging_pot",
+			"beautify:rose_pot",
+			"beautify:from_rose_pot"
+		]
+	}
+}
