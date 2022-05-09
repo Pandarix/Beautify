@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"#",
+		"F"
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:blue orchid"
+		},
+		"F": {
+			"item": "beautify:hanging_pot"
+		}
+	},
+	"result": {
+		"item": "beautify:orchid_pot",
+		"count": 1
+	}
+}

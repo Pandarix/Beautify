@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"hanging=true": {
+			"model": "beautify:block/orchid_pot"
+		},
+		"hanging=false": {
+			"model": "beautify:block/standing_orchid_pot"
+		}
+	}
+}
