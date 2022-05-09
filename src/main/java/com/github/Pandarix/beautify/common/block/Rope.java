@@ -3,11 +3,12 @@ package com.github.Pandarix.beautify.common.block;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.ChainBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class Rope extends Block {
+public class Rope extends ChainBlock {
 
 	public Rope(Properties properties) {
 		super(properties);

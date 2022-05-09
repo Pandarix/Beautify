@@ -1,7 +1,13 @@
 {
 	"variants": {
-		"": {
+		"axis=y": {
 			"model": "beautify:block/rope"
+		},
+		"axis=x": {
+			"model": "beautify:block/rope", "y": 90
+		},
+		"axis=z": {
+			"model": "beautify:block/rope", "y": 0
 		}
 	}
 }
