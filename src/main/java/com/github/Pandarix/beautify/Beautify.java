@@ -5,7 +5,6 @@ import com.github.Pandarix.beautify.core.init.ItemInit;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
@@ -24,7 +23,7 @@ public class Beautify {
 	public static final CreativeModeTab BEAUTIFY_TAB = new CreativeModeTab(MODID) { //itemGroup.beautify
 		@Override
 		public ItemStack makeIcon() {
-			return Items.LARGE_FERN.getDefaultInstance();
+			return ItemInit.ROSE_POT_ITEM.get().getDefaultInstance();
 		}
 	};
 }
