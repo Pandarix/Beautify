@@ -9,7 +9,6 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class HangingPot extends LanternBlock {
-
 	public HangingPot(Properties properties) {
 		super(properties);
 	}

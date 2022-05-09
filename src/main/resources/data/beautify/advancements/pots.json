@@ -18,7 +18,11 @@
 	"rewards": {
 		"recipes": [
 			"beautify:rose_pot",
-			"beautify:from_rose_pot"
+			"beautify:from_rose_pot",
+			"beautify:orchid_pot",
+			"beautify:from_orchid_pot",
+			"beautify:lilac_pot",
+			"beautify:from_lilac_pot"
 		]
 	}
 }

@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"hanging=true": {
+			"model": "beautify:block/lilac_pot"
+		},
+		"hanging=false": {
+			"model": "beautify:block/standing_lilac_pot"
+		}
+	}
+}

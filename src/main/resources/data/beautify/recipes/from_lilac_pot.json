@@ -2,7 +2,7 @@
 	"type": "minecraft:crafting_shapeless",
 	"ingredients": [
 		{
-			"item": "beautify:orchid_pot"
+			"item": "beautify:lilac_pot"
 		}
 	],
 	"result": {
