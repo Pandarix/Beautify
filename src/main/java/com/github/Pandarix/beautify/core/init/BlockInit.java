@@ -25,12 +25,12 @@ public final class BlockInit {
 
 	// BLOCKS
 	public static final RegistryObject<Rope> ROPE = BLOCKS.register("rope",
-			() -> new Rope(BlockBehaviour.Properties.of(Material.CLOTH_DECORATION, MaterialColor.NONE).instabreak()
-					.sound(SoundType.WOOL).strength(0.2F, 0.2F)));
+			() -> new Rope(BlockBehaviour.Properties.of(Material.CLOTH_DECORATION, MaterialColor.NONE)
+					.strength(0.2F, 0.2F).sound(SoundType.WOOL).noOcclusion()));
 
 	public static final RegistryObject<RosePot> ROSE_POT = BLOCKS.register("rose_pot",
 			() -> new RosePot(BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
-	
+
 	public static final RegistryObject<HangingPot> HANGING_POT = BLOCKS.register("hanging_pot",
 			() -> new HangingPot(BlockBehaviour.Properties.copy(Blocks.FLOWER_POT)));
 }

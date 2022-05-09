@@ -7,9 +7,9 @@
 				"items": [
 					{
 						"items": [
-							"minecraft:rope"
+							"beautify:rope"
 						],
-						"count": 1
+						"min": 1
 					}
 				]
 			}
@@ -17,9 +17,7 @@
 	},
 	"rewards": {
 		"recipes": [
-			"beautify:hanging_pot",
-			"beautify:rose_pot",
-			"beautify:from_rose_pot"
+			"beautify:hanging_pot"
 		]
 	}
 }

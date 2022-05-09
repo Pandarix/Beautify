@@ -4,10 +4,10 @@
 			"model": "beautify:block/rope"
 		},
 		"axis=x": {
-			"model": "beautify:block/rope", "y": 90
+			"model": "beautify:block/rope", "x": 90, "y": 90
 		},
 		"axis=z": {
-			"model": "beautify:block/rope", "y": 0
+			"model": "beautify:block/rope", "x": 90
 		}
 	}
 }

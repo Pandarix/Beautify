@@ -7,7 +7,7 @@
 				"items": [
 					{
 						"items": [
-							"minecraft:string"
+							"beautify:hanging_pot"
 						],
 						"min": 1
 					}
@@ -17,7 +17,8 @@
 	},
 	"rewards": {
 		"recipes": [
-			"beautify:rope"
+			"beautify:rose_pot",
+			"beautify:from_rose_pot"
 		]
 	}
 }
