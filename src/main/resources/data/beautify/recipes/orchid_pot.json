@@ -6,14 +6,14 @@
 	],
 	"key": {
 		"#": {
-			"item": "minecraft:lilac"
+			"item": "minecraft:blue_orchid"
 		},
 		"F": {
 			"item": "beautify:hanging_pot"
 		}
 	},
 	"result": {
-		"item": "beautify:lilac_pot",
+		"item": "beautify:orchid_pot",
 		"count": 1
 	},
 	"group": "pot"
