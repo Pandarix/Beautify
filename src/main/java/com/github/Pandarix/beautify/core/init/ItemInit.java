@@ -18,6 +18,9 @@ public final class ItemInit {
 	public static final RegistryObject<BlockItem> ROPE_ITEM = ITEMS.register("rope",
 			() -> new BlockItem(BlockInit.ROPE.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
 	
+	public static final RegistryObject<BlockItem> BOOKSTACK_ITEM = ITEMS.register("bookstack",
+			() -> new BlockItem(BlockInit.BOOKSTACK.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
+	
 	public static final RegistryObject<BlockItem> ROSE_POT_ITEM = ITEMS.register("rose_pot",
 			() -> new BlockItem(BlockInit.ROSE_POT.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
 	

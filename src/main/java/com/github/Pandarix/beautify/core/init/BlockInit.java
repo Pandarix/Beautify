@@ -1,6 +1,7 @@
 package com.github.Pandarix.beautify.core.init;
 
 import com.github.Pandarix.beautify.Beautify;
+import com.github.Pandarix.beautify.common.block.BookStack;
 import com.github.Pandarix.beautify.common.block.HangingPot;
 import com.github.Pandarix.beautify.common.block.LilacPot;
 import com.github.Pandarix.beautify.common.block.OrchidPot;
@@ -25,6 +26,11 @@ public final class BlockInit {
 			Beautify.MODID);
 
 	// BLOCKS
+	public static final RegistryObject<BookStack> BOOKSTACK = BLOCKS.register("bookstack",
+			() -> new BookStack(BlockBehaviour.Properties.of(Material.CLOTH_DECORATION,
+					MaterialColor.NONE)
+					.strength(0.2F, 0.2F).sound(SoundType.CANDLE).noOcclusion()));
+	
 	public static final RegistryObject<Rope> ROPE = BLOCKS.register("rope",
 			() -> new Rope(BlockBehaviour.Properties.of(Material.CLOTH_DECORATION, MaterialColor.NONE)
 					.strength(0.2F, 0.2F).sound(SoundType.WOOL).noOcclusion()));
