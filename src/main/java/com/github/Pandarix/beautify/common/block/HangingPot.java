@@ -13,6 +13,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -73,9 +74,10 @@ public class HangingPot extends LanternBlock {
 					if (stackID.equals(flower)) {
 						// if that is the case, the BlockState gets set to the index value of the flower
 						// the flower gets removed from the inventory
+			            //ItemStack dropStack = new ItemStack(Items.);
 						pLevel.setBlock(pPos, pState.setValue(POTFLOWER, flowers.indexOf(flower)), 3);
 						stack.shrink(1);
-						ItemStack droppedItem = new ItemStack(item);
+						//pPlayer.drop(dropStack, false);
 						return InteractionResult.CONSUME;
 					}
 				}
