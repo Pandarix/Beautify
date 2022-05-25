@@ -22,7 +22,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class BookStack extends HorizontalDirectionalBlock {
 	private static final int modelcount = 2; // number of models the bookstack has
 	public static final IntegerProperty BOOKSTACK_MODEL = IntegerProperty.create("bookstack_model", 0, modelcount - 1);
-	private static final VoxelShape SHAPE = Block.box(0, 0, 2, 16, 5, 14); // bounding box
+	private static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 4, 15); // bounding box
 
 	public BookStack(Properties p_49795_) {
 		super(p_49795_);
