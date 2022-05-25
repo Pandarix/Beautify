@@ -27,23 +27,26 @@ public final class BlockInit {
 
 	// BLOCKS
 	public static final RegistryObject<BookStack> BOOKSTACK = BLOCKS.register("bookstack",
-			() -> new BookStack(BlockBehaviour.Properties.of(Material.CLOTH_DECORATION,
-					MaterialColor.NONE)
+			() -> new BookStack(BlockBehaviour.Properties.of(Material.CLOTH_DECORATION, MaterialColor.NONE)
 					.strength(0.2F, 0.2F).sound(SoundType.CANDLE).noOcclusion()));
-	
+
 	public static final RegistryObject<Rope> ROPE = BLOCKS.register("rope",
 			() -> new Rope(BlockBehaviour.Properties.of(Material.CLOTH_DECORATION, MaterialColor.NONE)
 					.strength(0.2F, 0.2F).sound(SoundType.WOOL).noOcclusion()));
-	
+
 	public static final RegistryObject<HangingPot> HANGING_POT = BLOCKS.register("hanging_pot",
-			() -> new HangingPot(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.TERRACOTTA_BROWN).noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE)));
+			() -> new HangingPot(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.TERRACOTTA_BROWN)
+					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE)));
 
 	public static final RegistryObject<RosePot> ROSE_POT = BLOCKS.register("rose_pot",
-			() -> new RosePot(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.TERRACOTTA_BROWN).noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE)));
+			() -> new RosePot(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.TERRACOTTA_BROWN)
+					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE)));
 
 	public static final RegistryObject<OrchidPot> ORCHID_POT = BLOCKS.register("orchid_pot",
-			() -> new OrchidPot(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.TERRACOTTA_BROWN).noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE)));
-	
+			() -> new OrchidPot(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.TERRACOTTA_BROWN)
+					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE)));
+
 	public static final RegistryObject<LilacPot> LILAC_POT = BLOCKS.register("lilac_pot",
-			() -> new LilacPot(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.TERRACOTTA_BROWN).noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE)));
+			() -> new LilacPot(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.TERRACOTTA_BROWN)
+					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE)));
 }

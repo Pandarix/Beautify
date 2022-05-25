@@ -24,5 +24,6 @@ public class ClientModEvents {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.HANGING_POT.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.LILAC_POT.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.HANGING_POT.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.BOOKSTACK.get(), RenderType.cutout());
 	}
 }
