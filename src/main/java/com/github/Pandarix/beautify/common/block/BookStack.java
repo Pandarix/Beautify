@@ -27,7 +27,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class BookStack extends HorizontalDirectionalBlock {
-	private static final int modelcount = 2; // number of models the bookstack has
+	private static final int modelcount = 3; // number of models the bookstack has
 	public static final IntegerProperty BOOKSTACK_MODEL = IntegerProperty.create("bookstack_model", 0, modelcount - 1);
 	private static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 4, 15); // bounding box
 
@@ -86,11 +86,12 @@ public class BookStack extends HorizontalDirectionalBlock {
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> tooltip, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift()) {
-			tooltip.add(new TextComponent("Hold \u00A7eSHIFT\u00A7r for more."));
+			tooltip.add(
+					new TextComponent("\u00A77Hold\u00A77 \u00A7e\u00A7oSHIFT\u00A7o\u00A7r \u00A77for more.\u00A77"));
 		}
-		
+
 		if (KeyBoardHelper.isHoldingShift()) {
-			tooltip.add(new TextComponent("Places random Bookstack. Shift-Rightclick on Block to change model."));
+			tooltip.add(new TextComponent("\u00A77Places random Bookstack. Shift-Rightclick on Block to change model.\u00A77"));
 		}
 		super.appendHoverText(stack, getter, tooltip, flag);
 	}

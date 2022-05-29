@@ -1,18 +1,48 @@
 {
 	"variants": {
-		"facing=north": {
-			"model": "beautify:block/bookstack"
+		"bookstack_model=0,facing=north": {
+			"model": "beautify:block/bookstack_0"
 		},
-		"facing=east": {
-			"model": "beautify:block/bookstack",
+		"bookstack_model=0,facing=east": {
+			"model": "beautify:block/bookstack_0",
 			"y": 90
 		},
-		"facing=south": {
-			"model": "beautify:block/bookstack",
+		"bookstack_model=0,facing=south": {
+			"model": "beautify:block/bookstack_0",
 			"y": 180
 		},
-		"facing=west": {
-			"model": "beautify:block/bookstack",
+		"bookstack_model=0,facing=west": {
+			"model": "beautify:block/bookstack_0",
+			"y": 270
+		},
+		"bookstack_model=1,facing=north": {
+			"model": "beautify:block/bookstack_1"
+		},
+		"bookstack_model=1,facing=east": {
+			"model": "beautify:block/bookstack_1",
+			"y": 90
+		},
+		"bookstack_model=1,facing=south": {
+			"model": "beautify:block/bookstack_1",
+			"y": 180
+		},
+		"bookstack_model=1,facing=west": {
+			"model": "beautify:block/bookstack_1",
+			"y": 270
+		},
+		"bookstack_model=2,facing=north": {
+			"model": "beautify:block/bookstack_2"
+		},
+		"bookstack_model=2,facing=east": {
+			"model": "beautify:block/bookstack_2",
+			"y": 90
+		},
+		"bookstack_model=2,facing=south": {
+			"model": "beautify:block/bookstack_2",
+			"y": 180
+		},
+		"bookstack_model=2,facing=west": {
+			"model": "beautify:block/bookstack_2",
 			"y": 270
 		}
 	}

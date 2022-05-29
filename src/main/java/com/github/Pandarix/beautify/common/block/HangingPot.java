@@ -27,10 +27,10 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class HangingPot extends LanternBlock {
 	// POTFLOWER indicates which index of the flowers List below is active
-	public static final IntegerProperty POTFLOWER = IntegerProperty.create("potflower", 0, 3);
+	public static final IntegerProperty POTFLOWER = IntegerProperty.create("potflower", 0, 4);
 	private ItemStack content;
 	private static final List<String> flowers = Arrays.asList("block.minecraft.air", "block.minecraft.rose_bush",
-			"block.minecraft.lilac", "block.minecraft.blue_orchid");
+			"block.minecraft.lilac", "block.minecraft.blue_orchid", "block.minecraft.vine");
 
 	public HangingPot(Properties properties) {
 		super(properties);
@@ -74,6 +74,8 @@ public class HangingPot extends LanternBlock {
 							content = new ItemStack(Items.LILAC);
 						} else if (flower == "block.minecraft.blue_orchid") {
 							content = new ItemStack(Items.BLUE_ORCHID);
+						} else if (flower == "block.minecraft.vine") {
+							content = new ItemStack(Items.VINE);
 						}
 						pLevel.setBlock(pPos, pState.setValue(POTFLOWER, flowers.indexOf(flower)), 3);
 						stack.shrink(1);
@@ -95,13 +97,24 @@ public class HangingPot extends LanternBlock {
 
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> tooltip, TooltipFlag flag) {
-		if (!KeyBoardHelper.isHoldingShift()) {
-			tooltip.add(new TextComponent("Hold \u00A7eSHIFT\u00A7r for more."));
+		if (!KeyBoardHelper.isHoldingShift() && !KeyBoardHelper.isHoldingControl()) {
+			tooltip.add(
+					new TextComponent("\u00A77Hold\u00A77 \u00A7e\u00A7oSHIFT\u00A7o\u00A7r \u00A77for more.\u00A77"));
+			tooltip.add(new TextComponent("\u00A77Hold\u00A77 \u00A7e\u00A7oCTRL\u00A7o\u00A7r \u00A77for a list of plants.\u00A77"));
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
-			tooltip.add(new TextComponent("Can be placed hanging on blocks and \u00A7eropes\u00A7r or on ground as usual. Right click with plants to pot them."));
+			tooltip.add(new TextComponent(
+					"\u00A77Can be placed hanging on blocks and\u00A77 \u00A7oropes\u00A7o \u00A77or on ground as usual.\u00A77"));
+			tooltip.add(new TextComponent(
+					"\u00A77Right click with plants to pot them.\u00A77"));
 		}
+
+		if (KeyBoardHelper.isHoldingControl()) {
+			tooltip.add(new TextComponent("\u00A7nPottable plants:\u00A7n"));
+			tooltip.add(new TextComponent("\u00A77Rose Bushes, Lilacs, Blue Orchids, Vines\u00A77"));
+		}
+
 		super.appendHoverText(stack, getter, tooltip, flag);
 	}
 }

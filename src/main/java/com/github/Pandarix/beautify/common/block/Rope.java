@@ -19,15 +19,17 @@ public class Rope extends ChainBlock {
 		this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, Boolean.valueOf(false))
 				.setValue(AXIS, Direction.Axis.Y));
 	}
-	
+
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> tooltip, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift()) {
-			tooltip.add(new TextComponent("Hold \u00A7eSHIFT\u00A7r for more."));
+			tooltip.add(
+					new TextComponent("\u00A77Hold\u00A77 \u00A7e\u00A7oSHIFT\u00A7o\u00A7r \u00A77for more.\u00A77"));
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
-			tooltip.add(new TextComponent("Acts like Chains. Nice addition to \u00A7ehanging pots\u00A7r"));
+			tooltip.add(
+					new TextComponent("\u00A77Acts like Chains. Nice addition to\u00A77 \u00A7ohanging pots.\u00A7o"));
 		}
 		super.appendHoverText(stack, getter, tooltip, flag);
 	}
