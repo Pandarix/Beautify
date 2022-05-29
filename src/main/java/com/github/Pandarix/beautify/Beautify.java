@@ -23,7 +23,7 @@ public class Beautify {
 	public static final CreativeModeTab BEAUTIFY_TAB = new CreativeModeTab(MODID) { //itemGroup.beautify
 		@Override
 		public ItemStack makeIcon() {
-			return ItemInit.ROSE_POT_ITEM.get().getDefaultInstance();
+			return ItemInit.HANGING_POT_ITEM.get().getDefaultInstance();
 		}
 	};
 }

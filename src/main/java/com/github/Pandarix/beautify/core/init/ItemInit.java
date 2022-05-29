@@ -21,15 +21,6 @@ public final class ItemInit {
 	public static final RegistryObject<BlockItem> BOOKSTACK_ITEM = ITEMS.register("bookstack",
 			() -> new BlockItem(BlockInit.BOOKSTACK.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
 	
-	public static final RegistryObject<BlockItem> ROSE_POT_ITEM = ITEMS.register("rose_pot",
-			() -> new BlockItem(BlockInit.ROSE_POT.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
-	
-	public static final RegistryObject<BlockItem> ORCHID_POT_ITEM = ITEMS.register("orchid_pot",
-			() -> new BlockItem(BlockInit.ORCHID_POT.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
-	
-	public static final RegistryObject<BlockItem> LILAC_POT_ITEM = ITEMS.register("lilac_pot",
-			() -> new BlockItem(BlockInit.LILAC_POT.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
-	
 	public static final RegistryObject<BlockItem> HANGING_POT_ITEM = ITEMS.register("hanging_pot",
 			() -> new BlockItem(BlockInit.HANGING_POT.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
 }

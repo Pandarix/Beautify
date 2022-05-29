@@ -1,10 +1,28 @@
 {
 	"variants": {
-		"hanging=true": {
+		"hanging=true,potflower=0": {
 			"model": "beautify:block/hanging_pot"
 		},
-		"hanging=false": {
+		"hanging=false,potflower=0": {
 			"model": "beautify:block/standing_pot"
+		},
+		"hanging=true,potflower=1": {
+			"model": "beautify:block/rose_pot"
+		},
+		"hanging=false,potflower=1": {
+			"model": "beautify:block/standing_rose_pot"
+		},
+		"hanging=true,potflower=2": {
+			"model": "beautify:block/lilac_pot"
+		},
+		"hanging=false,potflower=2": {
+			"model": "beautify:block/standing_lilac_pot"
+		},
+		"hanging=true,potflower=3": {
+			"model": "beautify:block/orchid_pot"
+		},
+		"hanging=false,potflower=3": {
+			"model": "beautify:block/standing_orchid_pot"
 		}
 	}
 }
