@@ -25,7 +25,7 @@ public final class BlockInit {
 	// BLOCKS
 	public static final RegistryObject<BookStack> BOOKSTACK = BLOCKS.register("bookstack",
 			() -> new BookStack(BlockBehaviour.Properties.of(Material.CLOTH_DECORATION, MaterialColor.NONE)
-					.strength(0.2F, 0.2F).sound(SoundType.CANDLE).noOcclusion()));
+					.strength(0.2F, 0.2F).sound(SoundInit.BOOKSTACK_SOUNDS).noOcclusion()));
 
 	public static final RegistryObject<Rope> ROPE = BLOCKS.register("rope",
 			() -> new Rope(BlockBehaviour.Properties.of(Material.CLOTH_DECORATION, MaterialColor.NONE)

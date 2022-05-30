@@ -7,7 +7,7 @@
 			"model": "beautify:block/standing_pot"
 		},
 		"hanging=true,potflower=1": {
-			"model": "beautify:block/hanging_pot"
+			"model": "beautify:block/rose_pot"
 		},
 		"hanging=false,potflower=1": {
 			"model": "beautify:block/standing_rose_pot"

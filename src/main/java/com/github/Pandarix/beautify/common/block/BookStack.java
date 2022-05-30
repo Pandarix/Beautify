@@ -3,12 +3,15 @@ package com.github.Pandarix.beautify.common.block;
 import java.util.List;
 import java.util.Random;
 
+import com.github.Pandarix.beautify.core.init.BlockInit;
+import com.github.Pandarix.beautify.core.init.SoundInit;
 import com.github.Pandarix.beautify.util.KeyBoardHelper;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -17,6 +20,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -54,6 +58,8 @@ public class BookStack extends HorizontalDirectionalBlock {
 		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()
 				&& pPlayer.isShiftKeyDown()) {
 			int currentModel = pState.getValue(BOOKSTACK_MODEL); // current index
+			// currently broken
+			pLevel.playSound(pPlayer, pPos, SoundInit.BOOKSTACK_NEXT.get(), SoundSource.BLOCKS, 1f, 1f);
 			// reset if it surpasses the number of possible models
 			if (currentModel + 1 > modelcount - 1) {
 				pLevel.setBlock(pPos, pState.setValue(BOOKSTACK_MODEL, 0), 3);
@@ -64,6 +70,15 @@ public class BookStack extends HorizontalDirectionalBlock {
 			}
 		}
 		return InteractionResult.SUCCESS;
+	}
+
+	@Override
+	public float getEnchantPowerBonus(BlockState state, LevelReader level, BlockPos pos) {
+		if (state.is(BlockInit.BOOKSTACK.get())) {
+			return 1;
+		} else {
+			return super.getEnchantPowerBonus(state, level, pos);
+		}
 	}
 
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -91,7 +106,10 @@ public class BookStack extends HorizontalDirectionalBlock {
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
-			tooltip.add(new TextComponent("\u00A77Places random Bookstack. Shift-Rightclick on Block to change model.\u00A77"));
+			tooltip.add(new TextComponent(
+					"\u00A77Increases Enchantment Table Power like Shelves.\u00A77"));
+			tooltip.add(new TextComponent(
+					"\u00A77Places random Bookstack. Shift-Rightclick on Block to change model.\u00A77"));
 		}
 		super.appendHoverText(stack, getter, tooltip, flag);
 	}

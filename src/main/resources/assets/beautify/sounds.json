@@ -1,0 +1,38 @@
+{
+	"bookstack_break": {
+		"subtitle": "sounds.beautify.bookstack_break",
+		"sounds": [
+			"beautify:bookstack_break"
+		]
+	},
+	"bookstack_step": {
+		"subtitle": "sounds.beautify.bookstack_step",
+		"sounds": [
+			"beautify:bookstack_step"
+		]
+	},
+	"bookstack_place": {
+		"subtitle": "sounds.beautify.bookstack_place",
+		"sounds": [
+			"beautify:bookstack_place"
+		]
+	},
+	"bookstack_hit": {
+		"subtitle": "sounds.beautify.bookstack_hit",
+		"sounds": [
+			"beautify:bookstack_hit"
+		]
+	},
+	"bookstack_fall": {
+		"subtitle": "sounds.beautify.bookstack_fall",
+		"sounds": [
+			"beautify:bookstack_fall"
+		]
+	},
+	"bookstack_next": {
+		"subtitle": "sounds.beautify.bookstack_next",
+		"sounds": [
+			"beautify:bookstack_next"
+		]
+	}
+}
