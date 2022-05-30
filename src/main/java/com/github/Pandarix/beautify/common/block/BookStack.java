@@ -2,10 +2,12 @@ package com.github.Pandarix.beautify.common.block;
 
 import java.util.List;
 import java.util.Random;
+import java.util.function.Function;
 
 import com.github.Pandarix.beautify.core.init.BlockInit;
 import com.github.Pandarix.beautify.core.init.SoundInit;
 import com.github.Pandarix.beautify.util.KeyBoardHelper;
+import com.google.common.collect.ImmutableMap;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -31,7 +33,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class BookStack extends HorizontalDirectionalBlock {
-	private static final int modelcount = 3; // number of models the bookstack has
+	private static final int modelcount = 4; // number of models the bookstack has
 	public static final IntegerProperty BOOKSTACK_MODEL = IntegerProperty.create("bookstack_model", 0, modelcount - 1);
 	private static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 4, 15); // bounding box
 

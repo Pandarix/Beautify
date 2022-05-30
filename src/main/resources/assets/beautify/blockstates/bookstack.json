@@ -44,6 +44,21 @@
 		"bookstack_model=2,facing=west": {
 			"model": "beautify:block/bookstack_2",
 			"y": 270
+		},
+		"bookstack_model=3,facing=north": {
+			"model": "beautify:block/bookstack_3"
+		},
+		"bookstack_model=3,facing=east": {
+			"model": "beautify:block/bookstack_3",
+			"y": 90
+		},
+		"bookstack_model=3,facing=south": {
+			"model": "beautify:block/bookstack_3",
+			"y": 180
+		},
+		"bookstack_model=3,facing=west": {
+			"model": "beautify:block/bookstack_3",
+			"y": 270
 		}
 	}
 }
