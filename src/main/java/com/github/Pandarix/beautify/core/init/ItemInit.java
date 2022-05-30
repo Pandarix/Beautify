@@ -23,4 +23,11 @@ public final class ItemInit {
 	
 	public static final RegistryObject<BlockItem> HANGING_POT_ITEM = ITEMS.register("hanging_pot",
 			() -> new BlockItem(BlockInit.HANGING_POT.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
+	
+		//picture frame
+	public static final RegistryObject<BlockItem> OAK_PICTURE_FRAME_ITEM = ITEMS.register("oak_picture_frame",
+			() -> new BlockItem(BlockInit.OAK_PICTURE_FRAME.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
+	
+	public static final RegistryObject<BlockItem> SPRUCE_PICTURE_FRAME_ITEM = ITEMS.register("spruce_picture_frame",
+			() -> new BlockItem(BlockInit.SPRUCE_PICTURE_FRAME.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
 }

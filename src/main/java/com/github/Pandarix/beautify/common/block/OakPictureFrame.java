@@ -3,7 +3,6 @@ package com.github.Pandarix.beautify.common.block;
 import java.util.List;
 import java.util.Random;
 
-import com.github.Pandarix.beautify.core.init.BlockInit;
 import com.github.Pandarix.beautify.core.init.SoundInit;
 import com.github.Pandarix.beautify.util.KeyBoardHelper;
 
@@ -20,7 +19,6 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -28,28 +26,17 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-public class BookStack extends HorizontalDirectionalBlock {
-	private static final int modelcount = 4; // number of models the bookstack has
-	public static final IntegerProperty BOOKSTACK_MODEL = IntegerProperty.create("bookstack_model", 0, modelcount - 1);
-	private static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 4, 15); // bounding box
+public class OakPictureFrame extends HorizontalDirectionalBlock {
+	private static final int modelcount = 2; // number of models the bookstack has
+	public static final IntegerProperty FRAME_MOTIVE = IntegerProperty.create("frame_motive", 0, modelcount - 1);
+	protected static final VoxelShape SHAPE = Block.box(4, 0, 5, 12, 8, 11);
 
-	public BookStack(Properties p_49795_) {
+	public OakPictureFrame(Properties p_49795_) {
 		super(p_49795_);
-		this.registerDefaultState(
-				this.defaultBlockState().setValue(BOOKSTACK_MODEL, 0).setValue(FACING, Direction.NORTH));
-	}
-
-	// setting the bounding box
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-		return SHAPE;
-	}
-
-	@Override
-	public VoxelShape getOcclusionShape(BlockState p_53338_, BlockGetter p_53339_, BlockPos p_53340_) {
-		return SHAPE;
+		this.registerDefaultState(this.defaultBlockState().setValue(FRAME_MOTIVE, 0).setValue(FACING, Direction.NORTH));
 	}
 
 	// changing the model of the bookstack by shift-rightclicking
@@ -57,28 +44,28 @@ public class BookStack extends HorizontalDirectionalBlock {
 			BlockHitResult pResult) {
 		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()
 				&& pPlayer.isShiftKeyDown()) {
-			int currentModel = pState.getValue(BOOKSTACK_MODEL); // current index
+			int currentModel = pState.getValue(FRAME_MOTIVE); // current index
 			// currently broken
 			pLevel.playSound(pPlayer, pPos, SoundInit.BOOKSTACK_NEXT.get(), SoundSource.BLOCKS, 1f, 1f);
 			// reset if it surpasses the number of possible models
 			if (currentModel + 1 > modelcount - 1) {
-				pLevel.setBlock(pPos, pState.setValue(BOOKSTACK_MODEL, 0), 3);
+				pLevel.setBlock(pPos, pState.setValue(FRAME_MOTIVE, 0), 3);
 				return InteractionResult.SUCCESS;
 			} else { // increases index
-				pLevel.setBlock(pPos, pState.setValue(BOOKSTACK_MODEL, currentModel + 1), 3);
+				pLevel.setBlock(pPos, pState.setValue(FRAME_MOTIVE, currentModel + 1), 3);
 				return InteractionResult.SUCCESS;
 			}
 		}
 		return InteractionResult.SUCCESS;
 	}
 
-	@Override
-	public float getEnchantPowerBonus(BlockState state, LevelReader level, BlockPos pos) {
-		if (state.is(BlockInit.BOOKSTACK.get())) {
-			return 1;
-		} else {
-			return super.getEnchantPowerBonus(state, level, pos);
-		}
+	public VoxelShape getShape(BlockState p_56331_, BlockGetter p_56332_, BlockPos p_56333_,
+			CollisionContext p_56334_) {
+		return SHAPE;
+	}
+
+	public VoxelShape getOcclusionShape(BlockState p_56336_, BlockGetter p_56337_, BlockPos p_56338_) {
+		return Shapes.empty();
 	}
 
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
@@ -88,14 +75,14 @@ public class BookStack extends HorizontalDirectionalBlock {
 		int randomNum = rand.nextInt((max - min));
 
 		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite())
-				.setValue(BOOKSTACK_MODEL, randomNum);
+				.setValue(FRAME_MOTIVE, randomNum);
 	}
 
 	// creates blockstate
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
 		super.createBlockStateDefinition(pBuilder);
-		pBuilder.add(BOOKSTACK_MODEL, FACING);
+		pBuilder.add(FRAME_MOTIVE, FACING);
 	}
 
 	@Override
@@ -107,9 +94,7 @@ public class BookStack extends HorizontalDirectionalBlock {
 
 		if (KeyBoardHelper.isHoldingShift()) {
 			tooltip.add(new TextComponent(
-					"\u00A77Increases Enchantment Table Power like Shelves.\u00A77"));
-			tooltip.add(new TextComponent(
-					"\u00A77Places random Bookstack. Shift-Rightclick on Block to change model.\u00A77"));
+					"\u00A77Places Frame with a random motive. Shift-Rightclick on Block to change model.\u00A77"));
 		}
 		super.appendHoverText(stack, getter, tooltip, flag);
 	}

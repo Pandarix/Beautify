@@ -20,7 +20,7 @@ public class ClientModEvents {
 	public static void clientSetup(FMLClientSetupEvent event) {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.ROPE.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.HANGING_POT.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.HANGING_POT.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.OAK_PICTURE_FRAME.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.BOOKSTACK.get(), RenderType.cutout());
 	}
 }

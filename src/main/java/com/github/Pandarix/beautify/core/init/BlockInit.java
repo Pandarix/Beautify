@@ -3,7 +3,9 @@ package com.github.Pandarix.beautify.core.init;
 import com.github.Pandarix.beautify.Beautify;
 import com.github.Pandarix.beautify.common.block.BookStack;
 import com.github.Pandarix.beautify.common.block.HangingPot;
+import com.github.Pandarix.beautify.common.block.OakPictureFrame;
 import com.github.Pandarix.beautify.common.block.Rope;
+import com.github.Pandarix.beautify.common.block.SprucePictureFrame;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -34,4 +36,13 @@ public final class BlockInit {
 	public static final RegistryObject<HangingPot> HANGING_POT = BLOCKS.register("hanging_pot",
 			() -> new HangingPot(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.TERRACOTTA_BROWN)
 					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE)));
+	
+		//picture frames
+	public static final RegistryObject<OakPictureFrame> OAK_PICTURE_FRAME = BLOCKS.register("oak_picture_frame",
+			() -> new OakPictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
+	
+	public static final RegistryObject<SprucePictureFrame> SPRUCE_PICTURE_FRAME = BLOCKS.register("spruce_picture_frame",
+			() -> new SprucePictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 }

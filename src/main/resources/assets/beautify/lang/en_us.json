@@ -3,6 +3,8 @@
 	"block.beautify.rope": "Rope",
 	"block.beautify.hanging_pot": "Hanging Pot",
 	"block.beautify.bookstack": "Bookstack",
+	"block.beautify.oak_picture_frame": "Oak Picture Frame",
+	"block.beautify.spruce_picture_frame": "Spruce Picture Frame",
 	"sounds.beautify.bookstack_break": "Bookstack broken",
 	"sounds.beautify.bookstack_step": "Steps on Bookstack",
 	"sounds.beautify.bookstack_place": "Bookstack placed",

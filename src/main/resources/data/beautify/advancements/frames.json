@@ -1,0 +1,24 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:white_wool"
+						],
+						"min": 1
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"beautify:oak_picture_frame",
+			"beautify:spruce_picture_frame"
+		]
+	}
+}
