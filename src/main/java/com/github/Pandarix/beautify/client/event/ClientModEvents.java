@@ -20,7 +20,17 @@ public class ClientModEvents {
 	public static void clientSetup(FMLClientSetupEvent event) {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.ROPE.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.HANGING_POT.get(), RenderType.cutout());
-		ItemBlockRenderTypes.setRenderLayer(BlockInit.OAK_PICTURE_FRAME.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.BOOKSTACK.get(), RenderType.cutout());
+		
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.OAK_PICTURE_FRAME.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.BIRCH_PICTURE_FRAME.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.SPRUCE_PICTURE_FRAME.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.DARK_OAK_PICTURE_FRAME.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.JUNGLE_PICTURE_FRAME.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.ACACIA_PICTURE_FRAME.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.WARPED_PICTURE_FRAME.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.CRIMSON_PICTURE_FRAME.get(), RenderType.cutout());
+		
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.OAK_BLINDS.get(), RenderType.cutout());
 	}
 }

@@ -1,0 +1,34 @@
+{
+	"variants": {
+		"frame_motive=0,facing=north": {
+			"model": "beautify:block/pictureframes/warped_sunset_picture_frame"
+		},
+		"frame_motive=0,facing=east": {
+			"model": "beautify:block/pictureframes/warped_sunset_picture_frame",
+			"y": 90
+		},
+		"frame_motive=0,facing=south": {
+			"model": "beautify:block/pictureframes/warped_sunset_picture_frame",
+			"y": 180
+		},
+		"frame_motive=0,facing=west": {
+			"model": "beautify:block/pictureframes/warped_sunset_picture_frame",
+			"y": 270
+		},
+		"frame_motive=1,facing=north": {
+			"model": "beautify:block/pictureframes/warped_flower_picture_frame"
+		},
+		"frame_motive=1,facing=east": {
+			"model": "beautify:block/pictureframes/warped_flower_picture_frame",
+			"y": 90
+		},
+		"frame_motive=1,facing=south": {
+			"model": "beautify:block/pictureframes/warped_flower_picture_frame",
+			"y": 180
+		},
+		"frame_motive=1,facing=west": {
+			"model": "beautify:block/pictureframes/warped_flower_picture_frame",
+			"y": 270
+		}
+	}
+}

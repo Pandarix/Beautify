@@ -1,34 +1,34 @@
 {
 	"variants": {
 		"hanging=true,potflower=0": {
-			"model": "beautify:block/hanging_pot"
+			"model": "beautify:block/pots/hanging_pot"
 		},
 		"hanging=false,potflower=0": {
-			"model": "beautify:block/standing_pot"
+			"model": "beautify:block/pots/standing_pot"
 		},
 		"hanging=true,potflower=1": {
-			"model": "beautify:block/rose_pot"
+			"model": "beautify:block/pots/rose_pot"
 		},
 		"hanging=false,potflower=1": {
-			"model": "beautify:block/standing_rose_pot"
+			"model": "beautify:block/pots/standing_rose_pot"
 		},
 		"hanging=true,potflower=2": {
-			"model": "beautify:block/lilac_pot"
+			"model": "beautify:block/pots/lilac_pot"
 		},
 		"hanging=false,potflower=2": {
-			"model": "beautify:block/standing_lilac_pot"
+			"model": "beautify:block/pots/standing_lilac_pot"
 		},
 		"hanging=true,potflower=3": {
-			"model": "beautify:block/orchid_pot"
+			"model": "beautify:block/pots/orchid_pot"
 		},
 		"hanging=false,potflower=3": {
-			"model": "beautify:block/standing_orchid_pot"
+			"model": "beautify:block/pots/standing_orchid_pot"
 		},
 		"hanging=true,potflower=4": {
-			"model": "beautify:block/vine_pot"
+			"model": "beautify:block/pots/vine_pot"
 		},
 		"hanging=false,potflower=4": {
-			"model": "beautify:block/standing_vine_pot"
+			"model": "beautify:block/pots/standing_vine_pot"
 		}
 	}
 }

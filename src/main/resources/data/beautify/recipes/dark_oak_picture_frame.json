@@ -7,7 +7,7 @@
 	],
 	"key": {
 		"_": {
-			"item": "minecraft:spruce_slab"
+			"item": "minecraft:dark_oak_slab"
 		},
 		"W": {
 			"item": "minecraft:white_wool"
@@ -17,7 +17,7 @@
 		}
 	},
 	"result": {
-		"item": "beautify:spruce_picture_frame",
+		"item": "beautify:dark_oak_picture_frame",
 		"count": 1
 	},
 	"group": "frames"

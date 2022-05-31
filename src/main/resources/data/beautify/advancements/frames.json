@@ -18,7 +18,13 @@
 	"rewards": {
 		"recipes": [
 			"beautify:oak_picture_frame",
-			"beautify:spruce_picture_frame"
+			"beautify:spruce_picture_frame",
+			"beautify:birch_picture_frame",
+			"beautify:dark_oak_picture_frame",
+			"beautify:jungle_picture_frame",
+			"beautify:acacia_picture_frame",
+			"beautify:warped_picture_frame",
+			"beautify:crimson_picture_frame"
 		]
 	}
 }
