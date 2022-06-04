@@ -34,6 +34,14 @@ public final class ItemInit {
 					return 300;
 				}
 			});
+	
+	public static final RegistryObject<BlockItem> SPRUCE_BLINDS_ITEM = ITEMS.register("spruce_blinds",
+			() -> new BlockItem(BlockInit.SPRUCE_BLINDS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
+				@Override
+				public int getBurnTime(ItemStack itemStack, RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
 
 	// picture frame
 	public static final RegistryObject<BlockItem> OAK_PICTURE_FRAME_ITEM = ITEMS.register("oak_picture_frame",

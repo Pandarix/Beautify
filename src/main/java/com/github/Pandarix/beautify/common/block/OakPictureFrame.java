@@ -3,14 +3,12 @@ package com.github.Pandarix.beautify.common.block;
 import java.util.List;
 import java.util.Random;
 
-import com.github.Pandarix.beautify.core.init.SoundInit;
 import com.github.Pandarix.beautify.util.KeyBoardHelper;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -39,14 +37,12 @@ public class OakPictureFrame extends HorizontalDirectionalBlock {
 		this.registerDefaultState(this.defaultBlockState().setValue(FRAME_MOTIVE, 0).setValue(FACING, Direction.NORTH));
 	}
 
-	// changing the model of the bookstack by shift-rightclicking
+	// changing the model of the picture frame by shift-rightclicking
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
 			BlockHitResult pResult) {
 		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()
 				&& pPlayer.isShiftKeyDown()) {
 			int currentModel = pState.getValue(FRAME_MOTIVE); // current index
-			// currently broken
-			pLevel.playSound(pPlayer, pPos, SoundInit.BOOKSTACK_NEXT.get(), SoundSource.BLOCKS, 1f, 1f);
 			// reset if it surpasses the number of possible models
 			if (currentModel + 1 > modelcount - 1) {
 				pLevel.setBlock(pPos, pState.setValue(FRAME_MOTIVE, 0), 3);

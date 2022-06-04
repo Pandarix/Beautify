@@ -11,6 +11,7 @@ import com.github.Pandarix.beautify.common.block.JunglePictureFrame;
 import com.github.Pandarix.beautify.common.block.OakBlinds;
 import com.github.Pandarix.beautify.common.block.OakPictureFrame;
 import com.github.Pandarix.beautify.common.block.Rope;
+import com.github.Pandarix.beautify.common.block.SpruceBlinds;
 import com.github.Pandarix.beautify.common.block.SprucePictureFrame;
 import com.github.Pandarix.beautify.common.block.WarpedPictureFrame;
 
@@ -47,6 +48,10 @@ public final class BlockInit {
 		//blinds
 	public static final RegistryObject<OakBlinds> OAK_BLINDS = BLOCKS.register("oak_blinds",
 			() -> new OakBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<OakBlinds> SPRUCE_BLINDS = BLOCKS.register("spruce_blinds",
+			() -> new SpruceBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
 					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.WOOD)));
 	
 		//picture frames

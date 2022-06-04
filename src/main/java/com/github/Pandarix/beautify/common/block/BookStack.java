@@ -14,6 +14,7 @@ import net.minecraft.network.chat.TextComponent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -58,8 +59,7 @@ public class BookStack extends HorizontalDirectionalBlock {
 		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()
 				&& pPlayer.isShiftKeyDown()) {
 			int currentModel = pState.getValue(BOOKSTACK_MODEL); // current index
-			// currently broken
-			pLevel.playSound(pPlayer, pPos, SoundInit.BOOKSTACK_NEXT.get(), SoundSource.BLOCKS, 1f, 1f);
+			pLevel.playSound(null, pPos, SoundInit.BOOKSTACK_NEXT.get(), SoundSource.BLOCKS, 1, 1);
 			// reset if it surpasses the number of possible models
 			if (currentModel + 1 > modelcount - 1) {
 				pLevel.setBlock(pPos, pState.setValue(BOOKSTACK_MODEL, 0), 3);
@@ -81,6 +81,13 @@ public class BookStack extends HorizontalDirectionalBlock {
 		}
 	}
 
+	@Override
+	public void fallOn(Level p_152426_, BlockState p_152427_, BlockPos p_152428_, Entity p_152429_, float p_152430_) {
+		p_152426_.playSound(null, p_152428_, SoundInit.BOOKSTACK_FALL.get(), SoundSource.BLOCKS, 1, 1);
+		super.fallOn(p_152426_, p_152427_, p_152428_, p_152429_, p_152430_);
+	}
+	
+	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		final int min = 0;
 		final int max = modelcount;

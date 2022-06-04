@@ -57,7 +57,7 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 				if (Config.SEARCHRADIUS.get() > 0) {
 
 					for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
-						if (pLevel.getBlockState(pPos.below(offsetDown)).getBlock() instanceof OakBlinds) {
+						if (pLevel.getBlockState(pPos.below(offsetDown)).getBlock().getClass() == this.getClass()) {
 							pLevel.setBlock(pPos.below(offsetDown), pState.setValue(OPEN, !currentState), 3);
 						} else {
 							break;
@@ -71,13 +71,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 
 						// checks blinds east of clicked blind
 						for (int offsetEast = 1; offsetEast <= (int) Config.SEARCHRADIUS.get() / 2; ++offsetEast) {
-							if (pLevel.getBlockState(pPos.east(offsetEast)).getBlock() instanceof OakBlinds) {
+							if (pLevel.getBlockState(pPos.east(offsetEast)).getBlock().getClass() == this.getClass()) {
 								// changes east blinds
 								pLevel.setBlock(pPos.east(offsetEast), pState.setValue(OPEN, !currentState), 3);
 								// checks for blinds below east blinds
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
 									if (pLevel.getBlockState(pPos.below(offsetDown).east(offsetEast))
-											.getBlock() instanceof OakBlinds) {
+											.getBlock().getClass() == this.getClass()) {
 										pLevel.setBlock(pPos.below(offsetDown).east(offsetEast),
 												pState.setValue(OPEN, !currentState), 3);
 									} else {
@@ -91,13 +91,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 
 						// checks blinds west of clicked blind
 						for (int offsetWest = 1; offsetWest <= Config.SEARCHRADIUS.get() / 2; ++offsetWest) {
-							if (pLevel.getBlockState(pPos.west(offsetWest)).getBlock() instanceof OakBlinds) {
+							if (pLevel.getBlockState(pPos.west(offsetWest)).getBlock().getClass() == this.getClass()) {
 								// changes west blinds
 								pLevel.setBlock(pPos.west(offsetWest), pState.setValue(OPEN, !currentState), 3);
 								// checks for blinds below west blinds
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
 									if (pLevel.getBlockState(pPos.below(offsetDown).west(offsetWest))
-											.getBlock() instanceof OakBlinds) {
+											.getBlock().getClass() == this.getClass()) {
 										pLevel.setBlock(pPos.below(offsetDown).west(offsetWest),
 												pState.setValue(OPEN, !currentState), 3);
 									} else {
@@ -115,13 +115,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 
 						// checks blinds north of clicked blind
 						for (int offsetNorth = 1; offsetNorth <= Config.SEARCHRADIUS.get() / 2; ++offsetNorth) {
-							if (pLevel.getBlockState(pPos.north(offsetNorth)).getBlock() instanceof OakBlinds) {
+							if (pLevel.getBlockState(pPos.north(offsetNorth)).getBlock().getClass() == this.getClass()) {
 								// changes north blinds
 								pLevel.setBlock(pPos.north(offsetNorth), pState.setValue(OPEN, !currentState), 3);
 								// checks for blinds below north blinds
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
 									if (pLevel.getBlockState(pPos.below(offsetDown).north(offsetNorth))
-											.getBlock() instanceof OakBlinds) {
+											.getBlock().getClass() == this.getClass()) {
 										pLevel.setBlock(pPos.below(offsetDown).north(offsetNorth),
 												pState.setValue(OPEN, !currentState), 3);
 									} else {
@@ -135,13 +135,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 
 						// checks blinds south of clicked blind
 						for (int offsetSouth = 1; offsetSouth <= Config.SEARCHRADIUS.get() / 2; ++offsetSouth) {
-							if (pLevel.getBlockState(pPos.south(offsetSouth)).getBlock() instanceof OakBlinds) {
+							if (pLevel.getBlockState(pPos.south(offsetSouth)).getBlock().getClass() == this.getClass()) {
 								// changes south blinds
 								pLevel.setBlock(pPos.south(offsetSouth), pState.setValue(OPEN, !currentState), 3);
 								// checks for blinds below south blinds
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
 									if (pLevel.getBlockState(pPos.below(offsetDown).south(offsetSouth))
-											.getBlock() instanceof OakBlinds) {
+											.getBlock().getClass() == this.getClass()) {
 										pLevel.setBlock(pPos.below(offsetDown).south(offsetSouth),
 												pState.setValue(OPEN, !currentState), 3);
 									} else {
@@ -153,7 +153,7 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 							}
 						}
 					}
-
+				    pLevel.levelEvent((Player)null, currentState ? 1007 : 1013, pPos, 0);
 					return InteractionResult.SUCCESS;
 
 				}
@@ -162,14 +162,14 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 		return InteractionResult.SUCCESS;
 	}
 
+	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
 		return switch (state.getValue(FACING)) {
-		case DOWN -> SHAPE_NORTH;
-		case UP -> SHAPE_NORTH;
 		case NORTH -> SHAPE_NORTH;
 		case SOUTH -> SHAPE_SOUTH;
 		case WEST -> SHAPE_WEST;
 		case EAST -> SHAPE_EAST;
+		default -> SHAPE_NORTH;
 		};
 	}
 
