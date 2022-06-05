@@ -18,7 +18,8 @@
 	"rewards": {
 		"recipes": [
 			"beautify:oak_blinds",
-			"beautify:spruce_blinds"
+			"beautify:spruce_blinds",
+			"beautify:birch_blinds"
 		]
 	}
 }

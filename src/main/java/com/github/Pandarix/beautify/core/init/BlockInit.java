@@ -2,6 +2,7 @@ package com.github.Pandarix.beautify.core.init;
 
 import com.github.Pandarix.beautify.Beautify;
 import com.github.Pandarix.beautify.common.block.AcaciaPictureFrame;
+import com.github.Pandarix.beautify.common.block.BirchBlinds;
 import com.github.Pandarix.beautify.common.block.BirchPictureFrame;
 import com.github.Pandarix.beautify.common.block.BookStack;
 import com.github.Pandarix.beautify.common.block.CrimsonPictureFrame;
@@ -52,6 +53,10 @@ public final class BlockInit {
 	
 	public static final RegistryObject<OakBlinds> SPRUCE_BLINDS = BLOCKS.register("spruce_blinds",
 			() -> new SpruceBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<OakBlinds> BIRCH_BLINDS = BLOCKS.register("birch_blinds",
+			() -> new BirchBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
 					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.WOOD)));
 	
 		//picture frames
