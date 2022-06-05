@@ -60,7 +60,7 @@ public class HangingPot extends LanternBlock {
 
 			if (pState.getValue(POTFLOWER) != 0) {
 				if (stack.isEmpty()) {
-					pPlayer.drop(content, false);
+					pPlayer.setItemInHand(pHand, content);
 					pLevel.setBlock(pPos, pState.setValue(POTFLOWER, 0), 3);
 					return InteractionResult.SUCCESS;
 				}
