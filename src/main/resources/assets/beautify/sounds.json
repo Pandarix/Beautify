@@ -34,5 +34,17 @@
 		"sounds": [
 			"beautify:bookstack_next"
 		]
+	},
+	"block.blinds_open": {
+		"subtitle": "sounds.beautify.blinds_open",
+		"sounds": [
+			"beautify:blinds_open"
+		]
+	},
+	"block.blinds_close": {
+		"subtitle": "sounds.beautify.blinds_close",
+		"sounds": [
+			"beautify:blinds_close"
+		]
 	}
 }

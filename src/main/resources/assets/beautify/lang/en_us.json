@@ -14,10 +14,14 @@
 	"block.beautify.oak_blinds": "Oak Blinds",
 	"block.beautify.spruce_blinds": "Spruce Blinds",
 	"block.beautify.birch_blinds": "Birch Blinds",
+	"block.beautify.dark_oak_blinds": "Dark Oak Blinds",
+	"block.beautify.jungle_blinds": "Jungle Blinds",
 	"sounds.beautify.bookstack_break": "Bookstack broken",
 	"sounds.beautify.bookstack_step": "Steps on Bookstack",
 	"sounds.beautify.bookstack_place": "Bookstack placed",
 	"sounds.beautify.bookstack_hit": "Bookstack hit",
 	"sounds.beautify.bookstack_fall": "Fallen on Bookstack",
-	"sounds.beautify.bookstack_next": "Bookstack switched"
+	"sounds.beautify.bookstack_next": "Bookstack switched",
+	"sounds.beautify.blinds_open": "Blinds opened",
+	"sounds.beautify.blinds_close": "Blinds closed"
 }

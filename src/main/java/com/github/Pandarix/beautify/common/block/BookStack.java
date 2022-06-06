@@ -32,7 +32,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class BookStack extends HorizontalDirectionalBlock {
-	private static final int modelcount = 4; // number of models the bookstack has
+	private static final int modelcount = 5; // number of models the bookstack has
 	public static final IntegerProperty BOOKSTACK_MODEL = IntegerProperty.create("bookstack_model", 0, modelcount - 1);
 	private static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 4, 15); // bounding box
 

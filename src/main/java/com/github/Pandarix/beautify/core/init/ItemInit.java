@@ -34,7 +34,7 @@ public final class ItemInit {
 					return 300;
 				}
 			});
-	
+
 	public static final RegistryObject<BlockItem> SPRUCE_BLINDS_ITEM = ITEMS.register("spruce_blinds",
 			() -> new BlockItem(BlockInit.SPRUCE_BLINDS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
 				@Override
@@ -42,9 +42,25 @@ public final class ItemInit {
 					return 300;
 				}
 			});
-	
+
 	public static final RegistryObject<BlockItem> BIRCH_BLINDS_ITEM = ITEMS.register("birch_blinds",
 			() -> new BlockItem(BlockInit.BIRCH_BLINDS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
+				@Override
+				public int getBurnTime(ItemStack itemStack, RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
+
+	public static final RegistryObject<BlockItem> DARK_OAK_BLINDS_ITEM = ITEMS.register("dark_oak_blinds",
+			() -> new BlockItem(BlockInit.DARK_OAK_BLINDS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
+				@Override
+				public int getBurnTime(ItemStack itemStack, RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
+
+	public static final RegistryObject<BlockItem> JUNGLE_BLINDS_ITEM = ITEMS.register("jungle_blinds",
+			() -> new BlockItem(BlockInit.JUNGLE_BLINDS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
 				@Override
 				public int getBurnTime(ItemStack itemStack, RecipeType<?> recipeType) {
 					return 300;

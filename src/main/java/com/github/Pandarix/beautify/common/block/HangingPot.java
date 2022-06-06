@@ -11,6 +11,7 @@ import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TooltipFlag;
@@ -28,17 +29,16 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class HangingPot extends LanternBlock {
 	// POTFLOWER indicates which index of the flowers List below is active
 	public static final IntegerProperty POTFLOWER = IntegerProperty.create("potflower", 0, 4);
-	private ItemStack content;
-	private static final List<String> flowers = Arrays.asList("block.minecraft.air", "block.minecraft.rose_bush",
-			"block.minecraft.lilac", "block.minecraft.blue_orchid", "block.minecraft.vine");
+	
+	private static final List<Item> validFlowers = Arrays.asList(Items.AIR, Items.ROSE_BUSH,
+			Items.LILAC, Items.BLUE_ORCHID, Items.VINE);
 
 	public HangingPot(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.defaultBlockState().setValue(POTFLOWER, 0));
-		content = new ItemStack(Items.AIR);
 	}
 
-	// hitbox for the Hanging Pot
+	// hitbox for the HangingPot
 	private static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.D, 12.0D, 8.0D, 12.0D);
 
 	@Override
@@ -56,36 +56,51 @@ public class HangingPot extends LanternBlock {
 
 		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
 
-			ItemStack stack = pPlayer.getItemInHand(pHand);
-
+			ItemStack playerStack = pPlayer.getItemInHand(pHand);
+			// if there is a flower
 			if (pState.getValue(POTFLOWER) != 0) {
-				if (stack.isEmpty()) {
-					pPlayer.setItemInHand(pHand, content);
+
+				// giving flower and clearing pot if hand empty
+				if (playerStack.isEmpty()) {
+					switch (pState.getValue(POTFLOWER)) {
+					case 1:
+						pPlayer.setItemInHand(pHand, new ItemStack(Items.ROSE_BUSH));
+						break;
+					case 2:
+						pPlayer.setItemInHand(pHand, new ItemStack(Items.LILAC));
+						break;
+					case 3:
+						pPlayer.setItemInHand(pHand, new ItemStack(Items.BLUE_ORCHID));
+						break;
+					case 4:
+						pPlayer.setItemInHand(pHand, new ItemStack(Items.VINE));
+						break;
+					default:
+						pPlayer.setItemInHand(pHand, new ItemStack(Items.AIR));
+						break;
+					}
 					pLevel.setBlock(pPos, pState.setValue(POTFLOWER, 0), 3);
 					return InteractionResult.SUCCESS;
 				}
-			} else {
-				String stackID = stack.getDescriptionId();
-				for (String flower : flowers) {
-					if (stackID.equals(flower)) {
-						if (flower == "block.minecraft.rose_bush") {
-							content = new ItemStack(Items.ROSE_BUSH);
-						} else if (flower == "block.minecraft.lilac") {
-							content = new ItemStack(Items.LILAC);
-						} else if (flower == "block.minecraft.blue_orchid") {
-							content = new ItemStack(Items.BLUE_ORCHID);
-						} else if (flower == "block.minecraft.vine") {
-							content = new ItemStack(Items.VINE);
-						}
-						pLevel.setBlock(pPos, pState.setValue(POTFLOWER, flowers.indexOf(flower)), 3);
-						stack.shrink(1);
+
+				// else just return
+				return InteractionResult.PASS;
+			} else { // if there is no flower
+
+				// checks if the flower in hand matches the available types
+				for (Item flower : validFlowers) {
+					if (playerStack.getItem().equals(flower)) {
+						pLevel.setBlock(pPos, pState.setValue(POTFLOWER, validFlowers.indexOf(flower)), 3);
+						playerStack.shrink(1);
 						return InteractionResult.CONSUME;
 					}
 				}
-				return InteractionResult.SUCCESS;
+				// if the flower is not a valid one
+				return InteractionResult.PASS;
 			}
 		}
-		return InteractionResult.SUCCESS;
+		//end of statement
+		return InteractionResult.PASS;
 	}
 
 	// creating Blockstates
@@ -95,19 +110,20 @@ public class HangingPot extends LanternBlock {
 		pBuilder.add(POTFLOWER);
 	}
 
+	// Description
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> tooltip, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift() && !KeyBoardHelper.isHoldingControl()) {
 			tooltip.add(
 					new TextComponent("\u00A77Hold\u00A77 \u00A7e\u00A7oSHIFT\u00A7o\u00A7r \u00A77for more.\u00A77"));
-			tooltip.add(new TextComponent("\u00A77Hold\u00A77 \u00A7e\u00A7oCTRL\u00A7o\u00A7r \u00A77for a list of plants.\u00A77"));
+			tooltip.add(new TextComponent(
+					"\u00A77Hold\u00A77 \u00A7e\u00A7oCTRL\u00A7o\u00A7r \u00A77for a list of plants.\u00A77"));
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
 			tooltip.add(new TextComponent(
 					"\u00A77Can be placed hanging on blocks and\u00A77 \u00A7oropes\u00A7o \u00A77or on ground as usual.\u00A77"));
-			tooltip.add(new TextComponent(
-					"\u00A77Right click with plants to pot them.\u00A77"));
+			tooltip.add(new TextComponent("\u00A77Right click with plants to pot them.\u00A77"));
 		}
 
 		if (KeyBoardHelper.isHoldingControl()) {

@@ -19,7 +19,9 @@
 		"recipes": [
 			"beautify:oak_blinds",
 			"beautify:spruce_blinds",
-			"beautify:birch_blinds"
+			"beautify:birch_blinds",
+			"beautify:dar_oak_blinds",
+			"beautify:jungle_blinds"
 		]
 	}
 }

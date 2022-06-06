@@ -1,5 +1,5 @@
 {
-	"parent": "beautify:block/pictureframespictureframes/base_picture_frame",
+	"parent": "beautify:block/pictureframes/base_picture_frame",
 	"textures": {
 		"0": "beautify:blocks/motive_flower",
 		"1": "beautify:blocks/spruce_frame_texture",
