@@ -11,11 +11,6 @@
 	"block.beautify.acacia_picture_frame": "Acacia Picture Frame",
 	"block.beautify.warped_picture_frame": "Warped Picture Frame",
 	"block.beautify.crimson_picture_frame": "Crimson Picture Frame",
-	"block.beautify.oak_blinds": "Oak Blinds",
-	"block.beautify.spruce_blinds": "Spruce Blinds",
-	"block.beautify.birch_blinds": "Birch Blinds",
-	"block.beautify.dark_oak_blinds": "Dark Oak Blinds",
-	"block.beautify.jungle_blinds": "Jungle Blinds",
 	"sounds.beautify.bookstack_break": "Bookstack broken",
 	"sounds.beautify.bookstack_step": "Steps on Bookstack",
 	"sounds.beautify.bookstack_place": "Bookstack placed",
@@ -23,5 +18,14 @@
 	"sounds.beautify.bookstack_fall": "Fallen on Bookstack",
 	"sounds.beautify.bookstack_next": "Bookstack switched",
 	"sounds.beautify.blinds_open": "Blinds opened",
-	"sounds.beautify.blinds_close": "Blinds closed"
+	"sounds.beautify.blinds_close": "Blinds closed",
+	"block.beautify.oak_blinds": "Oak Blinds",
+	"block.beautify.spruce_blinds": "Spruce Blinds",
+	"block.beautify.birch_blinds": "Birch Blinds",
+	"block.beautify.dark_oak_blinds": "Dark Oak Blinds",
+	"block.beautify.jungle_blinds": "Jungle Blinds",
+	"block.beautify.crimson_blinds": "Crimson Blinds",
+	"block.beautify.acacia_blinds": "Acacia Blinds",
+	"block.beautify.warped_blinds": "Warped Blinds",
+	"block.beautify.iron_blinds": "Iron Blinds"
 }

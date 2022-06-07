@@ -1,14 +1,17 @@
 package com.github.Pandarix.beautify.core.init;
 
 import com.github.Pandarix.beautify.Beautify;
+import com.github.Pandarix.beautify.common.block.AcaciaBlinds;
 import com.github.Pandarix.beautify.common.block.AcaciaPictureFrame;
 import com.github.Pandarix.beautify.common.block.BirchBlinds;
 import com.github.Pandarix.beautify.common.block.BirchPictureFrame;
 import com.github.Pandarix.beautify.common.block.BookStack;
+import com.github.Pandarix.beautify.common.block.CrimsonBlinds;
 import com.github.Pandarix.beautify.common.block.CrimsonPictureFrame;
 import com.github.Pandarix.beautify.common.block.DarkOakBlinds;
 import com.github.Pandarix.beautify.common.block.DarkOakPictureFrame;
 import com.github.Pandarix.beautify.common.block.HangingPot;
+import com.github.Pandarix.beautify.common.block.IronBlinds;
 import com.github.Pandarix.beautify.common.block.JungleBlinds;
 import com.github.Pandarix.beautify.common.block.JunglePictureFrame;
 import com.github.Pandarix.beautify.common.block.OakBlinds;
@@ -16,9 +19,11 @@ import com.github.Pandarix.beautify.common.block.OakPictureFrame;
 import com.github.Pandarix.beautify.common.block.Rope;
 import com.github.Pandarix.beautify.common.block.SpruceBlinds;
 import com.github.Pandarix.beautify.common.block.SprucePictureFrame;
+import com.github.Pandarix.beautify.common.block.WarpedBlinds;
 import com.github.Pandarix.beautify.common.block.WarpedPictureFrame;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -53,11 +58,19 @@ public final class BlockInit {
 			() -> new SpruceBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
 	
-	public static final RegistryObject<OakBlinds> DARK_OAK_BLINDS = BLOCKS.register("dark_oak_blinds",
+	public static final RegistryObject<DarkOakBlinds> DARK_OAK_BLINDS = BLOCKS.register("dark_oak_blinds",
 			() -> new DarkOakBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
 	
-	public static final RegistryObject<OakBlinds> JUNGLE_BLINDS = BLOCKS.register("jungle_blinds",
+	public static final RegistryObject<CrimsonBlinds> CRIMSON_BLINDS = BLOCKS.register("crimson_blinds",
+			() -> new CrimsonBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
+					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<AcaciaBlinds> ACACIA_BLINDS = BLOCKS.register("acacia_blinds",
+			() -> new AcaciaBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
+					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<JungleBlinds> JUNGLE_BLINDS = BLOCKS.register("jungle_blinds",
 			() -> new JungleBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
 
@@ -65,9 +78,16 @@ public final class BlockInit {
 			() -> new OakBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
 
-	public static final RegistryObject<OakBlinds> BIRCH_BLINDS = BLOCKS.register("birch_blinds",
+	public static final RegistryObject<BirchBlinds> BIRCH_BLINDS = BLOCKS.register("birch_blinds",
 			() -> new BirchBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<WarpedBlinds> WARPED_BLINDS = BLOCKS.register("warped_blinds",
+			() -> new WarpedBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
+					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
+	
+	public static final RegistryObject<IronBlinds> IRON_BLINDS = BLOCKS.register("iron_blinds",
+			() -> new IronBlinds(BlockBehaviour.Properties.copy(Blocks.IRON_BARS).noOcclusion().strength(0.5f, 0.5f)));
 
 	// picture frames
 	public static final RegistryObject<SprucePictureFrame> SPRUCE_PICTURE_FRAME = BLOCKS.register(

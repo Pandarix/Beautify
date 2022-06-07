@@ -29,27 +29,33 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class OakBlinds extends HorizontalDirectionalBlock {
-	private static final VoxelShape SHAPE_NORTH = Block.box(0, 13, 13, 16, 16, 16);
-	private static final VoxelShape SHAPE_SOUTH = Block.box(0, 13, 0, 16, 16, 3);
-	private static final VoxelShape SHAPE_WEST = Block.box(13, 13, 0, 16, 16, 16);
-	private static final VoxelShape SHAPE_EAST = Block.box(0, 13, 0, 3, 16, 16);
-
-	private static final VoxelShape COLLISION_NONE = Block.box(0, 0, 0, 0, 0, 0);
-	private static final VoxelShape COLLISION_NORTH = Block.box(0, 0, 14, 16, 16, 16);
-	private static final VoxelShape COLLISION_SOUTH = Block.box(0, 0, 0, 16, 16, 2);
-	private static final VoxelShape COLLISION_WEST = Block.box(0, 0, 0, 2, 16, 16);
-	private static final VoxelShape COLLISION_EAST = Block.box(14, 0, 0, 16, 16, 16);
+	private static final VoxelShape OPEN_NORTH = Block.box(0, 13, 13, 16, 16, 16);
+	private static final VoxelShape OPEN_SOUTH = Block.box(0, 13, 0, 16, 16, 3);
+	private static final VoxelShape OPEN_WEST = Block.box(13, 13, 0, 16, 16, 16);
+	private static final VoxelShape OPEN_EAST = Block.box(0, 13, 0, 3, 16, 16);
+	private static final VoxelShape CLOSED_SOUTH = Block.box(0, 0, 13, 16, 16, 16);
+	private static final VoxelShape CLOSED_NORTH = Block.box(0, 0, 0, 16, 16, 3);
+	private static final VoxelShape CLOSED_EAST = Block.box(0, 0, 0, 3, 16, 16);
+	private static final VoxelShape CLOSED_WEST = Block.box(13, 0, 0, 16, 16, 16);
+	private static final VoxelShape SHAPE_HIDDEN = Block.box(0, 0, 0, 0, 0, 0);
 
 	public static final BooleanProperty OPEN = BooleanProperty.create("open");
+	public static final BooleanProperty HIDDEN = BooleanProperty.create("hidden");
 
 	public OakBlinds(Properties p_54120_) {
 		super(p_54120_);
-		this.registerDefaultState(this.defaultBlockState().setValue(OPEN, false).setValue(FACING, Direction.NORTH));
+		this.registerDefaultState(this.defaultBlockState().setValue(OPEN, false).setValue(FACING, Direction.NORTH)
+				.setValue(HIDDEN, false));
 	}
 
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite()).setValue(OPEN,
-				false);
+		if (context.getLevel().getBlockState(context.getClickedPos().above()).getBlock().getClass() == this
+				.getClass()) {
+			return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite())
+					.setValue(OPEN, false).setValue(HIDDEN, true);
+		}
+		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite())
+				.setValue(OPEN, false).setValue(HIDDEN, false);
 	}
 
 	// changing the model of the blinds by shift-rightclicking
@@ -63,10 +69,15 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 				pLevel.setBlock(pPos, pState.setValue(OPEN, !currentState), 3);
 				// checks for blinds below clicked blind
 				if (Config.SEARCHRADIUS.get() > 0) {
-
 					for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
 						if (pLevel.getBlockState(pPos.below(offsetDown)).getBlock().getClass() == this.getClass()) {
-							pLevel.setBlock(pPos.below(offsetDown), pState.setValue(OPEN, !currentState), 3);
+							if (!pState.getValue(OPEN)) {
+								pLevel.setBlock(pPos.below(offsetDown),
+										pState.setValue(OPEN, true).setValue(HIDDEN, false), 3);
+							} else {
+								pLevel.setBlock(pPos.below(offsetDown),
+										pState.setValue(OPEN, false).setValue(HIDDEN, true), 3);
+							}
 						} else {
 							break;
 						}
@@ -86,8 +97,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
 									if (pLevel.getBlockState(pPos.below(offsetDown).east(offsetEast)).getBlock()
 											.getClass() == this.getClass()) {
-										pLevel.setBlock(pPos.below(offsetDown).east(offsetEast),
-												pState.setValue(OPEN, !currentState), 3);
+										if (!pState.getValue(OPEN)) {
+											pLevel.setBlock(pPos.below(offsetDown),
+													pState.setValue(OPEN, true).setValue(HIDDEN, false), 3);
+										} else {
+											pLevel.setBlock(pPos.below(offsetDown),
+													pState.setValue(OPEN, false).setValue(HIDDEN, true), 3);
+										}
 									} else {
 										break;
 									}
@@ -106,8 +122,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
 									if (pLevel.getBlockState(pPos.below(offsetDown).west(offsetWest)).getBlock()
 											.getClass() == this.getClass()) {
-										pLevel.setBlock(pPos.below(offsetDown).west(offsetWest),
-												pState.setValue(OPEN, !currentState), 3);
+										if (!pState.getValue(OPEN)) {
+											pLevel.setBlock(pPos.below(offsetDown),
+													pState.setValue(OPEN, true).setValue(HIDDEN, false), 3);
+										} else {
+											pLevel.setBlock(pPos.below(offsetDown),
+													pState.setValue(OPEN, false).setValue(HIDDEN, true), 3);
+										}
 									} else {
 										break;
 									}
@@ -131,8 +152,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
 									if (pLevel.getBlockState(pPos.below(offsetDown).north(offsetNorth)).getBlock()
 											.getClass() == this.getClass()) {
-										pLevel.setBlock(pPos.below(offsetDown).north(offsetNorth),
-												pState.setValue(OPEN, !currentState), 3);
+										if (!pState.getValue(OPEN)) {
+											pLevel.setBlock(pPos.below(offsetDown),
+													pState.setValue(OPEN, true).setValue(HIDDEN, false), 3);
+										} else {
+											pLevel.setBlock(pPos.below(offsetDown),
+													pState.setValue(OPEN, false).setValue(HIDDEN, true), 3);
+										}
 									} else {
 										break;
 									}
@@ -152,8 +178,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
 									if (pLevel.getBlockState(pPos.below(offsetDown).south(offsetSouth)).getBlock()
 											.getClass() == this.getClass()) {
-										pLevel.setBlock(pPos.below(offsetDown).south(offsetSouth),
-												pState.setValue(OPEN, !currentState), 3);
+										if (!pState.getValue(OPEN)) {
+											pLevel.setBlock(pPos.below(offsetDown),
+													pState.setValue(OPEN, true).setValue(HIDDEN, false), 3);
+										} else {
+											pLevel.setBlock(pPos.below(offsetDown),
+													pState.setValue(OPEN, false).setValue(HIDDEN, true), 3);
+										}
 									} else {
 										break;
 									}
@@ -174,28 +205,27 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 	}
 
 	@Override
-	public VoxelShape getCollisionShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
+	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
+		if (state.getValue(HIDDEN)) {
+			return SHAPE_HIDDEN;
+		}
+
 		if (!state.getValue(OPEN)) {
-			return COLLISION_NONE;
+			return switch (state.getValue(FACING)) {
+			case NORTH -> OPEN_NORTH;
+			case SOUTH -> OPEN_SOUTH;
+			case WEST -> OPEN_WEST;
+			case EAST -> OPEN_EAST;
+			default -> OPEN_NORTH;
+			};
 		}
 
 		return switch (state.getValue(FACING)) {
-		case NORTH -> COLLISION_NORTH;
-		case SOUTH -> COLLISION_SOUTH;
-		case WEST -> COLLISION_WEST;
-		case EAST -> COLLISION_EAST;
-		default -> COLLISION_NORTH;
-		};
-	}
-
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-		return switch (state.getValue(FACING)) {
-		case NORTH -> SHAPE_NORTH;
-		case SOUTH -> SHAPE_SOUTH;
-		case WEST -> SHAPE_WEST;
-		case EAST -> SHAPE_EAST;
-		default -> SHAPE_NORTH;
+		case NORTH -> CLOSED_NORTH;
+		case SOUTH -> CLOSED_SOUTH;
+		case WEST -> CLOSED_WEST;
+		case EAST -> CLOSED_EAST;
+		default -> CLOSED_NORTH;
 		};
 	}
 
@@ -216,6 +246,6 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
 		super.createBlockStateDefinition(pBuilder);
-		pBuilder.add(OPEN, FACING);
+		pBuilder.add(OPEN, FACING, HIDDEN);
 	}
 }

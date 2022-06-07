@@ -41,5 +41,8 @@ public class ClientModEvents {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.BIRCH_BLINDS.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.DARK_OAK_BLINDS.get(), RenderType.cutout());
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.JUNGLE_BLINDS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.ACACIA_BLINDS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.CRIMSON_BLINDS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.WARPED_BLINDS.get(), RenderType.cutout());
 	}
 }
