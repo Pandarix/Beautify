@@ -9,6 +9,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -46,13 +48,15 @@ public class OakPictureFrame extends HorizontalDirectionalBlock {
 			// reset if it surpasses the number of possible models
 			if (currentModel + 1 > modelcount - 1) {
 				pLevel.setBlock(pPos, pState.setValue(FRAME_MOTIVE, 0), 3);
+				pLevel.playSound(null, pPos, SoundEvents.PAINTING_PLACE, SoundSource.BLOCKS, 1, 1);
 				return InteractionResult.SUCCESS;
 			} else { // increases index
 				pLevel.setBlock(pPos, pState.setValue(FRAME_MOTIVE, currentModel + 1), 3);
+				pLevel.playSound(null, pPos, SoundEvents.PAINTING_PLACE, SoundSource.BLOCKS, 1, 1);
 				return InteractionResult.SUCCESS;
 			}
 		}
-		return InteractionResult.SUCCESS;
+		return InteractionResult.PASS;
 	}
 
 	public VoxelShape getShape(BlockState p_56331_, BlockGetter p_56332_, BlockPos p_56333_,

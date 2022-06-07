@@ -49,18 +49,10 @@ public final class BlockInit {
 					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE)));
 
 	// blinds
-	public static final RegistryObject<OakBlinds> OAK_BLINDS = BLOCKS.register("oak_blinds",
-			() -> new OakBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
-
 	public static final RegistryObject<OakBlinds> SPRUCE_BLINDS = BLOCKS.register("spruce_blinds",
 			() -> new SpruceBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
-
-	public static final RegistryObject<OakBlinds> BIRCH_BLINDS = BLOCKS.register("birch_blinds",
-			() -> new BirchBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
-
+	
 	public static final RegistryObject<OakBlinds> DARK_OAK_BLINDS = BLOCKS.register("dark_oak_blinds",
 			() -> new DarkOakBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
@@ -69,15 +61,15 @@ public final class BlockInit {
 			() -> new JungleBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
 
+	public static final RegistryObject<OakBlinds> OAK_BLINDS = BLOCKS.register("oak_blinds",
+			() -> new OakBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
+					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
+
+	public static final RegistryObject<OakBlinds> BIRCH_BLINDS = BLOCKS.register("birch_blinds",
+			() -> new BirchBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
+					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
+
 	// picture frames
-	public static final RegistryObject<OakPictureFrame> OAK_PICTURE_FRAME = BLOCKS.register("oak_picture_frame",
-			() -> new OakPictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
-
-	public static final RegistryObject<BirchPictureFrame> BIRCH_PICTURE_FRAME = BLOCKS.register("birch_picture_frame",
-			() -> new BirchPictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
-
 	public static final RegistryObject<SprucePictureFrame> SPRUCE_PICTURE_FRAME = BLOCKS.register(
 			"spruce_picture_frame",
 			() -> new SprucePictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
@@ -88,9 +80,9 @@ public final class BlockInit {
 			() -> new DarkOakPictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 
-	public static final RegistryObject<JunglePictureFrame> JUNGLE_PICTURE_FRAME = BLOCKS.register(
-			"jungle_picture_frame",
-			() -> new JunglePictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
+	public static final RegistryObject<CrimsonPictureFrame> CRIMSON_PICTURE_FRAME = BLOCKS.register(
+			"crimson_picture_frame",
+			() -> new CrimsonPictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 
 	public static final RegistryObject<AcaciaPictureFrame> ACACIA_PICTURE_FRAME = BLOCKS.register(
@@ -98,13 +90,21 @@ public final class BlockInit {
 			() -> new AcaciaPictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 
+	public static final RegistryObject<JunglePictureFrame> JUNGLE_PICTURE_FRAME = BLOCKS.register(
+			"jungle_picture_frame",
+			() -> new JunglePictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
+					.strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
+
+	public static final RegistryObject<OakPictureFrame> OAK_PICTURE_FRAME = BLOCKS.register("oak_picture_frame",
+			() -> new OakPictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
+					.strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
+
+	public static final RegistryObject<BirchPictureFrame> BIRCH_PICTURE_FRAME = BLOCKS.register("birch_picture_frame",
+			() -> new BirchPictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
+					.strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
+
 	public static final RegistryObject<WarpedPictureFrame> WARPED_PICTURE_FRAME = BLOCKS.register(
 			"warped_picture_frame",
 			() -> new WarpedPictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
-
-	public static final RegistryObject<CrimsonPictureFrame> CRIMSON_PICTURE_FRAME = BLOCKS.register(
-			"crimson_picture_frame",
-			() -> new CrimsonPictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 }

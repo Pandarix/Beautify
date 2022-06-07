@@ -8,6 +8,8 @@ import com.github.Pandarix.beautify.util.KeyBoardHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -80,6 +82,7 @@ public class HangingPot extends LanternBlock {
 						break;
 					}
 					pLevel.setBlock(pPos, pState.setValue(POTFLOWER, 0), 3);
+					pLevel.playSound(null, pPos, SoundEvents.COMPOSTER_READY, SoundSource.BLOCKS, 1, 1);
 					return InteractionResult.SUCCESS;
 				}
 
@@ -91,6 +94,7 @@ public class HangingPot extends LanternBlock {
 				for (Item flower : validFlowers) {
 					if (playerStack.getItem().equals(flower)) {
 						pLevel.setBlock(pPos, pState.setValue(POTFLOWER, validFlowers.indexOf(flower)), 3);
+						pLevel.playSound(null, pPos, SoundEvents.AZALEA_PLACE, SoundSource.BLOCKS, 1, 1);
 						playerStack.shrink(1);
 						return InteractionResult.CONSUME;
 					}

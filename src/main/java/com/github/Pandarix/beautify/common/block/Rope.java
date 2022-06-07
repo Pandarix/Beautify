@@ -43,11 +43,10 @@ public class Rope extends ChainBlock {
 	public boolean isLadder(BlockState state, LevelReader level, BlockPos pos, LivingEntity entity) {
 		if (state.is(BlockInit.ROPE.get())) {
 			return true;
-		} else {
-			return super.isLadder(state, level, pos, entity);
 		}
+		return super.isLadder(state, level, pos, entity);
 	}
-
+	
 	@Override
 	public boolean makesOpenTrapdoorAboveClimbable(BlockState state, LevelReader level, BlockPos pos,
 			BlockState trapdoorState) {
