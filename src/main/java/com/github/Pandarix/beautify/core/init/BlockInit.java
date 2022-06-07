@@ -87,7 +87,7 @@ public final class BlockInit {
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
 	
 	public static final RegistryObject<IronBlinds> IRON_BLINDS = BLOCKS.register("iron_blinds",
-			() -> new IronBlinds(BlockBehaviour.Properties.copy(Blocks.IRON_BARS).noOcclusion().strength(0.2f, 0.2f)));
+			() -> new IronBlinds(BlockBehaviour.Properties.copy(Blocks.IRON_BARS).noOcclusion().strength(0.5f, 0.5f)));
 
 	// picture frames
 	public static final RegistryObject<SprucePictureFrame> SPRUCE_PICTURE_FRAME = BLOCKS.register(
