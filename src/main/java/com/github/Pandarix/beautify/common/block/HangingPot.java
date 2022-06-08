@@ -30,10 +30,10 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class HangingPot extends LanternBlock {
 	// POTFLOWER indicates which index of the flowers List below is active
-	public static final IntegerProperty POTFLOWER = IntegerProperty.create("potflower", 0, 4);
+	public static final IntegerProperty POTFLOWER = IntegerProperty.create("potflower", 0, 5);
 	
 	private static final List<Item> validFlowers = Arrays.asList(Items.AIR, Items.ROSE_BUSH,
-			Items.LILAC, Items.BLUE_ORCHID, Items.VINE);
+			Items.LILAC, Items.BLUE_ORCHID, Items.VINE, Items.SUNFLOWER);
 
 	public HangingPot(Properties properties) {
 		super(properties);
@@ -77,6 +77,9 @@ public class HangingPot extends LanternBlock {
 					case 4:
 						pPlayer.setItemInHand(pHand, new ItemStack(Items.VINE));
 						break;
+					case 5:
+						pPlayer.setItemInHand(pHand, new ItemStack(Items.SUNFLOWER));
+						break;
 					default:
 						pPlayer.setItemInHand(pHand, new ItemStack(Items.AIR));
 						break;
@@ -94,9 +97,9 @@ public class HangingPot extends LanternBlock {
 				for (Item flower : validFlowers) {
 					if (playerStack.getItem().equals(flower)) {
 						pLevel.setBlock(pPos, pState.setValue(POTFLOWER, validFlowers.indexOf(flower)), 3);
-						pLevel.playSound(null, pPos, SoundEvents.AZALEA_PLACE, SoundSource.BLOCKS, 1, 1);
+						if(!flower.equals(Items.AIR)) {pLevel.playSound(null, pPos, SoundEvents.AZALEA_PLACE, SoundSource.BLOCKS, 1, 1);}
 						playerStack.shrink(1);
-						return InteractionResult.CONSUME;
+						return InteractionResult.CONSUME_PARTIAL;
 					}
 				}
 				// if the flower is not a valid one
@@ -132,7 +135,7 @@ public class HangingPot extends LanternBlock {
 
 		if (KeyBoardHelper.isHoldingControl()) {
 			tooltip.add(new TextComponent("\u00A7nPottable plants:\u00A7n"));
-			tooltip.add(new TextComponent("\u00A77Rose Bushes, Lilacs, Blue Orchids, Vines\u00A77"));
+			tooltip.add(new TextComponent("\u00A77Rose Bushes, Lilacs, Blue Orchids, Vines, Sunflowers\u00A77"));
 		}
 
 		super.appendHoverText(stack, getter, tooltip, flag);

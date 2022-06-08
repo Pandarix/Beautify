@@ -29,6 +29,12 @@
 		},
 		"hanging=false,potflower=4": {
 			"model": "beautify:block/pots/standing_vine_pot"
+		},
+		"hanging=true,potflower=5": {
+			"model": "beautify:block/pots/sunflower_pot"
+		},
+		"hanging=false,potflower=5": {
+			"model": "beautify:block/pots/standing_sunflower_pot"
 		}
 	}
 }

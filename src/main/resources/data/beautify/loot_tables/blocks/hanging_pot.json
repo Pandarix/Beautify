@@ -68,6 +68,19 @@
 							}
 						}
 					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/sunflower_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "5"
+							}
+						}
+					]
 				}
 			]
 		}
