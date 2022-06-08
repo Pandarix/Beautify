@@ -23,7 +23,6 @@ import com.github.Pandarix.beautify.common.block.WarpedBlinds;
 import com.github.Pandarix.beautify.common.block.WarpedPictureFrame;
 
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -56,38 +55,39 @@ public final class BlockInit {
 	// blinds
 	public static final RegistryObject<OakBlinds> SPRUCE_BLINDS = BLOCKS.register("spruce_blinds",
 			() -> new SpruceBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
-	
+					.strength(0.4f, 0.4f).sound(SoundType.WOOD)));
+
 	public static final RegistryObject<DarkOakBlinds> DARK_OAK_BLINDS = BLOCKS.register("dark_oak_blinds",
 			() -> new DarkOakBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
-	
+					.strength(0.4f, 0.4f).sound(SoundType.WOOD)));
+
 	public static final RegistryObject<CrimsonBlinds> CRIMSON_BLINDS = BLOCKS.register("crimson_blinds",
 			() -> new CrimsonBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
-	
+					.strength(0.4f, 0.4f).sound(SoundType.WOOD)));
+
 	public static final RegistryObject<AcaciaBlinds> ACACIA_BLINDS = BLOCKS.register("acacia_blinds",
 			() -> new AcaciaBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
-	
+					.strength(0.4f, 0.4f).sound(SoundType.WOOD)));
+
 	public static final RegistryObject<JungleBlinds> JUNGLE_BLINDS = BLOCKS.register("jungle_blinds",
 			() -> new JungleBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
+					.strength(0.4f, 0.4f).sound(SoundType.WOOD)));
 
 	public static final RegistryObject<OakBlinds> OAK_BLINDS = BLOCKS.register("oak_blinds",
 			() -> new OakBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
+					.strength(0.4f, 0.4f).sound(SoundType.WOOD)));
 
 	public static final RegistryObject<BirchBlinds> BIRCH_BLINDS = BLOCKS.register("birch_blinds",
 			() -> new BirchBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
-	
+					.strength(0.4f, 0.4f).sound(SoundType.WOOD)));
+
 	public static final RegistryObject<WarpedBlinds> WARPED_BLINDS = BLOCKS.register("warped_blinds",
 			() -> new WarpedBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.WOOD)));
-	
+					.strength(0.4f, 0.4f).sound(SoundType.WOOD)));
+
 	public static final RegistryObject<IronBlinds> IRON_BLINDS = BLOCKS.register("iron_blinds",
-			() -> new IronBlinds(BlockBehaviour.Properties.copy(Blocks.IRON_BARS).noOcclusion().strength(0.2f, 0.2f)));
+			() -> new IronBlinds(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL)
+					.noOcclusion().strength(0.4f, 0.4f).sound(SoundType.CHAIN).requiresCorrectToolForDrops()));
 
 	// picture frames
 	public static final RegistryObject<SprucePictureFrame> SPRUCE_PICTURE_FRAME = BLOCKS.register(

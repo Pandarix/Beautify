@@ -74,6 +74,17 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()) {
 			// stores last value of blind
 			final boolean currentlyOpen = pState.getValue(OPEN);
+			
+			// if the blinds open from the root
+			// search for the position of the topmost blind and set the pPos
+			if (Config.OPENS_FROM_ROOT.get()) {
+				int step = 1;
+				while (sameBlindType(pLevel, pPos.above(step), pState)) {
+					++step;
+				}
+				pPos = pPos.above(step-1);
+			}
+
 			{
 				// changes clicked blind: open <-> closed
 				pLevel.setBlock(pPos, pState.setValue(OPEN, !currentlyOpen), 3);
