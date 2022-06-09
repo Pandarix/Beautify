@@ -2,6 +2,7 @@ package com.github.Pandarix.beautify.common.block;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 import com.github.Pandarix.beautify.util.KeyBoardHelper;
 
@@ -60,6 +61,67 @@ public class HangingPot extends LanternBlock {
 		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
 
 			ItemStack playerStack = pPlayer.getItemInHand(pHand);
+			if (playerStack.getItem().equals(Items.BONE_MEAL)) {
+				Random rand = new Random();
+				int randomNum = rand.nextInt(3);
+
+				if (randomNum == 0) {
+					pLevel.playSound(null, pPos, SoundEvents.NETHER_SPROUTS_BREAK , SoundSource.BLOCKS, 1, 1);
+					switch (pState.getValue(POTFLOWER)) {
+					case 1:
+						pPlayer.drop(new ItemStack(Items.ROSE_BUSH), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
+					case 2:
+						pPlayer.drop(new ItemStack(Items.LILAC), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
+					case 3:
+						pPlayer.drop(new ItemStack(Items.BLUE_ORCHID), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
+					case 4:
+						pPlayer.drop(new ItemStack(Items.VINE), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
+					case 5:
+						pPlayer.drop(new ItemStack(Items.SUNFLOWER), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
+					case 6:
+						pPlayer.drop(new ItemStack(Items.PEONY), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
+					case 7:
+						pPlayer.drop(new ItemStack(Items.AZURE_BLUET), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
+					case 8:
+						pPlayer.drop(new ItemStack(Items.RED_TULIP), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
+					case 9:
+						pPlayer.drop(new ItemStack(Items.ORANGE_TULIP), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
+					case 10:
+						pPlayer.drop(new ItemStack(Items.WHITE_TULIP), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
+					case 11:
+						pPlayer.drop(new ItemStack(Items.PINK_TULIP), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
+					default:
+						return InteractionResult.SUCCESS;
+					}
+				} else {
+					pLevel.playSound(null, pPos, SoundEvents.BONE_MEAL_USE , SoundSource.BLOCKS, 1, 1);
+					playerStack.shrink(1);
+					return InteractionResult.SUCCESS;
+				}
+			}
+
 			// if there is a flower
 			if (pState.getValue(POTFLOWER) != 0) {
 
@@ -152,6 +214,7 @@ public class HangingPot extends LanternBlock {
 			tooltip.add(new TextComponent(
 					"\u00A77Can be placed hanging on blocks and\u00A77 \u00A7oropes\u00A7o \u00A77or on ground as usual.\u00A77"));
 			tooltip.add(new TextComponent("\u00A77Right click with plants to pot them.\u00A77"));
+			tooltip.add(new TextComponent("\u00A77Right click with Bone Meal to duplicate plant with 1/3 chance.\u00A77"));
 		}
 
 		if (KeyBoardHelper.isHoldingControl()) {
