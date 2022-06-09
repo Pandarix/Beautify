@@ -1,0 +1,8 @@
+{
+	"parent": "beautify:block/pictureframes/base_picture_frame",
+	"textures": {
+		"0": "beautify:blocks/motive_bomb",
+		"1": "beautify:blocks/dark_oak_frame_texture",
+		"particle": "beautify:blocks/dark_oak_frame_texture"
+	}
+}
