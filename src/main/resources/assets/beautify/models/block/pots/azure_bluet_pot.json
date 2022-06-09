@@ -1,0 +1,7 @@
+{
+	"parent": "beautify:block/pots/hanging_pot",
+	"textures": {
+		"0": "beautify:blocks/azure_bluet_pot",
+		"particle": "minecraft:block/terracotta"
+	}
+}

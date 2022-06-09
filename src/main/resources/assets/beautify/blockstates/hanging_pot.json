@@ -35,6 +35,42 @@
 		},
 		"hanging=false,potflower=5": {
 			"model": "beautify:block/pots/standing_sunflower_pot"
+		},
+		"hanging=true,potflower=6": {
+			"model": "beautify:block/pots/peony_pot"
+		},
+		"hanging=false,potflower=6": {
+			"model": "beautify:block/pots/standing_peony_pot"
+		},
+		"hanging=true,potflower=7": {
+			"model": "beautify:block/pots/azure_bluet_pot"
+		},
+		"hanging=false,potflower=7": {
+			"model": "beautify:block/pots/standing_azure_bluet_pot"
+		},
+		"hanging=true,potflower=8": {
+			"model": "beautify:block/pots/red_tulip_pot"
+		},
+		"hanging=false,potflower=8": {
+			"model": "beautify:block/pots/standing_red_tulip_pot"
+		},
+		"hanging=true,potflower=9": {
+			"model": "beautify:block/pots/orange_tulip_pot"
+		},
+		"hanging=false,potflower=9": {
+			"model": "beautify:block/pots/standing_orange_tulip_pot"
+		},
+		"hanging=true,potflower=10": {
+			"model": "beautify:block/pots/white_tulip_pot"
+		},
+		"hanging=false,potflower=10": {
+			"model": "beautify:block/pots/standing_white_tulip_pot"
+		},
+		"hanging=true,potflower=11": {
+			"model": "beautify:block/pots/pink_tulip_pot"
+		},
+		"hanging=false,potflower=11": {
+			"model": "beautify:block/pots/standing_pink_tulip_pot"
 		}
 	}
 }

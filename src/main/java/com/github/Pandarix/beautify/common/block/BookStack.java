@@ -34,7 +34,12 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class BookStack extends HorizontalDirectionalBlock {
 	private static final int modelcount = 5; // number of models the bookstack has
 	public static final IntegerProperty BOOKSTACK_MODEL = IntegerProperty.create("bookstack_model", 0, modelcount - 1);
-	private static final VoxelShape SHAPE = Block.box(1, 0, 1, 15, 4, 15); // bounding box
+	//Different Voxelshapes for models of BOOKSTACK_MODEL
+	private static final VoxelShape SHAPE0 = Block.box(1, 0, 1, 15, 4, 15);
+	private static final VoxelShape SHAPE1 = Block.box(1, 0, 1, 15, 4, 15);
+	private static final VoxelShape SHAPE2 = Block.box(0, 0, 0, 16, 1.5, 16);
+	private static final VoxelShape SHAPE3 = Block.box(0, 0, 0, 16, 9.5, 16);
+	private static final VoxelShape SHAPE4 = Block.box(1, 0, 1, 15, 5, 15);
 
 	public BookStack(Properties p_49795_) {
 		super(p_49795_);
@@ -42,15 +47,16 @@ public class BookStack extends HorizontalDirectionalBlock {
 				this.defaultBlockState().setValue(BOOKSTACK_MODEL, 0).setValue(FACING, Direction.NORTH));
 	}
 
-	// setting the bounding box
 	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-		return SHAPE;
-	}
-
-	@Override
-	public VoxelShape getOcclusionShape(BlockState p_53338_, BlockGetter p_53339_, BlockPos p_53340_) {
-		return SHAPE;
+	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
+		return switch (state.getValue(BOOKSTACK_MODEL)) {
+		case 0 -> SHAPE0;
+		case 1 -> SHAPE1;
+		case 2 -> SHAPE2;
+		case 3 -> SHAPE3;
+		case 4 -> SHAPE4;
+		default -> SHAPE0;
+		};
 	}
 
 	// changing the model of the bookstack by shift-rightclicking

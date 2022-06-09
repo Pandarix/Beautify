@@ -81,6 +81,84 @@
 							}
 						}
 					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/peony_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "6"
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/azure_bluet_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "7"
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/red_tulip_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "8"
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/orange_tulip_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "9"
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/white_tulip_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "10"
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/pink_tulip_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "11"
+							}
+						}
+					]
 				}
 			]
 		}
