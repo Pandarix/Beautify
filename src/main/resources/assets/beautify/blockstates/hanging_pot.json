@@ -113,6 +113,18 @@
 		},
 		"hanging=false,potflower=18": {
 			"model": "beautify:block/pots/standing_cornflower_pot"
+		},
+		"hanging=true,potflower=19": {
+			"model": "beautify:block/pots/weeping_vines_pot"
+		},
+		"hanging=false,potflower=19": {
+			"model": "beautify:block/pots/standing_weeping_vines_pot"
+		},
+		"hanging=true,potflower=20": {
+			"model": "beautify:block/pots/twisting_vines_pot"
+		},
+		"hanging=false,potflower=20": {
+			"model": "beautify:block/pots/standing_twisting_vines_pot"
 		}
 	}
 }

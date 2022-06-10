@@ -31,12 +31,13 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class HangingPot extends LanternBlock {
 	// POTFLOWER indicates which index of the flowers List below is active
-	public static final IntegerProperty POTFLOWER = IntegerProperty.create("potflower", 0, 18);
+	public static final IntegerProperty POTFLOWER = IntegerProperty.create("potflower", 0, 20);
 
 	private static final List<Item> validFlowers = Arrays.asList(Items.AIR, Items.ROSE_BUSH, Items.LILAC,
 			Items.BLUE_ORCHID, Items.VINE, Items.SUNFLOWER, Items.PEONY, Items.AZURE_BLUET, Items.RED_TULIP,
 			Items.ORANGE_TULIP, Items.WHITE_TULIP, Items.PINK_TULIP, Items.ALLIUM, Items.DANDELION, Items.POPPY,
-			Items.GLOW_LICHEN, Items.OXEYE_DAISY, Items.LILY_OF_THE_VALLEY, Items.CORNFLOWER);
+			Items.GLOW_LICHEN, Items.OXEYE_DAISY, Items.LILY_OF_THE_VALLEY, Items.CORNFLOWER, Items.WEEPING_VINES,
+			Items.TWISTING_VINES);
 
 	public HangingPot(Properties properties) {
 		super(properties);
@@ -141,6 +142,14 @@ public class HangingPot extends LanternBlock {
 						pPlayer.drop(new ItemStack(Items.CORNFLOWER), false);
 						playerStack.shrink(1);
 						return InteractionResult.SUCCESS;
+					case 19:
+						pPlayer.drop(new ItemStack(Items.WEEPING_VINES), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
+					case 20:
+						pPlayer.drop(new ItemStack(Items.TWISTING_VINES), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
 					default:
 						return InteractionResult.SUCCESS;
 					}
@@ -211,6 +220,12 @@ public class HangingPot extends LanternBlock {
 					case 18:
 						pPlayer.setItemInHand(pHand, new ItemStack(Items.CORNFLOWER));
 						break;
+					case 19:
+						pPlayer.setItemInHand(pHand, new ItemStack(Items.WEEPING_VINES));
+						break;
+					case 20:
+						pPlayer.setItemInHand(pHand, new ItemStack(Items.TWISTING_VINES));
+						break;
 					default:
 						pPlayer.setItemInHand(pHand, new ItemStack(Items.AIR));
 						break;
@@ -271,7 +286,7 @@ public class HangingPot extends LanternBlock {
 		if (KeyBoardHelper.isHoldingControl()) {
 			tooltip.add(new TextComponent("\u00A7nPottable plants:\u00A7n"));
 			tooltip.add(new TextComponent(
-					"\u00A77All normal flowers + Rose Bushes, Lilacs, Peonies, Vines, Glow Lichen, Sunflowers\u00A77"));
+					"\u00A77All normal flowers + Rose Bushes, Lilacs, Peonies, Sunflowers, Vines, Weeping Vines, Twisting Vines, Glow Lichen\u00A77"));
 		}
 
 		super.appendHoverText(stack, getter, tooltip, flag);
