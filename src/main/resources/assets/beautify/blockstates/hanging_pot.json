@@ -71,6 +71,24 @@
 		},
 		"hanging=false,potflower=11": {
 			"model": "beautify:block/pots/standing_pink_tulip_pot"
+		},
+		"hanging=true,potflower=12": {
+			"model": "beautify:block/pots/allium_pot"
+		},
+		"hanging=false,potflower=12": {
+			"model": "beautify:block/pots/standing_allium_pot"
+		},
+		"hanging=true,potflower=13": {
+			"model": "beautify:block/pots/dandelion_pot"
+		},
+		"hanging=false,potflower=13": {
+			"model": "beautify:block/pots/standing_dandelion_pot"
+		},
+		"hanging=true,potflower=14": {
+			"model": "beautify:block/pots/poppy_pot"
+		},
+		"hanging=false,potflower=14": {
+			"model": "beautify:block/pots/standing_poppy_pot"
 		}
 	}
 }

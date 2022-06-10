@@ -31,11 +31,11 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class HangingPot extends LanternBlock {
 	// POTFLOWER indicates which index of the flowers List below is active
-	public static final IntegerProperty POTFLOWER = IntegerProperty.create("potflower", 0, 11);
+	public static final IntegerProperty POTFLOWER = IntegerProperty.create("potflower", 0, 14);
 
 	private static final List<Item> validFlowers = Arrays.asList(Items.AIR, Items.ROSE_BUSH, Items.LILAC,
 			Items.BLUE_ORCHID, Items.VINE, Items.SUNFLOWER, Items.PEONY, Items.AZURE_BLUET, Items.RED_TULIP,
-			Items.ORANGE_TULIP, Items.WHITE_TULIP, Items.PINK_TULIP);
+			Items.ORANGE_TULIP, Items.WHITE_TULIP, Items.PINK_TULIP, Items.ALLIUM, Items.DANDELION, Items.POPPY);
 
 	public HangingPot(Properties properties) {
 		super(properties);
@@ -66,7 +66,7 @@ public class HangingPot extends LanternBlock {
 				int randomNum = rand.nextInt(3);
 
 				if (randomNum == 0) {
-					pLevel.playSound(null, pPos, SoundEvents.NETHER_SPROUTS_BREAK , SoundSource.BLOCKS, 1, 1);
+					pLevel.playSound(null, pPos, SoundEvents.NETHER_SPROUTS_BREAK, SoundSource.BLOCKS, 1, 1);
 					switch (pState.getValue(POTFLOWER)) {
 					case 1:
 						pPlayer.drop(new ItemStack(Items.ROSE_BUSH), false);
@@ -112,11 +112,23 @@ public class HangingPot extends LanternBlock {
 						pPlayer.drop(new ItemStack(Items.PINK_TULIP), false);
 						playerStack.shrink(1);
 						return InteractionResult.SUCCESS;
+					case 12:
+						pPlayer.drop(new ItemStack(Items.ALLIUM), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
+					case 13:
+						pPlayer.drop(new ItemStack(Items.DANDELION), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
+					case 14:
+						pPlayer.drop(new ItemStack(Items.POPPY), false);
+						playerStack.shrink(1);
+						return InteractionResult.SUCCESS;
 					default:
 						return InteractionResult.SUCCESS;
 					}
 				} else {
-					pLevel.playSound(null, pPos, SoundEvents.BONE_MEAL_USE , SoundSource.BLOCKS, 1, 1);
+					pLevel.playSound(null, pPos, SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1, 1);
 					playerStack.shrink(1);
 					return InteractionResult.SUCCESS;
 				}
@@ -160,6 +172,15 @@ public class HangingPot extends LanternBlock {
 						break;
 					case 11:
 						pPlayer.setItemInHand(pHand, new ItemStack(Items.PINK_TULIP));
+						break;
+					case 12:
+						pPlayer.setItemInHand(pHand, new ItemStack(Items.ALLIUM));
+						break;
+					case 13:
+						pPlayer.setItemInHand(pHand, new ItemStack(Items.DANDELION));
+						break;
+					case 14:
+						pPlayer.setItemInHand(pHand, new ItemStack(Items.POPPY));
 						break;
 					default:
 						pPlayer.setItemInHand(pHand, new ItemStack(Items.AIR));
@@ -214,13 +235,14 @@ public class HangingPot extends LanternBlock {
 			tooltip.add(new TextComponent(
 					"\u00A77Can be placed hanging on blocks and\u00A77 \u00A7oropes\u00A7o \u00A77or on ground as usual.\u00A77"));
 			tooltip.add(new TextComponent("\u00A77Right click with plants to pot them.\u00A77"));
-			tooltip.add(new TextComponent("\u00A77Right click with Bone Meal to duplicate plant with 1/3 chance.\u00A77"));
+			tooltip.add(
+					new TextComponent("\u00A77Right click with Bone Meal to duplicate plant with 1/3 chance.\u00A77"));
 		}
 
 		if (KeyBoardHelper.isHoldingControl()) {
 			tooltip.add(new TextComponent("\u00A7nPottable plants:\u00A7n"));
 			tooltip.add(new TextComponent(
-					"\u00A77Rose Bushes, Lilacs, Blue Orchids, Vines, Sunflowers, Peonies, Azure Bluets, Tulips\u00A77"));
+					"\u00A77Rose Bushes, Lilacs, Blue Orchids, Vines, Sunflowers, Peonies, Azure Bluets, Tulips, Allium, Dandelion, Poppy\u00A77"));
 		}
 
 		super.appendHoverText(stack, getter, tooltip, flag);
