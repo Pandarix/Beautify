@@ -125,6 +125,24 @@
 		},
 		"hanging=false,potflower=20": {
 			"model": "beautify:block/pots/standing_twisting_vines_pot"
+		},
+		"hanging=true,potflower=21": {
+			"model": "beautify:block/pots/wither_rose_pot"
+		},
+		"hanging=false,potflower=21": {
+			"model": "beautify:block/pots/standing_wither_rose_pot"
+		},
+		"hanging=true,potflower=22": {
+			"model": "beautify:block/pots/glowberry_pot"
+		},
+		"hanging=false,potflower=22": {
+			"model": "beautify:block/pots/standing_glowberry_pot"
+		},
+		"hanging=true,potflower=23": {
+			"model": "beautify:block/pots/berry_pot"
+		},
+		"hanging=false,potflower=23": {
+			"model": "beautify:block/pots/standing_berry_pot"
 		}
 	}
 }

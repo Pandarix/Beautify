@@ -289,6 +289,45 @@
 							}
 						}
 					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/wither_rose_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "21"
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/glowberry_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "22"
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/berry_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "23"
+							}
+						}
+					]
 				}
 			]
 		}

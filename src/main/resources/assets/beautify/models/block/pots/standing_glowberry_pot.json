@@ -1,0 +1,7 @@
+{
+	"parent": "beautify:block/pots/standing_pot",
+	"textures": {
+		"0": "beautify:blocks/glowberry_pot",
+		"particle": "minecraft:block/terracotta"
+	}
+}

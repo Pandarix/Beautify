@@ -53,6 +53,8 @@ public final class BlockInit {
 					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE).lightLevel((state) -> {
 						if (state.getValue(HangingPot.POTFLOWER) == 15) {
 							return 7;
+						} else if (state.getValue(HangingPot.POTFLOWER) == 22) {
+							return 14;
 						} else {
 							return 0;
 						}
