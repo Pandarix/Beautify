@@ -192,7 +192,7 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 				}
 			}
 		}
-		return InteractionResult.PASS;
+		return InteractionResult.SUCCESS;
 	}
 
 	// returns: true/false if
