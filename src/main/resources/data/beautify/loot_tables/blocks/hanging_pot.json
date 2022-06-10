@@ -198,6 +198,71 @@
 							}
 						}
 					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/poppy_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "14"
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/glow_lichen_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "15"
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/oxeye_daisy_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "16"
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/lily_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "17"
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/cornflower_pot",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"potflower": "18"
+							}
+						}
+					]
 				}
 			]
 		}

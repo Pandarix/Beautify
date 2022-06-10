@@ -89,6 +89,30 @@
 		},
 		"hanging=false,potflower=14": {
 			"model": "beautify:block/pots/standing_poppy_pot"
+		},
+		"hanging=true,potflower=15": {
+			"model": "beautify:block/pots/glow_lichen_pot"
+		},
+		"hanging=false,potflower=15": {
+			"model": "beautify:block/pots/standing_glow_lichen_pot"
+		},
+		"hanging=true,potflower=16": {
+			"model": "beautify:block/pots/oxeye_daisy_pot"
+		},
+		"hanging=false,potflower=16": {
+			"model": "beautify:block/pots/standing_oxeye_daisy_pot"
+		},
+		"hanging=true,potflower=17": {
+			"model": "beautify:block/pots/lily_pot"
+		},
+		"hanging=false,potflower=17": {
+			"model": "beautify:block/pots/standing_lily_pot"
+		},
+		"hanging=true,potflower=18": {
+			"model": "beautify:block/pots/cornflower_pot"
+		},
+		"hanging=false,potflower=18": {
+			"model": "beautify:block/pots/standing_cornflower_pot"
 		}
 	}
 }

@@ -50,7 +50,13 @@ public final class BlockInit {
 
 	public static final RegistryObject<HangingPot> HANGING_POT = BLOCKS.register("hanging_pot",
 			() -> new HangingPot(BlockBehaviour.Properties.of(Material.DECORATION, MaterialColor.TERRACOTTA_BROWN)
-					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE)));
+					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE).lightLevel((state) -> {
+						if (state.getValue(HangingPot.POTFLOWER) == 15) {
+							return 7;
+						} else {
+							return 0;
+						}
+					})));
 
 	// blinds
 	public static final RegistryObject<OakBlinds> SPRUCE_BLINDS = BLOCKS.register("spruce_blinds",
@@ -86,8 +92,8 @@ public final class BlockInit {
 					.strength(0.4f, 0.4f).sound(SoundType.WOOD)));
 
 	public static final RegistryObject<IronBlinds> IRON_BLINDS = BLOCKS.register("iron_blinds",
-			() -> new IronBlinds(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL)
-					.noOcclusion().strength(0.4f, 0.4f).sound(SoundType.CHAIN).requiresCorrectToolForDrops()));
+			() -> new IronBlinds(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL).noOcclusion()
+					.strength(0.4f, 0.4f).sound(SoundType.CHAIN).requiresCorrectToolForDrops()));
 
 	// picture frames
 	public static final RegistryObject<SprucePictureFrame> SPRUCE_PICTURE_FRAME = BLOCKS.register(
