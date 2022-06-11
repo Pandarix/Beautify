@@ -17,6 +17,7 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.ChainBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.PushReaction;
 
 public class Rope extends ChainBlock {
 	public Rope(BlockBehaviour.Properties properties) {
@@ -46,7 +47,11 @@ public class Rope extends ChainBlock {
 		}
 		return super.isLadder(state, level, pos, entity);
 	}
-	
+
+	public PushReaction getPistonPushReaction(BlockState p_153494_) {
+		return PushReaction.DESTROY;
+	}
+
 	@Override
 	public boolean makesOpenTrapdoorAboveClimbable(BlockState state, LevelReader level, BlockPos pos,
 			BlockState trapdoorState) {

@@ -1,0 +1,23 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:iron_ingot"
+						],
+						"min": 1
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"beautify:iron_blinds"
+		]
+	}
+}

@@ -24,6 +24,7 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
@@ -62,6 +63,10 @@ public class OakPictureFrame extends HorizontalDirectionalBlock {
 	public VoxelShape getShape(BlockState p_56331_, BlockGetter p_56332_, BlockPos p_56333_,
 			CollisionContext p_56334_) {
 		return SHAPE;
+	}
+
+	public PushReaction getPistonPushReaction(BlockState p_153494_) {
+		return PushReaction.DESTROY;
 	}
 
 	public VoxelShape getOcclusionShape(BlockState p_56336_, BlockGetter p_56337_, BlockPos p_56338_) {

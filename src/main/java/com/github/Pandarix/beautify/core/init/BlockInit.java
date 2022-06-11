@@ -135,4 +135,9 @@ public final class BlockInit {
 			"warped_picture_frame",
 			() -> new WarpedPictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
+	
+	public static final RegistryObject<WarpedPictureFrame> QUARTZ_PICTURE_FRAME = BLOCKS.register(
+			"quartz_picture_frame",
+			() -> new WarpedPictureFrame(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.QUARTZ).noOcclusion()
+					.strength(0.1f, 0.1f).sound(SoundType.STONE).noOcclusion()));
 }

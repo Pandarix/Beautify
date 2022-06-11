@@ -11,6 +11,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -21,6 +22,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -34,7 +36,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 public class BookStack extends HorizontalDirectionalBlock {
 	private static final int modelcount = 5; // number of models the bookstack has
 	public static final IntegerProperty BOOKSTACK_MODEL = IntegerProperty.create("bookstack_model", 0, modelcount - 1);
-	//Different Voxelshapes for models of BOOKSTACK_MODEL
+	// Different Voxelshapes for models of BOOKSTACK_MODEL
 	private static final VoxelShape SHAPE0 = Block.box(1, 0, 1, 15, 4, 15);
 	private static final VoxelShape SHAPE1 = Block.box(1, 0, 1, 15, 4, 15);
 	private static final VoxelShape SHAPE2 = Block.box(0, 0, 0, 16, 1.5, 16);
@@ -57,6 +59,28 @@ public class BookStack extends HorizontalDirectionalBlock {
 		case 4 -> SHAPE4;
 		default -> SHAPE0;
 		};
+	}
+
+	@SuppressWarnings("deprecation")
+	@Override
+	public BlockState updateShape(BlockState p_60541_, Direction p_60542_, BlockState p_60543_, LevelAccessor p_60544_,
+			BlockPos p_60545_, BlockPos p_60546_) {
+		if (!p_60541_.canSurvive(p_60544_, p_60545_)) {
+			p_60544_.scheduleTick(p_60545_, this, 1);
+		}
+		return super.updateShape(p_60541_, p_60542_, p_60543_, p_60544_, p_60545_, p_60546_);
+	}
+
+	@Override
+	public boolean canSurvive(BlockState p_49395_, LevelReader p_49396_, BlockPos p_49397_) {
+		return canSupportRigidBlock(p_49396_, p_49397_.below());
+	}
+
+	public void tick(BlockState p_48896_, ServerLevel p_48897_, BlockPos p_48898_, Random p_48899_) {
+		if (!p_48896_.canSurvive(p_48897_, p_48898_)) {
+			p_48897_.destroyBlock(p_48898_, true);
+		}
+
 	}
 
 	// changing the model of the bookstack by shift-rightclicking
@@ -92,7 +116,7 @@ public class BookStack extends HorizontalDirectionalBlock {
 		p_152426_.playSound(null, p_152428_, SoundInit.BOOKSTACK_FALL.get(), SoundSource.BLOCKS, 1, 1);
 		super.fallOn(p_152426_, p_152427_, p_152428_, p_152429_, p_152430_);
 	}
-	
+
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		final int min = 0;
@@ -119,8 +143,7 @@ public class BookStack extends HorizontalDirectionalBlock {
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
-			tooltip.add(new TextComponent(
-					"\u00A77Increases Enchantment Table Power like Shelves.\u00A77"));
+			tooltip.add(new TextComponent("\u00A77Increases Enchantment Table Power like Shelves.\u00A77"));
 			tooltip.add(new TextComponent(
 					"\u00A77Places random Bookstack. Shift-Rightclick on Block to change model.\u00A77"));
 		}
