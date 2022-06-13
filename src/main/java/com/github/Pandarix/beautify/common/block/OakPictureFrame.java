@@ -31,7 +31,7 @@ import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class OakPictureFrame extends HorizontalDirectionalBlock {
-	private static final int modelcount = 9; // number of models the bookstack has
+	private static final int modelcount = 13; // number of models the frame has
 	public static final IntegerProperty FRAME_MOTIVE = IntegerProperty.create("frame_motive", 0, modelcount - 1);
 	protected static final VoxelShape SHAPE = Block.box(5, 0, 5, 11, 8, 11);
 

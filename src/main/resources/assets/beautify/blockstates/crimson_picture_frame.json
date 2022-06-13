@@ -134,6 +134,66 @@
 		"frame_motive=8,facing=west": {
 			"model": "beautify:block/pictureframes/crimson_bomb_picture_frame",
 			"y": 270
+		},
+		"frame_motive=9,facing=north": {
+			"model": "beautify:block/pictureframes/crimson_shroom_picture_frame"
+		},
+		"frame_motive=9,facing=east": {
+			"model": "beautify:block/pictureframes/crimson_shroom_picture_frame",
+			"y": 90
+		},
+		"frame_motive=9,facing=south": {
+			"model": "beautify:block/pictureframes/crimson_shroom_picture_frame",
+			"y": 180
+		},
+		"frame_motive=9,facing=west": {
+			"model": "beautify:block/pictureframes/crimson_shroom_picture_frame",
+			"y": 270
+		},
+		"frame_motive=10,facing=north": {
+			"model": "beautify:block/pictureframes/crimson_river_picture_frame"
+		},
+		"frame_motive=10,facing=east": {
+			"model": "beautify:block/pictureframes/crimson_river_picture_frame",
+			"y": 90
+		},
+		"frame_motive=10,facing=south": {
+			"model": "beautify:block/pictureframes/crimson_river_picture_frame",
+			"y": 180
+		},
+		"frame_motive=10,facing=west": {
+			"model": "beautify:block/pictureframes/crimson_river_picture_frame",
+			"y": 270
+		},
+		"frame_motive=11,facing=north": {
+			"model": "beautify:block/pictureframes/crimson_beach_picture_frame"
+		},
+		"frame_motive=11,facing=east": {
+			"model": "beautify:block/pictureframes/crimson_beach_picture_frame",
+			"y": 90
+		},
+		"frame_motive=11,facing=south": {
+			"model": "beautify:block/pictureframes/crimson_beach_picture_frame",
+			"y": 180
+		},
+		"frame_motive=11,facing=west": {
+			"model": "beautify:block/pictureframes/crimson_beach_picture_frame",
+			"y": 270
+		},
+		"frame_motive=12,facing=north": {
+			"model": "beautify:block/pictureframes/crimson_frog_picture_frame"
+		},
+		"frame_motive=12,facing=east": {
+			"model": "beautify:block/pictureframes/crimson_frog_picture_frame",
+			"y": 90
+		},
+		"frame_motive=12,facing=south": {
+			"model": "beautify:block/pictureframes/crimson_frog_picture_frame",
+			"y": 180
+		},
+		"frame_motive=12,facing=west": {
+			"model": "beautify:block/pictureframes/crimson_frog_picture_frame",
+			"y": 270
 		}
 	}
 }
