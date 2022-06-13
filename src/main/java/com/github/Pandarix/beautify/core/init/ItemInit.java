@@ -1,6 +1,7 @@
 package com.github.Pandarix.beautify.core.init;
 
 import com.github.Pandarix.beautify.Beautify;
+import com.github.Pandarix.beautify.common.item.LampShadeItem;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -15,7 +16,11 @@ public final class ItemInit {
 	}
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Beautify.MODID);
+	// ITEMS
+	public static final RegistryObject<Item> Lampshade = ITEMS.register("lampshade",
+			() -> new LampShadeItem(new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
 
+	// BLOCKITEMS
 	// blinds
 	public static final RegistryObject<BlockItem> OAK_BLINDS_ITEM = ITEMS.register("oak_blinds",
 			() -> new BlockItem(BlockInit.OAK_BLINDS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
@@ -48,7 +53,7 @@ public final class ItemInit {
 					return 300;
 				}
 			});
-	
+
 	public static final RegistryObject<BlockItem> ACACIA_BLINDS_ITEM = ITEMS.register("acacia_blinds",
 			() -> new BlockItem(BlockInit.ACACIA_BLINDS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
 				@Override
@@ -92,7 +97,7 @@ public final class ItemInit {
 					return 300;
 				}
 			});
-	
+
 	public static final RegistryObject<BlockItem> SPRUCE_PICTURE_FRAME_ITEM = ITEMS.register("spruce_picture_frame",
 			() -> new BlockItem(BlockInit.SPRUCE_PICTURE_FRAME.get(),
 					new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
@@ -101,7 +106,7 @@ public final class ItemInit {
 					return 300;
 				}
 			});
-	
+
 	public static final RegistryObject<BlockItem> BIRCH_PICTURE_FRAME_ITEM = ITEMS.register("birch_picture_frame",
 			() -> new BlockItem(BlockInit.BIRCH_PICTURE_FRAME.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
 				@Override
@@ -109,7 +114,7 @@ public final class ItemInit {
 					return 300;
 				}
 			});
-	
+
 	public static final RegistryObject<BlockItem> JUNGLE_PICTURE_FRAME_ITEM = ITEMS.register("jungle_picture_frame",
 			() -> new BlockItem(BlockInit.JUNGLE_PICTURE_FRAME.get(),
 					new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
@@ -154,12 +159,11 @@ public final class ItemInit {
 					return 300;
 				}
 			});
-	
+
 	public static final RegistryObject<BlockItem> QUARTZ_PICTURE_FRAME_ITEM = ITEMS.register("quartz_picture_frame",
 			() -> new BlockItem(BlockInit.QUARTZ_PICTURE_FRAME.get(),
 					new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
 
-	// BLOCK ITEMS
 	public static final RegistryObject<BlockItem> ROPE_ITEM = ITEMS.register("rope",
 			() -> new BlockItem(BlockInit.ROPE.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
 				@Override
