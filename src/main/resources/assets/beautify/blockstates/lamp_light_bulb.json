@@ -1,0 +1,16 @@
+{
+	"variants": {
+		"hanging=true,on=true": {
+			"model": "beautify:block/lamps/light_bulb"
+		},
+		"hanging=false,on=true": {
+			"model": "beautify:block/lamps/standing_light_bulb"
+		},
+		"hanging=true,on=false": {
+			"model": "beautify:block/lamps/light_bulb_off"
+		},
+		"hanging=false,on=false": {
+			"model": "beautify:block/lamps/standing_light_bulb_off"
+		}
+	}
+}

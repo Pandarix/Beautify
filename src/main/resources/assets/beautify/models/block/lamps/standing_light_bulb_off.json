@@ -1,0 +1,7 @@
+{
+	"parent": "beautify:block/lamps/standing_light_bulb",
+	"textures": {
+		"0": "beautify:blocks/standing_light_bulb_off",
+		"particle": "beautify:blocks/standing_light_bulb_off"
+	}
+}

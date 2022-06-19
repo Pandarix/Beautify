@@ -15,6 +15,10 @@ public final class ItemInit {
 	}
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Beautify.MODID);
+<<<<<<< Updated upstream
+=======
+	// ITEMS
+>>>>>>> Stashed changes
 
 	// blinds
 	public static final RegistryObject<BlockItem> OAK_BLINDS_ITEM = ITEMS.register("oak_blinds",
@@ -173,4 +177,7 @@ public final class ItemInit {
 
 	public static final RegistryObject<BlockItem> BOOKSTACK_ITEM = ITEMS.register("bookstack",
 			() -> new BlockItem(BlockInit.BOOKSTACK.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
+	
+	public static final RegistryObject<BlockItem> LAMP_LIGHT_BULB_ITEM = ITEMS.register("lamp_light_bulb",
+			() -> new BlockItem(BlockInit.LAMP_LIGHT_BULB.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
 }

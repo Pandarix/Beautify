@@ -17,12 +17,14 @@ import com.github.Pandarix.beautify.common.block.JunglePictureFrame;
 import com.github.Pandarix.beautify.common.block.OakBlinds;
 import com.github.Pandarix.beautify.common.block.OakPictureFrame;
 import com.github.Pandarix.beautify.common.block.Rope;
+import com.github.Pandarix.beautify.common.block.LampLightBulb;
 import com.github.Pandarix.beautify.common.block.SpruceBlinds;
 import com.github.Pandarix.beautify.common.block.SprucePictureFrame;
 import com.github.Pandarix.beautify.common.block.WarpedBlinds;
 import com.github.Pandarix.beautify.common.block.WarpedPictureFrame;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -59,6 +61,15 @@ public final class BlockInit {
 							return 0;
 						}
 					})));
+
+	public static final RegistryObject<LampLightBulb> LAMP_LIGHT_BULB = BLOCKS.register("lamp_light_bulb",
+			() -> new LampLightBulb(BlockBehaviour.Properties.copy(Blocks.LANTERN).lightLevel((state) -> {
+				if(state.getValue(LampLightBulb.ON)) {
+					return 14;
+				} else {
+					return 0;
+				}
+			})));
 
 	// blinds
 	public static final RegistryObject<OakBlinds> SPRUCE_BLINDS = BLOCKS.register("spruce_blinds",
@@ -135,9 +146,9 @@ public final class BlockInit {
 			"warped_picture_frame",
 			() -> new WarpedPictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
-	
+
 	public static final RegistryObject<WarpedPictureFrame> QUARTZ_PICTURE_FRAME = BLOCKS.register(
 			"quartz_picture_frame",
-			() -> new WarpedPictureFrame(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.QUARTZ).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.STONE).noOcclusion()));
+			() -> new WarpedPictureFrame(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.QUARTZ)
+					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE).noOcclusion()));
 }
