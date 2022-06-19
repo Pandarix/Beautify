@@ -15,10 +15,6 @@ public final class ItemInit {
 	}
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Beautify.MODID);
-<<<<<<< Updated upstream
-=======
-	// ITEMS
->>>>>>> Stashed changes
 
 	// blinds
 	public static final RegistryObject<BlockItem> OAK_BLINDS_ITEM = ITEMS.register("oak_blinds",

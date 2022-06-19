@@ -1,21 +1,13 @@
 package com.github.Pandarix.beautify.common.block;
 
-import java.util.List;
-import java.util.Random;
-
-import com.github.Pandarix.beautify.util.KeyBoardHelper;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -58,7 +50,7 @@ public class LampLightBulb extends LanternBlock {
 		return InteractionResult.SUCCESS;
 	}
 
-	public void animateTick(BlockState p_57494_, Level p_57495_, BlockPos p_57496_, Random p_57497_) {
+	public void animateTick(BlockState p_57494_, Level p_57495_, BlockPos p_57496_, RandomSource p_57497_) {
 		double d0 = (double) p_57496_.getX() + 0.5D;
 		double d1 = (double) p_57496_.getY() + 0.7D;
 		double d2 = (double) p_57496_.getZ() + 0.5D;
@@ -78,6 +70,7 @@ public class LampLightBulb extends LanternBlock {
 		pBuilder.add(ON);
 	}
 
+	/*
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> tooltip, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift()) {
@@ -90,4 +83,5 @@ public class LampLightBulb extends LanternBlock {
 		}
 		super.appendHoverText(stack, getter, tooltip, flag);
 	}
+	*/
 }

@@ -1,21 +1,14 @@
 package com.github.Pandarix.beautify.common.block;
 
-import java.util.List;
 import java.util.Random;
-
-import com.github.Pandarix.beautify.util.KeyBoardHelper;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TextComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -90,6 +83,7 @@ public class OakPictureFrame extends HorizontalDirectionalBlock {
 		pBuilder.add(FRAME_MOTIVE, FACING);
 	}
 
+	/*
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> tooltip, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift()) {
@@ -103,4 +97,5 @@ public class OakPictureFrame extends HorizontalDirectionalBlock {
 		}
 		super.appendHoverText(stack, getter, tooltip, flag);
 	}
+	*/
 }
