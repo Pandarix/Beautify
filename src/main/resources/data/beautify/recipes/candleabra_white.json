@@ -1,0 +1,21 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"###",
+		"III",
+		" I "
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:white_candle"
+		},
+		"I": {
+			"item": "minecraft:iron_nugget"
+		}
+	},
+	"result": {
+		"item": "beautify:lamp_candleabra_white",
+		"count": 1
+	},
+	"group": "candleabras"
+}

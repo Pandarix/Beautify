@@ -17,7 +17,8 @@
 	},
 	"rewards": {
 		"recipes": [
-			"beautify:lamp_light_bulb"
+			"beautify:lamp_light_bulb",
+			"beautify:lamp_bamboo"
 		]
 	}
 }

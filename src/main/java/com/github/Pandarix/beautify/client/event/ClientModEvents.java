@@ -27,6 +27,7 @@ public class ClientModEvents {
 	
 		//LAMPS
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.LAMP_LIGHT_BULB.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.LAMP_BAMBOO.get(), RenderType.cutout());
 		
 		//FRAMES
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.OAK_PICTURE_FRAME.get(), RenderType.cutout());
