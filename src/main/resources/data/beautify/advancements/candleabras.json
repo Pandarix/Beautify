@@ -17,23 +17,23 @@
 	},
 	"rewards": {
 		"recipes": [
-			"beautify:lamp_candleabra",
-			"beautify:lamp_candleabra_light_blue",
-			"beautify:lamp_candleabra_light_gray",
-			"beautify:lamp_candleabra_black",
-			"beautify:lamp_candleabra_blue",
-			"beautify:lamp_candleabra_brown",
-			"beautify:lamp_candleabra_cyan",
-			"beautify:lamp_candleabra_gray",
-			"beautify:lamp_candleabra_green",
-			"beautify:lamp_candleabra_lime",
-			"beautify:lamp_candleabra_magenta",
-			"beautify:lamp_candleabra_orange",
-			"beautify:lamp_candleabra_pink",
-			"beautify:lamp_candleabra_purple",
-			"beautify:lamp_candleabra_red",
-			"beautify:lamp_candleabra_white",
-			"beautify:lamp_candleabra_yellow"
+			"beautify:candleabra",
+			"beautify:candleabra_light_blue",
+			"beautify:candleabra_light_gray",
+			"beautify:candleabra_black",
+			"beautify:candleabra_blue",
+			"beautify:candleabra_brown",
+			"beautify:candleabra_cyan",
+			"beautify:candleabra_gray",
+			"beautify:candleabra_green",
+			"beautify:candleabra_lime",
+			"beautify:candleabra_magenta",
+			"beautify:candleabra_orange",
+			"beautify:candleabra_pink",
+			"beautify:candleabra_purple",
+			"beautify:candleabra_red",
+			"beautify:candleabra_white",
+			"beautify:candleabra_yellow"
 		]
 	}
 }

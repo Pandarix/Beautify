@@ -31,7 +31,7 @@
 			"y": 270
 		},
 		"on=false,facing=north,hanging=true": {
-			"model": "beautify:block/lamps/candleabras/candleabras/lamp_candleabra_off_cyan"
+			"model": "beautify:block/lamps/candleabras/lamp_candleabra_off_cyan"
 		},
 		"on=false,facing=east,hanging=true": {
 			"model": "beautify:block/lamps/candleabras/lamp_candleabra_off_cyan",
@@ -46,18 +46,18 @@
 			"y": 270
 		},
 		"on=true,facing=north,hanging=true": {
-			"model": "beautify:block/lamps/candleabras/lamp_candleabra_light_cyan"
+			"model": "beautify:block/lamps/candleabras/lamp_candleabra_cyan"
 		},
 		"on=true,facing=east,hanging=true": {
-			"model": "beautify:block/lamps/candleabras/lamp_candleabra_light_cyan",
+			"model": "beautify:block/lamps/candleabras/lamp_candleabra_cyan",
 			"y": 90
 		},
 		"on=true,facing=south,hanging=true": {
-			"model": "beautify:block/lamps/candleabras/lamp_candleabra_light_cyan",
+			"model": "beautify:block/lamps/candleabras/lamp_candleabra_cyan",
 			"y": 180
 		},
 		"on=true,facing=west,hanging=true": {
-			"model": "beautify:block/lamps/candleabras/lamp_candleabra_light_cyan",
+			"model": "beautify:block/lamps/candleabras/lamp_candleabra_cyan",
 			"y": 270
 		}
 	}

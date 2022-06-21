@@ -31,7 +31,7 @@
 			"y": 270
 		},
 		"on=false,facing=north,hanging=true": {
-			"model": "beautify:block/lamps/candleabras/candleabras/lamp_candleabra_off_light_gray"
+			"model": "beautify:block/lamps/candleabras/lamp_candleabra_off_light_gray"
 		},
 		"on=false,facing=east,hanging=true": {
 			"model": "beautify:block/lamps/candleabras/lamp_candleabra_off_light_gray",
