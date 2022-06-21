@@ -1,0 +1,10 @@
+{
+	"variants": {
+		"hanging=true": {
+			"model": "beautify:block/lamps/lamp_jar"
+		},
+		"hanging=false": {
+			"model": "beautify:block/lamps/standing_lamp_jar"
+		}
+	}
+}

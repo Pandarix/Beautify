@@ -196,6 +196,9 @@ public final class ItemInit {
 	public static final RegistryObject<BlockItem> LAMP_BAMBOO_ITEM = ITEMS.register("lamp_bamboo",
 			() -> new BlockItem(BlockInit.LAMP_BAMBOO.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
 	
+	public static final RegistryObject<BlockItem> LAMP_JAR_ITEM = ITEMS.register("lamp_jar",
+			() -> new BlockItem(BlockInit.LAMP_JAR.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
+	
 	//candleabras
 	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_ITEM = ITEMS.register("lamp_candleabra",
 			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));

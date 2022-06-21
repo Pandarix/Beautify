@@ -32,6 +32,7 @@ import com.github.Pandarix.beautify.common.block.LampCandleabraPurple;
 import com.github.Pandarix.beautify.common.block.LampCandleabraRed;
 import com.github.Pandarix.beautify.common.block.LampCandleabraWhite;
 import com.github.Pandarix.beautify.common.block.LampCandleabraYellow;
+import com.github.Pandarix.beautify.common.block.LampJar;
 import com.github.Pandarix.beautify.common.block.LampLightBulb;
 import com.github.Pandarix.beautify.common.block.MangroveBlinds;
 import com.github.Pandarix.beautify.common.block.MangrovePictureFrame;
@@ -98,6 +99,24 @@ public final class BlockInit {
 						if (state.getValue(LampBamboo.ON)) {
 							return 14;
 						} else {
+							return 0;
+						}
+					})));
+
+	public static final RegistryObject<LampJar> LAMP_JAR = BLOCKS.register("lamp_jar",
+			() -> new LampJar(BlockBehaviour.Properties.of(Material.GLASS, MaterialColor.NONE).noOcclusion()
+					.strength(0.05f, 0.05f).sound(SoundType.GLASS).lightLevel((state) -> {
+						final int fill = state.getValue(LampJar.FILL_LEVEL);
+						switch (fill) {
+						case 0:
+							return 0;
+						case 5:
+							return 8;
+						case 10:
+							return 11;
+						case 15:
+							return 14;
+						default:
 							return 0;
 						}
 					})));

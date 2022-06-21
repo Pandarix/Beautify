@@ -3,6 +3,7 @@ package com.github.Pandarix.beautify;
 import com.github.Pandarix.beautify.core.init.BlockInit;
 import com.github.Pandarix.beautify.core.init.ItemInit;
 import com.github.Pandarix.beautify.core.init.SoundInit;
+import com.github.Pandarix.beautify.particle.ParticleInit;
 import com.github.Pandarix.beautify.util.Config;
 
 import net.minecraft.world.item.CreativeModeTab;
@@ -20,6 +21,7 @@ public class Beautify {
 		ItemInit.ITEMS.register(bus);
 		BlockInit.BLOCKS.register(bus);
 		SoundInit.SOUND_EVENTS.register(bus);
+		ParticleInit.PARTICLE_TYPES.register(bus);
 		Config.register();
 		
 	}

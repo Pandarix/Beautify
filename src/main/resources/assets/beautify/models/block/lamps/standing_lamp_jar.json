@@ -1,0 +1,105 @@
+{
+	"credit": "Made with Blockbench",
+	"texture_size": [32, 32],
+	"textures": {
+		"0": "beautify:blocks/jar",
+		"1": "minecraft:block/mushroom_block_inside",
+		"particle": "beautify:blocks/jar"
+	},
+	"elements": [
+		{
+			"name": "korken",
+			"from": [6, 8.25, 6],
+			"to": [10, 9.25, 10],
+			"faces": {
+				"north": {"uv": [7, 4, 9, 4.5], "texture": "#1"},
+				"east": {"uv": [7, 4, 9, 4.5], "texture": "#1"},
+				"south": {"uv": [7, 4, 9, 4.5], "texture": "#1"},
+				"west": {"uv": [7, 4, 9, 4.5], "texture": "#1"},
+				"up": {"uv": [7, 4, 9, 6], "texture": "#1"},
+				"down": {"uv": [7, 4, 9, 6], "texture": "#1"}
+			}
+		},
+		{
+			"from": [5, 0, 5],
+			"to": [11, 7, 11],
+			"faces": {
+				"north": {"uv": [3, 0, 0, 3.5], "texture": "#0"},
+				"east": {"uv": [3, 0, 0, 3.5], "texture": "#0"},
+				"south": {"uv": [3, 0, 0, 3.5], "texture": "#0"},
+				"west": {"uv": [3, 0, 0, 3.5], "texture": "#0"},
+				"up": {"uv": [0, 0, 3, 3], "texture": "#0"},
+				"down": {"uv": [0, 0, 3, 3], "texture": "#0"}
+			}
+		},
+		{
+			"from": [5, 7.5, 5],
+			"to": [6, 8.5, 11],
+			"faces": {
+				"north": {"uv": [6.5, 0, 6, 0.5], "texture": "#0"},
+				"east": {"uv": [6.5, 0, 3.5, 0.5], "texture": "#0"},
+				"south": {"uv": [3.5, 0, 4, 0.5], "texture": "#0"},
+				"west": {"uv": [6.5, 0, 3.5, 0.5], "texture": "#0"},
+				"up": {"uv": [6.5, 0, 3.5, 0.5], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [6.5, 0, 3.5, 0.5], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [6, 7.5, 10],
+			"to": [10, 8.5, 11],
+			"faces": {
+				"north": {"uv": [4.5, 0, 6.5, 0.5], "texture": "#0"},
+				"east": {"uv": [3.5, 0.5, 4, 1], "texture": "#0"},
+				"south": {"uv": [6.5, 0, 4.5, 0.5], "texture": "#0"},
+				"west": {"uv": [3.5, 0.5, 4, 1], "texture": "#0"},
+				"up": {"uv": [4.5, 0, 6.5, 0.5], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [4.5, 0, 6.5, 0.5], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"from": [6, 7.5, 5],
+			"to": [10, 8.5, 6],
+			"faces": {
+				"north": {"uv": [6.5, 0, 4.5, 0.5], "texture": "#0"},
+				"east": {"uv": [4.5, 0.5, 5, 1], "texture": "#0"},
+				"south": {"uv": [6.5, 0, 4.5, 0.5], "texture": "#0"},
+				"west": {"uv": [4.5, 0.5, 5, 1], "texture": "#0"},
+				"up": {"uv": [6.5, 0, 4.5, 0.5], "rotation": 180, "texture": "#0"},
+				"down": {"uv": [6.5, 0, 4.5, 0.5], "rotation": 180, "texture": "#0"}
+			}
+		},
+		{
+			"from": [10, 7.5, 5],
+			"to": [11, 8.5, 11],
+			"faces": {
+				"north": {"uv": [3, 0, 3.5, 0.5], "texture": "#0"},
+				"east": {"uv": [6.5, 0, 3.5, 0.5], "texture": "#0"},
+				"south": {"uv": [6, 0, 6.5, 0.5], "texture": "#0"},
+				"west": {"uv": [3.5, 0, 6.5, 0.5], "texture": "#0"},
+				"up": {"uv": [3.5, 0, 6.5, 0.5], "rotation": 90, "texture": "#0"},
+				"down": {"uv": [3.5, 0, 6.5, 0.5], "rotation": 90, "texture": "#0"}
+			}
+		},
+		{
+			"from": [5.5, 7, 5.5],
+			"to": [10.5, 8, 10.5],
+			"faces": {
+				"north": {"uv": [3, 0.5, 5.5, 1], "texture": "#0"},
+				"east": {"uv": [3, 0.5, 5.5, 1], "texture": "#0"},
+				"south": {"uv": [3, 0.5, 5.5, 1], "texture": "#0"},
+				"west": {"uv": [3, 0.5, 5.5, 1], "texture": "#0"},
+				"up": {"uv": [3, 1, 5.5, 3.5], "texture": "#0"},
+				"down": {"uv": [3, 1, 5.5, 3.5], "texture": "#0"}
+			}
+		}
+	],
+	"groups": [
+		0,
+		{
+			"name": "flasche",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [1, 2, 3, 4, 5, 6]
+		}
+	]
+}
