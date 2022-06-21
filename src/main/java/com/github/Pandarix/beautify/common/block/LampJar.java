@@ -3,6 +3,8 @@ package com.github.Pandarix.beautify.common.block;
 import com.github.Pandarix.beautify.particle.ParticleInit;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -40,6 +42,7 @@ public class LampJar extends LanternBlock {
 			if (playerStack.isEmpty() && currentLevel > 0) {
 				pPlayer.setItemInHand(pHand, new ItemStack(Items.GLOWSTONE_DUST, currentLevel / increase));
 				pLevel.setBlock(pPos, pState.setValue(FILL_LEVEL, 0), 3);
+				pLevel.playSound((Player) null, pPos, SoundEvents.AMETHYST_CLUSTER_BREAK, SoundSource.BLOCKS, 0.5F, 0.5f);
 				return InteractionResult.SUCCESS;
 			}
 
@@ -47,6 +50,7 @@ public class LampJar extends LanternBlock {
 			if (playerStack.is(Items.GLOWSTONE_DUST) && currentLevel + increase <= maxLevel) {
 				playerStack.shrink(1);
 				pLevel.setBlock(pPos, pState.setValue(FILL_LEVEL, currentLevel + increase), 3);
+				pLevel.playSound((Player) null, pPos, SoundEvents.AMETHYST_BLOCK_HIT, SoundSource.BLOCKS, 0.5F, 0.5f);
 				return InteractionResult.SUCCESS;
 			}
 		}

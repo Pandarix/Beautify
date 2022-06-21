@@ -73,11 +73,11 @@ public class LampCandleabra extends LanternBlock {
 			// Ignite/Extinguish
 			if (pState.getValue(ON) && !KeyBoardHelper.isHoldingShift() && pPlayer.getItemInHand(pHand).isEmpty()) {
 				pLevel.setBlock(pPos, pState.setValue(ON, !pState.getValue(ON)), 3);
-				pLevel.playSound((Player) null, pPos, SoundEvents.CANDLE_EXTINGUISH, SoundSource.BLOCKS, 0.25F, 0.5f);
+				pLevel.playSound((Player) null, pPos, SoundEvents.CANDLE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 0.5f);
 				return InteractionResult.SUCCESS;
 			} else if (!pState.getValue(ON) && pPlayer.getItemInHand(pHand).is(Items.FLINT_AND_STEEL)) {
 				pLevel.setBlock(pPos, pState.setValue(ON, !pState.getValue(ON)), 3);
-				pLevel.playSound((Player) null, pPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 0.25F, 1f);
+				pLevel.playSound((Player) null, pPos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 0.5F, 1f);
 				return InteractionResult.SUCCESS;
 			}
 		}
