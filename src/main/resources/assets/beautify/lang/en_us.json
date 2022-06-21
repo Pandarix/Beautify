@@ -11,6 +11,7 @@
 	"block.beautify.acacia_picture_frame": "Acacia Picture Frame",
 	"block.beautify.warped_picture_frame": "Warped Picture Frame",
 	"block.beautify.crimson_picture_frame": "Crimson Picture Frame",
+	"block.beautify.mangrove_picture_frame": "Mangrove Picture Frame",
 	"block.beautify.quartz_picture_frame": "Quartz Picture Frame",
 	"block.beautify.lamp_light_bulb": "Light Bulb",
 	"block.beautify.lamp_bamboo": "Bamboo Lamp",
@@ -47,5 +48,6 @@
 	"block.beautify.crimson_blinds": "Crimson Blinds",
 	"block.beautify.acacia_blinds": "Acacia Blinds",
 	"block.beautify.warped_blinds": "Warped Blinds",
+	"block.beautify.mangrove_blinds": "Mangrove Blinds",
 	"block.beautify.iron_blinds": "Iron Blinds"
 }

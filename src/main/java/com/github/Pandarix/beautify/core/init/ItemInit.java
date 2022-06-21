@@ -80,6 +80,14 @@ public final class ItemInit {
 					return 300;
 				}
 			});
+	
+	public static final RegistryObject<BlockItem> MANGROVE_BLINDS_ITEM = ITEMS.register("mangrove_blinds",
+			() -> new BlockItem(BlockInit.MANGROVE_BLINDS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
+				@Override
+				public int getBurnTime(ItemStack itemStack, RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
 
 	public static final RegistryObject<BlockItem> IRON_BLINDS_ITEM = ITEMS.register("iron_blinds",
 			() -> new BlockItem(BlockInit.IRON_BLINDS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
@@ -148,6 +156,15 @@ public final class ItemInit {
 
 	public static final RegistryObject<BlockItem> WARPED_PICTURE_FRAME_ITEM = ITEMS.register("warped_picture_frame",
 			() -> new BlockItem(BlockInit.WARPED_PICTURE_FRAME.get(),
+					new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
+				@Override
+				public int getBurnTime(ItemStack itemStack, RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
+	
+	public static final RegistryObject<BlockItem> MANGROVE_PICTURE_FRAME_ITEM = ITEMS.register("mangrove_picture_frame",
+			() -> new BlockItem(BlockInit.MANGROVE_PICTURE_FRAME.get(),
 					new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
 				@Override
 				public int getBurnTime(ItemStack itemStack, RecipeType<?> recipeType) {

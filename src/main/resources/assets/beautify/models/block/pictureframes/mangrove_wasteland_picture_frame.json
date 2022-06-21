@@ -1,0 +1,8 @@
+{
+	"parent": "beautify:block/pictureframes/base_picture_frame",
+	"textures": {
+		"0": "beautify:blocks/motive_wasteland",
+		"1": "beautify:blocks/mangrove_frame_texture",
+		"particle": "beautify:blocks/mangrove_frame_texture"
+	}
+}

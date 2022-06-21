@@ -1,0 +1,7 @@
+{
+	"parent": "beautify:block/blinds/oak_blinds_up",
+	"textures": {
+		"0": "minecraft:block/mangrove_planks",
+		"particle": "minecraft:block/mangrove_planks"
+	}
+}

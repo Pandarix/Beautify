@@ -1,0 +1,37 @@
+{
+	"variants": {
+		"open=false,facing=north,hidden=false": {
+			"model": "beautify:block/blinds/mangrove_blinds_up"
+		},
+		"open=false,facing=east,hidden=false": {
+			"model": "beautify:block/blinds/mangrove_blinds_up",
+			"y": 90
+		},
+		"open=false,facing=south,hidden=false": {
+			"model": "beautify:block/blinds/mangrove_blinds_up",
+			"y": 180
+		},
+		"open=false,facing=west,hidden=false": {
+			"model": "beautify:block/blinds/mangrove_blinds_up",
+			"y": 270
+		},
+		"open=true,facing=north,hidden=false": {
+			"model": "beautify:block/blinds/mangrove_blinds_down"
+		},
+		"open=true,facing=east,hidden=false": {
+			"model": "beautify:block/blinds/mangrove_blinds_down",
+			"y": 90
+		},
+		"open=true,facing=south,hidden=false": {
+			"model": "beautify:block/blinds/mangrove_blinds_down",
+			"y": 180
+		},
+		"open=true,facing=west,hidden=false": {
+			"model": "beautify:block/blinds/mangrove_blinds_down",
+			"y": 270
+		},
+		"hidden=true":{
+			"model": "beautify:block/blinds/none"
+		}
+	}
+}
