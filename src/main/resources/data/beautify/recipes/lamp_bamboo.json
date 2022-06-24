@@ -1,21 +1,24 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        " # ",
-        "#c#",
-        " # "
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:bamboo"
-        },
-        "c": {
-            "item": "minecraft:copper_ingot"
-        }
-    },
-    "result": {
-        "item": "beautify:lamp_bamboo",
-        "count": 1
-    },
-    "group": "lamps"
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		" # ",
+		"ScS",
+		" # "
+	],
+	"key": {
+		"#": {
+			"item": "minecraft:bamboo"
+		},
+		"S": {
+			"item": "minecraft:string"
+		},
+		"c": {
+			"item": "minecraft:copper_ingot"
+		}
+	},
+	"result": {
+		"item": "beautify:lamp_bamboo",
+		"count": 1
+	},
+	"group": "lamps"
 }

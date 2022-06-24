@@ -42,7 +42,8 @@ public class LampJar extends LanternBlock {
 			if (playerStack.isEmpty() && currentLevel > 0) {
 				pPlayer.setItemInHand(pHand, new ItemStack(Items.GLOWSTONE_DUST, currentLevel / increase));
 				pLevel.setBlock(pPos, pState.setValue(FILL_LEVEL, 0), 3);
-				pLevel.playSound((Player) null, pPos, SoundEvents.AMETHYST_CLUSTER_BREAK, SoundSource.BLOCKS, 0.5F, 0.5f);
+				pLevel.playSound((Player) null, pPos, SoundEvents.AMETHYST_CLUSTER_BREAK, SoundSource.BLOCKS, 0.5F,
+						0.5f);
 				return InteractionResult.SUCCESS;
 			}
 
@@ -66,36 +67,46 @@ public class LampJar extends LanternBlock {
 	@Override
 	public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource rand) {
 		double posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
-		double posY = (pPos.getY() + 0.15) + rand.nextDouble() / 3.5;
+		double posY = (pPos.getY() + 0.1) + rand.nextDouble() / 3.5;
 		double posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
 
 		if (pState.getValue(FILL_LEVEL) >= 5 && pState.getValue(FILL_LEVEL) < 10) {
 			if (rand.nextBoolean()) {
-				pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, 0, 0, 0);
+				pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01,
+						randomDir(rand));
 			}
 		} else if (pState.getValue(FILL_LEVEL) >= 10 && pState.getValue(FILL_LEVEL) < 15) {
 			if (rand.nextBoolean()) {
-				pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, 0, 0, 0);
+				pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01,
+						randomDir(rand));
 			}
 			posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
-			posY = (pPos.getY() + 0.15) + rand.nextDouble() / 3.5;
+			posY = (pPos.getY() + 0.1) + rand.nextDouble() / 3.5;
 			posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
-			pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, 0, 0, 0);
+			pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01,
+					randomDir(rand));
 		} else if (pState.getValue(FILL_LEVEL) == 15) {
 			if (rand.nextBoolean()) {
-				pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, 0, 0, 0);
+				pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01,
+						randomDir(rand));
 			}
-			if (rand.nextBoolean()) {
-				posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
-				posY = (pPos.getY() + 0.15) + rand.nextDouble() / 3.5;
-				posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
-				pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, 0, 0, 0);
-			}
+
 			posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
-			posY = (pPos.getY() + 0.15) + rand.nextDouble() / 3.5;
+			posY = (pPos.getY() + 0.1) + rand.nextDouble() / 3.5;
 			posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
-			pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, 0, 0, 0);
+			pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01,
+					randomDir(rand));
+
+			posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
+			posY = (pPos.getY() + 0.1) + rand.nextDouble() / 3.5;
+			posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
+			pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01,
+					randomDir(rand));
 		}
+	}
+
+	private static double randomDir(RandomSource rand) {
+		return (rand.nextIntBetweenInclusive(0, 2) - 1) * rand.nextFloat() / 30;
 	}
 
 	/*

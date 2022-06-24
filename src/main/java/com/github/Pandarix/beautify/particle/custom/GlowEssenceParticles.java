@@ -15,12 +15,12 @@ public class GlowEssenceParticles extends TextureSheetParticle {
 	protected GlowEssenceParticles(ClientLevel level, double xCoord, double yCoord, double zCoord, SpriteSet spriteSet,
 			double xd, double yd, double zd) {
 		super(level, xCoord, yCoord, zCoord, xd, yd, zd);
-
+	
 		this.friction = 0.8F;
 		this.xd = xd;
 		this.yd = yd;
 		this.zd = zd;
-		this.quadSize *= 0.4F;
+		this.quadSize *= 0.3F;
 		this.lifetime = 60;
 		this.setSpriteFromAge(spriteSet);
 
@@ -31,6 +31,7 @@ public class GlowEssenceParticles extends TextureSheetParticle {
 
 	private void fadeOut() {
 		this.alpha = (-(1 / (float) lifetime) * age + 1);
+		this.quadSize = (-(1 / (float) lifetime) * age + 1)/12;
 	}
 
 	@Override
@@ -41,6 +42,7 @@ public class GlowEssenceParticles extends TextureSheetParticle {
     @Override
     public void tick() {
         super.tick();
+        
         fadeOut();
     }
 
