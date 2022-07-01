@@ -1,10 +1,18 @@
 package com.github.Pandarix.beautify.common.block;
 
-import com.github.Pandarix.beautify.core.init.BlockInit;
+import java.util.List;
 
+import com.github.Pandarix.beautify.core.init.BlockInit;
+import com.github.Pandarix.beautify.util.KeyBoardHelper;
+
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.ChainBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -40,19 +48,18 @@ public class Rope extends ChainBlock {
 		}
 	}
 	
-	/*
 	@Override
-	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> tooltip, TooltipFlag flag) {
+	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift()) {
-			tooltip.add(
-					new TextComponent("\u00A77Hold\u00A77 \u00A7e\u00A7oSHIFT\u00A7o\u00A7r \u00A77for more.\u00A77"));
+			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
-			tooltip.add(new TextComponent(
-					"\u00A77Placable like chains and climbable. Nice addition to\u00A77 \u00A7ohanging pots.\u00A7o"));
+			component.add(Component.literal("Placable like chains and climbable.")
+					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Nice addition to Hanging Pots.")
+					.withStyle(ChatFormatting.GRAY));
 		}
-		super.appendHoverText(stack, getter, tooltip, flag);
+		super.appendHoverText(stack, getter, component, flag);
 	}
-	 */
 }

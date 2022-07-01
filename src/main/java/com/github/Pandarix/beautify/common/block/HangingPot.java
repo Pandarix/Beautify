@@ -4,7 +4,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
+import com.github.Pandarix.beautify.util.KeyBoardHelper;
+
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -13,6 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -114,33 +119,29 @@ public class HangingPot extends LanternBlock {
 		super.createBlockStateDefinition(pBuilder);
 		pBuilder.add(POTFLOWER);
 	}
-
-	/*
-	// Description
+	
 	@Override
-	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> tooltip, TooltipFlag flag) {
+	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift() && !KeyBoardHelper.isHoldingControl()) {
-			tooltip.add(
-					new TextComponent("\u00A77Hold\u00A77 \u00A7e\u00A7oSHIFT\u00A7o\u00A7r \u00A77for more.\u00A77"));
-			tooltip.add(new TextComponent(
-					"\u00A77Hold\u00A77 \u00A7e\u00A7oCTRL\u00A7o\u00A7r \u00A77for a list of plants.\u00A77"));
+			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			component.add(Component.literal("Hold CTRL for a list of plants.").withStyle(ChatFormatting.YELLOW));
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
-			tooltip.add(new TextComponent(
-					"\u00A77Can be placed hanging on blocks and\u00A77 \u00A7oropes\u00A7o \u00A77or on ground as usual.\u00A77"));
-			tooltip.add(new TextComponent("\u00A77Right click with plants to pot them.\u00A77"));
-			tooltip.add(
-					new TextComponent("\u00A77Right click with Bone Meal to duplicate plant with 1/3 chance.\u00A77"));
+			component.add(Component.literal("Can be placed hanging on blocks, Ropes or on ground as usual.")
+					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Right click with plants to pot them.")
+					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Right click with Bone Meal to duplicate plant with 1/3 chance.")
+					.withStyle(ChatFormatting.GRAY));
 		}
-
+		
 		if (KeyBoardHelper.isHoldingControl()) {
-			tooltip.add(new TextComponent("\u00A7nPottable plants:\u00A7n"));
-			tooltip.add(new TextComponent(
-					"\u00A77All normal flowers + Rose Bushes, Lilacs, Peonies, Sunflowers, Vines, Weeping Vines, Twisting Vines, Glow Lichen, Glow Berries, Sweet Berries\u00A77"));
+			component.add(Component.literal("Pottable plants:")
+					.withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("All normal flowers + Rose Bushes, Lilacs, Peonies, Sunflowers, Vines, Weeping Vines, Twisting Vines, Glow Lichen, Glow Berries, Sweet Berries")	
+					.withStyle(ChatFormatting.GRAY));
 		}
-
-		super.appendHoverText(stack, getter, tooltip, flag);
+		super.appendHoverText(stack, getter, component, flag);
 	}
-	*/
 }

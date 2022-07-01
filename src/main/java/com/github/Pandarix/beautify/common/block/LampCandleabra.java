@@ -1,17 +1,23 @@
 package com.github.Pandarix.beautify.common.block;
 
+import java.util.List;
+
 import com.github.Pandarix.beautify.util.KeyBoardHelper;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -84,26 +90,26 @@ public class LampCandleabra extends LanternBlock {
 		return InteractionResult.SUCCESS;
 	}
 
-	public void animateTick(BlockState p_57494_, Level p_57495_, BlockPos p_57496_, RandomSource p_57497_) {
-		double d0 = (double) p_57496_.getX() + 0.5D;
-		double d1 = (double) p_57496_.getY() + 1D;
-		double d2 = (double) p_57496_.getZ() + 0.5D;
+	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource rand) {
+		double d0 = (double) pos.getX() + 0.5D;
+		double d1 = (double) pos.getY() + 1D;
+		double d2 = (double) pos.getZ() + 0.5D;
 
-		if (p_57494_.getValue(ON)) {
-			if (p_57494_.getValue(HANGING)) {
-				p_57495_.addParticle(ParticleTypes.SMALL_FLAME, d0 + 0.4, d1 - 0.15, d2, 0.0D, 0.0D, 0.0D);
-				p_57495_.addParticle(ParticleTypes.SMALL_FLAME, d0 - 0.4, d1 - 0.15, d2, 0.0D, 0.0D, 0.0D);
-				p_57495_.addParticle(ParticleTypes.SMALL_FLAME, d0, d1 - 0.15, d2 + 0.4, 0.0D, 0.0D, 0.0D);
-				p_57495_.addParticle(ParticleTypes.SMALL_FLAME, d0, d1 - 0.15, d2 - 0.4, 0.0D, 0.0D, 0.0D);
+		if (state.getValue(ON)) {
+			if (state.getValue(HANGING)) {
+				level.addParticle(ParticleTypes.SMALL_FLAME, d0 + 0.4, d1 - 0.15, d2, 0.0D, 0.0D, 0.0D);
+				level.addParticle(ParticleTypes.SMALL_FLAME, d0 - 0.4, d1 - 0.15, d2, 0.0D, 0.0D, 0.0D);
+				level.addParticle(ParticleTypes.SMALL_FLAME, d0, d1 - 0.15, d2 + 0.4, 0.0D, 0.0D, 0.0D);
+				level.addParticle(ParticleTypes.SMALL_FLAME, d0, d1 - 0.15, d2 - 0.4, 0.0D, 0.0D, 0.0D);
 			} else {
-				if (p_57494_.getValue(FACING) == Direction.EAST || p_57494_.getValue(FACING) == Direction.WEST) {
-					p_57495_.addParticle(ParticleTypes.SMALL_FLAME, d0, d1, d2, 0.0D, 0.0D, 0.0D);
-					p_57495_.addParticle(ParticleTypes.SMALL_FLAME, d0, d1 + 0.05, d2 + 0.35, 0.0D, 0.0D, 0.0D);
-					p_57495_.addParticle(ParticleTypes.SMALL_FLAME, d0, d1 + 0.05, d2 - 0.35, 0.0D, 0.0D, 0.0D);
+				if (state.getValue(FACING) == Direction.EAST || state.getValue(FACING) == Direction.WEST) {
+					level.addParticle(ParticleTypes.SMALL_FLAME, d0, d1, d2, 0.0D, 0.0D, 0.0D);
+					level.addParticle(ParticleTypes.SMALL_FLAME, d0, d1 + 0.05, d2 + 0.35, 0.0D, 0.0D, 0.0D);
+					level.addParticle(ParticleTypes.SMALL_FLAME, d0, d1 + 0.05, d2 - 0.35, 0.0D, 0.0D, 0.0D);
 				} else {
-					p_57495_.addParticle(ParticleTypes.SMALL_FLAME, d0, d1, d2, 0.0D, 0.0D, 0.0D);
-					p_57495_.addParticle(ParticleTypes.SMALL_FLAME, d0 + 0.35, d1 + 0.05, d2, 0.0D, 0.0D, 0.0D);
-					p_57495_.addParticle(ParticleTypes.SMALL_FLAME, d0 - 0.35, d1 + 0.05, d2, 0.0D, 0.0D, 0.0D);
+					level.addParticle(ParticleTypes.SMALL_FLAME, d0, d1, d2, 0.0D, 0.0D, 0.0D);
+					level.addParticle(ParticleTypes.SMALL_FLAME, d0 + 0.35, d1 + 0.05, d2, 0.0D, 0.0D, 0.0D);
+					level.addParticle(ParticleTypes.SMALL_FLAME, d0 - 0.35, d1 + 0.05, d2, 0.0D, 0.0D, 0.0D);
 				}
 			}
 		}
@@ -114,16 +120,21 @@ public class LampCandleabra extends LanternBlock {
 		super.createBlockStateDefinition(pBuilder);
 		pBuilder.add(FACING, ON);
 	}
+	
+	@Override
+	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
+		if (!KeyBoardHelper.isHoldingShift()) {
+			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+		}
 
-	/*
-	 * @Override public void appendHoverText(ItemStack stack, BlockGetter getter,
-	 * List<Component> tooltip, TooltipFlag flag) { if
-	 * (!KeyBoardHelper.isHoldingShift()) { tooltip.add( new
-	 * TextComponent("\u00A77Hold\u00A77 \u00A7e\u00A7oSHIFT\u00A7o\u00A7r \u00A77for more.\u00A77"
-	 * )); }
-	 * 
-	 * if (KeyBoardHelper.isHoldingShift()) { tooltip.add(new
-	 * TextComponent("\u00A77Rightclick to turn on/off.\u00A77")); }
-	 * super.appendHoverText(stack, getter, tooltip, flag); }
-	 */
+		if (KeyBoardHelper.isHoldingShift()) {
+			component.add(Component.literal("Can be placed hanging and standing like Lanterns.")
+					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Rightclick with hand to turn off.")
+					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Rightclick with Flint and Steel to turn on.")
+					.withStyle(ChatFormatting.GRAY));
+		}
+		super.appendHoverText(stack, getter, component, flag);
+	}
 }

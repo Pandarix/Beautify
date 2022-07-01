@@ -1,18 +1,24 @@
 package com.github.Pandarix.beautify.common.block;
 
+import java.util.List;
 import java.util.Random;
 
 import com.github.Pandarix.beautify.core.init.BlockInit;
 import com.github.Pandarix.beautify.core.init.SoundInit;
+import com.github.Pandarix.beautify.util.KeyBoardHelper;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -129,20 +135,18 @@ public class BookStack extends HorizontalDirectionalBlock {
 		pBuilder.add(BOOKSTACK_MODEL, FACING);
 	}
 
-	/*
 	@Override
-	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> tooltip, TooltipFlag flag) {
+	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift()) {
-			tooltip.add(
-					new TextComponent("\u00A77Hold\u00A77 \u00A7e\u00A7oSHIFT\u00A7o\u00A7r \u00A77for more.\u00A77"));
+			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
-			tooltip.add(new TextComponent("\u00A77Increases Enchantment Table Power like Shelves.\u00A77"));
-			tooltip.add(new TextComponent(
-					"\u00A77Places random Bookstack. Shift-Rightclick on Block to change model.\u00A77"));
+			component.add(Component.literal("Places random Bookstack. Shift-Rightclick on block to change model.")
+					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Increases Enchantment Table power like shelves.")
+					.withStyle(ChatFormatting.GRAY));
 		}
-		super.appendHoverText(stack, getter, tooltip, flag);
+		super.appendHoverText(stack, getter, component, flag);
 	}
-	 */
 }
