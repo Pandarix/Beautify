@@ -21,7 +21,7 @@ public class GlowEssenceParticles extends TextureSheetParticle {
 		this.yd = yd;
 		this.zd = zd;
 		this.quadSize *= 0.3F;
-		this.lifetime = 60;
+		this.lifetime = (int) (100 * (0.5+Math.random()/2));
 		this.setSpriteFromAge(spriteSet);
 
 		this.rCol = 1f;
@@ -30,8 +30,8 @@ public class GlowEssenceParticles extends TextureSheetParticle {
 	}
 
 	private void fadeOut() {
-		this.alpha = (-(1 / (float) lifetime) * age + 1);
-		this.quadSize = (-(1 / (float) lifetime) * age + 1)/12;
+		this.alpha = (-(1 / (float) this.lifetime) * this.age + 1);
+		this.quadSize = (-(1 / (float) this.lifetime) * this.age + 1)/12;
 	}
 
 	@Override

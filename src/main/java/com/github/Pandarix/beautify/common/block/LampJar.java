@@ -113,7 +113,7 @@ public class LampJar extends LanternBlock {
 	}
 
 	private static double randomDir(RandomSource rand) {
-		return (rand.nextIntBetweenInclusive(0, 2) - 1) * rand.nextFloat() / 30;
+		return (rand.nextIntBetweenInclusive(0, 2) - 1) * rand.nextFloat() / 34;
 	}
 
 	@Override
