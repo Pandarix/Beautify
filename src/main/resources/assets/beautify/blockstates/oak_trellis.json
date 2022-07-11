@@ -1,31 +1,31 @@
 {
 	"variants": {
 		"ceilling=false,facing=north": {
-			"model": "beautify:block/trellis/closed_trellis_planted",
+			"model": "beautify:block/trellis/oak/closed_trellis_planted",
 			"y": 270
 		},
 		"ceilling=false,facing=east": {
-			"model": "beautify:block/trellis/closed_trellis_planted"
+			"model": "beautify:block/trellis/oak/closed_trellis_planted"
 		},
 		"ceilling=false,facing=south": {
-			"model": "beautify:block/trellis/closed_trellis_planted",
+			"model": "beautify:block/trellis/oak/closed_trellis_planted",
 			"y": 90
 		},
 		"ceilling=false,facing=west": {
-			"model": "beautify:block/trellis/closed_trellis_planted",
+			"model": "beautify:block/trellis/oak/closed_trellis_planted",
 			"y": 180
 		},
 		"ceilling=true,facing=north": {
-			"model": "beautify:block/trellis/open_trellis_planted"
+			"model": "beautify:block/trellis/oak/open_trellis_planted"
 		},
 		"ceilling=true,facing=east": {
-			"model": "beautify:block/trellis/open_trellis_planted"
+			"model": "beautify:block/trellis/oak/open_trellis_planted"
 		},
 		"ceilling=true,facing=south": {
-			"model": "beautify:block/trellis/open_trellis_planted"
+			"model": "beautify:block/trellis/oak/open_trellis_planted"
 		},
 		"ceilling=true,facing=west": {
-			"model": "beautify:block/trellis/open_trellis_planted"
+			"model": "beautify:block/trellis/oak/open_trellis_planted"
 		}
 	}
 }
