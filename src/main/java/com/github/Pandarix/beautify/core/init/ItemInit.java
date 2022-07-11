@@ -15,6 +15,15 @@ public final class ItemInit {
 	}
 
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Beautify.MODID);
+	
+	// trellis
+	public static final RegistryObject<BlockItem> OAK_TRELLIS_ITEM = ITEMS.register("oak_trellis",
+			() -> new BlockItem(BlockInit.OAK_TRELLIS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
+				@Override
+				public int getBurnTime(ItemStack itemStack, RecipeType<?> recipeType) {
+					return 300;
+				}
+			});
 
 	// blinds
 	public static final RegistryObject<BlockItem> OAK_BLINDS_ITEM = ITEMS.register("oak_blinds",

@@ -38,6 +38,7 @@ import com.github.Pandarix.beautify.common.block.MangroveBlinds;
 import com.github.Pandarix.beautify.common.block.MangrovePictureFrame;
 import com.github.Pandarix.beautify.common.block.OakBlinds;
 import com.github.Pandarix.beautify.common.block.OakPictureFrame;
+import com.github.Pandarix.beautify.common.block.OakTrellis;
 import com.github.Pandarix.beautify.common.block.Rope;
 import com.github.Pandarix.beautify.common.block.SpruceBlinds;
 import com.github.Pandarix.beautify.common.block.SprucePictureFrame;
@@ -81,6 +82,11 @@ public final class BlockInit {
 							return 0;
 						}
 					})));
+	
+	// trellis
+	public static final RegistryObject<OakTrellis> OAK_TRELLIS = BLOCKS.register("oak_trellis",
+			() -> new OakTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+					.strength(0.3F, 0.3F).sound(SoundType.WOOD).noOcclusion()));
 
 	// lamps
 	public static final RegistryObject<LampLightBulb> LAMP_LIGHT_BULB = BLOCKS.register("lamp_light_bulb",
