@@ -12,16 +12,18 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class GlowEssenceParticles extends TextureSheetParticle {
 
+	private static final float size = 0.07f;
+
 	protected GlowEssenceParticles(ClientLevel level, double xCoord, double yCoord, double zCoord, SpriteSet spriteSet,
 			double xd, double yd, double zd) {
 		super(level, xCoord, yCoord, zCoord, xd, yd, zd);
-	
+
 		this.friction = 0.8F;
 		this.xd = xd;
 		this.yd = yd;
 		this.zd = zd;
-		this.quadSize *= 0.3F;
-		this.lifetime = (int) (100 * (0.5+Math.random()/2));
+		this.quadSize = 0;
+		this.lifetime = (int) (60 * (0.5 + Math.random() / 2));
 		this.setSpriteFromAge(spriteSet);
 
 		this.rCol = 1f;
@@ -30,21 +32,36 @@ public class GlowEssenceParticles extends TextureSheetParticle {
 	}
 
 	private void fadeOut() {
-		this.alpha = (-(1 / (float) this.lifetime) * this.age + 1);
-		this.quadSize = (-(1 / (float) this.lifetime) * this.age + 1)/12;
+		float fadeValue = (float) Math.sin(Math.PI * ((float) this.age / this.lifetime));
+
+		this.alpha = 1 * fadeValue;
+		this.quadSize = size * fadeValue;
+	}
+
+	private void move() {
+		if(Math.random()<=0.05) {
+		this.xd = (Math.random()*2-1)/70;
+		}
+		if(Math.random()<=0.05) {
+		this.yd = (Math.random()*2-1)/70;
+		}
+		if(Math.random()<=0.05) {
+		this.zd = (Math.random()*2-1)/70;
+		}
 	}
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
+		return ParticleRenderType.PARTICLE_SHEET_LIT;
 	}
-	
-    @Override
-    public void tick() {
-        super.tick();
-        
-        fadeOut();
-    }
+
+	@Override
+	public void tick() {
+		super.tick();
+
+		this.fadeOut();
+		this.move();
+	}
 
 	@OnlyIn(Dist.CLIENT)
 	public static class Provider implements ParticleProvider<SimpleParticleType> {
