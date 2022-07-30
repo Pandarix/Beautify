@@ -54,7 +54,6 @@ public class Rope extends ChainBlock {
 		if (!KeyBoardHelper.isHoldingShift()) {
 			component.add(new TranslatableComponent("tooltip.beautify.tooltip.shift").withStyle(ChatFormatting.YELLOW));
 		}
-
 		if (KeyBoardHelper.isHoldingShift()) {
 			component.add(new TranslatableComponent("tooltip.beautify.rope.tooltip.info").withStyle(ChatFormatting.GRAY));
 		}
