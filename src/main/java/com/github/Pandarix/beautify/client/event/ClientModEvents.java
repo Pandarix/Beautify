@@ -29,8 +29,12 @@ public class ClientModEvents {
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.BOOKSTACK.get(), RenderType.cutout());
 		
+		/*
+		 * IN DEV
+		 * 
 		// TRELLIS
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.OAK_TRELLIS.get(), RenderType.cutout());
+		*/
 
 		// LAMPS
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.LAMP_LIGHT_BULB.get(), RenderType.cutout());
