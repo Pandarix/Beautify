@@ -1,6 +1,7 @@
 package com.github.Pandarix.beautify.common.block;
 
 import java.util.List;
+import java.util.Random;
 
 import com.github.Pandarix.beautify.particle.ParticleInit;
 import com.github.Pandarix.beautify.util.KeyBoardHelper;
@@ -8,9 +9,9 @@ import com.github.Pandarix.beautify.util.KeyBoardHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -70,9 +71,8 @@ public class LampJar extends LanternBlock {
 		super.createBlockStateDefinition(pBuilder);
 		pBuilder.add(FILL_LEVEL);
 	}
-
-	@Override
-	public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource rand) {
+	
+	public void m_7100_(BlockState pState, Level pLevel, BlockPos pPos, Random rand) {
 		double posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
 		double posY = (pPos.getY() + 0.1) + rand.nextDouble() / 3.5;
 		double posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
@@ -112,23 +112,18 @@ public class LampJar extends LanternBlock {
 		}
 	}
 
-	private static double randomDir(RandomSource rand) {
-		return (rand.nextIntBetweenInclusive(0, 2) - 1) * rand.nextFloat() / 34;
+	private static double randomDir(Random rand) {
+		return (rand.nextInt(2) - 1) * rand.nextFloat() / 34;
 	}
 
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift()) {
-			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			component.add(new TranslatableComponent("tooltip.beautify.tooltip.shift").withStyle(ChatFormatting.YELLOW));
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
-			component.add(Component.literal("Can be placed hanging and standing like Lanterns.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Rightclick with Glowstone Dust to fill.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Rightclick with hand to empty.")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(new TranslatableComponent("tooltip.beautify.lamp_jar.info").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

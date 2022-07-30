@@ -1,6 +1,7 @@
 package com.github.Pandarix.beautify.common.block;
 
 import java.util.List;
+import java.util.Random;
 
 import com.github.Pandarix.beautify.util.KeyBoardHelper;
 
@@ -9,9 +10,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -89,8 +90,8 @@ public class LampCandleabra extends LanternBlock {
 		}
 		return InteractionResult.SUCCESS;
 	}
-
-	public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource rand) {
+	
+	public void m_7100_(BlockState state, Level level, BlockPos pos, Random rand) {
 		double d0 = (double) pos.getX() + 0.5D;
 		double d1 = (double) pos.getY() + 1D;
 		double d2 = (double) pos.getZ() + 0.5D;
@@ -124,16 +125,11 @@ public class LampCandleabra extends LanternBlock {
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift()) {
-			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			component.add(new TranslatableComponent("tooltip.beautify.tooltip.shift").withStyle(ChatFormatting.YELLOW));
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
-			component.add(Component.literal("Can be placed hanging and standing like Lanterns.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Rightclick with hand to turn off.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Rightclick with Flint and Steel to turn on.")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(new TranslatableComponent("tooltip.beautify.candelabra.info").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

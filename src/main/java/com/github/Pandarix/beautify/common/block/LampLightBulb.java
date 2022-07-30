@@ -1,6 +1,7 @@
 package com.github.Pandarix.beautify.common.block;
 
 import java.util.List;
+import java.util.Random;
 
 import com.github.Pandarix.beautify.util.KeyBoardHelper;
 
@@ -8,9 +9,9 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -58,16 +59,16 @@ public class LampLightBulb extends LanternBlock {
 		return InteractionResult.SUCCESS;
 	}
 
-	public void animateTick(BlockState p_57494_, Level p_57495_, BlockPos p_57496_, RandomSource p_57497_) {
-		double d0 = (double) p_57496_.getX() + 0.5D;
-		double d1 = (double) p_57496_.getY() + 0.7D;
-		double d2 = (double) p_57496_.getZ() + 0.5D;
+	public void m_7100_(BlockState state, Level level, BlockPos pos, Random random) {
+		double d0 = (double) pos.getX() + 0.5D;
+		double d1 = (double) pos.getY() + 0.7D;
+		double d2 = (double) pos.getZ() + 0.5D;
 
-		if (p_57497_.nextBoolean() && p_57494_.getValue(ON)) {
-			if (p_57494_.getValue(HANGING)) {
-				p_57495_.addParticle(ParticleTypes.SMOKE, d0, d1 - 0.3, d2, 0.0D, 0.0D, 0.0D);
+		if (random.nextBoolean() && state.getValue(ON)) {
+			if (state.getValue(HANGING)) {
+				level.addParticle(ParticleTypes.SMOKE, d0, d1 - 0.3, d2, 0.0D, 0.0D, 0.0D);
 			} else {
-				p_57495_.addParticle(ParticleTypes.SMOKE, d0, d1, d2, 0.0D, 0.0D, 0.0D);
+				level.addParticle(ParticleTypes.SMOKE, d0, d1, d2, 0.0D, 0.0D, 0.0D);
 			}
 		}
 	}
@@ -81,14 +82,11 @@ public class LampLightBulb extends LanternBlock {
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift()) {
-			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			component.add(new TranslatableComponent("tooltip.beautify.tooltip.shift").withStyle(ChatFormatting.YELLOW));
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
-			component.add(Component.literal("Can be placed hanging and standing like Lanterns.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Rightclick to turn on/off.")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(new TranslatableComponent("tooltip.beautify.lamp.info").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

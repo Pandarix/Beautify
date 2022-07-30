@@ -9,6 +9,7 @@ import com.github.Pandarix.beautify.util.KeyBoardHelper;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -123,24 +124,17 @@ public class HangingPot extends LanternBlock {
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift() && !KeyBoardHelper.isHoldingControl()) {
-			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			component.add(Component.literal("Hold CTRL for a list of plants.").withStyle(ChatFormatting.YELLOW));
+			component.add(new TranslatableComponent("tooltip.beautify.tooltip.shift").withStyle(ChatFormatting.YELLOW));
+			component.add(new TranslatableComponent("tooltip.beautify.hanging_pot.tooltip.control").withStyle(ChatFormatting.YELLOW));
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
-			component.add(Component.literal("Can be placed hanging on blocks, Ropes or on ground as usual.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Right click with plants to pot them.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Right click with Bone Meal to duplicate plant with 1/3 chance.")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(new TranslatableComponent("tooltip.beautify.hanging_pot.tooltip.info").withStyle(ChatFormatting.GRAY));
 		}
 		
 		if (KeyBoardHelper.isHoldingControl()) {
-			component.add(Component.literal("Pottable plants:")
-					.withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("All normal flowers + Rose Bushes, Lilacs, Peonies, Sunflowers, Vines, Weeping Vines, Twisting Vines, Glow Lichen, Glow Berries, Sweet Berries")	
-					.withStyle(ChatFormatting.GRAY));
+			component.add(new TranslatableComponent("tooltip.beautify.hanging_pot.tooltip.plant_header").withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.BOLD));
+			component.add(new TranslatableComponent("tooltip.beautify.hanging_pot.tooltip.plants").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

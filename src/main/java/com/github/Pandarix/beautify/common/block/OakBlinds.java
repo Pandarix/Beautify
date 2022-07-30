@@ -10,6 +10,7 @@ import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -107,13 +108,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 
 						// checks blinds east of clicked blind
 						for (int offsetEast = 1; offsetEast <= (int) Config.SEARCHRADIUS.get() / 2; ++offsetEast) {
-							if (sameBlindType(pLevel, pPos.east(offsetEast), pState)) {
+							if (sameBlindType(pLevel, pPos.relative(Direction.EAST, offsetEast), pState)) {
 								// changes east blinds: open <-> closed
-								pLevel.setBlock(pPos.east(offsetEast), pState.setValue(OPEN, !currentlyOpen), 3);
+								pLevel.setBlock(pPos.relative(Direction.EAST, offsetEast), pState.setValue(OPEN, !currentlyOpen), 3);
 								// checks for blinds below east blinds: open <-> closed, hidden=true
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
-									if (sameBlindType(pLevel, pPos.below(offsetDown).east(offsetEast), pState)) {
-										switchOpenUpdateHidden(pLevel, pPos.below(offsetDown).east(offsetEast), pState,
+									if (sameBlindType(pLevel, pPos.below(offsetDown).relative(Direction.EAST, offsetEast), pState)) {
+										switchOpenUpdateHidden(pLevel, pPos.below(offsetDown).relative(Direction.EAST, offsetEast), pState,
 												false);
 									} else {
 										break;
@@ -126,13 +127,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 
 						// checks blinds west of clicked blind
 						for (int offsetWest = 1; offsetWest <= Config.SEARCHRADIUS.get() / 2; ++offsetWest) {
-							if (sameBlindType(pLevel, pPos.west(offsetWest), pState)) {
+							if (sameBlindType(pLevel, pPos.relative(Direction.WEST, offsetWest), pState)) {
 								// changes west blinds: open <-> closed
-								pLevel.setBlock(pPos.west(offsetWest), pState.setValue(OPEN, !currentlyOpen), 3);
+								pLevel.setBlock(pPos.relative(Direction.WEST, offsetWest), pState.setValue(OPEN, !currentlyOpen), 3);
 								// checks for blinds below west blinds: open <-> closed, hidden=true
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
-									if (sameBlindType(pLevel, pPos.below(offsetDown).west(offsetWest), pState)) {
-										switchOpenUpdateHidden(pLevel, pPos.below(offsetDown).west(offsetWest), pState,
+									if (sameBlindType(pLevel, pPos.below(offsetDown).relative(Direction.WEST, offsetWest), pState)) {
+										switchOpenUpdateHidden(pLevel, pPos.below(offsetDown).relative(Direction.WEST, offsetWest), pState,
 												false);
 									} else {
 										break;
@@ -149,13 +150,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 
 						// checks blinds north of clicked blind
 						for (int offsetNorth = 1; offsetNorth <= Config.SEARCHRADIUS.get() / 2; ++offsetNorth) {
-							if (sameBlindType(pLevel, pPos.north(offsetNorth), pState)) {
+							if (sameBlindType(pLevel, pPos.relative(Direction.NORTH, offsetNorth), pState)) {
 								// changes north blinds: open <-> closed
-								pLevel.setBlock(pPos.north(offsetNorth), pState.setValue(OPEN, !currentlyOpen), 3);
+								pLevel.setBlock(pPos.relative(Direction.NORTH, offsetNorth), pState.setValue(OPEN, !currentlyOpen), 3);
 								// checks for blinds below north blinds: open <-> closed, hidden=true
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
-									if (sameBlindType(pLevel, pPos.below(offsetDown).north(offsetNorth), pState)) {
-										switchOpenUpdateHidden(pLevel, pPos.below(offsetDown).north(offsetNorth),
+									if (sameBlindType(pLevel, pPos.relative(Direction.DOWN, offsetDown).relative(Direction.NORTH, offsetNorth), pState)) {
+										switchOpenUpdateHidden(pLevel, pPos.relative(Direction.DOWN, offsetDown).relative(Direction.NORTH, offsetNorth),
 												pState, false);
 									} else {
 										break;
@@ -168,13 +169,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 
 						// checks blinds south of clicked blind
 						for (int offsetSouth = 1; offsetSouth <= Config.SEARCHRADIUS.get() / 2; ++offsetSouth) {
-							if (sameBlindType(pLevel, pPos.south(offsetSouth), pState)) {
+							if (sameBlindType(pLevel, pPos.relative(Direction.SOUTH, offsetSouth), pState)) {
 								// changes south blinds: open <-> closed
-								pLevel.setBlock(pPos.south(offsetSouth), pState.setValue(OPEN, !currentlyOpen), 3);
+								pLevel.setBlock(pPos.relative(Direction.SOUTH, offsetSouth), pState.setValue(OPEN, !currentlyOpen), 3);
 								// checks for blinds below south blinds: open <-> closed, hidden=true
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
-									if (sameBlindType(pLevel, pPos.below(offsetDown).south(offsetSouth), pState)) {
-										switchOpenUpdateHidden(pLevel, pPos.below(offsetDown).south(offsetSouth),
+									if (sameBlindType(pLevel, pPos.relative(Direction.DOWN, offsetDown).relative(Direction.SOUTH, offsetSouth), pState)) {
+										switchOpenUpdateHidden(pLevel, pPos.relative(Direction.DOWN, offsetDown).relative(Direction.SOUTH, offsetSouth),
 												pState, false);
 									} else {
 										break;
@@ -263,14 +264,11 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift()) {
-			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			component.add(new TranslatableComponent("tooltip.beautify.tooltip.shift").withStyle(ChatFormatting.YELLOW));
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
-			component.add(Component.literal("Rightclick on Block to open or close blind and adjacent ones.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("After closing 1st time, blinds below topmost blind become invisible when open.")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(new TranslatableComponent("tooltip.blinds.tooltip.info").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}
