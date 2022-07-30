@@ -34,8 +34,6 @@ import com.github.Pandarix.beautify.common.block.LampCandleabraWhite;
 import com.github.Pandarix.beautify.common.block.LampCandleabraYellow;
 import com.github.Pandarix.beautify.common.block.LampJar;
 import com.github.Pandarix.beautify.common.block.LampLightBulb;
-import com.github.Pandarix.beautify.common.block.MangroveBlinds;
-import com.github.Pandarix.beautify.common.block.MangrovePictureFrame;
 import com.github.Pandarix.beautify.common.block.OakBlinds;
 import com.github.Pandarix.beautify.common.block.OakPictureFrame;
 import com.github.Pandarix.beautify.common.block.Rope;
@@ -348,9 +346,15 @@ public final class BlockInit {
 			() -> new WarpedBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.4f, 0.4f).sound(SoundType.WOOD)));
 
-	public static final RegistryObject<MangroveBlinds> MANGROVE_BLINDS = BLOCKS.register("mangrove_blinds",
-			() -> new MangroveBlinds(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.4f, 0.4f).sound(SoundType.WOOD)));
+	/*
+	 * deactivated for 1.18.2
+	 * 
+	 * public static final RegistryObject<MangroveBlinds> MANGROVE_BLINDS =
+	 * BLOCKS.register("mangrove_blinds", () -> new
+	 * MangroveBlinds(BlockBehaviour.Properties.of(Material.WOOD,
+	 * MaterialColor.WOOD).noOcclusion() .strength(0.4f,
+	 * 0.4f).sound(SoundType.WOOD)));
+	 */
 
 	public static final RegistryObject<IronBlinds> IRON_BLINDS = BLOCKS.register("iron_blinds",
 			() -> new IronBlinds(BlockBehaviour.Properties.of(Material.METAL, MaterialColor.METAL).noOcclusion()
@@ -395,10 +399,15 @@ public final class BlockInit {
 			() -> new WarpedPictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
 					.strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 
-	public static final RegistryObject<MangrovePictureFrame> MANGROVE_PICTURE_FRAME = BLOCKS.register(
-			"mangrove_picture_frame",
-			() -> new MangrovePictureFrame(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).noOcclusion()
-					.strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
+	/*
+	 * deactivated for 1.18.2
+	 * 
+	 * public static final RegistryObject<MangrovePictureFrame>
+	 * MANGROVE_PICTURE_FRAME = BLOCKS.register( "mangrove_picture_frame", () -> new
+	 * MangrovePictureFrame(BlockBehaviour.Properties.of(Material.WOOD,
+	 * MaterialColor.WOOD).noOcclusion() .strength(0.1f,
+	 * 0.1f).sound(SoundType.WOOD).noOcclusion()));
+	 */
 
 	public static final RegistryObject<WarpedPictureFrame> QUARTZ_PICTURE_FRAME = BLOCKS.register(
 			"quartz_picture_frame",
