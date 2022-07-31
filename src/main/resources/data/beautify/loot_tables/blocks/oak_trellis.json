@@ -1,0 +1,49 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "beautify:oak_trellis",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:oak_trellis",
+							"properties": {
+								"flowers": "0"
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/oak_rose_trellis",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:oak_trellis",
+							"properties": {
+								"flowers": "1"
+							}
+						}
+					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/oak_sunflower_trellis",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:oak_trellis",
+							"properties": {
+								"flowers": "2"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

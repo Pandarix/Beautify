@@ -1,6 +1,3 @@
 {
-	"parent": "item/generated",
-	"textures": {
-		"layer0": "beautify:items/bamboo_lamp_item"
-	}
+	"parent": "beautify:block/lamps/lamp_bamboo_off"
 }

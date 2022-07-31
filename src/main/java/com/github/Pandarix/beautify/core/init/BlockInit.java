@@ -86,7 +86,7 @@ public final class BlockInit {
 	// trellis
 	public static final RegistryObject<OakTrellis> OAK_TRELLIS = BLOCKS.register("oak_trellis",
 			() -> new OakTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
-					.strength(0.3F, 0.3F).sound(SoundType.WOOD).noOcclusion()));
+					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
 
 	// lamps
 	public static final RegistryObject<LampLightBulb> LAMP_LIGHT_BULB = BLOCKS.register("lamp_light_bulb",

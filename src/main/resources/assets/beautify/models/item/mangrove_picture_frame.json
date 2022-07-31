@@ -1,6 +1,3 @@
 {
-	"parent": "item/generated",
-	"textures": {
-		"layer0": "beautify:items/mangrove_picture_frame_item"
-	}
+	"parent": "beautify:block/pictureframes/mangrove_flower_picture_frame"
 }

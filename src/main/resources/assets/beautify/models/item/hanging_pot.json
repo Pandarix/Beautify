@@ -1,6 +1,3 @@
 {
-	"parent": "item/generated",
-	"textures": {
-		"layer0": "beautify:items/hanging_pot_item"
-	}
+	"parent": "beautify:block/pots/hanging_pot"
 }

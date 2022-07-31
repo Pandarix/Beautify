@@ -3,7 +3,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "beautify:blocks/hanging_pot",
-		"particle": "minecraft:block/terracotta"
+		"particle": "block/terracotta"
 	},
 	"elements": [
 		{
@@ -233,6 +233,40 @@
 			}
 		}
 	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [67.54, -29.2, 0.06],
+			"translation": [0, -2.75, -4.5],
+			"scale": [0.65, 0.65, 0.65]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [67.54, -29.2, 0.06],
+			"translation": [0, -2.75, -4.5],
+			"scale": [0.65, 0.65, 0.65]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, 50.75, 0],
+			"translation": [0.75, 3.25, 0],
+			"scale": [0.65, 0.65, 0.65]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 50.75, 0],
+			"translation": [0.75, 3.25, 0],
+			"scale": [0.65, 0.65, 0.65]
+		},
+		"ground": {
+			"translation": [0, 1.5, 0],
+			"scale": [0.65, 0.65, 0.65]
+		},
+		"gui": {
+			"rotation": [25.75, -45, 0],
+			"translation": [0, 0.5, 0],
+			"scale": [0.9, 0.9, 0.9]
+		},
+		"head": {
+			"translation": [0, 14.25, 0]
+		}
+	},
 	"groups": [
 		{
 			"name": "test",
