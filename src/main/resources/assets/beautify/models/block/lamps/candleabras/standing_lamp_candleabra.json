@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "block/anvil",
-		"2": "block/candle_lit",
-		"particle": "block/anvil"
+		"1": "anvil",
+		"2": "candle_lit",
+		"particle": "candle"
 	},
 	"elements": [
 		{
@@ -174,34 +174,36 @@
 	],
 	"display": {
 		"thirdperson_righthand": {
-			"translation": [0, 1.25, 0],
-			"scale": [0.75, 0.75, 0.75]
+			"translation": [0, 0.75, 1.25],
+			"scale": [0.7, 0.7, 0.7]
 		},
 		"thirdperson_lefthand": {
-			"translation": [0, 1.25, 0],
-			"scale": [0.75, 0.75, 0.75]
+			"translation": [0, 0.75, 1.25],
+			"scale": [0.7, 0.7, 0.7]
 		},
 		"firstperson_righthand": {
-			"translation": [0, 1.25, 0],
-			"scale": [0.75, 0.75, 0.75]
+			"rotation": [0, -24.5, 0],
+			"translation": [-0.75, 2, 1.25],
+			"scale": [0.7, 0.7, 0.7]
 		},
 		"firstperson_lefthand": {
-			"translation": [0, 1.25, 0],
-			"scale": [0.75, 0.75, 0.75]
+			"rotation": [0, -24.5, 0],
+			"translation": [-0.75, 2, 1.25],
+			"scale": [0.7, 0.7, 0.7]
 		},
 		"ground": {
-			"translation": [0, 2.25, 0],
-			"scale": [0.75, 0.75, 0.75]
+			"translation": [0, 1.75, 0],
+			"scale": [0.7, 0.7, 0.7]
 		},
 		"gui": {
-			"rotation": [15, -45, 0],
-			"scale": [0.85, 0.85, 0.85]
+			"rotation": [25, 45, 0],
+			"scale": [0.8, 0.8, 0.8]
 		},
 		"head": {
 			"translation": [0, 14.25, 0]
 		},
 		"fixed": {
-			"translation": [0, 0, -0.75]
+			"translation": [0, 0, -0.5]
 		}
 	},
 	"groups": [

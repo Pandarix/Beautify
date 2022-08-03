@@ -18,6 +18,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -74,7 +75,7 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()) {
 			// stores last value of blind
 			final boolean currentlyOpen = pState.getValue(OPEN);
-			
+
 			// if the blinds open from the root
 			// search for the position of the topmost blind and set the pPos
 			if (Config.OPENS_FROM_ROOT.get()) {
@@ -82,7 +83,7 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 				while (sameBlindType(pLevel, pPos.above(step), pState)) {
 					++step;
 				}
-				pPos = pPos.above(step-1);
+				pPos = pPos.above(step - 1);
 			}
 
 			{
@@ -231,6 +232,14 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 		return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
 	}
 
+	@Override
+	public void onBlockExploded(BlockState state, Level level, BlockPos pos, Explosion explosion) {
+		if (sameBlindType(level, pos.below(), state)) {
+			switchOpenUpdateHidden(level, pos.below(), state, true);
+		}
+		super.onBlockExploded(state, level, pos, explosion);
+	}
+
 	// Shape switch
 	// hidden = invisible model
 	// OPEN_X = models of blinds that are down
@@ -259,7 +268,7 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 		default -> CLOSED_NORTH;
 		};
 	}
-	
+
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift()) {
@@ -269,8 +278,9 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 		if (KeyBoardHelper.isHoldingShift()) {
 			component.add(Component.literal("Rightclick on Block to open or close blind and adjacent ones.")
 					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("After closing 1st time, blinds below topmost blind become invisible when open.")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(
+					Component.literal("After closing 1st time, blinds below topmost blind become invisible when open.")
+							.withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

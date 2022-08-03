@@ -4,9 +4,12 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.github.Pandarix.beautify.core.init.BlockInit;
+import com.github.Pandarix.beautify.util.KeyBoardHelper;
 
+import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -16,6 +19,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
@@ -135,5 +139,28 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_57561_) {
 		p_57561_.add(FACING, CEILLING, FLOWERS);
+	}
+	
+	@Override
+	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
+		if (!KeyBoardHelper.isHoldingShift() && !KeyBoardHelper.isHoldingControl()) {
+			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
+			component.add(Component.literal("Hold CTRL for a list of plants.").withStyle(ChatFormatting.YELLOW));
+		}
+
+		if (KeyBoardHelper.isHoldingShift()) {
+			component.add(Component.literal("Can be placed on or like walls and on the ceilling.")
+					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Right click with plants to insert.")
+					.withStyle(ChatFormatting.GRAY));
+		}
+		
+		if (KeyBoardHelper.isHoldingControl()) {
+			component.add(Component.literal("Pottable plants:")
+					.withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Rose Bushes, Sunflowers")
+					.withStyle(ChatFormatting.GRAY));
+		}
+		super.appendHoverText(stack, getter, component, flag);
 	}
 }
