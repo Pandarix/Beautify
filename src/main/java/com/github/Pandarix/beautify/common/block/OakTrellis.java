@@ -35,11 +35,12 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class OakTrellis extends HorizontalDirectionalBlock {
-	private static final List<Item> validFlowers = Arrays.asList(Items.AIR, Items.ROSE_BUSH, Items.SUNFLOWER);
-	
+	private static final List<Item> validFlowers = Arrays.asList(Items.AIR, Items.ROSE_BUSH, Items.SUNFLOWER,
+			Items.PEONY, Items.LILAC, Items.VINE, Items.WEEPING_VINES, Items.TWISTING_VINES);
+
 	// FLOWERS indicates which index of the flowers List below is active
-	public static final IntegerProperty FLOWERS = IntegerProperty.create("flowers", 0, validFlowers.size()-1);
-	
+	public static final IntegerProperty FLOWERS = IntegerProperty.create("flowers", 0, validFlowers.size() - 1);
+
 	public static final BooleanProperty CEILLING = BooleanProperty.create("ceilling");
 	private static final VoxelShape SHAPE_CEILLING = Block.box(0, 14, 0, 16, 16, 16);
 	private static final VoxelShape SHAPE_SOUTH = Block.box(0, 0, 0, 16, 16, 2);
@@ -77,12 +78,12 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 		default -> SHAPE_NORTH;
 		};
 	}
-	
+
 	@Override
 	public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
 		return true;
 	}
-	
+
 	@Override
 	public boolean isLadder(BlockState state, LevelReader level, BlockPos pos, LivingEntity entity) {
 		if (state.is(BlockInit.OAK_TRELLIS.get())) {
@@ -107,7 +108,8 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 					pLevel.setBlock(pPos, pState.setValue(FLOWERS, 0), 3);
 					pLevel.playSound(null, pPos, SoundEvents.AZALEA_LEAVES_BREAK, SoundSource.BLOCKS, 1, 1);
 					return InteractionResult.SUCCESS;
-				} else if(playerStack.is(validFlowers.get(pState.getValue(FLOWERS))) && playerStack.getCount()<playerStack.getMaxStackSize()) {
+				} else if (playerStack.is(validFlowers.get(pState.getValue(FLOWERS)))
+						&& playerStack.getCount() < playerStack.getMaxStackSize()) {
 					playerStack.grow(1);
 					pLevel.setBlock(pPos, pState.setValue(FLOWERS, 0), 3);
 					pLevel.playSound(null, pPos, SoundEvents.AZALEA_LEAVES_BREAK, SoundSource.BLOCKS, 1, 1);
@@ -140,7 +142,7 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> p_57561_) {
 		p_57561_.add(FACING, CEILLING, FLOWERS);
 	}
-	
+
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift() && !KeyBoardHelper.isHoldingControl()) {
@@ -151,15 +153,13 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 		if (KeyBoardHelper.isHoldingShift()) {
 			component.add(Component.literal("Can be placed on or like walls and on the ceilling.")
 					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Right click with plants to insert.")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Right click with plants to insert.").withStyle(ChatFormatting.GRAY));
 		}
-		
+
 		if (KeyBoardHelper.isHoldingControl()) {
-			component.add(Component.literal("Pottable plants:")
-					.withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Rose Bushes, Sunflowers")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Pottable plants:").withStyle(ChatFormatting.UNDERLINE)
+					.withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Rose Bushes, Sunflowers, Peonies, Lilacs, Vines, Weeping Vines, Twisting Vines").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

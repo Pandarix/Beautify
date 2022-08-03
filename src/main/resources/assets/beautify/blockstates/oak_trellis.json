@@ -80,6 +80,141 @@
 		},
 		"ceilling=true,facing=west,flowers=2": {
 			"model": "beautify:block/trellis/oak/open_trellis_sunflower"
+		},
+		"ceilling=false,facing=north,flowers=3": {
+			"model": "beautify:block/trellis/oak/closed_trellis_peony",
+			"y": 270
+		},
+		"ceilling=false,facing=east,flowers=3": {
+			"model": "beautify:block/trellis/oak/closed_trellis_peony"
+		},
+		"ceilling=false,facing=south,flowers=3": {
+			"model": "beautify:block/trellis/oak/closed_trellis_peony",
+			"y": 90
+		},
+		"ceilling=false,facing=west,flowers=3": {
+			"model": "beautify:block/trellis/oak/closed_trellis_peony",
+			"y": 180
+		},
+		"ceilling=true,facing=north,flowers=3": {
+			"model": "beautify:block/trellis/oak/open_trellis_peony"
+		},
+		"ceilling=true,facing=east,flowers=3": {
+			"model": "beautify:block/trellis/oak/open_trellis_peony"
+		},
+		"ceilling=true,facing=south,flowers=3": {
+			"model": "beautify:block/trellis/oak/open_trellis_peony"
+		},
+		"ceilling=true,facing=west,flowers=3": {
+			"model": "beautify:block/trellis/oak/open_trellis_peony"
+		},
+		"ceilling=false,facing=north,flowers=4": {
+			"model": "beautify:block/trellis/oak/closed_trellis_lilac",
+			"y": 270
+		},
+		"ceilling=false,facing=east,flowers=4": {
+			"model": "beautify:block/trellis/oak/closed_trellis_lilac"
+		},
+		"ceilling=false,facing=south,flowers=4": {
+			"model": "beautify:block/trellis/oak/closed_trellis_lilac",
+			"y": 90
+		},
+		"ceilling=false,facing=west,flowers=4": {
+			"model": "beautify:block/trellis/oak/closed_trellis_lilac",
+			"y": 180
+		},
+		"ceilling=true,facing=north,flowers=4": {
+			"model": "beautify:block/trellis/oak/open_trellis_lilac"
+		},
+		"ceilling=true,facing=east,flowers=4": {
+			"model": "beautify:block/trellis/oak/open_trellis_lilac"
+		},
+		"ceilling=true,facing=south,flowers=4": {
+			"model": "beautify:block/trellis/oak/open_trellis_lilac"
+		},
+		"ceilling=true,facing=west,flowers=4": {
+			"model": "beautify:block/trellis/oak/open_trellis_lilac"
+		},
+		"ceilling=false,facing=north,flowers=5": {
+			"model": "beautify:block/trellis/oak/closed_trellis_vine",
+			"y": 270
+		},
+		"ceilling=false,facing=east,flowers=5": {
+			"model": "beautify:block/trellis/oak/closed_trellis_vine"
+		},
+		"ceilling=false,facing=south,flowers=5": {
+			"model": "beautify:block/trellis/oak/closed_trellis_vine",
+			"y": 90
+		},
+		"ceilling=false,facing=west,flowers=5": {
+			"model": "beautify:block/trellis/oak/closed_trellis_vine",
+			"y": 180
+		},
+		"ceilling=true,facing=north,flowers=5": {
+			"model": "beautify:block/trellis/oak/open_trellis_vine"
+		},
+		"ceilling=true,facing=east,flowers=5": {
+			"model": "beautify:block/trellis/oak/open_trellis_vine"
+		},
+		"ceilling=true,facing=south,flowers=5": {
+			"model": "beautify:block/trellis/oak/open_trellis_vine"
+		},
+		"ceilling=true,facing=west,flowers=5": {
+			"model": "beautify:block/trellis/oak/open_trellis_vine"
+		},
+		"ceilling=false,facing=north,flowers=6": {
+			"model": "beautify:block/trellis/oak/closed_trellis_weeping_vines",
+			"y": 270
+		},
+		"ceilling=false,facing=east,flowers=6": {
+			"model": "beautify:block/trellis/oak/closed_trellis_weeping_vines"
+		},
+		"ceilling=false,facing=south,flowers=6": {
+			"model": "beautify:block/trellis/oak/closed_trellis_weeping_vines",
+			"y": 90
+		},
+		"ceilling=false,facing=west,flowers=6": {
+			"model": "beautify:block/trellis/oak/closed_trellis_weeping_vines",
+			"y": 180
+		},
+		"ceilling=true,facing=north,flowers=6": {
+			"model": "beautify:block/trellis/oak/open_trellis_weeping_vines"
+		},
+		"ceilling=true,facing=east,flowers=6": {
+			"model": "beautify:block/trellis/oak/open_trellis_weeping_vines"
+		},
+		"ceilling=true,facing=south,flowers=6": {
+			"model": "beautify:block/trellis/oak/open_trellis_weeping_vines"
+		},
+		"ceilling=true,facing=west,flowers=6": {
+			"model": "beautify:block/trellis/oak/open_trellis_weeping_vines"
+		},
+		"ceilling=false,facing=north,flowers=7": {
+			"model": "beautify:block/trellis/oak/closed_trellis_twisting_vines",
+			"y": 270
+		},
+		"ceilling=false,facing=east,flowers=7": {
+			"model": "beautify:block/trellis/oak/closed_trellis_twisting_vines"
+		},
+		"ceilling=false,facing=south,flowers=7": {
+			"model": "beautify:block/trellis/oak/closed_trellis_twisting_vines",
+			"y": 90
+		},
+		"ceilling=false,facing=west,flowers=7": {
+			"model": "beautify:block/trellis/oak/closed_trellis_twisting_vines",
+			"y": 180
+		},
+		"ceilling=true,facing=north,flowers=7": {
+			"model": "beautify:block/trellis/oak/open_trellis_twisting_vines"
+		},
+		"ceilling=true,facing=east,flowers=7": {
+			"model": "beautify:block/trellis/oak/open_trellis_twisting_vines"
+		},
+		"ceilling=true,facing=south,flowers=7": {
+			"model": "beautify:block/trellis/oak/open_trellis_twisting_vines"
+		},
+		"ceilling=true,facing=west,flowers=7": {
+			"model": "beautify:block/trellis/oak/open_trellis_twisting_vines"
 		}
 	}
 }
