@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "/ /",
+        " O ",
+        "/ /"
+    ],
+    "key": {
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "O": {
+            "item": "minecraft:mangrove_log"
+        }
+    },
+    "result": {
+        "item": "beautify:mangrove_trellis",
+        "count": 4
+    },
+    "group": "trellis"
+}

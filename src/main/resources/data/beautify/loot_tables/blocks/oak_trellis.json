@@ -107,6 +107,19 @@
 							}
 						}
 					]
+				},
+				{
+					"type": "minecraft:loot_table",
+					"name": "beautify:blocks/oak_lichen_trellis",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:oak_trellis",
+							"properties": {
+								"flowers": "8"
+							}
+						}
+					]
 				}
 			]
 		}

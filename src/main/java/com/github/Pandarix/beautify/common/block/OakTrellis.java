@@ -36,7 +36,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class OakTrellis extends HorizontalDirectionalBlock {
 	private static final List<Item> validFlowers = Arrays.asList(Items.AIR, Items.ROSE_BUSH, Items.SUNFLOWER,
-			Items.PEONY, Items.LILAC, Items.VINE, Items.WEEPING_VINES, Items.TWISTING_VINES);
+			Items.PEONY, Items.LILAC, Items.VINE, Items.WEEPING_VINES, Items.TWISTING_VINES, Items.GLOW_LICHEN);
 
 	// FLOWERS indicates which index of the flowers List below is active
 	public static final IntegerProperty FLOWERS = IntegerProperty.create("flowers", 0, validFlowers.size() - 1);
@@ -86,7 +86,11 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 
 	@Override
 	public boolean isLadder(BlockState state, LevelReader level, BlockPos pos, LivingEntity entity) {
-		if (state.is(BlockInit.OAK_TRELLIS.get())) {
+		if (state.is(BlockInit.OAK_TRELLIS.get()) || state.is(BlockInit.BIRCH_TRELLIS.get())
+				|| state.is(BlockInit.JUNGLE_TRELLIS.get()) || state.is(BlockInit.SPRUCE_TRELLIS.get())
+				|| state.is(BlockInit.ACACIA_TRELLIS.get()) || state.is(BlockInit.DARK_OAK_TRELLIS.get())
+				|| state.is(BlockInit.MANGROVE_TRELLIS.get()) || state.is(BlockInit.CRIMSON_TRELLIS.get())
+				|| state.is(BlockInit.WARPED_TRELLIS.get())) {
 			return true;
 		}
 		return super.isLadder(state, level, pos, entity);
@@ -151,7 +155,7 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
-			component.add(Component.literal("Can be placed on or like walls and on the ceilling.")
+			component.add(Component.literal("Can be placed on or like walls and on the ceilling. Climbable.")
 					.withStyle(ChatFormatting.GRAY));
 			component.add(Component.literal("Right click with plants to insert.").withStyle(ChatFormatting.GRAY));
 		}
@@ -159,7 +163,9 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 		if (KeyBoardHelper.isHoldingControl()) {
 			component.add(Component.literal("Pottable plants:").withStyle(ChatFormatting.UNDERLINE)
 					.withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Rose Bushes, Sunflowers, Peonies, Lilacs, Vines, Weeping Vines, Twisting Vines").withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal(
+					"Rose Bushes, Sunflowers, Peonies, Lilacs, Vines, Weeping Vines, Twisting Vines, Glow Lichen")
+					.withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

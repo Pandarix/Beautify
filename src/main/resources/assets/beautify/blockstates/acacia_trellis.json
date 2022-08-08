@@ -1,0 +1,247 @@
+{
+	"variants": {
+		"ceilling=false,facing=north,flowers=0": {
+			"model": "beautify:block/trellis/acacia/closed_trellis",
+			"y": 270
+		},
+		"ceilling=false,facing=east,flowers=0": {
+			"model": "beautify:block/trellis/acacia/closed_trellis"
+		},
+		"ceilling=false,facing=south,flowers=0": {
+			"model": "beautify:block/trellis/acacia/closed_trellis",
+			"y": 90
+		},
+		"ceilling=false,facing=west,flowers=0": {
+			"model": "beautify:block/trellis/acacia/closed_trellis",
+			"y": 180
+		},
+		"ceilling=true,facing=north,flowers=0": {
+			"model": "beautify:block/trellis/acacia/open_trellis"
+		},
+		"ceilling=true,facing=east,flowers=0": {
+			"model": "beautify:block/trellis/acacia/open_trellis"
+		},
+		"ceilling=true,facing=south,flowers=0": {
+			"model": "beautify:block/trellis/acacia/open_trellis"
+		},
+		"ceilling=true,facing=west,flowers=0": {
+			"model": "beautify:block/trellis/acacia/open_trellis"
+		},
+		"ceilling=false,facing=north,flowers=1": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_rose",
+			"y": 270
+		},
+		"ceilling=false,facing=east,flowers=1": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_rose"
+		},
+		"ceilling=false,facing=south,flowers=1": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_rose",
+			"y": 90
+		},
+		"ceilling=false,facing=west,flowers=1": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_rose",
+			"y": 180
+		},
+		"ceilling=true,facing=north,flowers=1": {
+			"model": "beautify:block/trellis/acacia/open_trellis_rose"
+		},
+		"ceilling=true,facing=east,flowers=1": {
+			"model": "beautify:block/trellis/acacia/open_trellis_rose"
+		},
+		"ceilling=true,facing=south,flowers=1": {
+			"model": "beautify:block/trellis/acacia/open_trellis_rose"
+		},
+		"ceilling=true,facing=west,flowers=1": {
+			"model": "beautify:block/trellis/acacia/open_trellis_rose"
+		},
+		"ceilling=false,facing=north,flowers=2": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_sunflower",
+			"y": 270
+		},
+		"ceilling=false,facing=east,flowers=2": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_sunflower"
+		},
+		"ceilling=false,facing=south,flowers=2": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_sunflower",
+			"y": 90
+		},
+		"ceilling=false,facing=west,flowers=2": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_sunflower",
+			"y": 180
+		},
+		"ceilling=true,facing=north,flowers=2": {
+			"model": "beautify:block/trellis/acacia/open_trellis_sunflower"
+		},
+		"ceilling=true,facing=east,flowers=2": {
+			"model": "beautify:block/trellis/acacia/open_trellis_sunflower"
+		},
+		"ceilling=true,facing=south,flowers=2": {
+			"model": "beautify:block/trellis/acacia/open_trellis_sunflower"
+		},
+		"ceilling=true,facing=west,flowers=2": {
+			"model": "beautify:block/trellis/acacia/open_trellis_sunflower"
+		},
+		"ceilling=false,facing=north,flowers=3": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_peony",
+			"y": 270
+		},
+		"ceilling=false,facing=east,flowers=3": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_peony"
+		},
+		"ceilling=false,facing=south,flowers=3": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_peony",
+			"y": 90
+		},
+		"ceilling=false,facing=west,flowers=3": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_peony",
+			"y": 180
+		},
+		"ceilling=true,facing=north,flowers=3": {
+			"model": "beautify:block/trellis/acacia/open_trellis_peony"
+		},
+		"ceilling=true,facing=east,flowers=3": {
+			"model": "beautify:block/trellis/acacia/open_trellis_peony"
+		},
+		"ceilling=true,facing=south,flowers=3": {
+			"model": "beautify:block/trellis/acacia/open_trellis_peony"
+		},
+		"ceilling=true,facing=west,flowers=3": {
+			"model": "beautify:block/trellis/acacia/open_trellis_peony"
+		},
+		"ceilling=false,facing=north,flowers=4": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_lilac",
+			"y": 270
+		},
+		"ceilling=false,facing=east,flowers=4": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_lilac"
+		},
+		"ceilling=false,facing=south,flowers=4": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_lilac",
+			"y": 90
+		},
+		"ceilling=false,facing=west,flowers=4": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_lilac",
+			"y": 180
+		},
+		"ceilling=true,facing=north,flowers=4": {
+			"model": "beautify:block/trellis/acacia/open_trellis_lilac"
+		},
+		"ceilling=true,facing=east,flowers=4": {
+			"model": "beautify:block/trellis/acacia/open_trellis_lilac"
+		},
+		"ceilling=true,facing=south,flowers=4": {
+			"model": "beautify:block/trellis/acacia/open_trellis_lilac"
+		},
+		"ceilling=true,facing=west,flowers=4": {
+			"model": "beautify:block/trellis/acacia/open_trellis_lilac"
+		},
+		"ceilling=false,facing=north,flowers=5": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_vine",
+			"y": 270
+		},
+		"ceilling=false,facing=east,flowers=5": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_vine"
+		},
+		"ceilling=false,facing=south,flowers=5": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_vine",
+			"y": 90
+		},
+		"ceilling=false,facing=west,flowers=5": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_vine",
+			"y": 180
+		},
+		"ceilling=true,facing=north,flowers=5": {
+			"model": "beautify:block/trellis/acacia/open_trellis_vine"
+		},
+		"ceilling=true,facing=east,flowers=5": {
+			"model": "beautify:block/trellis/acacia/open_trellis_vine"
+		},
+		"ceilling=true,facing=south,flowers=5": {
+			"model": "beautify:block/trellis/acacia/open_trellis_vine"
+		},
+		"ceilling=true,facing=west,flowers=5": {
+			"model": "beautify:block/trellis/acacia/open_trellis_vine"
+		},
+		"ceilling=false,facing=north,flowers=6": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_weeping_vines",
+			"y": 270
+		},
+		"ceilling=false,facing=east,flowers=6": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_weeping_vines"
+		},
+		"ceilling=false,facing=south,flowers=6": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_weeping_vines",
+			"y": 90
+		},
+		"ceilling=false,facing=west,flowers=6": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_weeping_vines",
+			"y": 180
+		},
+		"ceilling=true,facing=north,flowers=6": {
+			"model": "beautify:block/trellis/acacia/open_trellis_weeping_vines"
+		},
+		"ceilling=true,facing=east,flowers=6": {
+			"model": "beautify:block/trellis/acacia/open_trellis_weeping_vines"
+		},
+		"ceilling=true,facing=south,flowers=6": {
+			"model": "beautify:block/trellis/acacia/open_trellis_weeping_vines"
+		},
+		"ceilling=true,facing=west,flowers=6": {
+			"model": "beautify:block/trellis/acacia/open_trellis_weeping_vines"
+		},
+		"ceilling=false,facing=north,flowers=7": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_twisting_vines",
+			"y": 270
+		},
+		"ceilling=false,facing=east,flowers=7": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_twisting_vines"
+		},
+		"ceilling=false,facing=south,flowers=7": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_twisting_vines",
+			"y": 90
+		},
+		"ceilling=false,facing=west,flowers=7": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_twisting_vines",
+			"y": 180
+		},
+		"ceilling=true,facing=north,flowers=7": {
+			"model": "beautify:block/trellis/acacia/open_trellis_twisting_vines"
+		},
+		"ceilling=true,facing=east,flowers=7": {
+			"model": "beautify:block/trellis/acacia/open_trellis_twisting_vines"
+		},
+		"ceilling=true,facing=south,flowers=7": {
+			"model": "beautify:block/trellis/acacia/open_trellis_twisting_vines"
+		},
+		"ceilling=true,facing=west,flowers=7": {
+			"model": "beautify:block/trellis/acacia/open_trellis_twisting_vines"
+		},
+		"ceilling=false,facing=north,flowers=8": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_lichen",
+			"y": 270
+		},
+		"ceilling=false,facing=east,flowers=8": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_lichen"
+		},
+		"ceilling=false,facing=south,flowers=8": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_lichen",
+			"y": 90
+		},
+		"ceilling=false,facing=west,flowers=8": {
+			"model": "beautify:block/trellis/acacia/closed_trellis_lichen",
+			"y": 180
+		},
+		"ceilling=true,facing=north,flowers=8": {
+			"model": "beautify:block/trellis/acacia/open_trellis_lichen"
+		},
+		"ceilling=true,facing=east,flowers=8": {
+			"model": "beautify:block/trellis/acacia/open_trellis_lichen"
+		},
+		"ceilling=true,facing=south,flowers=8": {
+			"model": "beautify:block/trellis/acacia/open_trellis_lichen"
+		},
+		"ceilling=true,facing=west,flowers=8": {
+			"model": "beautify:block/trellis/acacia/open_trellis_lichen"
+		}
+	}
+}

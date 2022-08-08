@@ -31,6 +31,14 @@ public class ClientModEvents {
 		
 		// TRELLIS
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.OAK_TRELLIS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.SPRUCE_TRELLIS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.BIRCH_TRELLIS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.JUNGLE_TRELLIS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.ACACIA_TRELLIS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.DARK_OAK_TRELLIS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.MANGROVE_TRELLIS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.CRIMSON_TRELLIS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.WARPED_TRELLIS.get(), RenderType.cutout());
 
 		// LAMPS
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.LAMP_LIGHT_BULB.get(), RenderType.cutout());

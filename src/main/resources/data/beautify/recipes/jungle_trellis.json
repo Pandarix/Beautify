@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "/ /",
+        " O ",
+        "/ /"
+    ],
+    "key": {
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "O": {
+            "item": "minecraft:jungle_log"
+        }
+    },
+    "result": {
+        "item": "beautify:jungle_trellis",
+        "count": 4
+    },
+    "group": "trellis"
+}

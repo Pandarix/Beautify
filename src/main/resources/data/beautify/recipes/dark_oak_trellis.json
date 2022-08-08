@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "/ /",
+        " O ",
+        "/ /"
+    ],
+    "key": {
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "O": {
+            "item": "minecraft:dark_oak_log"
+        }
+    },
+    "result": {
+        "item": "beautify:dark_oak_trellis",
+        "count": 4
+    },
+    "group": "trellis"
+}

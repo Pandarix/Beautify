@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"1": "anvil",
-		"2": "candle_lit",
-		"particle": "candle"
+		"1": "minecraft:block/anvil",
+		"2": "minecraft:block/candle_lit",
+		"particle": "minecraft:block/candle"
 	},
 	"elements": [
 		{

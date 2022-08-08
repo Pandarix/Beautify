@@ -17,7 +17,15 @@
 	},
 	"rewards": {
 		"recipes": [
-			"beautify:oak_trellis"
+			"beautify:oak_trellis",
+			"beautify:spruce_trellis",
+			"beautify:birch_trellis",
+			"beautify:jungle_trellis",
+			"beautify:acacia_trellis",
+			"beautify:dark_oak_trellis",
+			"beautify:mangrove_trellis",
+			"beautify:crimson_trellis",
+			"beautify:warped_trellis"
 		]
 	}
 }

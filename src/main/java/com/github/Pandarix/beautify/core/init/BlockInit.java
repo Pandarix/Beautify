@@ -3,17 +3,22 @@ package com.github.Pandarix.beautify.core.init;
 import com.github.Pandarix.beautify.Beautify;
 import com.github.Pandarix.beautify.common.block.AcaciaBlinds;
 import com.github.Pandarix.beautify.common.block.AcaciaPictureFrame;
+import com.github.Pandarix.beautify.common.block.AcaciaTrellis;
 import com.github.Pandarix.beautify.common.block.BirchBlinds;
 import com.github.Pandarix.beautify.common.block.BirchPictureFrame;
+import com.github.Pandarix.beautify.common.block.BirchTrellis;
 import com.github.Pandarix.beautify.common.block.BookStack;
 import com.github.Pandarix.beautify.common.block.CrimsonBlinds;
 import com.github.Pandarix.beautify.common.block.CrimsonPictureFrame;
+import com.github.Pandarix.beautify.common.block.CrimsonTrellis;
 import com.github.Pandarix.beautify.common.block.DarkOakBlinds;
 import com.github.Pandarix.beautify.common.block.DarkOakPictureFrame;
+import com.github.Pandarix.beautify.common.block.DarkOakTrellis;
 import com.github.Pandarix.beautify.common.block.HangingPot;
 import com.github.Pandarix.beautify.common.block.IronBlinds;
 import com.github.Pandarix.beautify.common.block.JungleBlinds;
 import com.github.Pandarix.beautify.common.block.JunglePictureFrame;
+import com.github.Pandarix.beautify.common.block.JungleTrellis;
 import com.github.Pandarix.beautify.common.block.LampBamboo;
 import com.github.Pandarix.beautify.common.block.LampCandleabra;
 import com.github.Pandarix.beautify.common.block.LampCandleabraBlack;
@@ -36,14 +41,17 @@ import com.github.Pandarix.beautify.common.block.LampJar;
 import com.github.Pandarix.beautify.common.block.LampLightBulb;
 import com.github.Pandarix.beautify.common.block.MangroveBlinds;
 import com.github.Pandarix.beautify.common.block.MangrovePictureFrame;
+import com.github.Pandarix.beautify.common.block.MangroveTrellis;
 import com.github.Pandarix.beautify.common.block.OakBlinds;
 import com.github.Pandarix.beautify.common.block.OakPictureFrame;
 import com.github.Pandarix.beautify.common.block.OakTrellis;
 import com.github.Pandarix.beautify.common.block.Rope;
 import com.github.Pandarix.beautify.common.block.SpruceBlinds;
 import com.github.Pandarix.beautify.common.block.SprucePictureFrame;
+import com.github.Pandarix.beautify.common.block.SpruceTrellis;
 import com.github.Pandarix.beautify.common.block.WarpedBlinds;
 import com.github.Pandarix.beautify.common.block.WarpedPictureFrame;
+import com.github.Pandarix.beautify.common.block.WarpedTrellis;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
@@ -86,6 +94,38 @@ public final class BlockInit {
 	// trellis
 	public static final RegistryObject<OakTrellis> OAK_TRELLIS = BLOCKS.register("oak_trellis",
 			() -> new OakTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
+	
+	public static final RegistryObject<SpruceTrellis> SPRUCE_TRELLIS = BLOCKS.register("spruce_trellis",
+			() -> new SpruceTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
+	
+	public static final RegistryObject<BirchTrellis> BIRCH_TRELLIS = BLOCKS.register("birch_trellis",
+			() -> new BirchTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
+	
+	public static final RegistryObject<JungleTrellis> JUNGLE_TRELLIS = BLOCKS.register("jungle_trellis",
+			() -> new JungleTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
+	
+	public static final RegistryObject<AcaciaTrellis> ACACIA_TRELLIS = BLOCKS.register("acacia_trellis",
+			() -> new AcaciaTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
+	
+	public static final RegistryObject<DarkOakTrellis> DARK_OAK_TRELLIS = BLOCKS.register("dark_oak_trellis",
+			() -> new DarkOakTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
+	
+	public static final RegistryObject<MangroveTrellis> MANGROVE_TRELLIS = BLOCKS.register("mangrove_trellis",
+			() -> new MangroveTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
+	
+	public static final RegistryObject<CrimsonTrellis> CRIMSON_TRELLIS = BLOCKS.register("crimson_trellis",
+			() -> new CrimsonTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
+					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
+	
+	public static final RegistryObject<WarpedTrellis> WARPED_TRELLIS = BLOCKS.register("warped_trellis",
+			() -> new WarpedTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
 					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
 
 	// lamps

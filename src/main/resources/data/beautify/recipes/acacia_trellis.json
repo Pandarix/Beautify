@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "/ /",
+        " O ",
+        "/ /"
+    ],
+    "key": {
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "O": {
+            "item": "minecraft:acacia_log"
+        }
+    },
+    "result": {
+        "item": "beautify:acacia_trellis",
+        "count": 4
+    },
+    "group": "trellis"
+}
