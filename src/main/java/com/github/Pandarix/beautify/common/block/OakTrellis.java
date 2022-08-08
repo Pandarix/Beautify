@@ -155,7 +155,7 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {
-			component.add(Component.literal("Can be placed on or like walls and on the ceilling. Climbable.")
+			component.add(Component.literal("Can be placed on or like walls and on the ceiling. Climbable.")
 					.withStyle(ChatFormatting.GRAY));
 			component.add(Component.literal("Right click with plants to insert.").withStyle(ChatFormatting.GRAY));
 		}
