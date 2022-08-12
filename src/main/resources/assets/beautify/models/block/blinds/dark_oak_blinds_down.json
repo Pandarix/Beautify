@@ -3,5 +3,6 @@
 	"textures": {
 		"0": "minecraft:block/dark_oak_planks",
 		"particle": "minecraft:block/dark_oak_planks"
-	}
+	},
+	"render_type": "cutout"
 }

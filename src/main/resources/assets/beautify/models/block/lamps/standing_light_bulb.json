@@ -4,6 +4,7 @@
 		"0": "beautify:blocks/standing_light_bulb",
 		"particle": "beautify:blocks/standing_light_bulb"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"name": "bein0",

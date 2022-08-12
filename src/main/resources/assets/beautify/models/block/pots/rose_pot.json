@@ -3,5 +3,6 @@
 	"textures": {
 		"0": "beautify:blocks/rose_pot",
 		"particle": "minecraft:block/terracotta"
-	}
+	},
+	"render_type": "cutout"
 }

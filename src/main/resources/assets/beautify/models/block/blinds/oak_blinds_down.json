@@ -1,9 +1,10 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "minecraft:block/oak_planks",
-		"particle": "minecraft:block/oak_planks"
+		"0": "block/oak_planks",
+		"particle": "block/oak_planks"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [0, 14.75, 14.75],
@@ -95,6 +96,41 @@
 			}
 		}
 	],
+	"display": {
+		"thirdperson_righthand": {
+			"translation": [0, 3.5, -2.75],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"translation": [0, 3.5, -2.75],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [172.48, -4.07, 179.68],
+			"translation": [1.25, 1.5, 4.5],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"rotation": [172.48, -4.07, 179.68],
+			"translation": [1.25, 1.5, 4.5],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"translation": [0, 2, -4.75],
+			"scale": [0.65, 0.65, 0.65]
+		},
+		"gui": {
+			"rotation": [176.13, 18.08, -174.53],
+			"translation": [-2, 0.25, 0],
+			"scale": [0.9, 0.9, 0.9]
+		},
+		"head": {
+			"translation": [0, -0.25, -13.75]
+		},
+		"fixed": {
+			"translation": [0, 0, -7.5]
+		}
+	},
 	"groups": [
 		{
 			"name": "blinds",

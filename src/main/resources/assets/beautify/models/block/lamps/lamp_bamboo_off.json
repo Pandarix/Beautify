@@ -4,5 +4,6 @@
 		"2": "beautify:blocks/chain",
 		"3": "beautify:blocks/bamboo_lamp_off",
 		"particle": "beautify:blocks/bamboo_lamp_off"
-	}
+	},
+	"render_type": "cutout"
 }

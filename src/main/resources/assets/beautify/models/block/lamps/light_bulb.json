@@ -5,6 +5,7 @@
 		"0": "beautify:blocks/light_bulb",
 		"particle": "beautify:blocks/light_bulb"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"name": "sockel",
@@ -141,6 +142,46 @@
 			}
 		}
 	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-180, 0, 0],
+			"translation": [0, 1.75, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [-180, 0, 0],
+			"translation": [0, 1.75, 0],
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"rotation": [-180, 0, 0],
+			"translation": [1.5, 3.5, 0],
+			"scale": [0.65, 0.65, 0.65]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-180, 0, 0],
+			"translation": [1.5, 3.5, 0],
+			"scale": [0.65, 0.65, 0.65]
+		},
+		"ground": {
+			"rotation": [-180, 0, 0],
+			"translation": [0, 2, 0],
+			"scale": [0.75, 0.75, 0.75]
+		},
+		"gui": {
+			"rotation": [21.25, -45, -180],
+			"translation": [0, 0.75, 0],
+			"scale": [0.9, 0.9, 0.9]
+		},
+		"head": {
+			"rotation": [-180, 0, 0],
+			"translation": [0, 12.25, 0]
+		},
+		"fixed": {
+			"rotation": [0, 0, -180],
+			"translation": [0, 1.25, 0]
+		}
+	},
 	"groups": [
 		{
 			"name": "group",

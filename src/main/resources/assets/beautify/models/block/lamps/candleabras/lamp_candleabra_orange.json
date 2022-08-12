@@ -4,5 +4,6 @@
 		"1": "minecraft:block/anvil",
 		"2": "minecraft:block/orange_candle_lit",
 		"particle": "minecraft:block/anvil"
-	}
+	},
+	"render_type": "cutout"
 }

@@ -4,5 +4,6 @@
 		"0": "beautify:blocks/motive_alban",
 		"1": "beautify:blocks/jungle_frame_texture",
 		"particle": "beautify:blocks/jungle_frame_texture"
-	}
+	},
+	"render_type": "cutout"
 }
