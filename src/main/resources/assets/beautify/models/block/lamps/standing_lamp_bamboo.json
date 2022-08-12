@@ -5,6 +5,7 @@
 		"0": "beautify:blocks/bamboo_lamp_on",
 		"particle": "beautify:blocks/bamboo_lamp_on"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [6, 2, 5],

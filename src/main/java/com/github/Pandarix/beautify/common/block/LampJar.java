@@ -2,11 +2,11 @@ package com.github.Pandarix.beautify.common.block;
 
 import java.util.List;
 
-import com.github.Pandarix.beautify.particle.ParticleInit;
 import com.github.Pandarix.beautify.util.KeyBoardHelper;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -73,42 +73,25 @@ public class LampJar extends LanternBlock {
 
 	@Override
 	public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource rand) {
+		final int particleProbability = 5;
+
 		double posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
 		double posY = (pPos.getY() + 0.1) + rand.nextDouble() / 3.5;
 		double posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
 
 		if (pState.getValue(FILL_LEVEL) >= 5 && pState.getValue(FILL_LEVEL) < 10) {
-			if (rand.nextBoolean()) {
-				pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01,
-						randomDir(rand));
+			if (rand.nextInt(particleProbability) == 0) {
+				pLevel.addParticle(ParticleTypes.END_ROD, posX, posY, posZ, randomDir(rand), 0.01, randomDir(rand));
 			}
 		} else if (pState.getValue(FILL_LEVEL) >= 10 && pState.getValue(FILL_LEVEL) < 15) {
-			if (rand.nextBoolean()) {
-				pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01,
-						randomDir(rand));
+			if (rand.nextInt(particleProbability) == 0) {
+				pLevel.addParticle(ParticleTypes.END_ROD, posX, posY, posZ, randomDir(rand), 0.01, randomDir(rand));
 			}
-			posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
-			posY = (pPos.getY() + 0.1) + rand.nextDouble() / 3.5;
-			posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
-			pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01,
-					randomDir(rand));
 		} else if (pState.getValue(FILL_LEVEL) == 15) {
-			if (rand.nextBoolean()) {
-				pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01,
-						randomDir(rand));
-			}
-
 			posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
 			posY = (pPos.getY() + 0.1) + rand.nextDouble() / 3.5;
 			posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
-			pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01,
-					randomDir(rand));
-
-			posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
-			posY = (pPos.getY() + 0.1) + rand.nextDouble() / 3.5;
-			posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
-			pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01,
-					randomDir(rand));
+			pLevel.addParticle(ParticleTypes.END_ROD, posX, posY, posZ, randomDir(rand), 0.01, randomDir(rand));
 		}
 	}
 
@@ -125,10 +108,8 @@ public class LampJar extends LanternBlock {
 		if (KeyBoardHelper.isHoldingShift()) {
 			component.add(Component.literal("Can be placed hanging and standing like Lanterns.")
 					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Rightclick with Glowstone Dust to fill.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Rightclick with hand to empty.")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Rightclick with Glowstone Dust to fill.").withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Rightclick with hand to empty.").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

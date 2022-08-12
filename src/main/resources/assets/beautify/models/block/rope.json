@@ -5,6 +5,7 @@
 		"0": "beautify:blocks/rope_texture",
 		"particle": "beautify:blocks/rope_texture"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [7, 13, 9],

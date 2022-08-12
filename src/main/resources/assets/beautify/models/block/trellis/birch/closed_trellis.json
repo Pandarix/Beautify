@@ -4,6 +4,7 @@
 		"4": "minecraft:block/birch_log",
 		"particle": "minecraft:block/birch_log"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [0.25, 0, 2.5],

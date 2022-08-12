@@ -4,6 +4,7 @@
 		"0": "minecraft:block/acacia_log",
 		"particle": "minecraft:block/acacia_log"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [0, 14.75, 2.5],

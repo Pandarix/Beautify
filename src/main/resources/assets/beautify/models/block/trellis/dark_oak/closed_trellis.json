@@ -4,6 +4,7 @@
 		"0": "block/dark_oak_log",
 		"particle": "block/dark_oak_log"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [0.25, 0, 2.5],

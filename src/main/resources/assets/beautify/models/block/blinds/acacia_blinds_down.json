@@ -3,5 +3,6 @@
 	"textures": {
 		"0": "minecraft:block/acacia_planks",
 		"particle": "minecraft:block/acacia_planks"
-	}
+	},
+	"render_type": "cutout"
 }

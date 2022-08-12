@@ -4,6 +4,7 @@
 		"4": "minecraft:block/warped_stem",
 		"particle": "minecraft:block/warped_stem"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [0, 14.75, 2.5],

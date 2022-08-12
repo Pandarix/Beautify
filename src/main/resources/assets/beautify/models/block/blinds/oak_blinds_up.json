@@ -4,6 +4,7 @@
 		"0": "minecraft:block/oak_planks",
 		"particle": "minecraft:block/oak_planks"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [0, 14, 14],

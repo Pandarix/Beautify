@@ -5,6 +5,7 @@
 		"0": "beautify:blocks/hanging_pot",
 		"particle": "minecraft:block/terracotta"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [5, 5, 5],

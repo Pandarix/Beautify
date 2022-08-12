@@ -4,6 +4,7 @@
 		"4": "minecraft:block/crimson_stem",
 		"particle": "minecraft:block/crimson_stem"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [0.25, 0, 2.5],

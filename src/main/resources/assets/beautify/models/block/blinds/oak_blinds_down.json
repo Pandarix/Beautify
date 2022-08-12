@@ -4,6 +4,7 @@
 		"0": "block/oak_planks",
 		"particle": "block/oak_planks"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [0, 14.75, 14.75],

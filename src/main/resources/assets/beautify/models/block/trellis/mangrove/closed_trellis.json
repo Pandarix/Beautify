@@ -4,6 +4,7 @@
 		"0": "block/mangrove_log",
 		"particle": "block/mangrove_log"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [0.25, 0, 2.5],

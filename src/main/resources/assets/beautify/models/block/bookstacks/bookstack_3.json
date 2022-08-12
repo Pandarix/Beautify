@@ -5,6 +5,7 @@
 		"0": "beautify:blocks/bookstack_3",
 		"particle": "beautify:blocks/bookstack_3"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [2, 0, 8],

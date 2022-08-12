@@ -5,6 +5,7 @@
 		"0": "beautify:blocks/light_bulb",
 		"particle": "beautify:blocks/light_bulb"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"name": "sockel",

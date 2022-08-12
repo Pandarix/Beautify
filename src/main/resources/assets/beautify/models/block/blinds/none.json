@@ -4,6 +4,7 @@
 		"0": "beautify:blocks/empty",
 		"particle": "beautify:blocks/empty"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [0, 0, 0],

@@ -7,6 +7,7 @@
 		"7": "beautify:blocks/trellis_vine_hanging",
 		"particle": "minecraft:block/dark_oak_log"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"from": [0, 14.75, 2.5],
