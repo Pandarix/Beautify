@@ -1,0 +1,30 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:stick"
+						],
+						"min": 1
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"beautify:oak_trellis",
+			"beautify:spruce_trellis",
+			"beautify:birch_trellis",
+			"beautify:jungle_trellis",
+			"beautify:acacia_trellis",
+			"beautify:dark_oak_trellis",
+			"beautify:crimson_trellis",
+			"beautify:warped_trellis"
+		]
+	}
+}

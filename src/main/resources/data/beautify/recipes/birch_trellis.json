@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "/ /",
+        " O ",
+        "/ /"
+    ],
+    "key": {
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "O": {
+            "item": "minecraft:birch_log"
+        }
+    },
+    "result": {
+        "item": "beautify:birch_trellis",
+        "count": 4
+    },
+    "group": "trellis"
+}

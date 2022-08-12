@@ -28,13 +28,16 @@ public class ClientModEvents {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.HANGING_POT.get(), RenderType.cutout());
 
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.BOOKSTACK.get(), RenderType.cutout());
-		
-		/*
-		 * IN DEV
-		 * 
+
 		// TRELLIS
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.OAK_TRELLIS.get(), RenderType.cutout());
-		*/
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.SPRUCE_TRELLIS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.BIRCH_TRELLIS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.JUNGLE_TRELLIS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.ACACIA_TRELLIS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.DARK_OAK_TRELLIS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.CRIMSON_TRELLIS.get(), RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(BlockInit.WARPED_TRELLIS.get(), RenderType.cutout());
 
 		// LAMPS
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.LAMP_LIGHT_BULB.get(), RenderType.cutout());
@@ -64,7 +67,7 @@ public class ClientModEvents {
 		ItemBlockRenderTypes.setRenderLayer(BlockInit.WARPED_BLINDS.get(), RenderType.cutout());
 	}
 
-	@SuppressWarnings("resource") //minecraft is autoclosing
+	@SuppressWarnings("resource") // minecraft is autoclosing
 	@SubscribeEvent
 	public static void registerParticleFactories(final ParticleFactoryRegisterEvent event) {
 		Minecraft.getInstance().particleEngine.register(ParticleInit.GLOWESSENCE_PARTICLES.get(),

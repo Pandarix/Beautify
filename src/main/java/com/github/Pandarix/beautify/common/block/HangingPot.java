@@ -125,7 +125,7 @@ public class HangingPot extends LanternBlock {
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift() && !KeyBoardHelper.isHoldingControl()) {
 			component.add(new TranslatableComponent("tooltip.beautify.tooltip.shift").withStyle(ChatFormatting.YELLOW));
-			component.add(new TranslatableComponent("tooltip.beautify.hanging_pot.tooltip.control").withStyle(ChatFormatting.YELLOW));
+			component.add(new TranslatableComponent("tooltip.beautify.tooltip.plantlist").withStyle(ChatFormatting.YELLOW));
 		}
 
 		if (KeyBoardHelper.isHoldingShift()) {

@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "/ /",
+        " O ",
+        "/ /"
+    ],
+    "key": {
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "O": {
+            "item": "minecraft:spruce_log"
+        }
+    },
+    "result": {
+        "item": "beautify:spruce_trellis",
+        "count": 4
+    },
+    "group": "trellis"
+}
