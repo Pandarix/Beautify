@@ -1,6 +1,3 @@
 {
-	"parent": "item/generated",
-	"textures": {
-		"layer0": "beautify:items/birch_blinds_item"
-	}
+	"parent": "beautify:block/blinds/birch_blinds_down"
 }
