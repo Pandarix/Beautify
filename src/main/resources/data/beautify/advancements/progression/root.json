@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:rose_bush"
+    },
+    "title": "Let's Beautify!",
+    "description": "The devil is in the detailing",
+    "background": "minecraft:textures/block/spruce_planks.png",
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "Install": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

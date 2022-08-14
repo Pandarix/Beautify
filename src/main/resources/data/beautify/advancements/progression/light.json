@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "beautify:lamp_light_bulb"
+    },
+    "title": "Lit!",
+    "description": "Craft a lightsource from Beautify",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "beautify:progression/root",
+  "criteria": {
+    "obtain": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "beautify:lamp_jar",
+              "beautify:lamp_bamboo",
+              "beautify:lamp_light_bulb"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
