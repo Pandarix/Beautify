@@ -57,19 +57,6 @@
 				"up": {"uv": [1.75, 6.25, 3.5, 9], "texture": "#0"},
 				"down": {"uv": [0, 6.25, 1.75, 9], "texture": "#0"}
 			}
-		},
-		{
-			"from": [0.25, 0, 0.75],
-			"to": [15.75, 7.25, 15.5],
-			"color": 1,
-			"faces": {
-				"north": {"uv": [0, 0, 3.875, 1.8125], "texture": "#missing"},
-				"east": {"uv": [0, 0, 3.6875, 1.8125], "texture": "#missing"},
-				"south": {"uv": [0, 0, 3.875, 1.8125], "texture": "#missing"},
-				"west": {"uv": [0, 0, 3.6875, 1.8125], "texture": "#missing"},
-				"up": {"uv": [0, 0, 3.875, 3.6875], "texture": "#missing"},
-				"down": {"uv": [0, 0, 3.875, 3.6875], "texture": "#missing"}
-			}
 		}
 	],
 	"display": {
@@ -116,12 +103,6 @@
 			"origin": [8, 0, 8],
 			"color": 0,
 			"children": [0, 1, 2, 3]
-		},
-		{
-			"name": "voxelshapes",
-			"origin": [8, 8, 8],
-			"color": 0,
-			"children": [4]
 		}
 	]
 }

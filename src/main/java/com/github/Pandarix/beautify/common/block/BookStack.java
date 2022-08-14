@@ -34,7 +34,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class BookStack extends HorizontalDirectionalBlock {
-	private static final int modelcount = 5; // number of models the bookstack has
+	private static final int modelcount = 6; // number of models the bookstack has
 	public static final IntegerProperty BOOKSTACK_MODEL = IntegerProperty.create("bookstack_model", 0, modelcount - 1);
 	// Different Voxelshapes for models of BOOKSTACK_MODEL
 	private static final VoxelShape SHAPE0 = Block.box(1, 0, 1, 15, 4, 15);
@@ -42,6 +42,7 @@ public class BookStack extends HorizontalDirectionalBlock {
 	private static final VoxelShape SHAPE2 = Block.box(0, 0, 0, 16, 1.5, 16);
 	private static final VoxelShape SHAPE3 = Block.box(0, 0, 0, 16, 9.5, 16);
 	private static final VoxelShape SHAPE4 = Block.box(1, 0, 1, 15, 5, 15);
+	private static final VoxelShape SHAPE5 = Block.box(0.25, 0, 0.75, 15.75, 7.25, 15.5);
 
 	public BookStack(Properties p_49795_) {
 		super(p_49795_);
@@ -57,6 +58,7 @@ public class BookStack extends HorizontalDirectionalBlock {
 		case 2 -> SHAPE2;
 		case 3 -> SHAPE3;
 		case 4 -> SHAPE4;
+		case 5 -> SHAPE5;
 		default -> SHAPE0;
 		};
 	}
