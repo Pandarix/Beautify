@@ -27,6 +27,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class HangingPot extends LanternBlock {
@@ -35,9 +36,9 @@ public class HangingPot extends LanternBlock {
 			Items.ORANGE_TULIP, Items.WHITE_TULIP, Items.PINK_TULIP, Items.ALLIUM, Items.DANDELION, Items.POPPY,
 			Items.GLOW_LICHEN, Items.OXEYE_DAISY, Items.LILY_OF_THE_VALLEY, Items.CORNFLOWER, Items.WEEPING_VINES,
 			Items.TWISTING_VINES, Items.WITHER_ROSE, Items.GLOW_BERRIES, Items.SWEET_BERRIES);
-	
+
 	// POTFLOWER indicates which index of the flowers List below is active
-	public static final IntegerProperty POTFLOWER = IntegerProperty.create("potflower", 0, validFlowers.size()-1);
+	public static final IntegerProperty POTFLOWER = IntegerProperty.create("potflower", 0, validFlowers.size() - 1);
 
 	public HangingPot(Properties properties) {
 		super(properties);
@@ -45,16 +46,16 @@ public class HangingPot extends LanternBlock {
 	}
 
 	// hitbox for the HangingPot
-	private static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.D, 12.0D, 8.0D, 12.0D);
+	private static final VoxelShape HANGING_SHAPE = Shapes.or(box(5, 0, 5, 11, 4, 11),
+			box(3.75, 4, 3.75, 12.25, 8, 12.25), box(5, 8, 5, 11, 16, 11));
+	private static final VoxelShape STANDING_SHAPE = Shapes.or(box(5, 0, 5, 11, 5, 11), box(4, 5, 4, 12, 8, 12));
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-		return SHAPE;
-	}
-
-	@Override
-	public VoxelShape getOcclusionShape(BlockState p_53338_, BlockGetter p_53339_, BlockPos p_53340_) {
-		return SHAPE;
+		if (state.getValue(HANGING)) {
+			return HANGING_SHAPE;
+		}
+		return STANDING_SHAPE;
 	}
 
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
@@ -63,18 +64,22 @@ public class HangingPot extends LanternBlock {
 		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
 
 			ItemStack playerStack = pPlayer.getItemInHand(pHand);
-			if (playerStack.getItem().equals(Items.BONE_MEAL) && pState.getValue(POTFLOWER)!=0) {
+			if (playerStack.getItem().equals(Items.BONE_MEAL) && pState.getValue(POTFLOWER) != 0) {
 				Random rand = new Random();
 				int randomNum = rand.nextInt(3);
 
 				if (randomNum == 0) {
 					pLevel.playSound(null, pPos, SoundEvents.NETHER_SPROUTS_BREAK, SoundSource.BLOCKS, 1, 1);
 					pPlayer.drop(new ItemStack(validFlowers.get(pState.getValue(POTFLOWER))), false);
-					playerStack.shrink(1);
+					if (!pPlayer.isCreative()) {
+						playerStack.shrink(1);
+					}
 					return InteractionResult.SUCCESS;
 				} else {
 					pLevel.playSound(null, pPos, SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1, 1);
-					playerStack.shrink(1);
+					if (!pPlayer.isCreative()) {
+						playerStack.shrink(1);
+					}
 					return InteractionResult.SUCCESS;
 				}
 			}
@@ -88,7 +93,8 @@ public class HangingPot extends LanternBlock {
 					pLevel.setBlock(pPos, pState.setValue(POTFLOWER, 0), 3);
 					pLevel.playSound(null, pPos, SoundEvents.COMPOSTER_READY, SoundSource.BLOCKS, 1, 1);
 					return InteractionResult.SUCCESS;
-				} else if(playerStack.is(validFlowers.get(pState.getValue(POTFLOWER))) && playerStack.getCount()<playerStack.getMaxStackSize()) {
+				} else if (playerStack.is(validFlowers.get(pState.getValue(POTFLOWER)))
+						&& playerStack.getCount() < playerStack.getMaxStackSize()) {
 					playerStack.grow(1);
 					pLevel.setBlock(pPos, pState.setValue(POTFLOWER, 0), 3);
 					pLevel.playSound(null, pPos, SoundEvents.AZALEA_LEAVES_BREAK, SoundSource.BLOCKS, 1, 1);
@@ -106,7 +112,9 @@ public class HangingPot extends LanternBlock {
 						if (!flower.equals(Items.AIR)) {
 							pLevel.playSound(null, pPos, SoundEvents.AZALEA_PLACE, SoundSource.BLOCKS, 1, 1);
 						}
-						playerStack.shrink(1);
+						if (!pPlayer.isCreative()) {
+							playerStack.shrink(1);
+						}
 						return InteractionResult.CONSUME_PARTIAL;
 					}
 				}
@@ -124,7 +132,7 @@ public class HangingPot extends LanternBlock {
 		super.createBlockStateDefinition(pBuilder);
 		pBuilder.add(POTFLOWER);
 	}
-	
+
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift() && !KeyBoardHelper.isHoldingControl()) {
@@ -135,16 +143,16 @@ public class HangingPot extends LanternBlock {
 		if (KeyBoardHelper.isHoldingShift()) {
 			component.add(Component.literal("Can be placed hanging on blocks, Ropes or on ground as usual.")
 					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Right click with plants to pot them.")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Right click with plants to pot them.").withStyle(ChatFormatting.GRAY));
 			component.add(Component.literal("Right click with Bone Meal to duplicate plant with 1/3 chance.")
 					.withStyle(ChatFormatting.GRAY));
 		}
-		
+
 		if (KeyBoardHelper.isHoldingControl()) {
-			component.add(Component.literal("Pottable plants:")
-					.withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("All normal flowers + Rose Bushes, Lilacs, Peonies, Sunflowers, Vines, Weeping Vines, Twisting Vines, Glow Lichen, Glow Berries, Sweet Berries")	
+			component.add(Component.literal("Pottable plants:").withStyle(ChatFormatting.UNDERLINE)
+					.withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal(
+					"All normal flowers + Rose Bushes, Lilacs, Peonies, Sunflowers, Vines, Weeping Vines, Twisting Vines, Glow Lichen, Glow Berries, Sweet Berries")
 					.withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);

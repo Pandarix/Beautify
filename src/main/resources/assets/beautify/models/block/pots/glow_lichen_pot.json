@@ -1,7 +1,8 @@
 {
-	"parent": "beautify:block/pots/hanging_pot",
+	"parent": "beautify:block/pots/vine_pot",
 	"textures": {
-		"0": "beautify:blocks/glow_lichen_pot",
+		"1": "beautify:blocks/pots/glow_lichen_pot",
+		"2": "beautify:blocks/pots/glow_lichen_pot_overlay",
 		"particle": "minecraft:block/terracotta"
 	},
 	"render_type": "cutout"
