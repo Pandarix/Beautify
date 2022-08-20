@@ -15,7 +15,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:lilac"
+					"name": "minecraft:fern"
 				}
 			]
 		},
@@ -24,7 +24,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:lilac",
+					"name": "minecraft:fern",
 					"conditions": [
 						{
 							"condition": "minecraft:block_state_property",

@@ -149,6 +149,12 @@
 		},
 		"hanging=false,potflower=24": {
 			"model": "beautify:block/pots/standing_grass_pot"
+		},
+		"hanging=true,potflower=25": {
+			"model": "beautify:block/pots/fern_pot"
+		},
+		"hanging=false,potflower=25": {
+			"model": "beautify:block/pots/standing_fern_pot"
 		}
 	}
 }

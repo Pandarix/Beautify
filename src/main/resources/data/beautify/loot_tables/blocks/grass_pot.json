@@ -15,7 +15,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:lilac"
+					"name": "minecraft:grass"
 				}
 			]
 		},
@@ -24,7 +24,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:lilac",
+					"name": "minecraft:grass",
 					"conditions": [
 						{
 							"condition": "minecraft:block_state_property",
