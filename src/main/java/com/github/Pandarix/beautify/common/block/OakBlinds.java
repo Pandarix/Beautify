@@ -19,6 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -28,6 +29,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class OakBlinds extends HorizontalDirectionalBlock {
@@ -53,6 +55,21 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 				.setValue(HIDDEN, false));
 	}
 
+	@Override
+	public boolean isCollisionShapeFullBlock(BlockState p_181242_, BlockGetter p_181243_, BlockPos p_181244_) {
+		return false;
+	}
+
+	@Override
+	public VoxelShape getBlockSupportShape(BlockState p_60581_, BlockGetter p_60582_, BlockPos p_60583_) {
+		return Shapes.empty();
+	}
+
+	@Override
+	public boolean propagatesSkylightDown(BlockState p_49928_, BlockGetter p_49929_, BlockPos p_49930_) {
+		return true;
+	}
+
 	// check for facing placement, hidden is false per default
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
 		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite())
@@ -75,7 +92,7 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()) {
 			// stores last value of blind
 			final boolean currentlyOpen = pState.getValue(OPEN);
-			
+
 			// if the blinds open from the root
 			// search for the position of the topmost blind and set the pPos
 			if (Config.OPENS_FROM_ROOT.get()) {
@@ -83,7 +100,7 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 				while (sameBlindType(pLevel, pPos.above(step), pState)) {
 					++step;
 				}
-				pPos = pPos.above(step-1);
+				pPos = pPos.above(step - 1);
 			}
 
 			{
@@ -108,13 +125,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 
 						// checks blinds east of clicked blind
 						for (int offsetEast = 1; offsetEast <= (int) Config.SEARCHRADIUS.get() / 2; ++offsetEast) {
-							if (sameBlindType(pLevel, pPos.relative(Direction.EAST, offsetEast), pState)) {
+							if (sameBlindType(pLevel, pPos.east(offsetEast), pState)) {
 								// changes east blinds: open <-> closed
-								pLevel.setBlock(pPos.relative(Direction.EAST, offsetEast), pState.setValue(OPEN, !currentlyOpen), 3);
+								pLevel.setBlock(pPos.east(offsetEast), pState.setValue(OPEN, !currentlyOpen), 3);
 								// checks for blinds below east blinds: open <-> closed, hidden=true
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
-									if (sameBlindType(pLevel, pPos.below(offsetDown).relative(Direction.EAST, offsetEast), pState)) {
-										switchOpenUpdateHidden(pLevel, pPos.below(offsetDown).relative(Direction.EAST, offsetEast), pState,
+									if (sameBlindType(pLevel, pPos.below(offsetDown).east(offsetEast), pState)) {
+										switchOpenUpdateHidden(pLevel, pPos.below(offsetDown).east(offsetEast), pState,
 												false);
 									} else {
 										break;
@@ -127,13 +144,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 
 						// checks blinds west of clicked blind
 						for (int offsetWest = 1; offsetWest <= Config.SEARCHRADIUS.get() / 2; ++offsetWest) {
-							if (sameBlindType(pLevel, pPos.relative(Direction.WEST, offsetWest), pState)) {
+							if (sameBlindType(pLevel, pPos.west(offsetWest), pState)) {
 								// changes west blinds: open <-> closed
-								pLevel.setBlock(pPos.relative(Direction.WEST, offsetWest), pState.setValue(OPEN, !currentlyOpen), 3);
+								pLevel.setBlock(pPos.west(offsetWest), pState.setValue(OPEN, !currentlyOpen), 3);
 								// checks for blinds below west blinds: open <-> closed, hidden=true
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
-									if (sameBlindType(pLevel, pPos.below(offsetDown).relative(Direction.WEST, offsetWest), pState)) {
-										switchOpenUpdateHidden(pLevel, pPos.below(offsetDown).relative(Direction.WEST, offsetWest), pState,
+									if (sameBlindType(pLevel, pPos.below(offsetDown).west(offsetWest), pState)) {
+										switchOpenUpdateHidden(pLevel, pPos.below(offsetDown).west(offsetWest), pState,
 												false);
 									} else {
 										break;
@@ -150,13 +167,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 
 						// checks blinds north of clicked blind
 						for (int offsetNorth = 1; offsetNorth <= Config.SEARCHRADIUS.get() / 2; ++offsetNorth) {
-							if (sameBlindType(pLevel, pPos.relative(Direction.NORTH, offsetNorth), pState)) {
+							if (sameBlindType(pLevel, pPos.north(offsetNorth), pState)) {
 								// changes north blinds: open <-> closed
-								pLevel.setBlock(pPos.relative(Direction.NORTH, offsetNorth), pState.setValue(OPEN, !currentlyOpen), 3);
+								pLevel.setBlock(pPos.north(offsetNorth), pState.setValue(OPEN, !currentlyOpen), 3);
 								// checks for blinds below north blinds: open <-> closed, hidden=true
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
-									if (sameBlindType(pLevel, pPos.relative(Direction.DOWN, offsetDown).relative(Direction.NORTH, offsetNorth), pState)) {
-										switchOpenUpdateHidden(pLevel, pPos.relative(Direction.DOWN, offsetDown).relative(Direction.NORTH, offsetNorth),
+									if (sameBlindType(pLevel, pPos.below(offsetDown).north(offsetNorth), pState)) {
+										switchOpenUpdateHidden(pLevel, pPos.below(offsetDown).north(offsetNorth),
 												pState, false);
 									} else {
 										break;
@@ -169,13 +186,13 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 
 						// checks blinds south of clicked blind
 						for (int offsetSouth = 1; offsetSouth <= Config.SEARCHRADIUS.get() / 2; ++offsetSouth) {
-							if (sameBlindType(pLevel, pPos.relative(Direction.SOUTH, offsetSouth), pState)) {
+							if (sameBlindType(pLevel, pPos.south(offsetSouth), pState)) {
 								// changes south blinds: open <-> closed
-								pLevel.setBlock(pPos.relative(Direction.SOUTH, offsetSouth), pState.setValue(OPEN, !currentlyOpen), 3);
+								pLevel.setBlock(pPos.south(offsetSouth), pState.setValue(OPEN, !currentlyOpen), 3);
 								// checks for blinds below south blinds: open <-> closed, hidden=true
 								for (int offsetDown = 1; offsetDown <= Config.SEARCHRADIUS.get(); ++offsetDown) {
-									if (sameBlindType(pLevel, pPos.relative(Direction.DOWN, offsetDown).relative(Direction.SOUTH, offsetSouth), pState)) {
-										switchOpenUpdateHidden(pLevel, pPos.relative(Direction.DOWN, offsetDown).relative(Direction.SOUTH, offsetSouth),
+									if (sameBlindType(pLevel, pPos.below(offsetDown).south(offsetSouth), pState)) {
+										switchOpenUpdateHidden(pLevel, pPos.below(offsetDown).south(offsetSouth),
 												pState, false);
 									} else {
 										break;
@@ -232,6 +249,14 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 		return super.onDestroyedByPlayer(state, level, pos, player, willHarvest, fluid);
 	}
 
+	@Override
+	public void onBlockExploded(BlockState state, Level level, BlockPos pos, Explosion explosion) {
+		if (sameBlindType(level, pos.below(), state)) {
+			switchOpenUpdateHidden(level, pos.below(), state, true);
+		}
+		super.onBlockExploded(state, level, pos, explosion);
+	}
+
 	// Shape switch
 	// hidden = invisible model
 	// OPEN_X = models of blinds that are down
@@ -260,7 +285,7 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 		default -> CLOSED_NORTH;
 		};
 	}
-	
+
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!KeyBoardHelper.isHoldingShift()) {

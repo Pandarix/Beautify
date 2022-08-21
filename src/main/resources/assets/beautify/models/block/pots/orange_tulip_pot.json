@@ -1,8 +1,0 @@
-{
-	"parent": "beautify:block/pots/hanging_pot",
-	"textures": {
-		"0": "beautify:blocks/orange_tulip_pot",
-		"particle": "minecraft:block/terracotta"
-	},
-	"render_type": "cutout"
-}

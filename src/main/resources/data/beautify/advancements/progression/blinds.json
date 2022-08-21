@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "item": "beautify:oak_blinds"
+    },
+    "title": "Blinded by the lights",
+    "description": "Craft blinds to filter some light",
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "beautify:progression/root",
+  "criteria": {
+    "obtain": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "beautify:oak_blinds",
+              "beautify:spruce_blinds",
+              "beautify:dark_oak_blinds",
+              "beautify:birch_blinds",
+              "beautify:acacia_blinds",
+              "beautify:jungle_blinds",
+              "beautify:warped_blinds",
+              "beautify:crimson_blinds",
+              "beautify:iron_blinds",
+              "beautify:mangrove_blinds"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

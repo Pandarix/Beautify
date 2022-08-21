@@ -1,0 +1,9 @@
+{
+	"parent": "beautify:block/pots/base/hanging_pot_flat",
+	"textures": {
+		"1": "beautify:blocks/pots/glow_lichen_pot",
+		"2": "beautify:blocks/pots/glow_lichen_pot_overlay",
+		"particle": "minecraft:block/terracotta"
+	},
+	"render_type": "cutout"
+}

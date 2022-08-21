@@ -1,0 +1,28 @@
+{
+	"display": {
+		"icon": {
+			"item": "beautify:hanging_pot"
+		},
+		"title": "Left hanging",
+		"description": "Craft a hanging pot",
+		"frame": "task",
+		"show_toast": true,
+		"announce_to_chat": true,
+		"hidden": false
+	},
+	"parent": "beautify:progression/rope",
+	"criteria": {
+		"obtain": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"beautify:hanging_pot"
+						]
+					}
+				]
+			}
+		}
+	}
+}

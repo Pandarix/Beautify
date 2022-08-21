@@ -1,0 +1,41 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "beautify:hanging_pot"
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:fern"
+				}
+			]
+		},
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"name": "minecraft:fern",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "beautify:hanging_pot",
+							"properties": {
+								"grown": "true"
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

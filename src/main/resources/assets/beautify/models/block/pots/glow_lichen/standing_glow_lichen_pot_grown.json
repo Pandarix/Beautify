@@ -1,0 +1,9 @@
+{
+	"parent": "beautify:block/pots/base/standing_pot_flat_grown",
+	"textures": {
+		"1": "beautify:blocks/pots/glow_lichen_pot_grown",
+		"2": "beautify:blocks/pots/glow_lichen_pot_overlay_grown",
+		"particle": "minecraft:block/terracotta"
+	},
+	"render_type": "cutout"
+}

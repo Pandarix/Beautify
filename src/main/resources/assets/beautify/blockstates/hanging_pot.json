@@ -1,148 +1,341 @@
 {
 	"variants": {
-		"hanging=true,potflower=0": {
-			"model": "beautify:block/pots/hanging_pot"
+		"grown=false,hanging=true,potflower=0": {
+			"model": "beautify:block/pots/base/hanging_pot"
 		},
-		"hanging=false,potflower=0": {
-			"model": "beautify:block/pots/standing_pot"
+		"grown=false,hanging=false,potflower=0": {
+			"model": "beautify:block/pots/base/standing_pot"
 		},
-		"hanging=true,potflower=1": {
-			"model": "beautify:block/pots/rose_pot"
+		"grown=true,hanging=true,potflower=0": {
+			"model": "beautify:block/pots/base/hanging_pot"
 		},
-		"hanging=false,potflower=1": {
-			"model": "beautify:block/pots/standing_rose_pot"
+		"grown=true,hanging=false,potflower=0": {
+			"model": "beautify:block/pots/base/standing_pot"
 		},
-		"hanging=true,potflower=2": {
-			"model": "beautify:block/pots/lilac_pot"
+		
+		"grown=false,hanging=true,potflower=1": {
+			"model": "beautify:block/pots/rose/rose_pot"
 		},
-		"hanging=false,potflower=2": {
-			"model": "beautify:block/pots/standing_lilac_pot"
+		"grown=false,hanging=false,potflower=1": {
+			"model": "beautify:block/pots/rose/standing_rose_pot"
 		},
-		"hanging=true,potflower=3": {
-			"model": "beautify:block/pots/orchid_pot"
+		"grown=true,hanging=true,potflower=1": {
+			"model": "beautify:block/pots/rose/rose_pot_grown"
 		},
-		"hanging=false,potflower=3": {
-			"model": "beautify:block/pots/standing_orchid_pot"
+		"grown=true,hanging=false,potflower=1": {
+			"model": "beautify:block/pots/rose/standing_rose_pot_grown"
 		},
-		"hanging=true,potflower=4": {
-			"model": "beautify:block/pots/vine_pot"
+		
+		"grown=false,hanging=true,potflower=2": {
+			"model": "beautify:block/pots/lilac/lilac_pot"
 		},
-		"hanging=false,potflower=4": {
-			"model": "beautify:block/pots/standing_vine_pot"
+		"grown=false,hanging=false,potflower=2": {
+			"model": "beautify:block/pots/lilac//standing_lilac_pot"
 		},
-		"hanging=true,potflower=5": {
-			"model": "beautify:block/pots/sunflower_pot"
+		"grown=true,hanging=true,potflower=2": {
+			"model": "beautify:block/pots/lilac/lilac_pot_grown"
 		},
-		"hanging=false,potflower=5": {
-			"model": "beautify:block/pots/standing_sunflower_pot"
+		"grown=true,hanging=false,potflower=2": {
+			"model": "beautify:block/pots/lilac//standing_lilac_pot_grown"
 		},
-		"hanging=true,potflower=6": {
-			"model": "beautify:block/pots/peony_pot"
+		
+		"grown=false,hanging=true,potflower=3": {
+			"model": "beautify:block/pots/orchid/orchid_pot"
 		},
-		"hanging=false,potflower=6": {
-			"model": "beautify:block/pots/standing_peony_pot"
+		"grown=false,hanging=false,potflower=3": {
+			"model": "beautify:block/pots/orchid/standing_orchid_pot"
 		},
-		"hanging=true,potflower=7": {
-			"model": "beautify:block/pots/azure_bluet_pot"
+		"grown=true,hanging=true,potflower=3": {
+			"model": "beautify:block/pots/orchid/orchid_pot_grown"
 		},
-		"hanging=false,potflower=7": {
-			"model": "beautify:block/pots/standing_azure_bluet_pot"
+		"grown=true,hanging=false,potflower=3": {
+			"model": "beautify:block/pots/orchid/standing_orchid_pot_grown"
 		},
-		"hanging=true,potflower=8": {
-			"model": "beautify:block/pots/red_tulip_pot"
+		
+		"grown=false,hanging=true,potflower=4": {
+			"model": "beautify:block/pots/vine/vine_pot"
 		},
-		"hanging=false,potflower=8": {
-			"model": "beautify:block/pots/standing_red_tulip_pot"
+		"grown=false,hanging=false,potflower=4": {
+			"model": "beautify:block/pots/vine/standing_vine_pot"
 		},
-		"hanging=true,potflower=9": {
-			"model": "beautify:block/pots/orange_tulip_pot"
+		"grown=true,hanging=true,potflower=4": {
+			"model": "beautify:block/pots/vine/vine_pot_grown"
 		},
-		"hanging=false,potflower=9": {
-			"model": "beautify:block/pots/standing_orange_tulip_pot"
+		"grown=true,hanging=false,potflower=4": {
+			"model": "beautify:block/pots/vine/standing_vine_pot_grown"
 		},
-		"hanging=true,potflower=10": {
-			"model": "beautify:block/pots/white_tulip_pot"
+				
+		"grown=false,hanging=true,potflower=5": {
+			"model": "beautify:block/pots/sunflower/sunflower_pot"
 		},
-		"hanging=false,potflower=10": {
-			"model": "beautify:block/pots/standing_white_tulip_pot"
+		"grown=false,hanging=false,potflower=5": {
+			"model": "beautify:block/pots/sunflower/standing_sunflower_pot"
 		},
-		"hanging=true,potflower=11": {
-			"model": "beautify:block/pots/pink_tulip_pot"
+		"grown=true,hanging=true,potflower=5": {
+			"model": "beautify:block/pots/sunflower/sunflower_pot_grown"
 		},
-		"hanging=false,potflower=11": {
-			"model": "beautify:block/pots/standing_pink_tulip_pot"
+		"grown=true,hanging=false,potflower=5": {
+			"model": "beautify:block/pots/sunflower/standing_sunflower_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=6": {
+			"model": "beautify:block/pots/peony/peony_pot"
 		},
-		"hanging=true,potflower=12": {
-			"model": "beautify:block/pots/allium_pot"
+		"grown=false,hanging=false,potflower=6": {
+			"model": "beautify:block/pots/peony/standing_peony_pot"
 		},
-		"hanging=false,potflower=12": {
-			"model": "beautify:block/pots/standing_allium_pot"
+		"grown=true,hanging=true,potflower=6": {
+			"model": "beautify:block/pots/peony/peony_pot_grown"
 		},
-		"hanging=true,potflower=13": {
-			"model": "beautify:block/pots/dandelion_pot"
+		"grown=true,hanging=false,potflower=6": {
+			"model": "beautify:block/pots/peony/standing_peony_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=7": {
+			"model": "beautify:block/pots/azure_bluet/azure_bluet_pot"
 		},
-		"hanging=false,potflower=13": {
-			"model": "beautify:block/pots/standing_dandelion_pot"
+		"grown=false,hanging=false,potflower=7": {
+			"model": "beautify:block/pots/azure_bluet/standing_azure_bluet_pot"
 		},
-		"hanging=true,potflower=14": {
-			"model": "beautify:block/pots/poppy_pot"
+		"grown=true,hanging=true,potflower=7": {
+			"model": "beautify:block/pots/azure_bluet/azure_bluet_pot_grown"
 		},
-		"hanging=false,potflower=14": {
-			"model": "beautify:block/pots/standing_poppy_pot"
+		"grown=true,hanging=false,potflower=7": {
+			"model": "beautify:block/pots/azure_bluet/standing_azure_bluet_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=8": {
+			"model": "beautify:block/pots/red_tulip/red_tulip_pot"
 		},
-		"hanging=true,potflower=15": {
-			"model": "beautify:block/pots/glow_lichen_pot"
+		"grown=false,hanging=false,potflower=8": {
+			"model": "beautify:block/pots/red_tulip/standing_red_tulip_pot"
 		},
-		"hanging=false,potflower=15": {
-			"model": "beautify:block/pots/standing_glow_lichen_pot"
+		"grown=true,hanging=true,potflower=8": {
+			"model": "beautify:block/pots/red_tulip/red_tulip_pot_grown"
 		},
-		"hanging=true,potflower=16": {
-			"model": "beautify:block/pots/oxeye_daisy_pot"
+		"grown=true,hanging=false,potflower=8": {
+			"model": "beautify:block/pots/red_tulip/standing_red_tulip_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=9": {
+			"model": "beautify:block/pots/orange_tulip/orange_tulip_pot"
 		},
-		"hanging=false,potflower=16": {
-			"model": "beautify:block/pots/standing_oxeye_daisy_pot"
+		"grown=false,hanging=false,potflower=9": {
+			"model": "beautify:block/pots/orange_tulip/standing_orange_tulip_pot"
 		},
-		"hanging=true,potflower=17": {
-			"model": "beautify:block/pots/lily_pot"
+		"grown=true,hanging=true,potflower=9": {
+			"model": "beautify:block/pots/orange_tulip/orange_tulip_pot_grown"
 		},
-		"hanging=false,potflower=17": {
-			"model": "beautify:block/pots/standing_lily_pot"
+		"grown=true,hanging=false,potflower=9": {
+			"model": "beautify:block/pots/orange_tulip/standing_orange_tulip_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=10": {
+			"model": "beautify:block/pots/white_tulip/white_tulip_pot"
 		},
-		"hanging=true,potflower=18": {
-			"model": "beautify:block/pots/cornflower_pot"
+		"grown=false,hanging=false,potflower=10": {
+			"model": "beautify:block/pots/white_tulip/standing_white_tulip_pot"
 		},
-		"hanging=false,potflower=18": {
-			"model": "beautify:block/pots/standing_cornflower_pot"
+		"grown=true,hanging=true,potflower=10": {
+			"model": "beautify:block/pots/white_tulip/white_tulip_pot_grown"
 		},
-		"hanging=true,potflower=19": {
-			"model": "beautify:block/pots/weeping_vines_pot"
+		"grown=true,hanging=false,potflower=10": {
+			"model": "beautify:block/pots/white_tulip/standing_white_tulip_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=11": {
+			"model": "beautify:block/pots/pink_tulip/pink_tulip_pot"
 		},
-		"hanging=false,potflower=19": {
-			"model": "beautify:block/pots/standing_weeping_vines_pot"
+		"grown=false,hanging=false,potflower=11": {
+			"model": "beautify:block/pots/pink_tulip/standing_pink_tulip_pot"
 		},
-		"hanging=true,potflower=20": {
-			"model": "beautify:block/pots/twisting_vines_pot"
+		"grown=true,hanging=true,potflower=11": {
+			"model": "beautify:block/pots/pink_tulip/pink_tulip_pot_grown"
 		},
-		"hanging=false,potflower=20": {
-			"model": "beautify:block/pots/standing_twisting_vines_pot"
+		"grown=true,hanging=false,potflower=11": {
+			"model": "beautify:block/pots/pink_tulip/standing_pink_tulip_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=12": {
+			"model": "beautify:block/pots/allium/allium_pot"
 		},
-		"hanging=true,potflower=21": {
-			"model": "beautify:block/pots/wither_rose_pot"
+		"grown=false,hanging=false,potflower=12": {
+			"model": "beautify:block/pots/allium/standing_allium_pot"
 		},
-		"hanging=false,potflower=21": {
-			"model": "beautify:block/pots/standing_wither_rose_pot"
+		"grown=true,hanging=true,potflower=12": {
+			"model": "beautify:block/pots/allium/allium_pot_grown"
 		},
-		"hanging=true,potflower=22": {
-			"model": "beautify:block/pots/glowberry_pot"
+		"grown=true,hanging=false,potflower=12": {
+			"model": "beautify:block/pots/allium/standing_allium_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=13": {
+			"model": "beautify:block/pots/dandelion/dandelion_pot"
 		},
-		"hanging=false,potflower=22": {
-			"model": "beautify:block/pots/standing_glowberry_pot"
+		"grown=false,hanging=false,potflower=13": {
+			"model": "beautify:block/pots/dandelion/standing_dandelion_pot"
 		},
-		"hanging=true,potflower=23": {
-			"model": "beautify:block/pots/berry_pot"
+		"grown=true,hanging=true,potflower=13": {
+			"model": "beautify:block/pots/dandelion/dandelion_pot_grown"
 		},
-		"hanging=false,potflower=23": {
-			"model": "beautify:block/pots/standing_berry_pot"
-		}
+		"grown=true,hanging=false,potflower=13": {
+			"model": "beautify:block/pots/dandelion/standing_dandelion_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=14": {
+			"model": "beautify:block/pots/poppy/poppy_pot"
+		},
+		"grown=false,hanging=false,potflower=14": {
+			"model": "beautify:block/pots/poppy/standing_poppy_pot"
+		},
+		"grown=true,hanging=true,potflower=14": {
+			"model": "beautify:block/pots/poppy/poppy_pot_grown"
+		},
+		"grown=true,hanging=false,potflower=14": {
+			"model": "beautify:block/pots/poppy/standing_poppy_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=15": {
+			"model": "beautify:block/pots/glow_lichen/glow_lichen_pot"
+		},
+		"grown=false,hanging=false,potflower=15": {
+			"model": "beautify:block/pots/glow_lichen/standing_glow_lichen_pot"
+		},
+		"grown=true,hanging=true,potflower=15": {
+			"model": "beautify:block/pots/glow_lichen/glow_lichen_pot_grown"
+		},
+		"grown=true,hanging=false,potflower=15": {
+			"model": "beautify:block/pots/glow_lichen/standing_glow_lichen_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=16": {
+			"model": "beautify:block/pots/oxeye_daisy/oxeye_daisy_pot"
+		},
+		"grown=false,hanging=false,potflower=16": {
+			"model": "beautify:block/pots/oxeye_daisy/standing_oxeye_daisy_pot"
+		},
+		"grown=true,hanging=true,potflower=16": {
+			"model": "beautify:block/pots/oxeye_daisy/oxeye_daisy_pot_grown"
+		},
+		"grown=true,hanging=false,potflower=16": {
+			"model": "beautify:block/pots/oxeye_daisy/standing_oxeye_daisy_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=17": {
+			"model": "beautify:block/pots/lily/lily_pot"
+		},
+		"grown=false,hanging=false,potflower=17": {
+			"model": "beautify:block/pots/lily/standing_lily_pot"
+		},
+		"grown=true,hanging=true,potflower=17": {
+			"model": "beautify:block/pots/lily/lily_pot_grown"
+		},
+		"grown=true,hanging=false,potflower=17": {
+			"model": "beautify:block/pots/lily/standing_lily_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=18": {
+			"model": "beautify:block/pots/cornflower/cornflower_pot"
+		},
+		"grown=false,hanging=false,potflower=18": {
+			"model": "beautify:block/pots/cornflower/standing_cornflower_pot"
+		},
+		"grown=true,hanging=true,potflower=18": {
+			"model": "beautify:block/pots/cornflower/cornflower_pot_grown"
+		},
+		"grown=true,hanging=false,potflower=18": {
+			"model": "beautify:block/pots/cornflower/standing_cornflower_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=19": {
+			"model": "beautify:block/pots/weeping_vines/weeping_vines_pot"
+		},
+		"grown=false,hanging=false,potflower=19": {
+			"model": "beautify:block/pots/weeping_vines/standing_weeping_vines_pot"
+		},
+		"grown=true,hanging=true,potflower=19": {
+			"model": "beautify:block/pots/weeping_vines/weeping_vines_pot_grown"
+		},
+		"grown=true,hanging=false,potflower=19": {
+			"model": "beautify:block/pots/weeping_vines/standing_weeping_vines_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=20": {
+			"model": "beautify:block/pots/twisting_vines/twisting_vines_pot"
+		},
+		"grown=false,hanging=false,potflower=20": {
+			"model": "beautify:block/pots/twisting_vines/standing_twisting_vines_pot"
+		},
+		"grown=true,hanging=true,potflower=20": {
+			"model": "beautify:block/pots/twisting_vines/twisting_vines_pot_grown"
+		},
+		"grown=true,hanging=false,potflower=20": {
+			"model": "beautify:block/pots/twisting_vines/standing_twisting_vines_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=21": {
+			"model": "beautify:block/pots/wither_rose/wither_rose_pot"
+		},
+		"grown=false,hanging=false,potflower=21": {
+			"model": "beautify:block/pots/wither_rose/standing_wither_rose_pot"
+		},
+		"grown=true,hanging=true,potflower=21": {
+			"model": "beautify:block/pots/wither_rose/wither_rose_pot_grown"
+		},
+		"grown=true,hanging=false,potflower=21": {
+			"model": "beautify:block/pots/wither_rose/standing_wither_rose_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=22": {
+			"model": "beautify:block/pots/glowberry/glowberry_pot"
+		},
+		"grown=false,hanging=false,potflower=22": {
+			"model": "beautify:block/pots/glowberry/standing_glowberry_pot"
+		},
+		"grown=true,hanging=true,potflower=22": {
+			"model": "beautify:block/pots/glowberry/glowberry_pot_grown"
+		},
+		"grown=true,hanging=false,potflower=22": {
+			"model": "beautify:block/pots/glowberry/standing_glowberry_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=23": {
+			"model": "beautify:block/pots/berry/berry_pot"
+		},
+		"grown=false,hanging=false,potflower=23": {
+			"model": "beautify:block/pots/berry/standing_berry_pot"
+		},
+		"grown=true,hanging=true,potflower=23": {
+			"model": "beautify:block/pots/berry/berry_pot_grown"
+		},
+		"grown=true,hanging=false,potflower=23": {
+			"model": "beautify:block/pots/berry/standing_berry_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=24": {
+			"model": "beautify:block/pots/grass/grass_pot"
+		},
+		"grown=false,hanging=false,potflower=24": {
+			"model": "beautify:block/pots/grass/standing_grass_pot"
+		},
+		"grown=true,hanging=true,potflower=24": {
+			"model": "beautify:block/pots/grass/grass_pot_grown"
+		},
+		"grown=true,hanging=false,potflower=24": {
+			"model": "beautify:block/pots/grass/standing_grass_pot_grown"
+		},		
+		
+		"grown=false,hanging=true,potflower=25": {
+			"model": "beautify:block/pots/fern/fern_pot"
+		},
+		"grown=false,hanging=false,potflower=25": {
+			"model": "beautify:block/pots/fern/standing_fern_pot"
+		},
+		"grown=true,hanging=true,potflower=25": {
+			"model": "beautify:block/pots/fern/fern_pot_grown"
+		},
+		"grown=true,hanging=false,potflower=25": {
+			"model": "beautify:block/pots/fern/standing_fern_pot_grown"
+		}		
 	}
 }
