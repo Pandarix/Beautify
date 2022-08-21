@@ -28,6 +28,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class OakBlinds extends HorizontalDirectionalBlock {
@@ -51,6 +52,21 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 		super(p_54120_);
 		this.registerDefaultState(this.defaultBlockState().setValue(OPEN, false).setValue(FACING, Direction.NORTH)
 				.setValue(HIDDEN, false));
+	}
+	
+	@Override
+	public boolean isCollisionShapeFullBlock(BlockState p_181242_, BlockGetter p_181243_, BlockPos p_181244_) {
+		return false;
+	}
+	
+	@Override
+	public VoxelShape getBlockSupportShape(BlockState p_60581_, BlockGetter p_60582_, BlockPos p_60583_) {
+		return Shapes.empty();
+	}
+	
+	@Override
+	public boolean propagatesSkylightDown(BlockState p_49928_, BlockGetter p_49929_, BlockPos p_49930_) {
+		return true;
 	}
 
 	// check for facing placement, hidden is false per default
