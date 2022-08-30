@@ -8,6 +8,7 @@ import com.github.Pandarix.beautify.common.block.BirchBlinds;
 import com.github.Pandarix.beautify.common.block.BirchPictureFrame;
 import com.github.Pandarix.beautify.common.block.BirchTrellis;
 import com.github.Pandarix.beautify.common.block.BookStack;
+import com.github.Pandarix.beautify.common.block.BotanistWorkbench;
 import com.github.Pandarix.beautify.common.block.CrimsonBlinds;
 import com.github.Pandarix.beautify.common.block.CrimsonPictureFrame;
 import com.github.Pandarix.beautify.common.block.CrimsonTrellis;
@@ -54,6 +55,7 @@ import com.github.Pandarix.beautify.common.block.WarpedPictureFrame;
 import com.github.Pandarix.beautify.common.block.WarpedTrellis;
 
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -90,43 +92,43 @@ public final class BlockInit {
 							return 0;
 						}
 					})));
-	
+
 	// trellis
 	public static final RegistryObject<OakTrellis> OAK_TRELLIS = BLOCKS.register("oak_trellis",
-			() -> new OakTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
-					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
-	
+			() -> new OakTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).strength(0.3F, 0.3F)
+					.sound(SoundType.BAMBOO).noOcclusion()));
+
 	public static final RegistryObject<SpruceTrellis> SPRUCE_TRELLIS = BLOCKS.register("spruce_trellis",
-			() -> new SpruceTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
-					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
-	
+			() -> new SpruceTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).strength(0.3F, 0.3F)
+					.sound(SoundType.BAMBOO).noOcclusion()));
+
 	public static final RegistryObject<BirchTrellis> BIRCH_TRELLIS = BLOCKS.register("birch_trellis",
-			() -> new BirchTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
-					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
-	
+			() -> new BirchTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).strength(0.3F, 0.3F)
+					.sound(SoundType.BAMBOO).noOcclusion()));
+
 	public static final RegistryObject<JungleTrellis> JUNGLE_TRELLIS = BLOCKS.register("jungle_trellis",
-			() -> new JungleTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
-					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
-	
+			() -> new JungleTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).strength(0.3F, 0.3F)
+					.sound(SoundType.BAMBOO).noOcclusion()));
+
 	public static final RegistryObject<AcaciaTrellis> ACACIA_TRELLIS = BLOCKS.register("acacia_trellis",
-			() -> new AcaciaTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
-					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
-	
+			() -> new AcaciaTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).strength(0.3F, 0.3F)
+					.sound(SoundType.BAMBOO).noOcclusion()));
+
 	public static final RegistryObject<DarkOakTrellis> DARK_OAK_TRELLIS = BLOCKS.register("dark_oak_trellis",
 			() -> new DarkOakTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
 					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
-	
+
 	public static final RegistryObject<MangroveTrellis> MANGROVE_TRELLIS = BLOCKS.register("mangrove_trellis",
 			() -> new MangroveTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
 					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
-	
+
 	public static final RegistryObject<CrimsonTrellis> CRIMSON_TRELLIS = BLOCKS.register("crimson_trellis",
 			() -> new CrimsonTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
 					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
-	
+
 	public static final RegistryObject<WarpedTrellis> WARPED_TRELLIS = BLOCKS.register("warped_trellis",
-			() -> new WarpedTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD)
-					.strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
+			() -> new WarpedTrellis(BlockBehaviour.Properties.of(Material.WOOD, MaterialColor.WOOD).strength(0.3F, 0.3F)
+					.sound(SoundType.BAMBOO).noOcclusion()));
 
 	// lamps
 	public static final RegistryObject<LampLightBulb> LAMP_LIGHT_BULB = BLOCKS.register("lamp_light_bulb",
@@ -442,4 +444,8 @@ public final class BlockInit {
 			"quartz_picture_frame",
 			() -> new WarpedPictureFrame(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.QUARTZ)
 					.noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE).noOcclusion()));
+
+	// workbench
+	public static final RegistryObject<BotanistWorkbench> BOTANIST_WORKBENCH = BLOCKS.register("botanist_workbench",
+			() -> new BotanistWorkbench(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)));
 }

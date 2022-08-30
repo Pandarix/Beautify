@@ -24,7 +24,7 @@ public final class ItemInit {
 					return 300;
 				}
 			});
-	
+
 	public static final RegistryObject<BlockItem> SPRUCE_TRELLIS_ITEM = ITEMS.register("spruce_trellis",
 			() -> new BlockItem(BlockInit.SPRUCE_TRELLIS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
 				@Override
@@ -40,7 +40,7 @@ public final class ItemInit {
 					return 300;
 				}
 			});
-	
+
 	public static final RegistryObject<BlockItem> JUNGLE_TRELLIS_ITEM = ITEMS.register("jungle_trellis",
 			() -> new BlockItem(BlockInit.JUNGLE_TRELLIS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
 				@Override
@@ -48,7 +48,7 @@ public final class ItemInit {
 					return 300;
 				}
 			});
-	
+
 	public static final RegistryObject<BlockItem> ACACIA_TRELLIS_ITEM = ITEMS.register("acacia_trellis",
 			() -> new BlockItem(BlockInit.ACACIA_TRELLIS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
 				@Override
@@ -56,7 +56,7 @@ public final class ItemInit {
 					return 300;
 				}
 			});
-	
+
 	public static final RegistryObject<BlockItem> DARK_OAK_TRELLIS_ITEM = ITEMS.register("dark_oak_trellis",
 			() -> new BlockItem(BlockInit.DARK_OAK_TRELLIS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
 				@Override
@@ -64,7 +64,7 @@ public final class ItemInit {
 					return 300;
 				}
 			});
-	
+
 	public static final RegistryObject<BlockItem> MANGROVE_TRELLIS_ITEM = ITEMS.register("mangrove_trellis",
 			() -> new BlockItem(BlockInit.MANGROVE_TRELLIS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
 				@Override
@@ -72,7 +72,7 @@ public final class ItemInit {
 					return 300;
 				}
 			});
-	
+
 	public static final RegistryObject<BlockItem> CRIMSON_TRELLIS_ITEM = ITEMS.register("crimson_trellis",
 			() -> new BlockItem(BlockInit.CRIMSON_TRELLIS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
 				@Override
@@ -80,7 +80,7 @@ public final class ItemInit {
 					return 300;
 				}
 			});
-	
+
 	public static final RegistryObject<BlockItem> WARPED_TRELLIS_ITEM = ITEMS.register("warped_trellis",
 			() -> new BlockItem(BlockInit.WARPED_TRELLIS.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)) {
 				@Override
@@ -338,4 +338,8 @@ public final class ItemInit {
 	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_YELLOW_ITEM = ITEMS.register("lamp_candleabra_yellow",
 			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA_YELLOW.get(),
 					new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
+
+	// workbench
+	public static final RegistryObject<BlockItem> BOTANIST_WORKBENCH_ITEM = ITEMS.register("botanist_workbench",
+			() -> new BlockItem(BlockInit.BOTANIST_WORKBENCH.get(), new Item.Properties().tab(Beautify.BEAUTIFY_TAB)));
 }

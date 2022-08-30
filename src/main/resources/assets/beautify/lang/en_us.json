@@ -52,6 +52,8 @@
 	"block.beautify.mangrove_trellis": "Mangrove Lattice",
 	"block.beautify.crimson_trellis": "Crimson Lattice",
 	"block.beautify.warped_trellis": "Warped Lattice",
+	"block.beautify.botanist_workbench": "Botanist Workbench",
+	"entity.minecraft.villager.beautify.botanist": "Botanist",
 	"sounds.beautify.bookstack_break": "Bookstack broken",
 	"sounds.beautify.bookstack_step": "Steps on Bookstack",
 	"sounds.beautify.bookstack_place": "Bookstack placed",

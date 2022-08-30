@@ -1,0 +1,19 @@
+{
+	"variants": {
+		"facing=north": {
+			"model": "beautify:block/botanist_workbench"
+		},
+		"facing=east": {
+			"model": "beautify:block/botanist_workbench",
+			"y": 90
+		},
+		"facing=south": {
+			"model": "beautify:block/botanist_workbench",
+			"y": 180
+		},
+		"facing=west": {
+			"model": "beautify:block/botanist_workbench",
+			"y": 270
+		}
+	}
+}

@@ -84,7 +84,6 @@ public class BookStack extends HorizontalDirectionalBlock {
 		if (!p_48896_.canSurvive(p_48897_, p_48898_)) {
 			p_48897_.destroyBlock(p_48898_, true);
 		}
-
 	}
 
 	// changing the model of the bookstack by shift-rightclicking
