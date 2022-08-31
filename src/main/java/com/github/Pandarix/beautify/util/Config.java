@@ -8,6 +8,7 @@ public class Config {
 	
 	public static ForgeConfigSpec.IntValue SEARCHRADIUS;
 	public static ForgeConfigSpec.BooleanValue OPENS_FROM_ROOT;
+	public static ForgeConfigSpec.IntValue BOTANIST_SPAWN_WEIGHT;
 
 	public static void register() {
 		registerServerConfigs();
@@ -26,7 +27,15 @@ public class Config {
 				"Opens blinds from the topmost blind on if true").define("opensFromRoot", true);
 
 		SERVER_BUILDER.pop();
+		
+		SERVER_BUILDER.comment("Settings for the Botanist Villager").push("Botanist");
+		
+		BOTANIST_SPAWN_WEIGHT = SERVER_BUILDER.comment(
+				"Defines the chance of a Botanist Villager House inside a village")
+				.defineInRange("botanistSpawnWeight", 20, 0, 100);
 
+		SERVER_BUILDER.pop();
+		
 		ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, SERVER_BUILDER.build());
 	}
 }

@@ -24,15 +24,15 @@ public class Beautify {
 
 		ItemInit.ITEMS.register(modEventBus);
 		BlockInit.BLOCKS.register(modEventBus);
-		
+
 		ModVillagers.register(modEventBus);
 		modEventBus.addListener(this::commonSetup);
-		
+
 		SoundInit.SOUND_EVENTS.register(modEventBus);
-		
+
 		// ParticleInit.PARTICLE_TYPES.register(bus);
 		Config.register();
-		
+
 		ModStructuresMain.register(modEventBus);
 
 		MinecraftForge.EVENT_BUS.register(this);
@@ -51,4 +51,5 @@ public class Beautify {
 			return ItemInit.HANGING_POT_ITEM.get().getDefaultInstance();
 		}
 	};
+
 }
