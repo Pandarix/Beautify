@@ -5,6 +5,7 @@ import com.github.Pandarix.beautify.core.init.ItemInit;
 import com.github.Pandarix.beautify.core.init.ModVillagers;
 import com.github.Pandarix.beautify.core.init.SoundInit;
 import com.github.Pandarix.beautify.util.Config;
+import com.github.Pandarix.beautify.world.structure.ModStructuresMain;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -25,13 +26,14 @@ public class Beautify {
 		BlockInit.BLOCKS.register(modEventBus);
 		
 		ModVillagers.register(modEventBus);
-		
 		modEventBus.addListener(this::commonSetup);
 		
 		SoundInit.SOUND_EVENTS.register(modEventBus);
 		
 		// ParticleInit.PARTICLE_TYPES.register(bus);
 		Config.register();
+		
+		ModStructuresMain.register(modEventBus);
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}
