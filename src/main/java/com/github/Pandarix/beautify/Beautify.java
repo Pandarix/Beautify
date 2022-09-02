@@ -117,24 +117,26 @@ public class Beautify {
 				.registry(Registry.TEMPLATE_POOL_REGISTRY).orElseThrow();
 		Registry<StructureProcessorList> processorListRegistry = event.getServer().registryAccess()
 				.registry(Registry.PROCESSOR_LIST_REGISTRY).orElseThrow();
+		
+		int weight = Config.BOTANIST_SPAWN_WEIGHT.get();
 
 		// Adds our piece to all village houses pool
 		// Note, the resourcelocation is getting the pool files from the data folder.
 		// Not assets folder.
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
-				new ResourceLocation("minecraft:village/plains/streets"), "beautify:botanist_house_plains", 5);
+				new ResourceLocation("minecraft:village/plains/streets"), "beautify:botanist_house_plains", weight);
 
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
-				new ResourceLocation("minecraft:village/snowy/streets"), "beautify:botanist_house_plains", 5);
+				new ResourceLocation("minecraft:village/snowy/streets"), "beautify:botanist_house_plains", weight);
 
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
-				new ResourceLocation("minecraft:village/savanna/streets"), "beautify:botanist_house_plains", 5);
+				new ResourceLocation("minecraft:village/savanna/streets"), "beautify:botanist_house_plains", weight);
 
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
-				new ResourceLocation("minecraft:village/taiga/streets"), "beautify:botanist_house_plains", 5);
+				new ResourceLocation("minecraft:village/taiga/streets"), "beautify:botanist_house_plains", weight);
 
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
-				new ResourceLocation("minecraft:village/desert/streets"), "beautify:botanist_house_plains", 5);
+				new ResourceLocation("minecraft:village/desert/streets"), "beautify:botanist_house_plains", weight);
 	}
 
 	// TAB
