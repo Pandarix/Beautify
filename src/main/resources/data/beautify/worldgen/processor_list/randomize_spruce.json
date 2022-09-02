@@ -12,8 +12,8 @@
             // The block to look for from the nbt file
             // This has a 50% chance of allowing the found stone bricks block to be replaced
           "input_predicate": {
-            "block": "minecraft:cobblestone",
-            "probability": 0.4,
+            "block": "minecraft:spruce_planks",
+            "probability": 0.2,
             "predicate_type": "minecraft:random_block_match"
           },
             // This is always true
@@ -23,7 +23,7 @@
           },
             // The actual block to place if the above conditions return true
           "output_state": {
-            "Name": "minecraft:mossy_cobblestone"
+            "Name": "minecraft:stripped_spruce_wood"
           }
         }
       ]

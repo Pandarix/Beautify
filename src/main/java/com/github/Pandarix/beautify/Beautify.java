@@ -127,16 +127,16 @@ public class Beautify {
 				new ResourceLocation("minecraft:village/plains/streets"), "beautify:botanist_house_plains", weight);
 
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
-				new ResourceLocation("minecraft:village/snowy/streets"), "beautify:botanist_house_plains", weight);
+				new ResourceLocation("minecraft:village/snowy/streets"), "beautify:botanist_house_snowy", weight);
 
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
-				new ResourceLocation("minecraft:village/savanna/streets"), "beautify:botanist_house_plains", weight);
+				new ResourceLocation("minecraft:village/savanna/streets"), "beautify:botanist_house_savanna", weight);
 
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
-				new ResourceLocation("minecraft:village/taiga/streets"), "beautify:botanist_house_plains", weight);
+				new ResourceLocation("minecraft:village/taiga/streets"), "beautify:botanist_house_taiga", weight);
 
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
-				new ResourceLocation("minecraft:village/desert/streets"), "beautify:botanist_house_plains", weight);
+				new ResourceLocation("minecraft:village/desert/streets"), "beautify:botanist_house_desert", weight);
 	}
 
 	// TAB
