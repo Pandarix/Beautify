@@ -122,19 +122,19 @@ public class Beautify {
 		// Note, the resourcelocation is getting the pool files from the data folder.
 		// Not assets folder.
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
-				new ResourceLocation("minecraft:village/plains/houses"), "beautify:sky_structures/botanist_house_plains", 5);
+				new ResourceLocation("minecraft:village/plains/streets"), "beautify:botanist_house_plains", 5);
 
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
-				new ResourceLocation("minecraft:village/snowy/houses"), "beautify:sky_structures/botanist_house_plains", 5);
+				new ResourceLocation("minecraft:village/snowy/streets"), "beautify:botanist_house_plains", 5);
 
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
-				new ResourceLocation("minecraft:village/savanna/houses"), "beautify:sky_structures/botanist_house_plains", 5);
+				new ResourceLocation("minecraft:village/savanna/streets"), "beautify:botanist_house_plains", 5);
 
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
-				new ResourceLocation("minecraft:village/taiga/houses"), "beautify:sky_structures/botanist_house_plains", 5);
+				new ResourceLocation("minecraft:village/taiga/streets"), "beautify:botanist_house_plains", 5);
 
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
-				new ResourceLocation("minecraft:village/desert/houses"), "beautify:sky_structures/botanist_house_plains", 5);
+				new ResourceLocation("minecraft:village/desert/streets"), "beautify:botanist_house_plains", 5);
 	}
 
 	// TAB
