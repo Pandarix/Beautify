@@ -38,8 +38,8 @@ public class Beautify {
 		BlockInit.BLOCKS.register(modEventBus);
 		SoundInit.SOUND_EVENTS.register(modEventBus);
 
-		ModVillagers.register(modEventBus);
 		modEventBus.addListener(this::commonSetup);
+		ModVillagers.register(modEventBus);
 
 		Config.register();
 

@@ -1,14 +1,13 @@
 package com.github.Pandarix.beautify.world.structure;
 
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.github.Pandarix.beautify.Beautify;
 
-@Mod(ModStructuresMain.MODID)
+import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
 public class ModStructuresMain {
 
     public static final Logger LOGGER = LogManager.getLogger();
