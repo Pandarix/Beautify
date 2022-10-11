@@ -2,9 +2,8 @@ package com.github.Pandarix.beautify.common.block;
 
 import java.util.List;
 
-import com.github.Pandarix.beautify.util.KeyBoardHelper;
-
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -64,11 +63,11 @@ public class LampBamboo extends LanternBlock {
 	
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
-		if (!KeyBoardHelper.isHoldingShift()) {
+		if (!Screen.hasShiftDown()) {
 			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 		}
 
-		if (KeyBoardHelper.isHoldingShift()) {
+		if (Screen.hasShiftDown()) {
 			component.add(Component.literal("Can be placed hanging and standing like Lanterns.")
 					.withStyle(ChatFormatting.GRAY));
 			component.add(Component.literal("Rightclick to turn on/off.")

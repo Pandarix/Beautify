@@ -2,9 +2,8 @@ package com.github.Pandarix.beautify.common.block;
 
 import java.util.List;
 
-import com.github.Pandarix.beautify.util.KeyBoardHelper;
-
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -77,7 +76,7 @@ public class LampCandleabra extends LanternBlock {
 			BlockHitResult pResult) {
 		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
 			// Ignite/Extinguish
-			if (pState.getValue(ON) && !KeyBoardHelper.isHoldingShift() && pPlayer.getItemInHand(pHand).isEmpty()) {
+			if (pState.getValue(ON) && !pPlayer.isShiftKeyDown() && pPlayer.getItemInHand(pHand).isEmpty()) {
 				pLevel.setBlock(pPos, pState.setValue(ON, !pState.getValue(ON)), 3);
 				pLevel.playSound((Player) null, pPos, SoundEvents.CANDLE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 0.5f);
 				return InteractionResult.SUCCESS;
@@ -123,11 +122,11 @@ public class LampCandleabra extends LanternBlock {
 	
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
-		if (!KeyBoardHelper.isHoldingShift()) {
+		if (!Screen.hasShiftDown()) {
 			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 		}
 
-		if (KeyBoardHelper.isHoldingShift()) {
+		if (Screen.hasShiftDown()) {
 			component.add(Component.literal("Can be placed hanging and standing like Lanterns.")
 					.withStyle(ChatFormatting.GRAY));
 			component.add(Component.literal("Rightclick with hand to turn off.")

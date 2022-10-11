@@ -3,9 +3,9 @@ package com.github.Pandarix.beautify.common.block;
 import java.util.List;
 
 import com.github.Pandarix.beautify.core.init.BlockInit;
-import com.github.Pandarix.beautify.util.KeyBoardHelper;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -47,18 +47,16 @@ public class Rope extends ChainBlock {
 			return super.makesOpenTrapdoorAboveClimbable(state, level, pos, trapdoorState);
 		}
 	}
-	
+
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
-		if (!KeyBoardHelper.isHoldingShift()) {
+		if (!Screen.hasShiftDown()) {
 			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
 		}
 
-		if (KeyBoardHelper.isHoldingShift()) {
-			component.add(Component.literal("Placable like chains and climbable.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Nice addition to Hanging Pots.")
-					.withStyle(ChatFormatting.GRAY));
+		if (Screen.hasShiftDown()) {
+			component.add(Component.literal("Placable like chains and climbable.").withStyle(ChatFormatting.GRAY));
+			component.add(Component.literal("Nice addition to Hanging Pots.").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}
