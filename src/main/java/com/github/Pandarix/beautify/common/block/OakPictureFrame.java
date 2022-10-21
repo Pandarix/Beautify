@@ -3,9 +3,8 @@ package com.github.Pandarix.beautify.common.block;
 import java.util.List;
 import java.util.Random;
 
-import com.github.Pandarix.beautify.util.KeyBoardHelper;
-
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -30,6 +29,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class OakPictureFrame extends HorizontalDirectionalBlock {
 	private static final int modelcount = 13; // number of models the frame has
@@ -91,13 +92,14 @@ public class OakPictureFrame extends HorizontalDirectionalBlock {
 		pBuilder.add(FRAME_MOTIVE, FACING);
 	}
 	
+	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
-		if (!KeyBoardHelper.isHoldingShift()) {
+		if (!Screen.hasShiftDown()) {
 			component.add(new TranslatableComponent("tooltip.beautify.tooltip.shift").withStyle(ChatFormatting.YELLOW));
 		}
 
-		if (KeyBoardHelper.isHoldingShift()) {
+		if (Screen.hasShiftDown()) {
 			component.add(new TranslatableComponent("tooltip.beautify.picture_frame.tooltip.info").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);

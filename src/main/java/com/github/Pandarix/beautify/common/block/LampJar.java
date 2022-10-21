@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.Random;
 
 import com.github.Pandarix.beautify.particle.ParticleInit;
-import com.github.Pandarix.beautify.util.KeyBoardHelper;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.TranslatableComponent;
@@ -26,6 +26,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class LampJar extends LanternBlock {
 	private static final int maxLevel = 15;
@@ -116,13 +118,14 @@ public class LampJar extends LanternBlock {
 		return (rand.nextInt(2) - 1) * rand.nextFloat() / 34;
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
-		if (!KeyBoardHelper.isHoldingShift()) {
+		if (!Screen.hasShiftDown()) {
 			component.add(new TranslatableComponent("tooltip.beautify.tooltip.shift").withStyle(ChatFormatting.YELLOW));
 		}
 
-		if (KeyBoardHelper.isHoldingShift()) {
+		if (Screen.hasShiftDown()) {
 			component.add(new TranslatableComponent("tooltip.beautify.lamp_jar.info").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);

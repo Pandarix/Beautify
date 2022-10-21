@@ -3,9 +3,8 @@ package com.github.Pandarix.beautify.common.block;
 import java.util.List;
 import java.util.Random;
 
-import com.github.Pandarix.beautify.util.KeyBoardHelper;
-
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -36,6 +35,8 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class LampCandleabra extends LanternBlock {
 	public static final BooleanProperty ON = BooleanProperty.create("on");
@@ -78,7 +79,7 @@ public class LampCandleabra extends LanternBlock {
 			BlockHitResult pResult) {
 		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
 			// Ignite/Extinguish
-			if (pState.getValue(ON) && !KeyBoardHelper.isHoldingShift() && pPlayer.getItemInHand(pHand).isEmpty()) {
+			if (pState.getValue(ON) && !Screen.hasShiftDown() && pPlayer.getItemInHand(pHand).isEmpty()) {
 				pLevel.setBlock(pPos, pState.setValue(ON, !pState.getValue(ON)), 3);
 				pLevel.playSound((Player) null, pPos, SoundEvents.CANDLE_EXTINGUISH, SoundSource.BLOCKS, 0.5F, 0.5f);
 				return InteractionResult.SUCCESS;
@@ -122,13 +123,14 @@ public class LampCandleabra extends LanternBlock {
 		pBuilder.add(FACING, ON);
 	}
 	
+	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
-		if (!KeyBoardHelper.isHoldingShift()) {
+		if (!Screen.hasShiftDown()) {
 			component.add(new TranslatableComponent("tooltip.beautify.tooltip.shift").withStyle(ChatFormatting.YELLOW));
 		}
 
-		if (KeyBoardHelper.isHoldingShift()) {
+		if (Screen.hasShiftDown()) {
 			component.add(new TranslatableComponent("tooltip.beautify.candelabra.info").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);

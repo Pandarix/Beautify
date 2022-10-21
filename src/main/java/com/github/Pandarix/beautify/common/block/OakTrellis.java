@@ -4,9 +4,9 @@ import java.util.Arrays;
 import java.util.List;
 
 import com.github.Pandarix.beautify.core.init.BlockInit;
-import com.github.Pandarix.beautify.util.KeyBoardHelper;
 
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -34,6 +34,8 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class OakTrellis extends HorizontalDirectionalBlock {
 	private static final List<Item> validFlowers = Arrays.asList(Items.AIR, Items.ROSE_BUSH, Items.SUNFLOWER,
@@ -147,20 +149,21 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 		p_57561_.add(FACING, CEILLING, FLOWERS);
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
-		if (!KeyBoardHelper.isHoldingShift() && !KeyBoardHelper.isHoldingControl()) {
+		if (!Screen.hasShiftDown() && !Screen.hasControlDown()) {
 			component.add(new TranslatableComponent("tooltip.beautify.tooltip.shift").withStyle(ChatFormatting.YELLOW));
 			component.add(
 					new TranslatableComponent("tooltip.beautify.tooltip.plantlist").withStyle(ChatFormatting.YELLOW));
 		}
 
-		if (KeyBoardHelper.isHoldingShift()) {
+		if (Screen.hasShiftDown()) {
 			component.add(
 					new TranslatableComponent("tooltip.beautify.trellis.tooltip.info").withStyle(ChatFormatting.GRAY));
 		}
 
-		if (KeyBoardHelper.isHoldingControl()) {
+		if (Screen.hasControlDown()) {
 			component.add(new TranslatableComponent("tooltip.beautify.trellis.tooltip.plant_header")
 					.withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.GRAY));
 			component.add(new TranslatableComponent("tooltip.beautify.trellis.tooltip.plants")

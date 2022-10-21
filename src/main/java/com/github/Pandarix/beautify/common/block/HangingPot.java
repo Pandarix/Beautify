@@ -3,9 +3,8 @@ package com.github.Pandarix.beautify.common.block;
 import java.util.Arrays;
 import java.util.List;
 
-import com.github.Pandarix.beautify.util.KeyBoardHelper;
-
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
@@ -32,6 +31,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.ToolAction;
 
 public class HangingPot extends LanternBlock {
@@ -162,20 +163,21 @@ public class HangingPot extends LanternBlock {
 		pBuilder.add(POTFLOWER, GROWN);
 	}
 
+	@OnlyIn(Dist.CLIENT)
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
-		if (!KeyBoardHelper.isHoldingShift() && !KeyBoardHelper.isHoldingControl()) {
+		if (!Screen.hasShiftDown() && !Screen.hasControlDown()) {
 			component.add(new TranslatableComponent("tooltip.beautify.tooltip.shift").withStyle(ChatFormatting.YELLOW));
 			component.add(
 					new TranslatableComponent("tooltip.beautify.tooltip.plantlist").withStyle(ChatFormatting.YELLOW));
 		}
 
-		if (KeyBoardHelper.isHoldingShift()) {
+		if (Screen.hasShiftDown()) {
 			component.add(new TranslatableComponent("tooltip.beautify.hanging_pot.tooltip.info")
 					.withStyle(ChatFormatting.GRAY));
 		}
 
-		if (KeyBoardHelper.isHoldingControl()) {
+		if (Screen.hasControlDown()) {
 			component.add(new TranslatableComponent("tooltip.beautify.hanging_pot.tooltip.plant_header")
 					.withStyle(ChatFormatting.GRAY).withStyle(ChatFormatting.BOLD));
 			component.add(new TranslatableComponent("tooltip.beautify.hanging_pot.tooltip.plants")
