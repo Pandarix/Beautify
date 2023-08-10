@@ -37,14 +37,14 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class LampCandleabra extends LanternBlock {
+public class LampCandelabra extends LanternBlock {
 	public static final BooleanProperty ON = BooleanProperty.create("on");
 	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
 	private static final VoxelShape SHAPE_HANGING = Shapes.join(Block.box(0, 2, 6.5, 16, 16, 9.5), Block.box(6.5, 2, 0, 9.5, 16, 16), BooleanOp.OR);
 	private static final VoxelShape SHAPE_STANDING = Block.box(4, 0, 4, 12, 13, 12);
 
-	public LampCandleabra(Properties p_153465_) {
+	public LampCandelabra(Properties p_153465_) {
 		super(p_153465_);
 		this.registerDefaultState(this.defaultBlockState().setValue(ON, false).setValue(FACING, Direction.NORTH));
 	}

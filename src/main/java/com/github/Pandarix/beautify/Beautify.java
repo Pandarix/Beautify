@@ -1,23 +1,14 @@
 package com.github.Pandarix.beautify;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import com.github.Pandarix.beautify.core.init.BlockInit;
-import com.github.Pandarix.beautify.core.init.ItemInit;
-import com.github.Pandarix.beautify.core.init.ModVillagers;
-import com.github.Pandarix.beautify.core.init.SoundInit;
+import com.github.Pandarix.beautify.core.init.*;
 import com.github.Pandarix.beautify.util.Config;
 import com.github.Pandarix.beautify.world.structure.ModStructuresMain;
 import com.mojang.datafixers.util.Pair;
-
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.levelgen.structure.pools.SinglePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructurePoolElement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
@@ -29,6 +20,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Mod(Beautify.MODID)
 public class Beautify {
 	public static final String MODID = "beautify";
@@ -37,6 +31,7 @@ public class Beautify {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		ItemInit.ITEMS.register(modEventBus);
 		BlockInit.BLOCKS.register(modEventBus);
+		ItemGroupInit.CREATIVE_MODE_TABS.register(modEventBus);
 		SoundInit.SOUND_EVENTS.register(modEventBus);
 
 		modEventBus.addListener(this::commonSetup);
@@ -139,13 +134,4 @@ public class Beautify {
 		addBuildingToPool(templatePoolRegistry, processorListRegistry,
 				new ResourceLocation("minecraft:village/desert/streets"), "beautify:botanist_house_desert", weight);
 	}
-
-	// TAB
-	public static final CreativeModeTab BEAUTIFY_TAB = new CreativeModeTab(MODID) { // itemGroup.beautify
-		@Override
-		public ItemStack makeIcon() {
-			return ItemInit.HANGING_POT_ITEM.get().getDefaultInstance();
-		}
-	};
-
 }

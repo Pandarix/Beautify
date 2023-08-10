@@ -109,185 +109,185 @@ public final class BlockInit {
                     })));
 
     // candleabras
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA = BLOCKS.register("lamp_candleabra",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA = BLOCKS.register("lamp_candleabra",
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
                     .strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_LIGHT_BLUE = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_LIGHT_BLUE = BLOCKS.register(
             "lamp_candleabra_light_blue",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .noOcclusion().strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_LIGHT_GRAY = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_LIGHT_GRAY = BLOCKS.register(
             "lamp_candleabra_light_gray",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .noOcclusion().strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_BLACK = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_BLACK = BLOCKS.register(
             "lamp_candleabra_black",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .noOcclusion().strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_BLUE = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_BLUE = BLOCKS.register(
             "lamp_candleabra_blue",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
                     .strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_BROWN = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_BROWN = BLOCKS.register(
             "lamp_candleabra_brown",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .noOcclusion().strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_CYAN = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_CYAN = BLOCKS.register(
             "lamp_candleabra_cyan",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
                     .strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_GRAY = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_GRAY = BLOCKS.register(
             "lamp_candleabra_gray",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
                     .strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_GREEN = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_GREEN = BLOCKS.register(
             "lamp_candleabra_green",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .noOcclusion().strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_LIME = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_LIME = BLOCKS.register(
             "lamp_candleabra_lime",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
                     .strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_MAGENTA = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_MAGENTA = BLOCKS.register(
             "lamp_candleabra_magenta",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .noOcclusion().strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_ORANGE = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_ORANGE = BLOCKS.register(
             "lamp_candleabra_orange",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .noOcclusion().strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_PINK = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_PINK = BLOCKS.register(
             "lamp_candleabra_pink",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
                     .strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_PURPLE = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_PURPLE = BLOCKS.register(
             "lamp_candleabra_purple",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .noOcclusion().strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_RED = BLOCKS.register("lamp_candleabra_red",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_RED = BLOCKS.register("lamp_candleabra_red",
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()
                     .strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_WHITE = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_WHITE = BLOCKS.register(
             "lamp_candleabra_white",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .noOcclusion().strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;
                         }
                     })));
 
-    public static final RegistryObject<LampCandleabra> LAMP_CANDLEABRA_YELLOW = BLOCKS.register(
+    public static final RegistryObject<LampCandelabra> LAMP_CANDELABRA_YELLOW = BLOCKS.register(
             "lamp_candleabra_yellow",
-            () -> new LampCandleabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
+            () -> new LampCandelabra(BlockBehaviour.Properties.copy(Blocks.IRON_BLOCK)
                     .noOcclusion().strength(0.2f, 0.2f).sound(SoundType.LANTERN).lightLevel((state) -> {
-                        if (state.getValue(LampCandleabra.ON)) {
+                        if (state.getValue(LampCandelabra.ON)) {
                             return 14;
                         } else {
                             return 0;

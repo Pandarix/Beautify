@@ -276,70 +276,70 @@ public final class ItemInit {
 			() -> new BlockItem(BlockInit.LAMP_JAR.get(), new Item.Properties()));
 
 	// candleabras
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_ITEM = ITEMS.register("lamp_candleabra",
-			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA.get(), new Item.Properties()));
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_ITEM = ITEMS.register("lamp_candelabra",
+			() -> new BlockItem(BlockInit.LAMP_CANDELABRA.get(), new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_LIGHT_BLUE_ITEM = ITEMS
-			.register("lamp_candleabra_light_blue", () -> new BlockItem(BlockInit.LAMP_CANDLEABRA_LIGHT_BLUE.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_LIGHT_BLUE_ITEM = ITEMS
+			.register("lamp_candelabra_light_blue", () -> new BlockItem(BlockInit.LAMP_CANDELABRA_LIGHT_BLUE.get(),
 					new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_LIGHT_GRAY_ITEM = ITEMS
-			.register("lamp_candleabra_light_gray", () -> new BlockItem(BlockInit.LAMP_CANDLEABRA_LIGHT_GRAY.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_LIGHT_GRAY_ITEM = ITEMS
+			.register("lamp_candelabra_light_gray", () -> new BlockItem(BlockInit.LAMP_CANDELABRA_LIGHT_GRAY.get(),
 					new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_BLACK_ITEM = ITEMS.register("lamp_candleabra_black",
-			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA_BLACK.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_BLACK_ITEM = ITEMS.register("lamp_candelabra_black",
+			() -> new BlockItem(BlockInit.LAMP_CANDELABRA_BLACK.get(),
 					new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_BLUE_ITEM = ITEMS.register("lamp_candleabra_blue",
-			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA_BLUE.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_BLUE_ITEM = ITEMS.register("lamp_candelabra_blue",
+			() -> new BlockItem(BlockInit.LAMP_CANDELABRA_BLUE.get(),
 					new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_BROWN_ITEM = ITEMS.register("lamp_candleabra_brown",
-			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA_BROWN.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_BROWN_ITEM = ITEMS.register("lamp_candelabra_brown",
+			() -> new BlockItem(BlockInit.LAMP_CANDELABRA_BROWN.get(),
 					new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_CYAN_ITEM = ITEMS.register("lamp_candleabra_cyan",
-			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA_CYAN.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_CYAN_ITEM = ITEMS.register("lamp_candelabra_cyan",
+			() -> new BlockItem(BlockInit.LAMP_CANDELABRA_CYAN.get(),
 					new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_GRAY_ITEM = ITEMS.register("lamp_candleabra_gray",
-			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA_GRAY.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_GRAY_ITEM = ITEMS.register("lamp_candelabra_gray",
+			() -> new BlockItem(BlockInit.LAMP_CANDELABRA_GRAY.get(),
 					new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_GREEN_ITEM = ITEMS.register("lamp_candleabra_green",
-			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA_GREEN.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_GREEN_ITEM = ITEMS.register("lamp_candelabra_green",
+			() -> new BlockItem(BlockInit.LAMP_CANDELABRA_GREEN.get(),
 					new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_LIME_ITEM = ITEMS.register("lamp_candleabra_lime",
-			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA_LIME.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_LIME_ITEM = ITEMS.register("lamp_candelabra_lime",
+			() -> new BlockItem(BlockInit.LAMP_CANDELABRA_LIME.get(),
 					new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_MAGENTA_ITEM = ITEMS
-			.register("lamp_candleabra_magenta", () -> new BlockItem(BlockInit.LAMP_CANDLEABRA_MAGENTA.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_MAGENTA_ITEM = ITEMS
+			.register("lamp_candelabra_magenta", () -> new BlockItem(BlockInit.LAMP_CANDELABRA_MAGENTA.get(),
 					new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_ORANGE_ITEM = ITEMS.register("lamp_candleabra_orange",
-			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA_ORANGE.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_ORANGE_ITEM = ITEMS.register("lamp_candelabra_orange",
+			() -> new BlockItem(BlockInit.LAMP_CANDELABRA_ORANGE.get(),
 					new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_PINK_ITEM = ITEMS.register("lamp_candleabra_pink",
-			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA_PINK.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_PINK_ITEM = ITEMS.register("lamp_candelabra_pink",
+			() -> new BlockItem(BlockInit.LAMP_CANDELABRA_PINK.get(),
 					new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_PURPLE_ITEM = ITEMS.register("lamp_candleabra_purple",
-			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA_PURPLE.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_PURPLE_ITEM = ITEMS.register("lamp_candelabra_purple",
+			() -> new BlockItem(BlockInit.LAMP_CANDELABRA_PURPLE.get(),
 					new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_RED_ITEM = ITEMS.register("lamp_candleabra_red",
-			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA_RED.get(), new Item.Properties()));
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_RED_ITEM = ITEMS.register("lamp_candelabra_red",
+			() -> new BlockItem(BlockInit.LAMP_CANDELABRA_RED.get(), new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_WHITE_ITEM = ITEMS.register("lamp_candleabra_white",
-			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA_WHITE.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_WHITE_ITEM = ITEMS.register("lamp_candelabra_white",
+			() -> new BlockItem(BlockInit.LAMP_CANDELABRA_WHITE.get(),
 					new Item.Properties()));
 
-	public static final RegistryObject<BlockItem> LAMP_CANDLEABRA_YELLOW_ITEM = ITEMS.register("lamp_candleabra_yellow",
-			() -> new BlockItem(BlockInit.LAMP_CANDLEABRA_YELLOW.get(),
+	public static final RegistryObject<BlockItem> LAMP_CANDELABRA_YELLOW_ITEM = ITEMS.register("lamp_candelabra_yellow",
+			() -> new BlockItem(BlockInit.LAMP_CANDELABRA_YELLOW.get(),
 					new Item.Properties()));
 
 	// workbench
