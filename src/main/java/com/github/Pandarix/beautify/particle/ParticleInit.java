@@ -13,10 +13,6 @@ public class ParticleInit {
 	public static final DeferredRegister<ParticleType<?>> PARTICLE_TYPES = DeferredRegister
 			.create(ForgeRegistries.PARTICLE_TYPES, Beautify.MODID);
 
-	public static void register(IEventBus eventBus) {
-		PARTICLE_TYPES.register(eventBus);
-	}
-
 	public static final RegistryObject<SimpleParticleType> GLOWESSENCE_PARTICLES = PARTICLE_TYPES
 			.register("glowessence_particles", () -> new SimpleParticleType(true));
 }

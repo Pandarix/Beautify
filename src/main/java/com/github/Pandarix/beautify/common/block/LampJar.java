@@ -75,25 +75,27 @@ public class LampJar extends LanternBlock {
 
 	@Override
 	public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource rand) {
-		final int particleProbability = 5;
+		if(pLevel.isClientSide()){
+			final int particleProbability = 5;
 
-		double posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
-		double posY = (pPos.getY() + 0.1) + rand.nextDouble() / 3.5;
-		double posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
+			double posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
+			double posY = (pPos.getY() + 0.1) + rand.nextDouble() / 3.5;
+			double posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
 
-		if (pState.getValue(FILL_LEVEL) >= 5 && pState.getValue(FILL_LEVEL) < 10) {
-			if (rand.nextInt(particleProbability) == 0) {
+			if (pState.getValue(FILL_LEVEL) >= 5 && pState.getValue(FILL_LEVEL) < 10) {
+				if (rand.nextInt(particleProbability) == 0) {
+					pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01, randomDir(rand));
+				}
+			} else if (pState.getValue(FILL_LEVEL) >= 10 && pState.getValue(FILL_LEVEL) < 15) {
+				if (rand.nextInt(particleProbability) == 0) {
+					pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01, randomDir(rand));
+				}
+			} else if (pState.getValue(FILL_LEVEL) == 15) {
+				posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
+				posY = (pPos.getY() + 0.1) + rand.nextDouble() / 3.5;
+				posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
 				pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01, randomDir(rand));
 			}
-		} else if (pState.getValue(FILL_LEVEL) >= 10 && pState.getValue(FILL_LEVEL) < 15) {
-			if (rand.nextInt(particleProbability) == 0) {
-				pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01, randomDir(rand));
-			}
-		} else if (pState.getValue(FILL_LEVEL) == 15) {
-			posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
-			posY = (pPos.getY() + 0.1) + rand.nextDouble() / 3.5;
-			posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
-			pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01, randomDir(rand));
 		}
 	}
 
