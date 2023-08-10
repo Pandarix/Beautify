@@ -1,9 +1,0 @@
-{
-	"parent": "beautify:block/lamps/candleabras/standing_lamp_candleabra",
-	"textures": {
-		"1": "minecraft:block/anvil",
-		"2": "minecraft:block/lime_candle",
-		"particle": "minecraft:block/anvil"
-	},
-	"render_type": "cutout"
-}

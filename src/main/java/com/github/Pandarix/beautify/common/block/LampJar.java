@@ -2,6 +2,7 @@ package com.github.Pandarix.beautify.common.block;
 
 import java.util.List;
 
+import com.github.Pandarix.beautify.particle.ParticleInit;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
@@ -82,17 +83,17 @@ public class LampJar extends LanternBlock {
 
 		if (pState.getValue(FILL_LEVEL) >= 5 && pState.getValue(FILL_LEVEL) < 10) {
 			if (rand.nextInt(particleProbability) == 0) {
-				pLevel.addParticle(ParticleTypes.END_ROD, posX, posY, posZ, randomDir(rand), 0.01, randomDir(rand));
+				pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01, randomDir(rand));
 			}
 		} else if (pState.getValue(FILL_LEVEL) >= 10 && pState.getValue(FILL_LEVEL) < 15) {
 			if (rand.nextInt(particleProbability) == 0) {
-				pLevel.addParticle(ParticleTypes.END_ROD, posX, posY, posZ, randomDir(rand), 0.01, randomDir(rand));
+				pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01, randomDir(rand));
 			}
 		} else if (pState.getValue(FILL_LEVEL) == 15) {
 			posX = (pPos.getX() + 0.35) + rand.nextDouble() / 3.5;
 			posY = (pPos.getY() + 0.1) + rand.nextDouble() / 3.5;
 			posZ = (pPos.getZ() + 0.35) + rand.nextDouble() / 3.5;
-			pLevel.addParticle(ParticleTypes.END_ROD, posX, posY, posZ, randomDir(rand), 0.01, randomDir(rand));
+			pLevel.addParticle(ParticleInit.GLOWESSENCE_PARTICLES.get(), posX, posY, posZ, randomDir(rand), 0.01, randomDir(rand));
 		}
 	}
 

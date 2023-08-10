@@ -10,11 +10,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class SoundInit {
-	
-	private SoundInit() {
-		
-	}
-	
 	public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister
 			.create(ForgeRegistries.SOUND_EVENTS, Beautify.MODID);
 
@@ -33,10 +28,7 @@ public class SoundInit {
 	public static final RegistryObject<SoundEvent> BLINDS_CLOSE = registerSoundEvent("block.blinds_close");
 	
 	private static RegistryObject<SoundEvent> registerSoundEvent(String name) {
-		return SOUND_EVENTS.register(name, () -> new SoundEvent(new ResourceLocation(Beautify.MODID, name)));
-	}
-
-	public static void register(IEventBus eventBus) {
-		SOUND_EVENTS.register(eventBus);
+		ResourceLocation id = new ResourceLocation(Beautify.MODID, name);
+		return SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));
 	}
 }

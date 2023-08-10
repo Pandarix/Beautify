@@ -1,4 +1,4 @@
-/*package com.github.Pandarix.beautify.particle;
+package com.github.Pandarix.beautify.particle;
 
 import com.github.Pandarix.beautify.Beautify;
 
@@ -20,4 +20,3 @@ public class ParticleInit {
 	public static final RegistryObject<SimpleParticleType> GLOWESSENCE_PARTICLES = PARTICLE_TYPES
 			.register("glowessence_particles", () -> new SimpleParticleType(true));
 }
-*/

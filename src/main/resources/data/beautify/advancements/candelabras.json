@@ -1,0 +1,39 @@
+{
+	"parent": "minecraft:recipes/root",
+	"criteria": {
+		"requirement": {
+			"trigger": "minecraft:inventory_changed",
+			"conditions": {
+				"items": [
+					{
+						"items": [
+							"minecraft:iron_nugget"
+						],
+						"min": 1
+					}
+				]
+			}
+		}
+	},
+	"rewards": {
+		"recipes": [
+			"beautify:candelabra",
+			"beautify:candelabra_light_blue",
+			"beautify:candelabra_light_gray",
+			"beautify:candelabra_black",
+			"beautify:candelabra_blue",
+			"beautify:candelabra_brown",
+			"beautify:candelabra_cyan",
+			"beautify:candelabra_gray",
+			"beautify:candelabra_green",
+			"beautify:candelabra_lime",
+			"beautify:candelabra_magenta",
+			"beautify:candelabra_orange",
+			"beautify:candelabra_pink",
+			"beautify:candelabra_purple",
+			"beautify:candelabra_red",
+			"beautify:candelabra_white",
+			"beautify:candelabra_yellow"
+		]
+	}
+}

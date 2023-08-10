@@ -12,9 +12,9 @@ public final class ItemGroupInit {
 	public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
 			DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Beautify.MODID);
 
-	public static final RegistryObject<CreativeModeTab> BEAUTIFY_TAB = CREATIVE_MODE_TABS.register("tutorial_tab",
+	public static final RegistryObject<CreativeModeTab> BEAUTIFY_TAB = CREATIVE_MODE_TABS.register("beautify",
 			() -> CreativeModeTab.builder().icon(() -> new ItemStack(ItemInit.HANGING_POT_ITEM.get()))
-					.title(Component.translatable("creativetab.tutorial_tab"))
+					.title(Component.translatable("itemGroup.beautify"))
 					.displayItems((pParameters, pOutput) -> {
 						//misc
 						pOutput.accept(ItemInit.ROPE_ITEM.get());
