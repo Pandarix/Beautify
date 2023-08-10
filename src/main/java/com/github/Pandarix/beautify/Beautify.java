@@ -13,6 +13,7 @@ import com.mojang.datafixers.util.Pair;
 
 import net.minecraft.core.Holder;
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
@@ -55,7 +56,7 @@ public class Beautify {
 	}
 
 	private static final ResourceKey<StructureProcessorList> EMPTY_PROCESSOR_LIST_KEY = ResourceKey
-			.create(Registry.PROCESSOR_LIST_REGISTRY, new ResourceLocation("minecraft", "empty"));
+			.create(Registries.PROCESSOR_LIST, new ResourceLocation("minecraft", "empty"));
 
 	/**
 	 * Adds the building to the targeted pool. We will call this in
@@ -114,9 +115,9 @@ public class Beautify {
 	 */
 	public void addNewVillageBuilding(final ServerAboutToStartEvent event) {
 		Registry<StructureTemplatePool> templatePoolRegistry = event.getServer().registryAccess()
-				.registry(Registry.TEMPLATE_POOL_REGISTRY).orElseThrow();
+				.registry(Registries.TEMPLATE_POOL).orElseThrow();
 		Registry<StructureProcessorList> processorListRegistry = event.getServer().registryAccess()
-				.registry(Registry.PROCESSOR_LIST_REGISTRY).orElseThrow();
+				.registry(Registries.PROCESSOR_LIST).orElseThrow();
 		
 		int weight = Config.BOTANIST_SPAWN_WEIGHT.get();
 
