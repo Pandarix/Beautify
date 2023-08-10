@@ -84,8 +84,10 @@ public class HangingPot extends LanternBlock {
 
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
 			BlockHitResult pResult) {
-
-		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
+		if(pLevel.isClientSide()){
+			return InteractionResult.SUCCESS;
+		}
+		if (pHand == InteractionHand.MAIN_HAND) {
 			ItemStack playerStack = pPlayer.getItemInHand(pHand); // saving ItemStack
 
 			// growing plant
@@ -159,7 +161,7 @@ public class HangingPot extends LanternBlock {
 						if (!pPlayer.isCreative()) {
 							playerStack.shrink(1);
 						}
-						return InteractionResult.CONSUME_PARTIAL;
+						return InteractionResult.SUCCESS;
 					}
 				}
 				// if the flower is not a valid one

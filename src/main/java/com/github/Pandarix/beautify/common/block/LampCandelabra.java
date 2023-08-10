@@ -76,7 +76,10 @@ public class LampCandelabra extends LanternBlock {
 
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
 			BlockHitResult pResult) {
-		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
+		if(pLevel.isClientSide()){
+			return InteractionResult.SUCCESS;
+		}
+		if (pHand == InteractionHand.MAIN_HAND) {
 			// Ignite/Extinguish
 			if (pState.getValue(ON) && !pPlayer.isShiftKeyDown() && pPlayer.getItemInHand(pHand).isEmpty()) {
 				pLevel.setBlock(pPos, pState.setValue(ON, !pState.getValue(ON)), 3);

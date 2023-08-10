@@ -94,7 +94,10 @@ public class BookStack extends HorizontalDirectionalBlock {
 	// changing the model of the bookstack by shift-rightclicking
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
 			BlockHitResult pResult) {
-		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()
+		if(pLevel.isClientSide()){
+			return InteractionResult.SUCCESS;
+		}
+		if (pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()
 				&& pPlayer.isShiftKeyDown()) {
 			int currentModel = pState.getValue(BOOKSTACK_MODEL); // current index
 			pLevel.playSound(null, pPos, SoundInit.BOOKSTACK_NEXT.get(), SoundSource.BLOCKS, 1, 1);

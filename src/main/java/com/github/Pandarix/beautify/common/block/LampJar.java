@@ -41,7 +41,10 @@ public class LampJar extends LanternBlock {
     // Fill
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
                                  BlockHitResult pResult) {
-        if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
+        if(pLevel.isClientSide()){
+            return InteractionResult.SUCCESS;
+        }
+        if (pHand == InteractionHand.MAIN_HAND) {
 
             ItemStack playerStack = pPlayer.getItemInHand(pHand);
 

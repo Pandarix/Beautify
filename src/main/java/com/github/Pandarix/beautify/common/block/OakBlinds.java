@@ -90,7 +90,10 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 	// HIDDEN: false <-> true if below root
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
 			BlockHitResult pResult) {
-		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()) {
+		if(pLevel.isClientSide()){
+			return InteractionResult.SUCCESS;
+		}
+		if (pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()) {
 			// stores last value of blind
 			final boolean currentlyOpen = pState.getValue(OPEN);
 
