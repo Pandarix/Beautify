@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "beautify:blocks/empty",
-		"particle": "beautify:blocks/empty"
+		"0": "beautify:block/empty",
+		"particle": "beautify:block/empty"
 	},
 	"render_type": "cutout",
 	"elements": [
