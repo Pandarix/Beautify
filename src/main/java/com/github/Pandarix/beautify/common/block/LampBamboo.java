@@ -70,14 +70,10 @@ public class LampBamboo extends LanternBlock {
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!Screen.hasShiftDown()) {
-			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-		}
-
-		if (Screen.hasShiftDown()) {
-			component.add(Component.literal("Can be placed hanging and standing like Lanterns.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Rightclick to turn on/off.")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("tooltip.shift").withStyle(ChatFormatting.YELLOW));
+		} else {
+			component.add(Component.translatable(this.getName().getString().replaceAll(" ", "_").toLowerCase() + ".description1").withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable(this.getName().getString().replaceAll(" ", "_").toLowerCase() + ".description2").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

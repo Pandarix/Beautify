@@ -1,8 +1,24 @@
 {
 	"itemGroup.beautify": "Beautify",
+
+	"tooltip.shift": "Hold SHIFT for more info",
+	"tooltip.control": "Hold CTRL for a list of plants.",
+
 	"block.beautify.rope": "Rope",
+	"rope.description1": "Placable like chains and climbable.",
+	"rope.description2": "Used to elongate the Rope of Hanging Pots",
+
 	"block.beautify.hanging_pot": "Hanging Pot",
+	"hanging_pot.description1": "Can be placed hanging on blocks, Ropes or on ground as usual.",
+	"hanging_pot.description2": "Right click with plants to pot them.",
+	"hanging_pot.description3": "Right click with Bone Meal to grow the plant further. Trim with shears to shorten and receive plant item.",
+	"hanging_pot.list1": "Pottable plants:",
+	"hanging_pot.list2": "All normal flowers + Rose Bushes, Lilacs, Peonies, Sunflowers, Vines, Weeping Vines, Twisting Vines, Glow Lichen, Glow Berries, Sweet Berries, Grass, Fern",
+
 	"block.beautify.bookstack": "Bookstack",
+	"bookstack.description1": "Shift-Rightclick on block to change the arrangement.",
+	"bookstack.description2": "Increases Enchantment Table power.",
+
 	"block.beautify.oak_picture_frame": "Oak Picture Frame",
 	"block.beautify.birch_picture_frame": "Birch Picture Frame",
 	"block.beautify.spruce_picture_frame": "Spruce Picture Frame",
@@ -13,9 +29,22 @@
 	"block.beautify.crimson_picture_frame": "Crimson Picture Frame",
 	"block.beautify.mangrove_picture_frame": "Mangrove Picture Frame",
 	"block.beautify.quartz_picture_frame": "Quartz Picture Frame",
+	"frame.description1": "Places Frame with a random motive.",
+	"frame.description2": "Shift-Rightclick on Block to change the picture.",
+
 	"block.beautify.lamp_light_bulb": "Light Bulb",
+	"light_bulb.description1": "Can be placed hanging and standing like Lanterns.",
+	"light_bulb.description2": "Rightclick to turn on/off.",
+
 	"block.beautify.lamp_bamboo": "Bamboo Lamp",
+	"bamboo_lamp.description1": "Can be placed hanging and standing like Lanterns.",
+	"bamboo_lamp.description2": "Rightclick to turn on/off.",
+
 	"block.beautify.lamp_jar": "Glowstone Essence Lamp",
+	"glowstone_essence_lamp.description1": "Can be placed hanging and standing like Lanterns.",
+	"glowstone_essence_lamp.description2": "Rightclick with Glowstone Dust to fill.",
+	"glowstone_essence_lamp.description3": "Rightclick with hand to empty.",
+
 	"block.beautify.lamp_candelabra": "Candelabra",
 	"block.beautify.lamp_candelabra_light_blue": "Light Blue Candelabra",
 	"block.beautify.lamp_candelabra_light_gray": "Light Gray Candelabra",
@@ -33,6 +62,10 @@
 	"block.beautify.lamp_candelabra_red": "Red Candelabra",
 	"block.beautify.lamp_candelabra_white": "White Candelabra",
 	"block.beautify.lamp_candelabra_yellow": "Yellow Candelabra",
+	"candelabra.description1": "Can be placed hanging and standing like Lanterns.",
+	"candelabra.description2": "Rightclick with hand to turn off.",
+	"candelabra.description3": "Rightclick with Flint and Steel to turn on.",
+
 	"block.beautify.oak_blinds": "Oak Blinds",
 	"block.beautify.spruce_blinds": "Spruce Blinds",
 	"block.beautify.birch_blinds": "Birch Blinds",
@@ -43,6 +76,9 @@
 	"block.beautify.warped_blinds": "Warped Blinds",
 	"block.beautify.mangrove_blinds": "Mangrove Blinds",
 	"block.beautify.iron_blinds": "Iron Blinds",
+	"blinds.description1": "Rightclick on Block to open or close blind and adjacent ones.",
+	"blinds.description2": "After closing 1st time, blinds below topmost blind become invisible when open.",
+
 	"block.beautify.oak_trellis": "Oak Lattice",
 	"block.beautify.spruce_trellis": "Spruce Lattice",
 	"block.beautify.birch_trellis": "Birch Lattice",
@@ -52,7 +88,14 @@
 	"block.beautify.mangrove_trellis": "Mangrove Lattice",
 	"block.beautify.crimson_trellis": "Crimson Lattice",
 	"block.beautify.warped_trellis": "Warped Lattice",
+	"trellis.description1": "Can be placed on or like walls and on the ceiling. Climbable.",
+	"trellis.description2": "Right click with plants to insert.",
+	"trellis.list1": "Plantable plants:",
+	"trellis.list2": "Rose Bushes, Sunflowers, Peonies, Lilacs, Vines, Weeping Vines, Twisting Vines, Glow Lichen",
+
 	"block.beautify.botanist_workbench": "Botanist Workbench",
+	"botanist_workbench.description": "Workbench for the Botanist Villager.",
+
 	"entity.minecraft.villager.beautify.botanist": "Botanist",
 	"sounds.beautify.bookstack_break": "Bookstack broken",
 	"sounds.beautify.bookstack_step": "Steps on Bookstack",
