@@ -2,8 +2,8 @@
 	"parent": "beautify:block/lamps/standing_lamp_bamboo",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "beautify:blocks/bamboo_lamp_off",
-		"particle": "beautify:blocks/bamboo_lamp_off"
+		"0": "beautify:block/bamboo_lamp_off",
+		"particle": "beautify:block/bamboo_lamp_off"
 	},
 	"render_type": "cutout"
 }

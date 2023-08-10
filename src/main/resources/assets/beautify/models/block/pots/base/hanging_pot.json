@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "beautify:blocks/hanging_pot",
+		"0": "beautify:block/hanging_pot",
 		"particle": "block/terracotta"
 	},
 	"render_type": "cutout",

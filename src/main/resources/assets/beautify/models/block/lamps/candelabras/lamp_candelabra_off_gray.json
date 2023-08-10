@@ -1,5 +1,5 @@
 {
-	"parent": "beautify:block/lamps/candleabras/lamp_candleabra",
+	"parent": "beautify:block/lamps/candelabras/lamp_candelabra",
 	"textures": {
 		"1": "minecraft:block/anvil",
 		"2": "minecraft:block/gray_candle",

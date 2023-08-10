@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"4": "minecraft:block/spruce_log",
-		"5": "beautify:blocks/trellis_rose_back",
-		"6": "beautify:blocks/trellis_rose_front",
-		"7": "beautify:blocks/trellis_rose_hanging",
+		"5": "beautify:block/trellis_rose_back",
+		"6": "beautify:block/trellis_rose_front",
+		"7": "beautify:block/trellis_rose_hanging",
 		"particle": "minecraft:block/spruce_log"
 	},
 	"render_type": "cutout",

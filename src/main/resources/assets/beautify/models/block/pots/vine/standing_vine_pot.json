@@ -1,8 +1,8 @@
 {
 	"parent": "beautify:block/pots/base/standing_pot_flat",
 	"textures": {
-		"1": "beautify:blocks/pots/vine_pot",
-		"2": "beautify:blocks/pots/vine_pot_overlay",
+		"1": "beautify:block/pots/vine_pot",
+		"2": "beautify:block/pots/vine_pot_overlay",
 		"particle": "minecraft:block/terracotta"
 	},
 	"render_type": "cutout"

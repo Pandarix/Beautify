@@ -1,9 +1,9 @@
 {
 	"parent": "beautify:block/pictureframes/base_picture_frame",
 	"textures": {
-		"0": "beautify:blocks/motive_shroom",
-		"1": "beautify:blocks/oak_frame_texture",
-		"particle": "beautify:blocks/oak_frame_texture"
+		"0": "beautify:block/motive_shroom",
+		"1": "beautify:block/oak_frame_texture",
+		"particle": "beautify:block/oak_frame_texture"
 	},
 	"render_type": "cutout"
 }

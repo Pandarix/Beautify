@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "beautify:blocks/jar",
+		"0": "beautify:block/jar",
 		"1": "block/mushroom_block_inside",
-		"particle": "beautify:blocks/jar"
+		"particle": "beautify:block/jar"
 	},
 	"render_type": "cutout",
 	"elements": [

@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "beautify:blocks/bookstack_1",
-		"particle": "beautify:blocks/bookstack_1"
+		"0": "beautify:block/bookstack_1",
+		"particle": "beautify:block/bookstack_1"
 	},
 	"render_type": "cutout",
 	"elements": [

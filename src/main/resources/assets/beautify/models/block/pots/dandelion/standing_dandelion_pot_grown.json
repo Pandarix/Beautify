@@ -1,7 +1,7 @@
 {
 	"parent": "beautify:block/pots/base/standing_pot_grown",
 	"textures": {
-		"0": "beautify:blocks/pots/dandelion_pot_grown",
+		"0": "beautify:block/pots/dandelion_pot_grown",
 		"particle": "minecraft:block/terracotta"
 	},
 	"render_type": "cutout"

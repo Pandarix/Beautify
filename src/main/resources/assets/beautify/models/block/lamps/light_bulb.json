@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "beautify:blocks/light_bulb",
-		"particle": "beautify:blocks/light_bulb"
+		"0": "beautify:block/light_bulb",
+		"particle": "beautify:block/light_bulb"
 	},
 	"render_type": "cutout",
 	"elements": [

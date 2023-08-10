@@ -1,0 +1,13 @@
+{
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "beautify:lamp_candelabra_light_blue"
+        }
+      ]
+    }
+  ]
+}

@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "minecraft:blocks/stone",
-		"1": "minecraft:blocks/stone",
-		"particle": "minecraft:blocks/stone"
+		"0": "minecraft:block/stone",
+		"1": "minecraft:block/stone",
+		"particle": "minecraft:block/stone"
 	},
 	"elements": [
 		{

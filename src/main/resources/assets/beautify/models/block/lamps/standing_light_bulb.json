@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "beautify:blocks/standing_light_bulb",
-		"particle": "beautify:blocks/standing_light_bulb"
+		"0": "beautify:block/standing_light_bulb",
+		"particle": "beautify:block/standing_light_bulb"
 	},
 	"render_type": "cutout",
 	"elements": [

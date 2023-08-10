@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "beautify:blocks/rope_texture",
-		"particle": "beautify:blocks/rope_texture"
+		"0": "beautify:block/rope_texture",
+		"particle": "beautify:block/rope_texture"
 	},
 	"render_type": "cutout",
 	"elements": [
