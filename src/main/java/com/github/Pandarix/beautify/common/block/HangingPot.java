@@ -27,6 +27,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -91,12 +92,27 @@ public class HangingPot extends LanternBlock {
 			// block below must not be sturdy to prevent clipping models
 			if (playerStack.getItem().equals(Items.BONE_MEAL) && pState.getValue(POTFLOWER) != 0
 					&& !pLevel.getBlockState(pPos.below()).isFaceSturdy(pLevel, pPos.below(), Direction.UP)) {
+
 				if (!pState.getValue(GROWN)) {
-					pLevel.playSound(null, pPos, SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1, 1);
+					pLevel.setBlock(pPos, pState.setValue(GROWN, true), 3);
 					if (!pPlayer.isCreative()) {
 						playerStack.shrink(1);
 					}
-					pLevel.setBlock(pPos, pState.setValue(GROWN, true), 3);
+					pLevel.playSound(null, pPos, SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1, 1);
+					return InteractionResult.SUCCESS;
+				} else {
+					Vec3 position = pPos.below().getCenter();
+					ItemStack content = new ItemStack(validFlowers.get(pState.getValue(POTFLOWER)));
+					if(content.isEdible()){
+						return InteractionResult.SUCCESS;
+					}
+					if (!pPlayer.isCreative()) {
+						playerStack.shrink(1);
+					}
+					pLevel.playSound(null, pPos, SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1, 1);
+					ItemEntity item = new ItemEntity(pLevel, position.x(), position.y(), position.z(),
+							content);
+					pLevel.addFreshEntity(item);
 					return InteractionResult.SUCCESS;
 				}
 			}
