@@ -28,20 +28,7 @@ public class ModVillagers {
 					1));
 
 	public static final RegistryObject<VillagerProfession> BOTANIST = VILLAGER_PROFESSIONS.register("botanist",
-			() -> new VillagerProfession("botanist", x -> x.get() == BOTANIST_WORKBENCH_POI.get(),
-					x -> x.get() == BOTANIST_WORKBENCH_POI.get(), ImmutableSet.of(), ImmutableSet.of(),
-					SoundEvents.CAVE_VINES_PLACE));
-
-	/*
-	public static void registerPOIs() {
-		try {
-			ObfuscationReflectionHelper.findMethod(PoiType.class,
-					"m_246216_", Holder.class, Set.class).invoke(null, BOTANIST_WORKBENCH_POI.getHolder(), BlockInit.BOTANIST_WORKBENCH.get().getStateDefinition());
-		} catch (InvocationTargetException | IllegalAccessException exception) {
-			exception.printStackTrace();
-		}
-	}
-	 */
+			() -> new VillagerProfession("botanist", holder -> holder.value().equals(BOTANIST_WORKBENCH_POI.get()), holder -> holder.value().equals(BOTANIST_WORKBENCH_POI.get()), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.CAVE_VINES_PLACE));
 
 	public static void register(IEventBus eventBus) {
 		POI_TYPES.register(eventBus);

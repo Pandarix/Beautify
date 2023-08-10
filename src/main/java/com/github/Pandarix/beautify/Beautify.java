@@ -1,6 +1,7 @@
 package com.github.Pandarix.beautify;
 
 import com.github.Pandarix.beautify.core.init.*;
+import com.github.Pandarix.beautify.event.ModEvents;
 import com.github.Pandarix.beautify.particle.ParticleInit;
 import com.github.Pandarix.beautify.util.Config;
 import com.github.Pandarix.beautify.world.structure.ModStructuresMain;
@@ -37,6 +38,7 @@ public class Beautify {
 		ParticleInit.PARTICLE_TYPES.register(modEventBus);
 
 		modEventBus.addListener(this::commonSetup);
+		ModVillagers.POI_TYPES.register(modEventBus);
 		ModVillagers.VILLAGER_PROFESSIONS.register(modEventBus);
 
 		Config.register();
@@ -48,7 +50,6 @@ public class Beautify {
 
 	private void commonSetup(final FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			//ModVillagers.registerPOIs();
 		});
 	}
 
