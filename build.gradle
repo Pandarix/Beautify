@@ -4,7 +4,7 @@ plugins {
     id 'net.minecraftforge.gradle' version '5.1.+'
 }
 
-version = '2.0.0'
+version = '2.0.1'
 group = 'com.github.Pandarix.beautify' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'beautify'
 
@@ -150,7 +150,7 @@ jar {
         attributes([
                 "Specification-Title"     : "beautify",
                 "Specification-Vendor"    : "Pandarix",
-                "Specification-Version"   : "2.0.0",
+                "Specification-Version"   : "2.0.1",
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : project.jar.archiveVersion,
                 "Implementation-Vendor"   : "Pandarix",
