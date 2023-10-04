@@ -65,7 +65,7 @@ public class BotanistWorkbench extends HorizontalDirectionalBlock {
 		if (!Screen.hasShiftDown()) {
 			component.add(Component.translatable("tooltip.shift").withStyle(ChatFormatting.YELLOW));
 		} else {
-			component.add(Component.translatable(this.getName().getString().replaceAll(" ", "_").toLowerCase() + ".description").withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("botanist_workbench.description").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

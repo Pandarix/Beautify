@@ -159,14 +159,14 @@ public class HangingPot extends LanternBlock {
         }
 
         if (Screen.hasShiftDown()) {
-            component.add(Component.translatable(this.getName().getString().replaceAll(" ", "_").toLowerCase() + ".description1").withStyle(ChatFormatting.GRAY));
-            component.add(Component.translatable(this.getName().getString().replaceAll(" ", "_").toLowerCase() + ".description2").withStyle(ChatFormatting.GRAY));
-            component.add(Component.translatable(this.getName().getString().replaceAll(" ", "_").toLowerCase() + ".description3").withStyle(ChatFormatting.GRAY));
+            component.add(Component.translatable("hanging_pot.description1").withStyle(ChatFormatting.GRAY));
+            component.add(Component.translatable("hanging_pot.description2").withStyle(ChatFormatting.GRAY));
+            component.add(Component.translatable("hanging_pot.description3").withStyle(ChatFormatting.GRAY));
         }
 
         if (Screen.hasControlDown()) {
-            component.add(Component.translatable(this.getName().getString().replaceAll(" ", "_").toLowerCase() + ".list1").withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.GRAY));
-            component.add(Component.translatable(this.getName().getString().replaceAll(" ", "_").toLowerCase() + ".list2").withStyle(ChatFormatting.GRAY));
+            component.add(Component.translatable("hanging_pot.list1").withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.GRAY));
+            component.add(Component.translatable("hanging_pot.list2").withStyle(ChatFormatting.GRAY));
         }
         super.appendHoverText(stack, getter, component, flag);
     }

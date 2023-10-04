@@ -221,7 +221,7 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 	// block in pLevel at pPos is the same kind of blind
 	// and facing is the same as pState
 	private final boolean sameBlindType(Level pLevel, BlockPos pPos, BlockState pState) {
-		return pLevel.getBlockState(pPos).getBlock().getClass() == this.getClass()
+		return pLevel.getBlockState(pPos).getBlock() == this
 				&& pLevel.getBlockState(pPos).getValue(FACING) == pState.getValue(FACING);
 	}
 

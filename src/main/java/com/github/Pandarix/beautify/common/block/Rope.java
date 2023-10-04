@@ -58,8 +58,8 @@ public class Rope extends ChainBlock {
 		}
 
 		if (Screen.hasShiftDown()) {
-			component.add(Component.translatable(this.getName().getString().replaceAll(" ", "_").toLowerCase() + ".description1").withStyle(ChatFormatting.GRAY));
-			component.add(Component.translatable(this.getName().getString().replaceAll(" ", "_").toLowerCase() + ".description2").withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("rope.description1").withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("rope.description2").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

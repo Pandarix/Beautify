@@ -117,9 +117,9 @@ public class LampJar extends LanternBlock {
         if (!Screen.hasShiftDown()) {
             component.add(Component.translatable("tooltip.shift").withStyle(ChatFormatting.YELLOW));
         } else {
-             component.add(Component.translatable(this.getName().getString().replaceAll(" ", "_").toLowerCase() + ".description1").withStyle(ChatFormatting.GRAY));
-            component.add(Component.translatable(this.getName().getString().replaceAll(" ", "_").toLowerCase() + ".description2").withStyle(ChatFormatting.GRAY));
-            component.add(Component.translatable(this.getName().getString().replaceAll(" ", "_").toLowerCase() + ".description3").withStyle(ChatFormatting.GRAY));
+             component.add(Component.translatable("glowstone_essence_lamp.description1").withStyle(ChatFormatting.GRAY));
+            component.add(Component.translatable("glowstone_essence_lamp.description2").withStyle(ChatFormatting.GRAY));
+            component.add(Component.translatable("glowstone_essence_lamp.description3").withStyle(ChatFormatting.GRAY));
         }
         super.appendHoverText(stack, getter, component, flag);
     }
