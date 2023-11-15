@@ -33,7 +33,6 @@ public class Beautify {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 		ItemInit.ITEMS.register(modEventBus);
 		BlockInit.BLOCKS.register(modEventBus);
-		ItemGroupInit.CREATIVE_MODE_TABS.register(modEventBus);
 		SoundInit.SOUND_EVENTS.register(modEventBus);
 		ParticleInit.PARTICLE_TYPES.register(modEventBus);
 
