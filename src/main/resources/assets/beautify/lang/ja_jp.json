@@ -63,7 +63,7 @@
 	"sounds.beautify.bookstack_fall": "積まれた本が落ちる",
 	"sounds.beautify.bookstack_next": "積まれた本のモデルを切り替えた",
 	"sounds.beautify.blinds_open": "ブラインドが開いた",
-	"sounds.beautify.blinds_close": "ブラインドが閉じた"
+	"sounds.beautify.blinds_close": "ブラインドが閉じた",
 
 	"tooltip.beautify.shift": "SHIFTを押して詳細",
 	"tooltip.beautify.plantlist": "CTRLを押して植物リストを表示",
@@ -74,7 +74,7 @@
 	"tooltip.beautify.hanging_pot.2": "アイテム使用で植物を植える",
 	"tooltip.beautify.hanging_pot.3": "骨粉をアイテム使用すること植物をさらに成長させる。ハサミで植えた植物がが刈り取れる",
 	"tooltip.beautify.hanging_pot.plant_header": "設置可能な植物 :",
-	"tooltip.beautify.hanging_pot.plants": "全ての通常の花 + バラの低木, ライラック, ボタン, ヒマワリ, ツタ, しだれツタ, ねじれツタ, ヒカリゴケ, グロウベリー, スイートベリー.",
+	"tooltip.beautify.hanging_pot.plants": "全ての通常の花 + バラの低木, ライラック, ボタン, ヒマワリ, ツタ, しだれツタ, ねじれツタ, ヒカリゴケ, グロウベリー, スイートベリー",
 	"tooltip.beautify.lamp.1": "ランタンのように吊るしたり立てて設置することもできる",
 	"tooltip.beautify.lamp.2": "アイテム使用でオン/オフ切り替え",
 	"tooltip.beautify.candelabra.1": "ランタンのように吊るしたり立てて設置することもできる",
