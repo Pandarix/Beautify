@@ -2,9 +2,11 @@ package com.github.Pandarix.beautify.common.block;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 import com.github.Pandarix.beautify.core.init.BlockInit;
 
+import com.google.common.collect.ImmutableMap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
@@ -32,23 +34,27 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class OakTrellis extends HorizontalDirectionalBlock {
-	private static final List<Item> validFlowers = Arrays.asList(Items.AIR, Items.ROSE_BUSH, Items.SUNFLOWER,
+	private static final List<Item> VALID_FLOWERS = Arrays.asList(Items.AIR, Items.ROSE_BUSH, Items.SUNFLOWER,
 			Items.PEONY, Items.LILAC, Items.VINE, Items.WEEPING_VINES, Items.TWISTING_VINES, Items.GLOW_LICHEN);
 
 	// FLOWERS indicates which index of the flowers List below is active
-	public static final IntegerProperty FLOWERS = IntegerProperty.create("flowers", 0, validFlowers.size() - 1);
+	public static final IntegerProperty FLOWERS = IntegerProperty.create("flowers", 0, VALID_FLOWERS.size() - 1);
 
 	public static final BooleanProperty CEILLING = BooleanProperty.create("ceilling");
+
+	private static final Map<Direction, VoxelShape> SHAPES_FOR_MODEL = ImmutableMap.of(
+			Direction.NORTH, Block.box(0, 0, 14, 16, 16, 16),
+			Direction.SOUTH, Block.box(0, 0, 0, 16, 16, 2),
+			Direction.WEST, Block.box(14, 0, 0, 16, 16, 16),
+			Direction.EAST, Block.box(0, 0, 0, 2, 16, 16)
+	);
 	private static final VoxelShape SHAPE_CEILLING = Block.box(0, 14, 0, 16, 16, 16);
-	private static final VoxelShape SHAPE_SOUTH = Block.box(0, 0, 0, 16, 16, 2);
-	private static final VoxelShape SHAPE_NORTH = Block.box(0, 0, 14, 16, 16, 16);
-	private static final VoxelShape SHAPE_WEST = Block.box(14, 0, 0, 16, 16, 16);
-	private static final VoxelShape SHAPE_EAST = Block.box(0, 0, 0, 2, 16, 16);
 
 	public OakTrellis(Properties p_49795_) {
 		super(p_49795_);
@@ -72,13 +78,7 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 			return SHAPE_CEILLING;
 		}
 
-		return switch (state.getValue(FACING)) {
-		case NORTH -> SHAPE_NORTH;
-		case SOUTH -> SHAPE_SOUTH;
-		case EAST -> SHAPE_EAST;
-		case WEST -> SHAPE_WEST;
-		default -> SHAPE_NORTH;
-		};
+		return SHAPES_FOR_MODEL.get(state.getValue(FACING));
 	}
 
 	@Override
@@ -88,14 +88,7 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 
 	@Override
 	public boolean isLadder(BlockState state, LevelReader level, BlockPos pos, LivingEntity entity) {
-		if (state.is(BlockInit.OAK_TRELLIS.get()) || state.is(BlockInit.BIRCH_TRELLIS.get())
-				|| state.is(BlockInit.JUNGLE_TRELLIS.get()) || state.is(BlockInit.SPRUCE_TRELLIS.get())
-				|| state.is(BlockInit.ACACIA_TRELLIS.get()) || state.is(BlockInit.DARK_OAK_TRELLIS.get())
-				|| state.is(BlockInit.MANGROVE_TRELLIS.get()) || state.is(BlockInit.CRIMSON_TRELLIS.get())
-				|| state.is(BlockInit.WARPED_TRELLIS.get())) {
-			return true;
-		}
-		return super.isLadder(state, level, pos, entity);
+		return state.is(this) || super.isLadder(state, level, pos, entity);
 	}
 
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
@@ -112,11 +105,11 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 
 				// giving flower and clearing pot if hand empty or same stack
 				if (playerStack.isEmpty()) {
-					pPlayer.setItemInHand(pHand, new ItemStack(validFlowers.get(pState.getValue(FLOWERS))));
+					pPlayer.setItemInHand(pHand, new ItemStack(VALID_FLOWERS.get(pState.getValue(FLOWERS))));
 					pLevel.setBlock(pPos, pState.setValue(FLOWERS, 0), 3);
 					pLevel.playSound(null, pPos, SoundEvents.AZALEA_LEAVES_BREAK, SoundSource.BLOCKS, 1, 1);
 					return InteractionResult.SUCCESS;
-				} else if (playerStack.is(validFlowers.get(pState.getValue(FLOWERS)))
+				} else if (playerStack.is(VALID_FLOWERS.get(pState.getValue(FLOWERS)))
 						&& playerStack.getCount() < playerStack.getMaxStackSize()) {
 					playerStack.grow(1);
 					pLevel.setBlock(pPos, pState.setValue(FLOWERS, 0), 3);
@@ -129,9 +122,9 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 			} else { // if there is no flower
 
 				// checks if the flower in hand matches the available types
-				for (Item flower : validFlowers) {
+				for (Item flower : VALID_FLOWERS) {
 					if (playerStack.getItem().equals(flower)) {
-						pLevel.setBlock(pPos, pState.setValue(FLOWERS, validFlowers.indexOf(flower)), 3);
+						pLevel.setBlock(pPos, pState.setValue(FLOWERS, VALID_FLOWERS.indexOf(flower)), 3);
 						if (!flower.equals(Items.AIR)) {
 							pLevel.playSound(null, pPos, SoundEvents.AZALEA_PLACE, SoundSource.BLOCKS, 1, 1);
 						}

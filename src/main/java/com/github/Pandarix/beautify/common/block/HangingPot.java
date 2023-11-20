@@ -54,20 +54,22 @@ public class HangingPot extends LanternBlock {
 
     @Override
     public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
-        if (state.getValue(HANGING)) {
-            return HANGING_SHAPE;
-        }
-        return STANDING_SHAPE;
+        return state.getValue(HANGING) ? HANGING_SHAPE : STANDING_SHAPE;
     }
 
-    @SuppressWarnings("deprecation")
     @Override
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos blockPos, boolean bool) {
-        if (state.getValue(GROWN)) { //if the plant is grown long
-            if (blockPos.equals(pos.below()) && level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP)) { //if the neighbour is a model that clips into the pot
+        //if the plant is grown long
+        if (state.getValue(GROWN)) {
+            //if the neighbour is a model that clips into the pot
+            if (blockPos.equals(pos.below()) && level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP))
+            {
+                //make pot ungrown again
                 level.setBlock(pos, state.setValue(GROWN, false), 3);
+                //spawn item from plant inside
                 ItemEntity Item = new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), new ItemStack(validFlowers.get(state.getValue(POTFLOWER))));
                 level.addFreshEntity(Item);
+                //play breaking sound
                 level.playSound(null, pos, SoundEvents.HANGING_ROOTS_BREAK, SoundSource.BLOCKS, 1, 1);
             }
         }

@@ -32,8 +32,8 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class OakPictureFrame extends HorizontalDirectionalBlock {
-	private static final int modelcount = 13; // number of models the frame has
-	public static final IntegerProperty FRAME_MOTIVE = IntegerProperty.create("frame_motive", 0, modelcount - 1);
+	private static final int MODELCOUNT = 13; // number of models the frame has
+	public static final IntegerProperty FRAME_MOTIVE = IntegerProperty.create("frame_motive", 0, MODELCOUNT - 1);
 	protected static final VoxelShape SHAPE = Block.box(5, 0, 5, 11, 8, 11);
 
 	public OakPictureFrame(Properties p_49795_) {
@@ -51,7 +51,7 @@ public class OakPictureFrame extends HorizontalDirectionalBlock {
 				&& pPlayer.isShiftKeyDown()) {
 			int currentModel = pState.getValue(FRAME_MOTIVE); // current index
 			// reset if it surpasses the number of possible models
-			if (currentModel + 1 > modelcount - 1) {
+			if (currentModel + 1 > MODELCOUNT - 1) {
 				pLevel.setBlock(pPos, pState.setValue(FRAME_MOTIVE, 0), 3);
 				pLevel.playSound(null, pPos, SoundEvents.PAINTING_PLACE, SoundSource.BLOCKS, 1, 1);
 				return InteractionResult.SUCCESS;
@@ -78,10 +78,8 @@ public class OakPictureFrame extends HorizontalDirectionalBlock {
 	}
 
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
-		final int min = 0;
-		final int max = modelcount;
 		Random rand = new Random();
-		int randomNum = rand.nextInt((max - min));
+		int randomNum = rand.nextInt((MODELCOUNT));
 
 		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite())
 				.setValue(FRAME_MOTIVE, randomNum);

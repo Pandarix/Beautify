@@ -1,7 +1,9 @@
 package com.github.Pandarix.beautify.common.block;
 
 import java.util.List;
+import java.util.Map;
 
+import com.google.common.collect.ImmutableMap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
@@ -22,15 +24,17 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class BotanistWorkbench extends HorizontalDirectionalBlock {
-
-	private static final VoxelShape SHAPE_NORTH = Shapes.or(box(2, 0, 0, 16, 12, 14.25),
-			box(9.5, 12, 8.5, 13.5, 16, 12.5));
-	private static final VoxelShape SHAPE_SOUTH = Shapes.or(box(0, 0, 1.75, 14, 12, 16),
-			box(2.5, 12, 3.5, 6.5, 16, 7.5));
-	private static final VoxelShape SHAPE_EAST = Shapes.or(box(1.75, 0, 2, 16, 12, 16),
-			box(3.5, 12, 9.5, 7.5, 16, 13.5));
-	private static final VoxelShape SHAPE_WEST = Shapes.or(box(0, 0, 0, 14.25, 12, 14),
-			box(8.5, 12, 2.5, 12.5, 16, 6.5));
+	//Map of hitboxes for direction the model can be facing
+	private static final Map<Direction, VoxelShape> SHAPES_FOR_MODEL = ImmutableMap.of(
+			Direction.NORTH, Shapes.or(box(2, 0, 0, 16, 12, 14.25),
+					box(9.5, 12, 8.5, 13.5, 16, 12.5)),
+			Direction.SOUTH, Shapes.or(box(0, 0, 1.75, 14, 12, 16),
+					box(2.5, 12, 3.5, 6.5, 16, 7.5)),
+			Direction.WEST, Shapes.or(box(0, 0, 0, 14.25, 12, 14),
+					box(8.5, 12, 2.5, 12.5, 16, 6.5)),
+			Direction.EAST, Shapes.or(box(1.75, 0, 2, 16, 12, 16),
+					box(3.5, 12, 9.5, 7.5, 16, 13.5))
+	);
 
 	public BotanistWorkbench(Properties p_49795_) {
 		super(p_49795_);
@@ -43,14 +47,8 @@ public class BotanistWorkbench extends HorizontalDirectionalBlock {
 	}
 
 	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter getter, BlockPos pos, CollisionContext context) {
-		return switch (state.getValue(FACING)) {
-		case NORTH -> SHAPE_NORTH;
-		case SOUTH -> SHAPE_SOUTH;
-		case EAST -> SHAPE_EAST;
-		case WEST -> SHAPE_WEST;
-		default -> SHAPE_NORTH;
-		};
+	public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos blockPos, CollisionContext collisionContext) {
+		return SHAPES_FOR_MODEL.get(blockState.getValue(FACING));
 	}
 
 	@Override

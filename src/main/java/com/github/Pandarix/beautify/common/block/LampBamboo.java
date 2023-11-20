@@ -38,12 +38,8 @@ public class LampBamboo extends LanternBlock {
 	}
 
 	@Override
-	public VoxelShape getShape(BlockState p_153474_, BlockGetter p_153475_, BlockPos p_153476_,
-			CollisionContext p_153477_) {
-		if (p_153474_.getValue(HANGING)) {
-			return SHAPE_HANGING;
-		}
-		return SHAPE_STANDING;
+	public VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
+		return state.getValue(HANGING) ? SHAPE_HANGING : SHAPE_STANDING;
 	}
 
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
