@@ -10,13 +10,13 @@
 
 	"block.beautify.hanging_pot": "Підвісний горщик",
 	"hanging_pot.description1": "Можна підвісити на блоках і мотузках або розмістити на поверхні.",
-	"hanging_pot.description2": "Пкм з рослиною в руці, щоб посадити.",
-	"hanging_pot.description3": "Пкм з кістковим борошном, щоб виростити рослину. Обріжте ножицями, щоб укоротити рослину.",
+	"hanging_pot.description2": "ПКМ з рослиною в руці, щоб посадити.",
+	"hanging_pot.description3": "ПКМ з кістковим борошном, щоб виростити рослину. Обріжте ножицями, щоб укоротити рослину.",
 	"hanging_pot.list1": "Рослини, які можна посадити:",
 	"hanging_pot.list2": "Усі звичайні квіти + трояндові кущі, бузки, півонії, соняшники, ліани, плакучі та кручені ліани, світлолишайник, сяйні та солодкі ягоди, траву, папороть",
 
 	"block.beautify.bookstack": "Стіс книг",
-	"bookstack.description1": "Shift-Пкм по блоку, щоб змінити порядок.",
+	"bookstack.description1": "Shift-ПКМ по блоку, щоб змінити порядок.",
 	"bookstack.description2": "Збільшує силу стола зачарування.",
 
 	"block.beautify.oak_picture_frame": "Дубова картинна рама",
@@ -30,20 +30,20 @@
 	"block.beautify.mangrove_picture_frame": "Мангрова картинна рама",
 	"block.beautify.quartz_picture_frame": "Кварцова картинна рама",
 	"frame.description1": "Розмішує рамку з випадковим мотивом.",
-	"frame.description2": "Shift-Пкм по блоку, щоб змінити світлину.",
+	"frame.description2": "Shift-ПКМ по блоку, щоб змінити світлину.",
 
 	"block.beautify.lamp_light_bulb": "Лампа",
 	"light_bulb.description1": "Можна як підвісити, так і розмістити на поверхні подібно ліхтарям.",
-	"light_bulb.description2": "Пкм, щоб вимкнути/ввімкнути.",
+	"light_bulb.description2": "ПКМ, щоб вимкнути/ввімкнути.",
 
 	"block.beautify.lamp_bamboo": "Бамбукова лампа",
 	"bamboo_lamp.description1": "Можна як підвісити, так і розмістити на поверхні подібно ліхтарям.",
-	"bamboo_lamp.description2": "Пкм, щоб вимкнути/ввімкнути.",
+	"bamboo_lamp.description2": "ПКМ, щоб вимкнути/ввімкнути.",
 
 	"block.beautify.lamp_jar": "Лампа есенції світлокаменю",
 	"glowstone_essence_lamp.description1": "Можна як підвісити, так і розмістити на поверхні подібно ліхтарям.",
-	"glowstone_essence_lamp.description2": "Пкм з пилом світлокаменю, щоб наповнити.",
-	"glowstone_essence_lamp.description3": "Пкм з порожньою рукою, щоб спорожнити.",
+	"glowstone_essence_lamp.description2": "ПКМ з пилом світлокаменю, щоб наповнити.",
+	"glowstone_essence_lamp.description3": "ПКМ з порожньою рукою, щоб спорожнити.",
 
 	"block.beautify.lamp_candelabra": "Канделябр",
 	"block.beautify.lamp_candelabra_light_blue": "Блакитний канделябр",
@@ -63,8 +63,8 @@
 	"block.beautify.lamp_candelabra_white": "Білий канделябр",
 	"block.beautify.lamp_candelabra_yellow": "Жовтий канделябр",
 	"candelabra.description1": "Можна як підвісити, так і розмістити на поверхні подібно ліхтарям.",
-	"candelabra.description2": "Пкм з порожньою рукою, щоб вимкнути/ввімкнути.",
-	"candelabra.description3": "Пкм з кресалом, щоб запалити.",
+	"candelabra.description2": "ПКМ з порожньою рукою, щоб вимкнути/ввімкнути.",
+	"candelabra.description3": "ПКМ з кресалом, щоб запалити.",
 
 	"block.beautify.oak_blinds": "Дубові жалюзі",
 	"block.beautify.spruce_blinds": "Смерекові жалюзі",
@@ -76,7 +76,7 @@
 	"block.beautify.warped_blinds": "Химерні жалюзі",
 	"block.beautify.mangrove_blinds": "Мангрові жалюзі",
 	"block.beautify.iron_blinds": "Залізні жалюзі",
-	"blinds.description1": "Пкм по блоку, щоб відкрити чи закрити жалюзі, а також усі прікріплені жалюзі.",
+	"blinds.description1": "ПКМ по блоку, щоб відкрити чи закрити жалюзі, а також усі прікріплені жалюзі.",
 	"blinds.description2": "Після першого закриття, нижні жалюзі стають невидимими, коли вони відкриті.",
 
 	"block.beautify.oak_trellis": "Дубова решітка",
@@ -89,7 +89,7 @@
 	"block.beautify.crimson_trellis": "Багряна решітка",
 	"block.beautify.warped_trellis": "Химерна решітка",
 	"trellis.description1": "Можна розмістити на стінах і стелях. Можна лізти.",
-	"trellis.description2": "Пкм з рослиною в руці, щоб посадити.",
+	"trellis.description2": "ПКМ з рослиною в руці, щоб посадити.",
 	"trellis.list1": "Рослини, які можна посадити:",
 	"trellis.list2": "Трояндові кущі, соняшники, півонії, лілії, ліани, плакучі та кручені ліани, світлолишайник",
 
