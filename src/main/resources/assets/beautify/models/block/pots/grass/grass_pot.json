@@ -1,7 +1,7 @@
 {
 	"parent": "beautify:block/pots/base/hanging_pot",
 	"textures": {
-		"0": "beautify:blocks/pots/grass_pot",
+		"0": "beautify:block/pots/grass_pot",
 		"particle": "minecraft:block/terracotta"
 	},
 	"render_type": "cutout"

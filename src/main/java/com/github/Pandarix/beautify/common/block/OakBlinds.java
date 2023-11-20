@@ -90,7 +90,10 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 	// HIDDEN: false <-> true if below root
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
 			BlockHitResult pResult) {
-		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()) {
+		if(pLevel.isClientSide()){
+			return InteractionResult.SUCCESS;
+		}
+		if (pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()) {
 			// stores last value of blind
 			final boolean currentlyOpen = pState.getValue(OPEN);
 
@@ -218,7 +221,7 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 	// block in pLevel at pPos is the same kind of blind
 	// and facing is the same as pState
 	private final boolean sameBlindType(Level pLevel, BlockPos pPos, BlockState pState) {
-		return pLevel.getBlockState(pPos).getBlock().getClass() == this.getClass()
+		return pLevel.getBlockState(pPos).getBlock() == this
 				&& pLevel.getBlockState(pPos).getValue(FACING) == pState.getValue(FACING);
 	}
 
@@ -291,15 +294,10 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!Screen.hasShiftDown()) {
-			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-		}
-
-		if (Screen.hasShiftDown()) {
-			component.add(Component.literal("Rightclick on Block to open or close blind and adjacent ones.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(
-					Component.literal("After closing 1st time, blinds below topmost blind become invisible when open.")
-							.withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("tooltip.shift").withStyle(ChatFormatting.YELLOW));
+		} else {
+			component.add(Component.translatable("blinds.description1").withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("blinds.description2").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

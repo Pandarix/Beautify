@@ -1,0 +1,64 @@
+{
+	"variants": {
+		"on=false,facing=north,hanging=false": {
+			"model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_off_green"
+		},
+		"on=false,facing=east,hanging=false": {
+			"model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_off_green",
+			"y": 90
+		},
+		"on=false,facing=south,hanging=false": {
+			"model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_off_green",
+			"y": 180
+		},
+		"on=false,facing=west,hanging=false": {
+			"model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_off_green",
+			"y": 270
+		},
+		"on=true,facing=north,hanging=false": {
+			"model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_green"
+		},
+		"on=true,facing=east,hanging=false": {
+			"model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_green",
+			"y": 90
+		},
+		"on=true,facing=south,hanging=false": {
+			"model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_green",
+			"y": 180
+		},
+		"on=true,facing=west,hanging=false": {
+			"model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_green",
+			"y": 270
+		},
+		"on=false,facing=north,hanging=true": {
+			"model": "beautify:block/lamps/candelabras/lamp_candelabra_off_green"
+		},
+		"on=false,facing=east,hanging=true": {
+			"model": "beautify:block/lamps/candelabras/lamp_candelabra_off_green",
+			"y": 90
+		},
+		"on=false,facing=south,hanging=true": {
+			"model": "beautify:block/lamps/candelabras/lamp_candelabra_off_green",
+			"y": 180
+		},
+		"on=false,facing=west,hanging=true": {
+			"model": "beautify:block/lamps/candelabras/lamp_candelabra_off_green",
+			"y": 270
+		},
+		"on=true,facing=north,hanging=true": {
+			"model": "beautify:block/lamps/candelabras/lamp_candelabra_green"
+		},
+		"on=true,facing=east,hanging=true": {
+			"model": "beautify:block/lamps/candelabras/lamp_candelabra_green",
+			"y": 90
+		},
+		"on=true,facing=south,hanging=true": {
+			"model": "beautify:block/lamps/candelabras/lamp_candelabra_green",
+			"y": 180
+		},
+		"on=true,facing=west,hanging=true": {
+			"model": "beautify:block/lamps/candelabras/lamp_candelabra_green",
+			"y": 270
+		}
+	}
+}

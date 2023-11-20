@@ -44,7 +44,10 @@ public class OakPictureFrame extends HorizontalDirectionalBlock {
 	// changing the model of the picture frame by shift-rightclicking
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
 			BlockHitResult pResult) {
-		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()
+		if(pLevel.isClientSide()){
+			return InteractionResult.SUCCESS;
+		}
+		if (pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()
 				&& pPlayer.isShiftKeyDown()) {
 			int currentModel = pState.getValue(FRAME_MOTIVE); // current index
 			// reset if it surpasses the number of possible models
@@ -95,14 +98,10 @@ public class OakPictureFrame extends HorizontalDirectionalBlock {
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!Screen.hasShiftDown()) {
-			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-		}
-
-		if (Screen.hasShiftDown()) {
-			component.add(Component.literal("Places Frame with a random motive.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Shift-Rightclick on Block to change model.")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("tooltip.shift").withStyle(ChatFormatting.YELLOW));
+		} else {
+			component.add(Component.translatable("frame.description1").withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("frame.description2").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

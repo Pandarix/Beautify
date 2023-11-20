@@ -58,7 +58,6 @@ public class GlowEssenceParticles extends TextureSheetParticle {
 	@Override
 	public void tick() {
 		super.tick();
-
 		this.fadeOut();
 		this.move();
 	}

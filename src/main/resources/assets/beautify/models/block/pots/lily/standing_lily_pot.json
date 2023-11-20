@@ -1,7 +1,7 @@
 {
 	"parent": "beautify:block/pots/base/standing_pot",
 	"textures": {
-		"0": "beautify:blocks/pots/lily_pot",
+		"0": "beautify:block/pots/lily_pot",
 		"particle": "minecraft:block/terracotta"
 	},
 	"render_type": "cutout"

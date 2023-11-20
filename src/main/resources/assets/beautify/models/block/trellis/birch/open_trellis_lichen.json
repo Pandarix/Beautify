@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"textures": {
 		"4": "minecraft:block/birch_log",
-		"5": "beautify:blocks/trellis_lichen_back",
-		"6": "beautify:blocks/trellis_lichen_front",
-		"7": "beautify:blocks/trellis_lichen_hanging",
+		"5": "beautify:block/trellis_lichen_back",
+		"6": "beautify:block/trellis_lichen_front",
+		"7": "beautify:block/trellis_lichen_hanging",
 		"particle": "minecraft:block/birch_log"
 	},
 	"render_type": "cutout",

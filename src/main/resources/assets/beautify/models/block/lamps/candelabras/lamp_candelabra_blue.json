@@ -1,0 +1,9 @@
+{
+	"parent": "beautify:block/lamps/candelabras/lamp_candelabra",
+	"textures": {
+		"1": "minecraft:block/anvil",
+		"2": "minecraft:block/blue_candle_lit",
+		"particle": "minecraft:block/anvil"
+	},
+	"render_type": "cutout"
+}

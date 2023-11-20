@@ -48,7 +48,10 @@ public class LampBamboo extends LanternBlock {
 
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
 			BlockHitResult pResult) {
-		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()) {
+		if(pLevel.isClientSide()){
+			return InteractionResult.SUCCESS;
+		}
+		if (pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()) {
 			pLevel.setBlock(pPos, pState.setValue(ON, !pState.getValue(ON)), 3);
 			float f = pState.getValue(ON) ? 0.5F : 0.6F;
 			pLevel.playSound((Player) null, pPos, SoundEvents.LEVER_CLICK, SoundSource.BLOCKS, 0.25F, f);
@@ -67,14 +70,10 @@ public class LampBamboo extends LanternBlock {
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!Screen.hasShiftDown()) {
-			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-		}
-
-		if (Screen.hasShiftDown()) {
-			component.add(Component.literal("Can be placed hanging and standing like Lanterns.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Rightclick to turn on/off.")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("tooltip.shift").withStyle(ChatFormatting.YELLOW));
+		} else {
+			component.add(Component.translatable("bamboo_lamp.description1").withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("bamboo_lamp.description2").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

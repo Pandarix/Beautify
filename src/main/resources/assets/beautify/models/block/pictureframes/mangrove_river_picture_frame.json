@@ -1,9 +1,9 @@
 {
 	"parent": "beautify:block/pictureframes/base_picture_frame",
 	"textures": {
-		"0": "beautify:blocks/motive_river",
-		"1": "beautify:blocks/mangrove_frame_texture",
-		"particle": "beautify:blocks/mangrove_frame_texture"
+		"0": "beautify:block/motive_river",
+		"1": "beautify:block/mangrove_frame_texture",
+		"particle": "beautify:block/mangrove_frame_texture"
 	},
 	"render_type": "cutout"
 }

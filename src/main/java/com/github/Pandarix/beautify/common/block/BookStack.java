@@ -1,11 +1,14 @@
 package com.github.Pandarix.beautify.common.block;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.stream.Stream;
 
 import com.github.Pandarix.beautify.core.init.BlockInit;
 import com.github.Pandarix.beautify.core.init.SoundInit;
 
+import com.google.common.collect.ImmutableMap;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
@@ -91,7 +94,10 @@ public class BookStack extends HorizontalDirectionalBlock {
 	// changing the model of the bookstack by shift-rightclicking
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
 			BlockHitResult pResult) {
-		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()
+		if(pLevel.isClientSide()){
+			return InteractionResult.SUCCESS;
+		}
+		if (pHand == InteractionHand.MAIN_HAND && pPlayer.getItemInHand(pHand).isEmpty()
 				&& pPlayer.isShiftKeyDown()) {
 			int currentModel = pState.getValue(BOOKSTACK_MODEL); // current index
 			pLevel.playSound(null, pPos, SoundInit.BOOKSTACK_NEXT.get(), SoundSource.BLOCKS, 1, 1);
@@ -144,14 +150,10 @@ public class BookStack extends HorizontalDirectionalBlock {
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!Screen.hasShiftDown()) {
-			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-		}
-
-		if (Screen.hasShiftDown()) {
-			component.add(Component.literal("Places random Bookstack. Shift-Rightclick on block to change model.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Increases Enchantment Table power like shelves.")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("tooltip.shift").withStyle(ChatFormatting.YELLOW));
+		} else {
+			component.add(Component.translatable("bookstack.description1").withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("bookstack.description2").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

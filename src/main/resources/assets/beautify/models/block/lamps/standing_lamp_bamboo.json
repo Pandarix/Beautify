@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "beautify:blocks/bamboo_lamp_on",
-		"particle": "beautify:blocks/bamboo_lamp_on"
+		"0": "beautify:block/bamboo_lamp_on",
+		"particle": "beautify:block/bamboo_lamp_on"
 	},
 	"render_type": "cutout",
 	"elements": [

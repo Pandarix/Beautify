@@ -1,9 +1,9 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"3": "beautify:blocks/trellis_weeping_vines_back",
+		"3": "beautify:block/trellis_weeping_vines_back",
 		"4": "minecraft:block/acacia_log",
-		"5": "beautify:blocks/trellis_weeping_vines_front",
+		"5": "beautify:block/trellis_weeping_vines_front",
 		"particle": "minecraft:block/acacia_log"
 	},
 	"render_type": "cutout",

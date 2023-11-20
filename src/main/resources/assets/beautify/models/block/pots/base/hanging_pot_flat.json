@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"1": "beautify:blocks/pots/vine_pot",
-		"2": "beautify:blocks/pots/vine_pot_overlay",
+		"1": "beautify:block/pots/vine_pot",
+		"2": "beautify:block/pots/vine_pot_overlay",
 		"particle": "block/terracotta"
 	},
 	"elements": [

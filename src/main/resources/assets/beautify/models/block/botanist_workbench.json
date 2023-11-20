@@ -2,14 +2,14 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "beautify:blocks/pots/dandelion_pot_grown",
+		"0": "beautify:block/pots/dandelion_pot_grown",
 		"1": "minecraft:block/barrel_bottom",
 		"2": "minecraft:block/beehive_end",
 		"3": "minecraft:block/dark_oak_log",
 		"4": "minecraft:block/dirt",
 		"5": "minecraft:item/sweet_berries",
-		"6": "beautify:blocks/trellis_lilac_front",
-		"particle": "beautify:blocks/pots/dandelion_pot_grown"
+		"6": "beautify:block/trellis_lilac_front",
+		"particle": "beautify:block/pots/dandelion_pot_grown"
 	},
 	"render_type": "cutout",
 	"elements": [

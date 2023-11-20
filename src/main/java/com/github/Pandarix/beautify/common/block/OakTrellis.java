@@ -100,8 +100,10 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 
 	public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand,
 			BlockHitResult pResult) {
-
-		if (!pLevel.isClientSide() && pHand == InteractionHand.MAIN_HAND) {
+		if(pLevel.isClientSide()){
+			return InteractionResult.SUCCESS;
+		}
+		if (pHand == InteractionHand.MAIN_HAND) {
 
 			ItemStack playerStack = pPlayer.getItemInHand(pHand);
 
@@ -153,22 +155,18 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 	@Override
 	public void appendHoverText(ItemStack stack, BlockGetter getter, List<Component> component, TooltipFlag flag) {
 		if (!Screen.hasShiftDown() && !Screen.hasControlDown()) {
-			component.add(Component.literal("Hold SHIFT for more info.").withStyle(ChatFormatting.YELLOW));
-			component.add(Component.literal("Hold CTRL for a list of plants.").withStyle(ChatFormatting.YELLOW));
+			component.add(Component.translatable("tooltip.shift").withStyle(ChatFormatting.YELLOW));
+			component.add(Component.translatable("tooltip.control").withStyle(ChatFormatting.YELLOW));
 		}
 
 		if (Screen.hasShiftDown()) {
-			component.add(Component.literal("Can be placed on or like walls and on the ceiling. Climbable.")
-					.withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal("Right click with plants to insert.").withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("trellis.description1").withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("trellis.description2").withStyle(ChatFormatting.GRAY));
 		}
 
 		if (Screen.hasControlDown()) {
-			component.add(Component.literal("Pottable plants:").withStyle(ChatFormatting.UNDERLINE)
-					.withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.GRAY));
-			component.add(Component.literal(
-					"Rose Bushes, Sunflowers, Peonies, Lilacs, Vines, Weeping Vines, Twisting Vines, Glow Lichen")
-					.withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("trellis.list1").withStyle(ChatFormatting.UNDERLINE).withStyle(ChatFormatting.BOLD).withStyle(ChatFormatting.GRAY));
+			component.add(Component.translatable("trellis.list2").withStyle(ChatFormatting.GRAY));
 		}
 		super.appendHoverText(stack, getter, component, flag);
 	}

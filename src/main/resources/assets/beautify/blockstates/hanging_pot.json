@@ -30,13 +30,13 @@
 			"model": "beautify:block/pots/lilac/lilac_pot"
 		},
 		"grown=false,hanging=false,potflower=2": {
-			"model": "beautify:block/pots/lilac//standing_lilac_pot"
+			"model": "beautify:block/pots/lilac/standing_lilac_pot"
 		},
 		"grown=true,hanging=true,potflower=2": {
 			"model": "beautify:block/pots/lilac/lilac_pot_grown"
 		},
 		"grown=true,hanging=false,potflower=2": {
-			"model": "beautify:block/pots/lilac//standing_lilac_pot_grown"
+			"model": "beautify:block/pots/lilac/standing_lilac_pot_grown"
 		},
 		
 		"grown=false,hanging=true,potflower=3": {

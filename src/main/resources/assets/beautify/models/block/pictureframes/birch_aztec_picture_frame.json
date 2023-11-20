@@ -1,8 +1,8 @@
 {
 	"parent": "beautify:block/pictureframes/base_picture_frame",
 	"textures": {
-		"0": "beautify:blocks/motive_aztec",
-		"1": "beautify:blocks/birch_frame_texture",
-		"particle": "beautify:blocks/birch_frame_texture"
+		"0": "beautify:block/motive_aztec",
+		"1": "beautify:block/birch_frame_texture",
+		"particle": "beautify:block/birch_frame_texture"
 	}
 }
