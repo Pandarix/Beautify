@@ -4,9 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-import com.github.Pandarix.beautify.core.init.BlockInit;
-
 import com.google.common.collect.ImmutableMap;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
@@ -34,12 +33,12 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class OakTrellis extends HorizontalDirectionalBlock {
+public class Trellis extends HorizontalDirectionalBlock {
+	public static final MapCodec<Trellis> TRELLIS_MAP_CODEC = simpleCodec(Trellis::new);
 	private static final List<Item> VALID_FLOWERS = Arrays.asList(Items.AIR, Items.ROSE_BUSH, Items.SUNFLOWER,
 			Items.PEONY, Items.LILAC, Items.VINE, Items.WEEPING_VINES, Items.TWISTING_VINES, Items.GLOW_LICHEN);
 
@@ -56,9 +55,15 @@ public class OakTrellis extends HorizontalDirectionalBlock {
 	);
 	private static final VoxelShape SHAPE_CEILLING = Block.box(0, 14, 0, 16, 16, 16);
 
-	public OakTrellis(Properties p_49795_) {
+	public Trellis(Properties p_49795_) {
 		super(p_49795_);
 		this.registerDefaultState(this.defaultBlockState().setValue(CEILLING, false).setValue(FACING, Direction.NORTH));
+	}
+
+	@Override
+	protected MapCodec<? extends HorizontalDirectionalBlock> codec()
+	{
+		return TRELLIS_MAP_CODEC;
 	}
 
 	public BlockState getStateForPlacement(BlockPlaceContext context) {

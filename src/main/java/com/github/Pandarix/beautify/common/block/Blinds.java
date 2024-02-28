@@ -1,10 +1,8 @@
 package com.github.Pandarix.beautify.common.block;
 
-import java.util.List;
-
 import com.github.Pandarix.beautify.core.init.SoundInit;
 import com.github.Pandarix.beautify.util.Config;
-
+import com.mojang.serialization.MapCodec;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
@@ -33,7 +31,10 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class OakBlinds extends HorizontalDirectionalBlock {
+import java.util.List;
+
+public class Blinds extends HorizontalDirectionalBlock {
+	public static final MapCodec<Blinds> BLINDS_MAP_CODEC = simpleCodec(Blinds::new);
 	// Voxelshapes; Hidden = Blind not visible
 	private static final VoxelShape OPEN_NORTH = Block.box(0, 13, 13, 16, 16, 16);
 	private static final VoxelShape OPEN_SOUTH = Block.box(0, 13, 0, 16, 16, 3);
@@ -50,12 +51,18 @@ public class OakBlinds extends HorizontalDirectionalBlock {
 	public static final BooleanProperty HIDDEN = BooleanProperty.create("hidden");
 
 	// constructor
-	public OakBlinds(Properties p_54120_) {
+	public Blinds(Properties p_54120_) {
 		super(p_54120_);
 		this.registerDefaultState(this.defaultBlockState().setValue(OPEN, false).setValue(FACING, Direction.NORTH)
 				.setValue(HIDDEN, false));
 	}
-	
+
+	@Override
+	protected MapCodec<? extends HorizontalDirectionalBlock> codec()
+	{
+		return BLINDS_MAP_CODEC;
+	}
+
 	@Override
 	public boolean isCollisionShapeFullBlock(BlockState p_181242_, BlockGetter p_181243_, BlockPos p_181244_) {
 		return false;

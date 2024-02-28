@@ -1,7 +1,7 @@
 {
   "display": {
     "icon": {
-      "item": "beautify:lamp_candleabra"
+      "item": "beautify:lamp_candelabra"
     },
     "title": "Wicked!",
     "description": "Craft a candelabra",
@@ -17,9 +17,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "beautify:lamp_candleabra"
-            ]
+            "tag": "beautify:candelabras"
           }
         ]
       }

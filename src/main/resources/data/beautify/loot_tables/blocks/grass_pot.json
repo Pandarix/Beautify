@@ -15,7 +15,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:grass"
+					"name": "minecraft:short_grass"
 				}
 			]
 		},
@@ -24,7 +24,7 @@
 			"entries": [
 				{
 					"type": "minecraft:item",
-					"name": "minecraft:grass",
+					"name": "minecraft:short_grass",
 					"conditions": [
 						{
 							"condition": "minecraft:block_state_property",

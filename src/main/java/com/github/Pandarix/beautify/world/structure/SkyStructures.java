@@ -1,7 +1,5 @@
 package com.github.Pandarix.beautify.world.structure;
 
-import java.util.Optional;
-
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
@@ -15,8 +13,14 @@ import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureType;
 import net.minecraft.world.level.levelgen.structure.pools.JigsawPlacement;
 import net.minecraft.world.level.levelgen.structure.pools.StructureTemplatePool;
+import net.minecraft.world.level.levelgen.structure.pools.alias.PoolAliasBinding;
+import net.minecraft.world.level.levelgen.structure.pools.alias.PoolAliasLookup;
 
-public class SkyStructures extends Structure {
+import java.util.List;
+import java.util.Optional;
+
+public class SkyStructures extends Structure
+{
 
     // A custom codec that changes the size limit for our code_structure_sky_fan.json's config to not be capped at 7.
     // With this, we can have a structure with a size limit up to 30 if we want to have extremely long branches of pieces in the structure.
@@ -27,7 +31,11 @@ public class SkyStructures extends Structure {
                     Codec.intRange(0, 30).fieldOf("size").forGetter(structure -> structure.size),
                     HeightProvider.CODEC.fieldOf("start_height").forGetter(structure -> structure.startHeight),
                     Heightmap.Types.CODEC.optionalFieldOf("project_start_to_heightmap").forGetter(structure -> structure.projectStartToHeightmap),
-                    Codec.intRange(1, 128).fieldOf("max_distance_from_center").forGetter(structure -> structure.maxDistanceFromCenter)
+                    Codec.intRange(1, 128).fieldOf("max_distance_from_center").forGetter(structure -> structure.maxDistanceFromCenter),
+                    Codec.list(PoolAliasBinding.CODEC).optionalFieldOf("pool_aliases", List.of()).forGetter((structures) ->
+                    {
+                        return structures.poolAliasBindings;
+                    })
             ).apply(instance, SkyStructures::new)).codec();
 
     private final Holder<StructureTemplatePool> startPool;
@@ -36,6 +44,7 @@ public class SkyStructures extends Structure {
     private final HeightProvider startHeight;
     private final Optional<Heightmap.Types> projectStartToHeightmap;
     private final int maxDistanceFromCenter;
+    private final List<PoolAliasBinding> poolAliasBindings;
 
     public SkyStructures(Structure.StructureSettings config,
                          Holder<StructureTemplatePool> startPool,
@@ -43,7 +52,7 @@ public class SkyStructures extends Structure {
                          int size,
                          HeightProvider startHeight,
                          Optional<Heightmap.Types> projectStartToHeightmap,
-                         int maxDistanceFromCenter)
+                         int maxDistanceFromCenter, List<PoolAliasBinding> poolAliasBindings)
     {
         super(config);
         this.startPool = startPool;
@@ -52,6 +61,7 @@ public class SkyStructures extends Structure {
         this.startHeight = startHeight;
         this.projectStartToHeightmap = projectStartToHeightmap;
         this.maxDistanceFromCenter = maxDistanceFromCenter;
+        this.poolAliasBindings = poolAliasBindings;
     }
 
     /*
@@ -80,7 +90,8 @@ public class SkyStructures extends Structure {
      * Use the biome tags for where to spawn the structure and users can datapack
      * it to spawn in specific biomes that aren't in the dimension they don't like if they wish.
      */
-    private static boolean extraSpawningChecks(Structure.GenerationContext context) {
+    private static boolean extraSpawningChecks(Structure.GenerationContext context)
+    {
         // Grabs the chunk position we are at
         ChunkPos chunkpos = context.chunkPos();
 
@@ -95,11 +106,13 @@ public class SkyStructures extends Structure {
     }
 
     @Override
-    public Optional<Structure.GenerationStub> findGenerationPoint(Structure.GenerationContext context) {
+    public Optional<Structure.GenerationStub> findGenerationPoint(Structure.GenerationContext context)
+    {
 
         // Check if the spot is valid for our structure. This is just as another method for cleanness.
         // Returning an empty optional tells the game to skip this spot as it will not generate the structure.
-        if (!SkyStructures.extraSpawningChecks(context)) {
+        if (!SkyStructures.extraSpawningChecks(context))
+        {
             return Optional.empty();
         }
 
@@ -124,7 +137,7 @@ public class SkyStructures extends Structure {
                         // Here, blockpos's y value is 60 which means the structure spawn 60 blocks above terrain height.
                         // Set this to false for structure to be place only at the passed in blockpos's Y value instead.
                         // Definitely keep this false when placing structures in the nether as otherwise, heightmap placing will put the structure on the Bedrock roof.
-                        this.maxDistanceFromCenter); // Maximum limit for how far pieces can spawn from center. You cannot set this bigger than 128 or else pieces gets cutoff.
+                        this.maxDistanceFromCenter, PoolAliasLookup.create(poolAliasBindings, blockPos, context.seed())); // Maximum limit for how far pieces can spawn from center. You cannot set this bigger than 128 or else pieces gets cutoff.
 
         /*
          * Note, you are always free to make your own JigsawPlacement class and implementation of how the structure
@@ -137,7 +150,8 @@ public class SkyStructures extends Structure {
     }
 
     @Override
-    public StructureType<?> type() {
+    public StructureType<?> type()
+    {
         return ModStructures.SKY_STRUCTURES.get(); // Helps the game know how to turn this structure back to json to save to chunks
     }
 }

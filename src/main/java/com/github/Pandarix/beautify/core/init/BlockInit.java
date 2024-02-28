@@ -6,7 +6,6 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -40,40 +39,40 @@ public final class BlockInit {
                     })));
 
     // trellis
-    public static final RegistryObject<OakTrellis> OAK_TRELLIS = BLOCKS.register("oak_trellis",
-            () -> new OakTrellis(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).strength(0.3F, 0.3F)
+    public static final RegistryObject<Trellis> OAK_TRELLIS = BLOCKS.register("oak_trellis",
+            () -> new Trellis(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).strength(0.3F, 0.3F)
                     .sound(SoundType.BAMBOO).noOcclusion()));
 
-    public static final RegistryObject<OakTrellis> SPRUCE_TRELLIS = BLOCKS.register("spruce_trellis",
-            () -> new OakTrellis(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS).strength(0.3F, 0.3F)
+    public static final RegistryObject<Trellis> SPRUCE_TRELLIS = BLOCKS.register("spruce_trellis",
+            () -> new Trellis(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS).strength(0.3F, 0.3F)
                     .sound(SoundType.BAMBOO).noOcclusion()));
 
-    public static final RegistryObject<OakTrellis> BIRCH_TRELLIS = BLOCKS.register("birch_trellis",
-            () -> new OakTrellis(BlockBehaviour.Properties.copy(Blocks.BIRCH_PLANKS).strength(0.3F, 0.3F)
+    public static final RegistryObject<Trellis> BIRCH_TRELLIS = BLOCKS.register("birch_trellis",
+            () -> new Trellis(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_PLANKS).strength(0.3F, 0.3F)
                     .sound(SoundType.BAMBOO).noOcclusion()));
 
-    public static final RegistryObject<OakTrellis> JUNGLE_TRELLIS = BLOCKS.register("jungle_trellis",
-            () -> new OakTrellis(BlockBehaviour.Properties.copy(Blocks.JUNGLE_PLANKS).strength(0.3F, 0.3F)
+    public static final RegistryObject<Trellis> JUNGLE_TRELLIS = BLOCKS.register("jungle_trellis",
+            () -> new Trellis(BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_PLANKS).strength(0.3F, 0.3F)
                     .sound(SoundType.BAMBOO).noOcclusion()));
 
-    public static final RegistryObject<OakTrellis> ACACIA_TRELLIS = BLOCKS.register("acacia_trellis",
-            () -> new OakTrellis(BlockBehaviour.Properties.copy(Blocks.ACACIA_PLANKS).strength(0.3F, 0.3F)
+    public static final RegistryObject<Trellis> ACACIA_TRELLIS = BLOCKS.register("acacia_trellis",
+            () -> new Trellis(BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_PLANKS).strength(0.3F, 0.3F)
                     .sound(SoundType.BAMBOO).noOcclusion()));
 
-    public static final RegistryObject<OakTrellis> DARK_OAK_TRELLIS = BLOCKS.register("dark_oak_trellis",
-            () -> new OakTrellis(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS)
+    public static final RegistryObject<Trellis> DARK_OAK_TRELLIS = BLOCKS.register("dark_oak_trellis",
+            () -> new Trellis(BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_PLANKS)
                     .strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
 
-    public static final RegistryObject<OakTrellis> MANGROVE_TRELLIS = BLOCKS.register("mangrove_trellis",
-            () -> new OakTrellis(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS)
+    public static final RegistryObject<Trellis> MANGROVE_TRELLIS = BLOCKS.register("mangrove_trellis",
+            () -> new Trellis(BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_PLANKS)
                     .strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
 
-    public static final RegistryObject<OakTrellis> CRIMSON_TRELLIS = BLOCKS.register("crimson_trellis",
-            () -> new OakTrellis(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS)
+    public static final RegistryObject<Trellis> CRIMSON_TRELLIS = BLOCKS.register("crimson_trellis",
+            () -> new Trellis(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS)
                     .strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion()));
 
-    public static final RegistryObject<OakTrellis> WARPED_TRELLIS = BLOCKS.register("warped_trellis",
-            () -> new OakTrellis(BlockBehaviour.Properties.copy(Blocks.WARPED_PLANKS).strength(0.3F, 0.3F)
+    public static final RegistryObject<Trellis> WARPED_TRELLIS = BLOCKS.register("warped_trellis",
+            () -> new Trellis(BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_PLANKS).strength(0.3F, 0.3F)
                     .sound(SoundType.BAMBOO).noOcclusion()));
 
     // lamps
@@ -88,7 +87,7 @@ public final class BlockInit {
                     })));
 
     public static final RegistryObject<LampBamboo> LAMP_BAMBOO = BLOCKS.register("lamp_bamboo",
-            () -> new LampBamboo(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()
+            () -> new LampBamboo(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()
                     .strength(0.1f, 0.1f).sound(SoundType.SCAFFOLDING).lightLevel((state) -> {
                         if (state.getValue(LampBamboo.ON)) {
                             return 14;
@@ -98,7 +97,7 @@ public final class BlockInit {
                     })));
 
     public static final RegistryObject<LampJar> LAMP_JAR = BLOCKS.register("lamp_jar",
-            () -> new LampJar(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion()
+            () -> new LampJar(BlockBehaviour.Properties.ofFullCopy(Blocks.GLASS).noOcclusion()
                     .strength(0.05f, 0.05f).sound(SoundType.GLASS).lightLevel((state) -> {
                         final int fill = state.getValue(LampJar.FILL_LEVEL);
                         return switch (fill) {
@@ -297,96 +296,96 @@ public final class BlockInit {
                     })));
 
     // blinds
-    public static final RegistryObject<OakBlinds> SPRUCE_BLINDS = BLOCKS.register("spruce_blinds",
-            () -> new OakBlinds(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS).noOcclusion()
+    public static final RegistryObject<Blinds> SPRUCE_BLINDS = BLOCKS.register("spruce_blinds",
+            () -> new Blinds(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS).noOcclusion()
                     .strength(0.4f, 0.4f).sound(SoundType.WOOD)));
 
-    public static final RegistryObject<OakBlinds> DARK_OAK_BLINDS = BLOCKS.register("dark_oak_blinds",
-            () -> new OakBlinds(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS).noOcclusion()
+    public static final RegistryObject<Blinds> DARK_OAK_BLINDS = BLOCKS.register("dark_oak_blinds",
+            () -> new Blinds(BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_PLANKS).noOcclusion()
                     .strength(0.4f, 0.4f).sound(SoundType.WOOD)));
 
-    public static final RegistryObject<OakBlinds> CRIMSON_BLINDS = BLOCKS.register("crimson_blinds",
-            () -> new OakBlinds(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS).noOcclusion()
+    public static final RegistryObject<Blinds> CRIMSON_BLINDS = BLOCKS.register("crimson_blinds",
+            () -> new Blinds(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).noOcclusion()
                     .strength(0.4f, 0.4f).sound(SoundType.WOOD)));
 
-    public static final RegistryObject<OakBlinds> ACACIA_BLINDS = BLOCKS.register("acacia_blinds",
-            () -> new OakBlinds(BlockBehaviour.Properties.copy(Blocks.ACACIA_PLANKS).noOcclusion()
+    public static final RegistryObject<Blinds> ACACIA_BLINDS = BLOCKS.register("acacia_blinds",
+            () -> new Blinds(BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_PLANKS).noOcclusion()
                     .strength(0.4f, 0.4f).sound(SoundType.WOOD)));
 
-    public static final RegistryObject<OakBlinds> JUNGLE_BLINDS = BLOCKS.register("jungle_blinds",
-            () -> new OakBlinds(BlockBehaviour.Properties.copy(Blocks.JUNGLE_PLANKS).noOcclusion()
+    public static final RegistryObject<Blinds> JUNGLE_BLINDS = BLOCKS.register("jungle_blinds",
+            () -> new Blinds(BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_PLANKS).noOcclusion()
                     .strength(0.4f, 0.4f).sound(SoundType.WOOD)));
 
-    public static final RegistryObject<OakBlinds> OAK_BLINDS = BLOCKS.register("oak_blinds",
-            () -> new OakBlinds(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()
+    public static final RegistryObject<Blinds> OAK_BLINDS = BLOCKS.register("oak_blinds",
+            () -> new Blinds(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()
                     .strength(0.4f, 0.4f).sound(SoundType.WOOD)));
 
-    public static final RegistryObject<OakBlinds> BIRCH_BLINDS = BLOCKS.register("birch_blinds",
-            () -> new OakBlinds(BlockBehaviour.Properties.copy(Blocks.BIRCH_PLANKS).noOcclusion()
+    public static final RegistryObject<Blinds> BIRCH_BLINDS = BLOCKS.register("birch_blinds",
+            () -> new Blinds(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_PLANKS).noOcclusion()
                     .strength(0.4f, 0.4f).sound(SoundType.WOOD)));
 
-    public static final RegistryObject<OakBlinds> WARPED_BLINDS = BLOCKS.register("warped_blinds",
-            () -> new OakBlinds(BlockBehaviour.Properties.copy(Blocks.WARPED_PLANKS).noOcclusion()
+    public static final RegistryObject<Blinds> WARPED_BLINDS = BLOCKS.register("warped_blinds",
+            () -> new Blinds(BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_PLANKS).noOcclusion()
                     .strength(0.4f, 0.4f).sound(SoundType.WOOD)));
 
-    public static final RegistryObject<OakBlinds> MANGROVE_BLINDS = BLOCKS.register("mangrove_blinds",
-            () -> new OakBlinds(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS).noOcclusion()
+    public static final RegistryObject<Blinds> MANGROVE_BLINDS = BLOCKS.register("mangrove_blinds",
+            () -> new Blinds(BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_PLANKS).noOcclusion()
                     .strength(0.4f, 0.4f).sound(SoundType.WOOD)));
 
-    public static final RegistryObject<OakBlinds> IRON_BLINDS = BLOCKS.register("iron_blinds",
-            () -> new OakBlinds(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).noOcclusion()
+    public static final RegistryObject<Blinds> IRON_BLINDS = BLOCKS.register("iron_blinds",
+            () -> new Blinds(BlockBehaviour.Properties.of().mapColor(MapColor.METAL).noOcclusion()
                     .strength(0.4f, 0.4f).sound(SoundType.CHAIN).requiresCorrectToolForDrops()));
 
     // picture frames
-    public static final RegistryObject<OakPictureFrame> SPRUCE_PICTURE_FRAME = BLOCKS.register(
+    public static final RegistryObject<PictureFrame> SPRUCE_PICTURE_FRAME = BLOCKS.register(
             "spruce_picture_frame",
-            () -> new OakPictureFrame(BlockBehaviour.Properties.copy(Blocks.SPRUCE_PLANKS).noOcclusion()
+            () -> new PictureFrame(BlockBehaviour.Properties.ofFullCopy(Blocks.SPRUCE_PLANKS).noOcclusion()
                     .strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 
-    public static final RegistryObject<OakPictureFrame> DARK_OAK_PICTURE_FRAME = BLOCKS.register(
+    public static final RegistryObject<PictureFrame> DARK_OAK_PICTURE_FRAME = BLOCKS.register(
             "dark_oak_picture_frame",
-            () -> new OakPictureFrame(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS).noOcclusion()
+            () -> new PictureFrame(BlockBehaviour.Properties.ofFullCopy(Blocks.DARK_OAK_PLANKS).noOcclusion()
                     .strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 
-    public static final RegistryObject<OakPictureFrame> CRIMSON_PICTURE_FRAME = BLOCKS.register(
+    public static final RegistryObject<PictureFrame> CRIMSON_PICTURE_FRAME = BLOCKS.register(
             "crimson_picture_frame",
-            () -> new OakPictureFrame(BlockBehaviour.Properties.copy(Blocks.CRIMSON_PLANKS).noOcclusion()
+            () -> new PictureFrame(BlockBehaviour.Properties.ofFullCopy(Blocks.CRIMSON_PLANKS).noOcclusion()
                     .strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 
-    public static final RegistryObject<OakPictureFrame> ACACIA_PICTURE_FRAME = BLOCKS.register(
+    public static final RegistryObject<PictureFrame> ACACIA_PICTURE_FRAME = BLOCKS.register(
             "acacia_picture_frame",
-            () -> new OakPictureFrame(BlockBehaviour.Properties.copy(Blocks.ACACIA_PLANKS).noOcclusion()
+            () -> new PictureFrame(BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_PLANKS).noOcclusion()
                     .strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 
-    public static final RegistryObject<OakPictureFrame> JUNGLE_PICTURE_FRAME = BLOCKS.register(
+    public static final RegistryObject<PictureFrame> JUNGLE_PICTURE_FRAME = BLOCKS.register(
             "jungle_picture_frame",
-            () -> new OakPictureFrame(BlockBehaviour.Properties.copy(Blocks.JUNGLE_PLANKS).noOcclusion()
+            () -> new PictureFrame(BlockBehaviour.Properties.ofFullCopy(Blocks.JUNGLE_PLANKS).noOcclusion()
                     .strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 
-    public static final RegistryObject<OakPictureFrame> OAK_PICTURE_FRAME = BLOCKS.register("oak_picture_frame",
-            () -> new OakPictureFrame(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS).noOcclusion()
+    public static final RegistryObject<PictureFrame> OAK_PICTURE_FRAME = BLOCKS.register("oak_picture_frame",
+            () -> new PictureFrame(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion()
                     .strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 
-    public static final RegistryObject<OakPictureFrame> BIRCH_PICTURE_FRAME = BLOCKS.register("birch_picture_frame",
-            () -> new OakPictureFrame(BlockBehaviour.Properties.copy(Blocks.BIRCH_PLANKS).noOcclusion()
+    public static final RegistryObject<PictureFrame> BIRCH_PICTURE_FRAME = BLOCKS.register("birch_picture_frame",
+            () -> new PictureFrame(BlockBehaviour.Properties.ofFullCopy(Blocks.BIRCH_PLANKS).noOcclusion()
                     .strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 
-    public static final RegistryObject<OakPictureFrame> WARPED_PICTURE_FRAME = BLOCKS.register(
+    public static final RegistryObject<PictureFrame> WARPED_PICTURE_FRAME = BLOCKS.register(
             "warped_picture_frame",
-            () -> new OakPictureFrame(BlockBehaviour.Properties.copy(Blocks.WARPED_PLANKS).noOcclusion()
+            () -> new PictureFrame(BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_PLANKS).noOcclusion()
                     .strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 
-    public static final RegistryObject<OakPictureFrame> MANGROVE_PICTURE_FRAME = BLOCKS.register(
+    public static final RegistryObject<PictureFrame> MANGROVE_PICTURE_FRAME = BLOCKS.register(
             "mangrove_picture_frame",
-            () -> new OakPictureFrame(BlockBehaviour.Properties.copy(Blocks.MANGROVE_PLANKS).noOcclusion()
+            () -> new PictureFrame(BlockBehaviour.Properties.ofFullCopy(Blocks.MANGROVE_PLANKS).noOcclusion()
                     .strength(0.1f, 0.1f).sound(SoundType.WOOD).noOcclusion()));
 
-    public static final RegistryObject<OakPictureFrame> QUARTZ_PICTURE_FRAME = BLOCKS.register(
+    public static final RegistryObject<PictureFrame> QUARTZ_PICTURE_FRAME = BLOCKS.register(
             "quartz_picture_frame",
-            () -> new OakPictureFrame(BlockBehaviour.Properties.copy(Blocks.QUARTZ_BLOCK)
+            () -> new PictureFrame(BlockBehaviour.Properties.ofFullCopy(Blocks.QUARTZ_BLOCK)
                     .noOcclusion().strength(0.1f, 0.1f).sound(SoundType.STONE).noOcclusion()));
 
     // workbench
     public static final RegistryObject<BotanistWorkbench> BOTANIST_WORKBENCH = BLOCKS.register("botanist_workbench",
-            () -> new BotanistWorkbench(BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE)));
+            () -> new BotanistWorkbench(BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE)));
 }

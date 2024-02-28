@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.common.collect.ImmutableMap;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
@@ -24,6 +25,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 public class BotanistWorkbench extends HorizontalDirectionalBlock {
+	public static final MapCodec<BotanistWorkbench> WORKBENCH_MAP_CODEC = simpleCodec(BotanistWorkbench::new);
 	//Map of hitboxes for direction the model can be facing
 	private static final Map<Direction, VoxelShape> SHAPES_FOR_MODEL = ImmutableMap.of(
 			Direction.NORTH, Shapes.or(box(2, 0, 0, 16, 12, 14.25),
@@ -39,6 +41,12 @@ public class BotanistWorkbench extends HorizontalDirectionalBlock {
 	public BotanistWorkbench(Properties p_49795_) {
 		super(p_49795_);
 		this.registerDefaultState(this.defaultBlockState().setValue(FACING, Direction.NORTH));
+	}
+
+	@Override
+	protected MapCodec<? extends HorizontalDirectionalBlock> codec()
+	{
+		return WORKBENCH_MAP_CODEC;
 	}
 
 	@Override

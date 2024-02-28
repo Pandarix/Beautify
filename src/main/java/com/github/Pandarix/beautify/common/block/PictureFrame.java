@@ -3,6 +3,7 @@ package com.github.Pandarix.beautify.common.block;
 import java.util.List;
 import java.util.Random;
 
+import com.mojang.serialization.MapCodec;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
@@ -31,14 +32,21 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class OakPictureFrame extends HorizontalDirectionalBlock {
+public class PictureFrame extends HorizontalDirectionalBlock {
+	public static final MapCodec<PictureFrame> PICTURE_FRAME_MAP_CODEC = simpleCodec(PictureFrame::new);
 	private static final int MODELCOUNT = 13; // number of models the frame has
 	public static final IntegerProperty FRAME_MOTIVE = IntegerProperty.create("frame_motive", 0, MODELCOUNT - 1);
 	protected static final VoxelShape SHAPE = Block.box(5, 0, 5, 11, 8, 11);
 
-	public OakPictureFrame(Properties p_49795_) {
+	public PictureFrame(Properties p_49795_) {
 		super(p_49795_);
 		this.registerDefaultState(this.defaultBlockState().setValue(FRAME_MOTIVE, 0).setValue(FACING, Direction.NORTH));
+	}
+
+	@Override
+	protected MapCodec<? extends HorizontalDirectionalBlock> codec()
+	{
+		return PICTURE_FRAME_MAP_CODEC;
 	}
 
 	// changing the model of the picture frame by shift-rightclicking

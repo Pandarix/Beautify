@@ -3,6 +3,7 @@ package com.github.Pandarix.beautify.common.block;
 import com.github.Pandarix.beautify.core.init.BlockInit;
 import com.github.Pandarix.beautify.core.init.SoundInit;
 import com.google.common.collect.ImmutableMap;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.core.BlockPos;
@@ -38,6 +39,7 @@ import java.util.Map;
 import java.util.Random;
 
 public class BookStack extends HorizontalDirectionalBlock {
+	public static final MapCodec<BookStack> BOOK_STACK_MAP_CODEC = simpleCodec(BookStack::new);
 	private static final int MODELCOUNT = 7; // number of models the bookstack has
 	public static final IntegerProperty BOOKSTACK_MODEL = IntegerProperty.create("bookstack_model", 0, MODELCOUNT - 1);
 
@@ -56,6 +58,12 @@ public class BookStack extends HorizontalDirectionalBlock {
 		super(p_49795_);
 		this.registerDefaultState(
 				this.defaultBlockState().setValue(BOOKSTACK_MODEL, 0).setValue(FACING, Direction.NORTH));
+	}
+
+	@Override
+	protected MapCodec<? extends HorizontalDirectionalBlock> codec()
+	{
+		return BOOK_STACK_MAP_CODEC;
 	}
 
 	@Override
